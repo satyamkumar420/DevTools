@@ -1,0 +1,98 @@
+import React, { useRef, useState } from "react";
+import "cropperjs/dist/cropper.css";
+import Cropper from "react-cropper";
+
+const ImageSquareCrop = () => {
+  const [image, setImage] = useState(null);
+  const [cropper, setCropper] = useState(null);
+  const cropperRef = useRef(null);
+
+  const handleImageChange = (e) => {
+    if (e.target.files && e.target.files.length > 0) {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        setImage(e.target.result);
+      };
+      reader.readAsDataURL(e.target.files[0]);
+    }
+    setImage(null);
+  };
+
+  const handleCrop = () => {
+    if (cropper) {
+      const croppedImage = cropper.getCroppedCanvas({
+        width: 200, // Adjust the width of the circle crop
+        height: 200, // Adjust the height of the circle crop
+      });
+      // Generate a random file name for the cropped image
+      const fileName = `cropped_image_${Math.floor(Math.random() * 100)}.png`;
+      // Convert the cropped image to a data URL
+      const croppedDataURL = croppedImage.toDataURL();
+      const link = document.createElement("a");
+      link.href = croppedDataURL;
+      link.download = fileName; // Set the file name for download
+      link.click();
+    }
+  };
+
+  return (
+    <div className="p-4 sm:ml-48 text-justify max-w-screen-lg overflow-y-auto max-h-screen">
+      <div className="mt-20">
+        <h3 className="p-2 rounded text-lg sm:text-2xl text-yellow-500 w-full bg-[#1a1c2e]">
+          Square Size Image Crop
+        </h3>
+        <div className="container mx-auto my-8">
+          <input
+            type="file"
+            accept="image/*"
+            onChange={handleImageChange}
+            className="block w-full text-sm text-slate-500 
+        file:mr-4 file:py-2 file:px-4 file:rounded
+        file:border-0 file:text-sm sm:file:text-base file:font-medium
+        file:bg-blue-500 file:text-blue-50 
+        hover:file:bg-blue-700 cursor-pointer file:cursor-pointer"
+          />
+          {image && (
+            <>
+              <div className="border-2 border-dashed border-pink-500 p-4 my-5 shadow-2xl bg-[#1a1c2e]">
+                <Cropper
+                  ref={cropperRef}
+                  src={image}
+                  style={{
+                    height: "auto",
+                    width: "99%",
+                    margin: "auto",
+                    zIndex: 0,
+                    maxHeight: "400px",
+                  }}
+                  aspectRatio={1} // Set aspect ratio to maintain a square shape
+                  guides={false}
+                  viewMode={1}
+                  dragMode="move"
+                  scalable={true}
+                  cropBoxResizable={true}
+                  cropBoxMovable={true}
+                  crop={(e) => {
+                    // You can add custom crop event handling if needed
+                  }}
+                  onInitialized={(instance) => {
+                    setCropper(instance);
+                  }}
+                  crossOrigin="anonymous"
+                />
+              </div>
+              <button
+                onClick={handleCrop}
+                className="bg-blue-500 text-sm sm:text-base text-blue-50 py-2 px-4 rounded mt-4 hover:bg-blue-700"
+              >
+                Crop Image
+              </button>
+            </>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default ImageSquareCrop;

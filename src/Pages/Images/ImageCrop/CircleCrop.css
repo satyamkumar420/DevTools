@@ -1,0 +1,17 @@
+/* CircleCrop.css */
+/* Style the cropped image as a circle */
+/* .cropper-crop-box,
+.cropper-view-box {
+    border-radius: 50%;
+} */
+
+.cropper-view-box {
+    box-shadow: 0 0 0 1px rgb(218, 243, 253);
+    outline: 0;
+
+}
+
+.cropper-container,
+.cropper-bg {
+    border-radius: 10px;
+}
