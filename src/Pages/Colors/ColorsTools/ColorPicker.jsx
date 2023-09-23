@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Clipboard from "../../../Components/utils/Clipboard/Clipboard";
 
 const ColorPicker = () => {
-  const [color, setColor] = useState("#05e16f");
+  const [color, setColor] = useState("#00ffd5");
 
   const handleColorChange = (e) => {
     const newColor = e.target.value;
@@ -16,6 +16,7 @@ const ColorPicker = () => {
     return { r, g, b };
   };
 
+  // RGB To HSL
   const rgbToHsl = (r, g, b) => {
     r /= 255;
     g /= 255;
@@ -48,15 +49,12 @@ const ColorPicker = () => {
 
     return { h, s, l };
   };
-
   const rgb = hexToRgb(color);
   const hsl = rgbToHsl(rgb.r, rgb.g, rgb.b);
   const hslColor = `hsl(${Math.round(hsl.h * 360)}, ${Math.round(
     hsl.s * 100
   )}%, ${Math.round(hsl.l * 100)}%)`;
   const rgbColor = `rgb(${rgb.r},${rgb.g},${rgb.b})`;
-  // TODO: add functionality to color name show while pick color
-
   return (
     <div className="p-4 sm:ml-48 max-w-screen-lg overflow-y-auto  max-h-screen">
       <div className=" mt-20 ">
@@ -118,7 +116,7 @@ const ColorPicker = () => {
           </div>
         </div>
         <div className="mt-10">
-          <div className="border-l-4 border-l-purple-500 p-2 text-sm sm:text-base bg-[#1a1c2e]">
+          <div className="border-l-4 border-l-purple-500 p-2 text-sm sm:text-lg bg-[#1a1c2e]">
             <span className="text-blue-300">
               This tool can help you choose colors in RGB, HSL, and HEX formats.
               It's essential for anyone who wants to ensure their colors are

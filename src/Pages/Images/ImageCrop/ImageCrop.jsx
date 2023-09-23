@@ -2,8 +2,7 @@ import React, { useRef, useState } from "react";
 import "cropperjs/dist/cropper.css";
 import Cropper from "react-cropper";
 import RandomImage from "../../../Components/Icons/RandomImage";
-
-const ImageSquareCrop = () => {
+const ImageCrop = () => {
   const [image, setImage] = useState(RandomImage);
   const [cropper, setCropper] = useState(null);
   const cropperRef = useRef(null);
@@ -40,7 +39,7 @@ const ImageSquareCrop = () => {
     <div className="p-4 sm:ml-48 text-justify max-w-screen-lg overflow-y-auto max-h-screen">
       <div className="mt-20">
         <h3 className="p-2 rounded text-lg sm:text-2xl text-yellow-500 w-full bg-[#1a1c2e]">
-          Square Size Image Crop
+          Custom Size Image Crop
         </h3>
         <div className="container mx-auto my-8">
           <input
@@ -66,9 +65,9 @@ const ImageSquareCrop = () => {
                     zIndex: 0,
                     maxHeight: "400px",
                   }}
-                  aspectRatio={1} // Set aspect ratio to maintain a square shape
+                  //   aspectRatio={1} // Set aspect ratio to maintain a square shape
                   guides={false}
-                  viewMode={1}
+                  //   viewMode={1}
                   dragMode="move"
                   scalable={true}
                   cropBoxResizable={true}
@@ -92,7 +91,7 @@ const ImageSquareCrop = () => {
           )}
         </div>
         <div className="mt-10">
-          <div className="border-l-4 border-l-purple-500 p-2 text-sm sm:text-base bg-[#1a1c2e]">
+          <div className="border-l-4 border-l-purple-500 p-2 text-sm sm:text-lg bg-[#1a1c2e]">
             <span className="text-blue-300">
               <strong>Note:</strong>For a better experience, please use the
               Chrome browser. If you are using Firefox, some functionality may
@@ -105,4 +104,4 @@ const ImageSquareCrop = () => {
   );
 };
 
-export default ImageSquareCrop;
+export default ImageCrop;

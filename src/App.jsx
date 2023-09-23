@@ -9,6 +9,7 @@ import Notfound from "./Components/Notfound/Notfound";
 import Images from "./Pages/Images/Images";
 import ImageCircleCrop from "./Pages/Images/ImageCrop/ImageCircleCrop";
 import ImageSquareCrop from "./Pages/Images/ImageCrop/ImageSquareCrop";
+import ImageCrop from "./Pages/Images/ImageCrop/ImageCrop";
 import ColorPicker from "./Pages/Colors/ColorsTools/ColorPicker";
 import RandomColor from "./Pages/Colors/ColorsTools/RandomColor";
 import FavoriteColor from "./Pages/Colors/ColorsTools/FavoriteColor";
@@ -30,7 +31,8 @@ function App() {
           {/* Here are the routes for Images */}
           <Route path="/image-tools" element={<Images />} />
           <Route path="/image/circle-crop" element={<ImageCircleCrop />} />
-          <Route path="/images/images-crop" element={<ImageSquareCrop />} />
+          <Route path="/images/square-crop" element={<ImageSquareCrop />} />
+          <Route path="/images/images-crop" element={<ImageCrop />} />
 
           {/* Here are the routes for Colors */}
           <Route path="/colors" element={<Colors />} />

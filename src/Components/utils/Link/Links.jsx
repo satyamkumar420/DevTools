@@ -15,10 +15,9 @@ export const Links = [
     link: "texts",
     icon: <IconFileText />,
   },
-  { text: "Colors", link: "colors", icon: <IconColorPalette /> },
+  { text: "CSS Tools", link: "colors", icon: <IconColorPalette /> },
   { text: "Image Tools", link: "image-tools", icon: <IconImageEdit /> },
   { text: "Converters", link: "converters", icon: <IconBxTransfer /> },
-  { text: "CSS Tools", link: "css-tools", icon: <IconContrastDropFill /> },
   { text: "Format Code", link: "format-code", icon: <IconBxCodeAlt /> },
   { text: "Minify Code", link: "minify-code", icon: <IconArrowsMinimize /> },
   {

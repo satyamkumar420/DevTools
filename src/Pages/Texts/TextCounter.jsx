@@ -69,7 +69,7 @@ function TextCounter() {
         </div>
         <div className="mt-5">
           {/* TODO: convert into text in 123 format */}
-          <div className="text-blue-300 border-l-4 border-l-purple-500 p-2 text-sm sm:text-base bg-[#1a1c2e]">
+          <div className="text-blue-300 border-l-4 border-l-purple-500 p-2 text-sm sm:text-lg bg-[#1a1c2e]">
             <p>
               This tool is a useful way to quickly and accurately count the
               characters, words, paragraphs, lines, and white spaces in your

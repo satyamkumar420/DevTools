@@ -1,13 +1,11 @@
 import React, { useRef, useState } from "react";
 import Avatar from "react-avatar-edit";
-import Toast from "../../../Components/ToastNotify/Toast";
 
 const ImageCircleCrop = () => {
   const [preview, setPreview] = useState(null);
   const handleCrop = (preview) => {
     setPreview(preview);
   };
-  // TODO:  if size large then show in toast message "its size too large"
   // Save image file to local storage
   const handleSave = () => {
     // Create a temporary HTML anchor element
@@ -53,6 +51,15 @@ const ImageCircleCrop = () => {
               </button>
             </div>
           )}
+        </div>
+        <div className="mt-10">
+          <div className="border-l-4 border-l-purple-500 p-2 text-sm sm:text-lg bg-[#1a1c2e]">
+            <span className="text-blue-300">
+              <strong>Note:</strong> For a better experience, please use Chrome
+              browser. Also, ensure that the image size is less than 1MB. If you
+              are using Firefox, some functionality may not work.
+            </span>
+          </div>
         </div>
       </div>
     </div>

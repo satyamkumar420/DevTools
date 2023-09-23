@@ -12,6 +12,7 @@ const Clipboard = ({ textToCopy }) => {
       setCopied(false);
     }, 2000);
   };
+
   const getRandomColor = () => {
     const colors = [
       "#f5d939",
@@ -30,7 +31,7 @@ const Clipboard = ({ textToCopy }) => {
     <div className="relative">
       <button
         onClick={handleCopyClick}
-        className="bg-blue-500 text-white py-1 px-3 rounded hover:bg-blue-600 focus:outline-none"
+        className="bg-blue-500 text-white py-1 px-3 rounded hover:bg-blue-700 focus:outline-none"
       >
         Copy
       </button>
@@ -41,9 +42,6 @@ const Clipboard = ({ textToCopy }) => {
         >
           Copied! ✔
         </div>
-        // <div className="absolute top-[-30px] left-1/2 -translate-x-1/2 px-2 py-1 bg-gray-800 text-white text-xs rounded-md opacity-0 hover:opacity-100 transition-opacity duration-300 transform translate-y-[-5px]">
-        //   Copied! ✔
-        // </div>
       )}
     </div>
   );

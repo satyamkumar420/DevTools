@@ -15,9 +15,15 @@ const Images = () => {
       className: "p-2 grid place-items-center",
     },
     {
-      to: "/images/images-crop",
+      to: "/images/square-crop",
       text: "Square Crop",
       icon: <IconImageResizeSquare className="text-yellow-500" />,
+      className: "p-2 grid place-items-center",
+    },
+    {
+      to: "/images/images-crop",
+      text: "Custom Crop",
+      icon: <IconImageResizeSquare className="text-orange-500" />,
       className: "p-2 grid place-items-center",
     },
     {
@@ -48,10 +54,10 @@ const Images = () => {
           ))}
         </div>
         <div className="mt-10">
-          <div className="border-l-4 border-l-purple-500 p-2 text-sm sm:text-base bg-[#1a1c2e]">
+          <div className="border-l-4 border-l-purple-500 p-2 text-sm sm:text-lg bg-[#1a1c2e]">
             <span className="text-blue-300">
-              Increase your productivity at work with texts using our collection
-              of online tools.
+              Improve your work productivity by utilizing our collection of
+              online tools that include image editing.
             </span>
           </div>
         </div>

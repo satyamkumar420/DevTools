@@ -37,10 +37,10 @@ const Texts = () => {
           ))}
         </div>
         <div className="mt-10">
-          <div className="border-l-4 border-l-purple-500 p-2 text-sm sm:text-base bg-[#1a1c2e]">
+          <div className="border-l-4 border-l-purple-500 p-2 text-sm sm:text-lg bg-[#1a1c2e]">
             <span className="text-blue-300">
-              Increase your productivity at work with texts using our collection
-              of online tools.
+              Boost your work productivity with our online tool collection for
+              text editing.
             </span>
           </div>
         </div>
