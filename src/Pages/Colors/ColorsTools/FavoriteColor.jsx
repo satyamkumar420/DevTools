@@ -24,7 +24,7 @@ const FavoriteColor = () => {
             <div
               key={index}
               style={{ backgroundColor: color }}
-              className="relative px-2 py-10 min-w-[200px]  rounded-md shadow-md text-white text-center"
+              className="relative px-2 py-10 min-w-[200px] cursor-pointer rounded-md shadow-md text-white text-center"
               onClick={() => copyToClipboard(color)}
             >
               <span className="font-medium">{color}</span>

@@ -73,7 +73,7 @@ const TextComparator = () => {
             <h2 className="text-base sm:text-lg mb-2 p-2 text-orange-600 rounded">
               Differences Found in Text
             </h2>
-            <div className=" text-base text-start bg-[#1a1c2e] p-2">
+            <div className="text-base sm:text-lg text-start bg-[#1a1c2e] p-2">
               {differences.map((diff, index) => (
                 <span
                   key={index}
