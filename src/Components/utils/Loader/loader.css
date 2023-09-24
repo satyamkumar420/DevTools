@@ -1,0 +1,32 @@
+.spinner {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+.spinner_loader {
+    animation: loader 1s infinite linear;
+    font-size: 70px;
+    color: var(--cyan-color);
+}
+
+/* Define the spin animation */
+@keyframes loader {
+    0% {
+        transform: rotate(0deg) scale(1);
+    }
+
+    50% {
+        transform: rotate(180deg) scale(1.2);
+    }
+
+    100% {
+        transform: rotate(360deg) scale(1);
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .spinner_loader {
+        font-size: 50px;
+    }
+}

@@ -343,3 +343,77 @@ export function IconColorBucket(props) {
     </svg>
   );
 }
+
+export function IconDatabase(props) {
+  return (
+    <svg
+      viewBox="0 0 21 21"
+      fill="currentColor"
+      height="1.5em"
+      width="1.5em"
+      {...props}
+    >
+      <g
+        fill="none"
+        fillRule="evenodd"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M4.5 5.206c0-1.3 2.5-2.741 6-2.706s6 1.553 6 2.853v10.294c0 1.3-2.5 2.853-6 2.853s-6-1.7-6-3V5.206z" />
+        <path d="M4.5 5.5c0 1.38 2 3 6 3s6-1.637 6-3.018M4.5 10.5c0 1.38 2 3 6 3s6-1.637 6-3.018" />
+      </g>
+    </svg>
+  );
+}
+
+export function IconPassword(props) {
+  return (
+    <svg
+      fill="none"
+      viewBox="0 0 15 15"
+      height="1.4em"
+      width="1.4em"
+      {...props}
+    >
+      <path
+        stroke="currentColor"
+        d="M12.5 8.5v-1a1 1 0 00-1-1h-10a1 1 0 00-1 1v6a1 1 0 001 1h10a1 1 0 001-1v-1m0-4h-4a2 2 0 100 4h4m0-4a2 2 0 110 4m-9-6v-3a3 3 0 016 0v3m2.5 4h1m-3 0h1m-3 0h1"
+      />
+    </svg>
+  );
+}
+
+export function IconSpinner(props) {
+  return (
+    <svg
+      viewBox="0 0 16 16"
+      fill="currentColor"
+      height="1em"
+      width="1em"
+      {...props}
+    >
+      <path
+        fill="currentColor"
+        d="M16 8a7.917 7.917 0 00-2.431-5.568A7.776 7.776 0 005.057.896c-.923.405-1.758.992-2.449 1.712S1.371 4.182 1.011 5.105a7.531 7.531 0 00.115 5.742c.392.892.961 1.7 1.658 2.368S4.307 14.41 5.2 14.758a7.286 7.286 0 002.799.493 7.157 7.157 0 006.526-4.547 6.98 6.98 0 00.415-1.622l.059.002a1 1 0 00.996-1.083h.004zm-1.589 2.655c-.367.831-.898 1.584-1.55 2.206s-1.422 1.112-2.254 1.434a6.759 6.759 0 01-2.608.454 6.676 6.676 0 01-4.685-2.065 6.597 6.597 0 01-1.38-2.173 6.514 6.514 0 01.116-4.976c.342-.77.836-1.468 1.441-2.044s1.321-1.029 2.092-1.326c.771-.298 1.596-.438 2.416-.416s1.629.202 2.368.532c.74.329 1.41.805 1.963 1.387s.988 1.27 1.272 2.011a6.02 6.02 0 01.397 2.32h.004a1 1 0 00.888 1.077 6.872 6.872 0 01-.481 1.578z"
+      />
+    </svg>
+  );
+}
+export function IconLoader2(props) {
+  return (
+    <svg
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2}
+      viewBox="0 0 24 24"
+      height="1em"
+      width="1em"
+      {...props}
+    >
+      <path d="M21 12a9 9 0 11-6.219-8.56" />
+    </svg>
+  );
+}

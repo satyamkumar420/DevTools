@@ -35,7 +35,7 @@ const Button = ({ text, icon, onClick, className }) => {
     >
       <div className={`${className}`}>
         {icon && <span className="md:text-3xl">{icon}</span>}
-        {text && <span className="text-base md:text-xl">{text}</span>}
+        {text && <span className="text-base md:text-xl mt-2">{text}</span>}
       </div>
     </button>
   );

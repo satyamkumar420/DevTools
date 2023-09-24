@@ -30,7 +30,7 @@ function TextCounter() {
 
   return (
     <div className="p-4 sm:ml-48 text-justify max-w-screen-lg">
-      <div className="mt-16">
+      <div className="mt-20">
         <h1 className="p-2 rounded text-lg md:text-2xl text-yellow-500 w-full bg-[#1a1c2e]">
           Text Counter
         </h1>

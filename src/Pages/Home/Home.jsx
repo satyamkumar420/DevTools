@@ -1,5 +1,5 @@
 // import {} from "../../Components/Icons/Icons";
-import { Links } from "../../Components/utils/Link/Links";
+import { HomeLinks } from "../../Components/utils/Link/Links";
 import Button from "../../Components/utils/Button/Button";
 import { NavLink } from "react-router-dom";
 
@@ -25,7 +25,7 @@ const Home = () => {
             <h2>✔ Online tools available for you:</h2>
           </div>
           <div className="flex flex-1 gap-4 flex-wrap mt-4">
-            {Links.map((button, index) => (
+            {HomeLinks.map((button, index) => (
               <NavLink to={button.link} key={index}>
                 <Button
                   text={button.text}

@@ -21,10 +21,7 @@ const ImageSquareCrop = () => {
 
   const handleCrop = () => {
     if (cropper) {
-      const croppedImage = cropper.getCroppedCanvas({
-        width: 200, // Adjust the width of the circle crop
-        height: 200, // Adjust the height of the circle crop
-      });
+      const croppedImage = cropper.getCroppedCanvas({});
       // Generate a random file name for the cropped image
       const fileName = `cropped_image_${Math.floor(Math.random() * 100)}.png`;
       // Convert the cropped image to a data URL
