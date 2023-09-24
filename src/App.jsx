@@ -1,8 +1,11 @@
 import { lazy, Suspense } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import Navbar from "./Components/Navbar/Navbar";
 import Notfound from "./Components/Notfound/Notfound";
 import Loader from "./Components/utils/Loader/Loader";
+import Footer from "./Components/Footer/Footer";
 
 // Lazy-loaded route components
 const Home = lazy(() => import("./Pages/Home/Home"));
@@ -32,11 +35,23 @@ const PasswordGenerator = lazy(() =>
   import("./Pages/RandomData/PasswordGenerator/PasswordGenerator")
 );
 
+const DummyTextGenerator = lazy(() =>
+  import("./Pages/RandomData/DummyTextGenerator/DummyTextGenerator")
+);
+
 function App() {
   return (
     <BrowserRouter>
       <Suspense fallback={<Loader />}>
         <Navbar />
+        <ToastContainer
+          position="top-center"
+          autoClose={3000}
+          newestOnTop={true}
+          draggable
+          pauseOnHover
+          theme="dark"
+        />
         <Routes>
           <Route path="*" element={<Notfound />} />
           <Route path="/" element={<Home />} />
@@ -57,13 +72,18 @@ function App() {
           <Route path="/colors/random-color" element={<RandomColor />} />
           <Route path="/colors/favorite-color" element={<FavoriteColor />} />
 
-          {/* RandomData Routes  */}
+          {/* Here are the routes for Random Data */}
           <Route path="/random-data" element={<RandomData />} />
           <Route
             path="/random-data/password-generator"
             element={<PasswordGenerator />}
           />
+          <Route
+            path="/random-data/dummy-text-generator"
+            element={<DummyTextGenerator />}
+          />
         </Routes>
+        <Footer />
       </Suspense>
     </BrowserRouter>
   );

@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import FavColors from "../../../Components/utils/Colors/Color";
 import CopiedMessage from "../../../Components/utils/Clipboard/CopyMessage";
-
+import { motion } from "framer-motion";
+import { container, item } from "../../../Components/utils/Motion/Motion";
 const FavoriteColor = () => {
   const [copiedColor, setCopiedColor] = useState(null);
 
@@ -15,23 +16,29 @@ const FavoriteColor = () => {
 
   return (
     <div className="p-4 sm:ml-48 max-w-screen-lg overflow-y-auto  max-h-screen">
-      <div className=" mt-20 ">
+      <div className=" my-20 ">
         <h3 className="p-2 rounded text-lg sm:text-2xl text-yellow-500 w-full bg-[#1a1c2e]">
           Favorite Colors
         </h3>
-        <div className="flex flex-wrap  gap-4 justify-center  mt-8">
+        <motion.div
+          variants={container}
+          initial="hidden"
+          animate="visible"
+          className="flex flex-wrap  gap-4 justify-center  mt-8"
+        >
           {FavColors.map((color, index) => (
-            <div
+            <motion.div
               key={index}
+              variants={item}
               style={{ backgroundColor: color }}
               className="relative px-2 py-10 min-w-[200px] cursor-pointer rounded-md shadow-md text-white text-center"
               onClick={() => copyToClipboard(color)}
             >
-              <span className="font-medium">{color}</span>
+              <motion.div className="font-medium">{color}</motion.div>
               {copiedColor === color && <CopiedMessage />}
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
         <div className="mt-10">
           <div className="border-l-4 border-l-purple-500 p-2 text-sm sm:text-lg bg-[#1a1c2e]">
             <span className="text-blue-300">

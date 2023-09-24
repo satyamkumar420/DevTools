@@ -57,7 +57,7 @@ const ColorPicker = () => {
   const rgbColor = `rgb(${rgb.r},${rgb.g},${rgb.b})`;
   return (
     <div className="p-4 sm:ml-48 max-w-screen-lg overflow-y-auto  max-h-screen">
-      <div className=" mt-20 ">
+      <div className=" my-20 ">
         <h3 className="p-2 rounded text-lg sm:text-2xl text-yellow-500 w-full bg-[#1a1c2e]">
           Pick Your Favorite Color 👇
         </h3>

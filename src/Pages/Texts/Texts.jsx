@@ -7,21 +7,21 @@ const Texts = () => {
     {
       to: "/texts/text-counter",
       text: "Text Counter",
-      icon: <IconCounter className="text-yellow-500" />,
+      icon: <IconCounter className="text-yellow-500 text-lg md:text-3xl" />,
       className: "p-2 grid place-items-center",
     },
     {
       to: "/texts/text-comparator",
       text: "Text Comparator",
-      icon: <IconCompare className="text-red-500 text-lg md:text-4xl" />,
+      icon: <IconCompare className="text-red-500  md:text-4xl" />,
       className: "p-2 grid place-items-center",
     },
     // Add more buttons here
   ];
 
   return (
-    <div className="p-4 sm:ml-48 text-justify max-w-screen-lg overflow-y-auto max-h-screen">
-      <div className="mt-20">
+    <div className="p-4 sm:ml-48   max-w-screen-lg overflow-y-auto max-h-screen">
+      <div className="my-20">
         <h3 className="p-2 rounded text-lg sm:text-2xl text-yellow-500 w-full bg-[#1a1c2e]">
           Text Tools
         </h3>

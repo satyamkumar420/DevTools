@@ -11,26 +11,30 @@ const Images = () => {
     {
       to: "/image/circle-crop",
       text: "Circle Crop",
-      icon: <IconCrosshair className="text-green-500" />,
+      icon: <IconCrosshair className="text-green-500 text-lg md:text-3xl" />,
       className: "p-2 grid place-items-center",
     },
     {
       to: "/images/square-crop",
       text: "Square Crop",
-      icon: <IconImageResizeSquare className="text-yellow-500" />,
+      icon: (
+        <IconImageResizeSquare className="text-yellow-500 text-lg md:text-3xl" />
+      ),
       className: "p-2 grid place-items-center",
     },
     {
       to: "/images/images-crop",
       text: "Custom Crop",
-      icon: <IconImageResizeSquare className="text-orange-500" />,
+      icon: (
+        <IconImageResizeSquare className="text-orange-500 text-lg md:text-3xl" />
+      ),
       className: "p-2 grid place-items-center",
     },
     {
       to: "/image/image-convert",
       text: "Image Convert",
       icon: (
-        <IconImageSyncOutline className="text-pink-500 text-lg md:text-4xl" />
+        <IconImageSyncOutline className="text-pink-500 text-lg md:text-3xl" />
       ),
       className: "p-2 grid place-items-center",
     },
@@ -38,7 +42,7 @@ const Images = () => {
 
   return (
     <div className="p-4 sm:ml-48 text-justify max-w-screen-lg overflow-y-auto max-h-screen">
-      <div className="mt-20">
+      <div className="my-20">
         <h3 className="p-2 rounded text-lg sm:text-2xl text-yellow-500 w-full bg-[#1a1c2e]">
           Image Tools
         </h3>

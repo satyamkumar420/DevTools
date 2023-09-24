@@ -1,9 +1,8 @@
 import React, { useRef, useState } from "react";
 import "cropperjs/dist/cropper.css";
 import Cropper from "react-cropper";
-import RandomImage from "../../../Components/Icons/RandomImage";
 const ImageCrop = () => {
-  const [image, setImage] = useState(RandomImage);
+  const [image, setImage] = useState(null);
   const [cropper, setCropper] = useState(null);
   const cropperRef = useRef(null);
 
@@ -20,10 +19,7 @@ const ImageCrop = () => {
 
   const handleCrop = () => {
     if (cropper) {
-      const croppedImage = cropper.getCroppedCanvas({
-        width: 200, // Adjust the width of the circle crop
-        height: 200, // Adjust the height of the circle crop
-      });
+      const croppedImage = cropper.getCroppedCanvas({});
       // Generate a random file name for the cropped image
       const fileName = `cropped_image_${Math.floor(Math.random() * 100)}.png`;
       // Convert the cropped image to a data URL
@@ -37,7 +33,7 @@ const ImageCrop = () => {
 
   return (
     <div className="p-4 sm:ml-48 text-justify max-w-screen-lg overflow-y-auto max-h-screen">
-      <div className="mt-20">
+      <div className="my-20">
         <h3 className="p-2 rounded text-lg sm:text-2xl text-yellow-500 w-full bg-[#1a1c2e]">
           Custom Size Image Crop
         </h3>
@@ -65,9 +61,7 @@ const ImageCrop = () => {
                     zIndex: 0,
                     maxHeight: "400px",
                   }}
-                  //   aspectRatio={1} // Set aspect ratio to maintain a square shape
-                  guides={false}
-                  //   viewMode={1}
+                  // guides={false}
                   dragMode="move"
                   scalable={true}
                   cropBoxResizable={true}

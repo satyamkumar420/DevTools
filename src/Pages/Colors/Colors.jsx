@@ -11,27 +11,29 @@ const Colors = () => {
     {
       to: "/colors/color-picker",
       text: "Color Picker ",
-      icon: <IconBxsColorFill className="text-pink-500" />,
+      icon: <IconBxsColorFill className="text-pink-500 text-lg md:text-3xl" />,
       className: "p-2 grid place-items-center",
     },
     {
       to: "/colors/random-color",
       text: "Random Color",
-      icon: <IconColorPaletteSharp className="text-yellow-500" />,
+      icon: (
+        <IconColorPaletteSharp className="text-yellow-500 text-lg md:text-3xl" />
+      ),
       className: "p-2 grid place-items-center",
     },
     {
       to: "/colors/favorite-color",
       text: "Favorite Color",
       icon: (
-        <IconColorBucket className="text-emerald-500 text-lg md:text-4xl" />
+        <IconColorBucket className="text-emerald-500 text-xl md:text-4xl" />
       ),
       className: "p-2 grid place-items-center",
     },
   ];
   return (
     <div className="p-4 sm:ml-48 max-w-screen-lg overflow-y-auto  max-h-screen">
-      <div className=" mt-20 ">
+      <div className=" my-20 ">
         <h3 className="p-2 rounded text-lg sm:text-2xl text-yellow-500 w-full bg-[#1a1c2e]">
           Color Tools
         </h3>

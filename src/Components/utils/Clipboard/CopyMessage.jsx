@@ -1,5 +1,3 @@
-import React, { useState } from "react";
-
 const CopiedMessage = () => {
   const getRandomColor = () => {
     const colors = [
@@ -18,7 +16,7 @@ const CopiedMessage = () => {
 
   return (
     <div
-      className="absolute min-w-[100px] bottom-2 left-1/2 -translate-x-1/2 z-50 bg-[#292c46] rounded  mt-2 mr-4  text-sm sm:text-base font-bold p-2 transition-opacity duration-300 transform translate-y-[-25px]"
+      className="absolute min-w-[100px] bottom-2 left-1/2 -translate-x-1/2 z-50 bg-[#292c46] rounded  mt-2 mr-4  text-sm sm:text-base font-bold p-2 transition-opacity duration-300 transform translate-y-[-25px] shadow-md"
       style={{ color: getRandomColor() }}
     >
       Copied! ✔

@@ -26,12 +26,12 @@ const TextComparator = () => {
   }, [text1, text2]);
   return (
     <div className="p-4 sm:ml-48 text-justify max-w-screen-lg overflow-y-auto max-h-screen">
-      <div className="mt-20">
+      <div className="my-20">
         <h3 className="p-2 rounded text-lg sm:text-2xl text-yellow-500 w-full bg-[#1a1c2e]">
           Text Comparator
         </h3>
         <div className="grid sm:grid-cols-2 gap-4 mt-4">
-          <div className="relative">
+          <div className="">
             <label
               htmlFor="text1"
               className="block mb-2 bg-[#1a1c2e] px-2 py-1 rounded text-green-500 sm:text-lg text-base "
@@ -46,7 +46,7 @@ const TextComparator = () => {
               onChange={(e) => setText1(e.target.value)}
             />
           </div>
-          <div className="relative">
+          <div className="">
             <label
               htmlFor="text2"
               className="block mb-2 bg-[#1a1c2e] px-2 py-1 rounded text-yellow-500 sm:text-lg text-base "

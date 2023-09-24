@@ -10,14 +10,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "cropperjs": "^1.6.1",
+    "framer-motion": "^10.16.4",
+    "lorem-ipsum": "^2.0.8",
     "react": "^18.2.0",
     "react-avatar-edit": "^1.2.0",
-    "react-avatar-editor": "^13.0.0",
     "react-cropper": "^2.3.3",
     "react-dom": "^18.2.0",
-    "react-dropzone": "^14.2.3",
-    "react-modal": "^3.16.1",
     "react-router-dom": "^6.16.0"
   },
   "devDependencies": {

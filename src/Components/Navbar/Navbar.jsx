@@ -54,8 +54,9 @@ const Navbar = () => {
           </select>
         </div>
       </header>
+      {/*TODO animate left to right and right to left */}
       <div
-        className={`transition-all duration-300 ease-in-out sm:block transform ${
+        className={`z-50 transition-all duration-300 ease-in-out sm:block transform ${
           isOpen ? "block" : "hidden"
         }`}
       >

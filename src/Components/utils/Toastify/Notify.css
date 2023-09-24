@@ -1,0 +1,36 @@
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in {
+    animation: fade-in 0.3s ease-in-out
+}
+
+@media screen and (max-width: 740px) {
+    .left {
+        left: 45%;
+    }
+
+}
+
+@media screen and (max-width: 640px) {
+    .left {
+        left: 40%;
+    }
+
+}
+
+@media screen and (max-width: 500px) {
+    .left {
+        left: 35%;
+    }
+
+}

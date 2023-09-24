@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import Notify from "../../../Components/utils/Toastify/Notify";
+
 const PasswordGenerator = () => {
   const [password, setPassword] = useState("");
   const [passwordLength, setPasswordLength] = useState(12); // Default length
@@ -53,18 +55,6 @@ const PasswordGenerator = () => {
       setCopied(resetCopied);
     }, 1000);
   };
-  const getRandomColor = () => {
-    const colors = [
-      "#f5d939",
-      "#ff0099",
-      "#f96c26",
-      "#00ff91",
-      "#00FFFF",
-      "#00ff1e",
-    ];
-    const randomIndex = Math.floor(Math.random() * colors.length);
-    return colors[randomIndex];
-  };
 
   const getPasswordTips = () => {
     if (passwordLength <= 6) {
@@ -80,7 +70,7 @@ const PasswordGenerator = () => {
 
   return (
     <div className="p-4 sm:ml-48 text-justify max-w-screen-lg overflow-y-auto max-h-screen">
-      <div className="mt-20">
+      <div className="my-20">
         <h3 className="p-2 rounded text-lg sm:text-2xl text-yellow-500 w-full bg-[#1a1c2e]">
           Password Generator
         </h3>
@@ -90,7 +80,8 @@ const PasswordGenerator = () => {
           </h1>
           <div className="mb-4">
             <label className="block font-medium mb-1 text-gray-400">
-              Password Length: {passwordLength}
+              Password Length:{" "}
+              <strong className="text-orange-500">{passwordLength}</strong>
             </label>
             <input
               type="range"
@@ -115,18 +106,11 @@ const PasswordGenerator = () => {
                 Generated Password:
               </h3>
               <span
-                className="relative flex-wrap flex text-gray-50 bg-[#282a40] cursor-pointer rounded px-3  py-3 max-w-full min-w-full "
+                className="flex-wrap flex text-gray-50 bg-[#282a40] cursor-pointer rounded px-3  py-3 max-w-full min-w-full "
                 onClick={() => handleCopy(password)}
               >
                 {password}
-                {copied[0] && (
-                  <div
-                    className="absolute min-w-[100px] bottom-6 left-1/2 -translate-x-1/2 z-50 bg-[#292c46] rounded  mt-2 mr-4  text-sm sm:text-base font-bold p-2 transition-opacity duration-300 transform translate-y-[-25px] shadow-lg"
-                    style={{ color: getRandomColor() }}
-                  >
-                    Copied! ✔
-                  </div>
-                )}
+                {copied[0] && <Notify message="Copied! ✔" />}
               </span>
 
               <div className="mt-2 flex gap-1">
