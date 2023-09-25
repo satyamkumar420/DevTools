@@ -48,6 +48,10 @@ const ImageToBase64Converter = lazy(() =>
   import("./Pages/Converters/ImageToBase64Converter/ImageToBase64Converter")
 );
 
+const TimestampConverter = lazy(() =>
+  import("./Pages/Converters/TimestampConverter/TimestampConverter")
+);
+
 const About = lazy(() => import("./Pages/About/About"));
 const Privacy = lazy(() => import("./Pages/About/PrivacyPolicy"));
 const Terms = lazy(() => import("./Pages/About/Terms"));
@@ -84,6 +88,10 @@ function App() {
           <Route
             path="/converters/ImageToBase64Converter"
             element={<ImageToBase64Converter />}
+          />
+          <Route
+            path="/converters/timestamp-converter"
+            element={<TimestampConverter />}
           />
 
           {/* Here are the routes for Random Data */}
