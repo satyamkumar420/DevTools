@@ -47,4 +47,5 @@ export const HomeLinks = [
   { text: "Password Generator", link: "/random-data/password-generator" },
   { text: "Circle Image Crop", link: "/image/circle-crop" },
   { text: "Square Image Crop", link: "/images/square-crop" },
+  { text: "Dummy Text", link: "/random-data/dummy-text-generator" },
 ];

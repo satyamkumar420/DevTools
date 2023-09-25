@@ -1,38 +1,22 @@
-import {
-  IconPassword,
-  IconTextSlash,
-  IconProfile,
-} from "../../Components/Icons/Icons";
+import React, { useState } from "react";
 import Button from "../../Components/utils/Button/Button";
 import { NavLink } from "react-router-dom";
+import { IconImageSyncOutline } from "../../Components/Icons/Icons";
 
-const RandomData = () => {
+const Converters = () => {
   const buttons = [
     {
-      to: "/random-data/password-generator",
-      text: "Password Generator",
-      icon: <IconPassword className="text-green-500" />,
-      className: "p-2 grid place-items-center",
-    },
-    {
-      to: "/random-data/dummy-text-generator",
-      text: "Dummy Text Generator",
-      icon: <IconTextSlash className="text-pink-500" />,
-      className: "p-2 grid place-items-center",
-    },
-    {
-      to: "/random-data/fake-details",
-      text: "Fake Details",
-      icon: <IconProfile className="text-yellow-500" />,
+      to: "/converters/ImageToBase64Converter",
+      text: "Image to Base64",
+      icon: <IconImageSyncOutline className="text-yellow-500" />,
       className: "p-2 grid place-items-center",
     },
   ];
-
   return (
     <div className="p-4 sm:ml-48 text-justify max-w-screen-lg overflow-y-auto max-h-screen">
       <div className="my-20">
         <h3 className="p-2 rounded text-lg sm:text-2xl text-yellow-500 w-full bg-[#1a1c2e]">
-          Random Data
+          Converters
         </h3>
         <div className="mt-5 flex flex-wrap gap-6 ">
           {buttons.map((button, index) => (
@@ -58,4 +42,4 @@ const RandomData = () => {
   );
 };
 
-export default RandomData;
+export default Converters;

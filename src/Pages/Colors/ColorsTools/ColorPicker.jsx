@@ -50,6 +50,7 @@ const ColorPicker = () => {
 
     return { h, s, l };
   };
+
   const rgb = hexToRgb(color);
   const hsl = rgbToHsl(rgb.r, rgb.g, rgb.b);
   const hslColor = `hsl(${Math.round(hsl.h * 360)}, ${Math.round(
@@ -57,7 +58,6 @@ const ColorPicker = () => {
   )}%, ${Math.round(hsl.l * 100)}%)`;
   const rgbColor = `rgb(${rgb.r},${rgb.g},${rgb.b})`;
 
-  //TODO can you fix that all hex, hsl and rgb color copy to clipboard
   const handleCopyClick = (copyColor) => {
     navigator.clipboard.writeText(copyColor);
     setCopied(true); // Set copied to true when the text is copied

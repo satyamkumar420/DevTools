@@ -4,6 +4,7 @@ import Navbar from "./Components/Navbar/Navbar";
 import Notfound from "./Components/Notfound/Notfound";
 import Loader from "./Components/utils/Loader/Loader";
 import Footer from "./Components/Footer/Footer";
+import Converters from "./Pages/Converters/Converters";
 
 // Lazy-loaded route components
 const Home = lazy(() => import("./Pages/Home/Home"));
@@ -40,6 +41,12 @@ const PasswordGenerator = lazy(() =>
 const DummyTextGenerator = lazy(() =>
   import("./Pages/RandomData/DummyTextGenerator/DummyTextGenerator")
 );
+const FakeDetails = lazy(() =>
+  import("./Pages/RandomData/FakeDetails/FakeDetails")
+);
+const ImageToBase64Converter = lazy(() =>
+  import("./Pages/Converters/ImageToBase64Converter/ImageToBase64Converter")
+);
 
 const About = lazy(() => import("./Pages/About/About"));
 const Privacy = lazy(() => import("./Pages/About/PrivacyPolicy"));
@@ -72,6 +79,13 @@ function App() {
           <Route path="/colors/random-color" element={<RandomColor />} />
           <Route path="/colors/favorite-color" element={<FavoriteColor />} />
 
+          {/* Here are the routes for Converters */}
+          <Route path="/converters" element={<Converters />} />
+          <Route
+            path="/converters/ImageToBase64Converter"
+            element={<ImageToBase64Converter />}
+          />
+
           {/* Here are the routes for Random Data */}
           <Route path="/random-data" element={<RandomData />} />
           <Route
@@ -82,6 +96,7 @@ function App() {
             path="/random-data/dummy-text-generator"
             element={<DummyTextGenerator />}
           />
+          <Route path="/random-data/fake-details" element={<FakeDetails />} />
 
           {/* Here are the routes for About, Privacy Policy, and Terms */}
           <Route path="/about" element={<About />} />

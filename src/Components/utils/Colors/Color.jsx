@@ -32,6 +32,8 @@ const FavColors = [
   "#2f2d39",
   "#1e2023",
   "#ee1d2f",
+  "#bbff6",
+  "#54152b",
   // Add more favorite colors here
 ];
 

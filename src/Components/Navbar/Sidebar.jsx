@@ -5,23 +5,35 @@ const Sidebar = ({ isOpen, setIsOpen }) => {
   const handleNavLinkClick = () => {
     setIsOpen(false);
   };
+
+  // TODO: while use random color then not use same color fix that
+  let previousIndex;
   const getRandomColor = () => {
     const colors = [
       "#f5d939",
       "#ff0099",
-      "#f96c26",
       "#00ff91",
       "#00FFFF",
       "#00ff1e",
       "#2469fe",
       "#b023fc",
+      "#ee1d2f",
+      "#f96c26",
     ];
-    const randomIndex = Math.floor(Math.random() * colors.length);
+
+    // Generate a random index different from the previous one
+    let randomIndex = Math.floor(Math.random() * colors.length);
+    while (randomIndex === previousIndex) {
+      randomIndex = Math.floor(Math.random() * colors.length);
+    }
+    // Store the current index for the next call
+    previousIndex = randomIndex;
     return colors[randomIndex];
   };
+
   return (
     <aside
-      className="fixed h-screen top-0  left-0 bg-[#1a1c2e] p-4 shadow-2xl  border-r-2 border-r-cyan-500   z-50 "
+      className="fixed h-screen top-0  left-0 bg-[#1a1c2e] p-4 shadow-2xl  border-r-2 border-r-cyan-500 z-50 "
       aria-label="Sidebar"
     >
       <div className="mt-20">
