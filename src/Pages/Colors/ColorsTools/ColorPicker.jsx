@@ -1,8 +1,9 @@
 import { useState } from "react";
-import Clipboard from "../../../Components/utils/Clipboard/Clipboard";
+import Notify from "../../../Components/utils/Toastify/Notify";
 
 const ColorPicker = () => {
   const [color, setColor] = useState("#00ffd5");
+  const [copied, setCopied] = useState(false);
 
   const handleColorChange = (e) => {
     const newColor = e.target.value;
@@ -55,11 +56,21 @@ const ColorPicker = () => {
     hsl.s * 100
   )}%, ${Math.round(hsl.l * 100)}%)`;
   const rgbColor = `rgb(${rgb.r},${rgb.g},${rgb.b})`;
+
+  //TODO can you fix that all hex, hsl and rgb color copy to clipboard
+  const handleCopyClick = (copyColor) => {
+    navigator.clipboard.writeText(copyColor);
+    setCopied(true); // Set copied to true when the text is copied
+    setTimeout(() => {
+      setCopied(false); // Reset copied to false after 2 seconds
+    }, 2000);
+  };
+
   return (
     <div className="p-4 sm:ml-48 max-w-screen-lg overflow-y-auto  max-h-screen">
       <div className=" my-20 ">
         <h3 className="p-2 rounded text-lg sm:text-2xl text-yellow-500 w-full bg-[#1a1c2e]">
-          Pick Your Favorite Color 👇
+          Color Picker
         </h3>
         <div className="mt-10 flex flex-wrap gap-6 items-center justify-center">
           <div>
@@ -82,7 +93,13 @@ const ColorPicker = () => {
                 {rgbColor}
               </div>
               <div className="mt-10">
-                <Clipboard textToCopy={rgbColor} />
+                <button
+                  className="px-3 py-1 text-blue-50 bg-blue-500 hover:bg-blue-700  rounded"
+                  onClick={() => handleCopyClick(rgbColor)}
+                >
+                  Copy
+                </button>
+                {copied && <Notify message="Copied! ✔" type="error" />}
               </div>
             </div>
             <div className="shadow-lg min-w-[170px] min-h-[200px] text-center bg-[#1a1c2e] rounded">
@@ -95,8 +112,15 @@ const ColorPicker = () => {
               >
                 {hslColor}
               </div>
+
               <div className="mt-10">
-                <Clipboard textToCopy={hslColor} />
+                <button
+                  className="px-3 py-1 text-blue-50 bg-blue-500 hover:bg-blue-700  rounded"
+                  onClick={() => handleCopyClick(hslColor)}
+                >
+                  Copy
+                </button>
+                {copied && <Notify message="Copied! ✔" type="success" />}
               </div>
             </div>
             <div className="shadow-lg min-w-[170px] min-h-[200px] text-center bg-[#1a1c2e] rounded">
@@ -110,7 +134,13 @@ const ColorPicker = () => {
                 {color}
               </div>
               <div className="mt-10">
-                <Clipboard textToCopy={color} />
+                <button
+                  className="px-3 py-1 text-blue-50 bg-blue-500 hover:bg-blue-700  rounded"
+                  onClick={() => handleCopyClick(color)}
+                >
+                  Copy
+                </button>
+                {copied && <Notify message="Copied! ✔" type="success" />}
               </div>
             </div>
           </div>

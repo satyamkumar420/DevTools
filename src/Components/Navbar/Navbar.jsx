@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import { IconLanguageHiragana } from "../Icons/Icons";
 import { IconMenu, IconCross2 } from "../Icons/Icons";
 import { useState } from "react";
-import Logo from "../../assets/code.png";
+import Logo from "../../assets/favicon.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);

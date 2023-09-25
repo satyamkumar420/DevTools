@@ -110,7 +110,7 @@ const PasswordGenerator = () => {
                 onClick={() => handleCopy(password)}
               >
                 {password}
-                {copied[0] && <Notify message="Copied! ✔" />}
+                {copied[0] && <Notify message="Copied! ✔" type="success" />}
               </span>
 
               <div className="mt-2 flex gap-1">

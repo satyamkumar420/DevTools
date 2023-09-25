@@ -3,12 +3,10 @@ const CopiedMessage = () => {
     const colors = [
       "#f5d939",
       "#ff0099",
-      "#f96c26",
+      "#ff7732",
       "#00ff91",
       "#00FFFF",
       "#00ff1e",
-      "#2469fe",
-      "#b023fc",
     ];
     const randomIndex = Math.floor(Math.random() * colors.length);
     return colors[randomIndex];

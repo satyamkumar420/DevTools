@@ -12,13 +12,22 @@ const Footer = () => {
           </strong>
           DevTools. All rights reserved.
         </p>
-        <NavLink className="text-blue-400 hover:underline hover:text-blue-500">
+        <NavLink
+          to="/about"
+          className="text-blue-400 hover:underline hover:text-blue-500"
+        >
           About
         </NavLink>
-        <NavLink className="text-blue-400 hover:underline hover:text-blue-500">
+        <NavLink
+          to="/privacy-policy"
+          className="text-blue-400 hover:underline hover:text-blue-500"
+        >
           Privacy Policy
         </NavLink>
-        <NavLink className="text-blue-400 hover:underline hover:text-blue-500">
+        <NavLink
+          to="/terms-and-conditions"
+          className="text-blue-400 hover:underline hover:text-blue-500"
+        >
           Terms
         </NavLink>
       </div>
