@@ -8,6 +8,7 @@ import {
   IconArrowsMinimize,
   IconGrid_squares,
   IconDatabase,
+  IconEmojiSunglasses,
 } from "../../Icons/Icons";
 
 export const Links = [
@@ -26,7 +27,11 @@ export const Links = [
     link: "various-tools",
     icon: <IconGrid_squares />,
   },
-  { text: "Emojis Picker", link: "emojis-picker", icon: "😂" },
+  {
+    text: "Emojis Picker",
+    link: "emojis-picker",
+    icon: <IconEmojiSunglasses />,
+  },
   { text: "Random Data", link: "/random-data", icon: <IconDatabase /> },
 ];
 

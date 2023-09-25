@@ -116,6 +116,16 @@ const DummyTextGenerator = () => {
             </div>
           </div>
         </div>
+        <div className="mt-10">
+          <div className="border-l-4 border-l-purple-500 p-2 text-sm sm:text-lg bg-[#1a1c2e]">
+            <span className="text-blue-300">
+              If you're a student or a developer, you know how important it is
+              to have good dummy text for your websites. Well, this tool is just
+              what you need! It's a valuable resource that you can't afford to
+              overlook. Just remember to use it wisely, and you'll be all set!
+            </span>
+          </div>
+        </div>
       </div>
     </div>
   );

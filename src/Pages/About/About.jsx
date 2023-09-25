@@ -18,8 +18,8 @@ const About = () => {
           is to assist with your tasks throughout the different stages of
           software development. Our online tools cover a wide range of topics,
           such as generating fictitious data for testing, code formatting and
-          minification, data conversion, as well as utilities for working with
-          dates, colors, texts, images, and even PDFs. Our platform also
+          minification, and data conversion, as well as utilities for working
+          with dates, colors, texts, images, and even PDFs. Our platform also
           benefits students, designers, and content creators. We are
           continuously expanding our collection of tools to add value to
           developers and the technology community.

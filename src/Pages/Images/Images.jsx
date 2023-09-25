@@ -30,14 +30,14 @@ const Images = () => {
       ),
       className: "p-2 grid place-items-center",
     },
-    {
-      to: "/image/image-convert",
-      text: "Image Convert",
-      icon: (
-        <IconImageSyncOutline className="text-pink-500 text-lg md:text-3xl" />
-      ),
-      className: "p-2 grid place-items-center",
-    },
+    // {
+    //   to: "/image/image-convert",
+    //   text: "Image Convert",
+    //   icon: (
+    //     <IconImageSyncOutline className="text-pink-500 text-lg md:text-3xl" />
+    //   ),
+    //   className: "p-2 grid place-items-center",
+    // },
   ];
 
   return (

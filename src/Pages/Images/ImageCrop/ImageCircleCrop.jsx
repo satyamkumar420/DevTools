@@ -1,21 +1,46 @@
 import React, { useRef, useState } from "react";
 import Avatar from "react-avatar-edit";
+import CustomAlert from "../../../Components/utils/Toastify/CustomAlert";
 
 const ImageCircleCrop = () => {
   const [preview, setPreview] = useState(null);
-  const handleCrop = (preview) => {
-    setPreview(preview);
+
+  const [showAlert, setShowAlert] = useState(false);
+  const [currentError, setCurrentError] = useState("");
+
+  // Function to show custom alert
+  const showAlertMessage = (message) => {
+    setCurrentError(message);
+    setShowAlert(true);
+  };
+
+  const handleCrop = (croppedImage) => {
+    setPreview(croppedImage);
   };
   // Save image file to local storage
   const handleSave = () => {
-    // Create a temporary HTML anchor element
-    const link = document.createElement("a");
-    link.href = preview;
-    link.download = "cropped-avatar.png"; // Specify the filename here
-    // Trigger a click event on the anchor element to download the image
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    if (preview) {
+      // Create a temporary HTML anchor element
+      const link = document.createElement("a");
+      link.href = preview;
+      link.download = "cropped-avatar.png"; // Specify the filename here
+      // Trigger a click event on the anchor element to download the image
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    } else {
+      showAlertMessage("No image to save. Please crop an image first.");
+    }
+  };
+
+  const handleBeforeFileLoad = (elem) => {
+    if (elem.target.files[0].size > 1000000) {
+      showAlertMessage("File is too big! Maximum size is 1MB.");
+      elem.target.value = "";
+    } else if (!elem.target.files[0].type.includes("image")) {
+      showAlertMessage("Invalid file type! Please select an image file.");
+      elem.target.value = "";
+    }
   };
 
   return (
@@ -25,18 +50,22 @@ const ImageCircleCrop = () => {
           Crop Circle Size Image
         </h3>
         <div className="flex flex-col items-center mt-10 text-center ">
+          {showAlert && (
+            <CustomAlert
+              message={currentError}
+              onClose={() => {
+                setShowAlert(false);
+                setCurrentError("");
+              }}
+            />
+          )}
           <div className=" rounded-lg overflow-hidden">
             <Avatar
               width={300}
               height={300}
               onCrop={handleCrop}
               onClose={() => setPreview(null)}
-              onBeforeFileLoad={(elem) => {
-                if (elem.target.files[0].size > 1000000) {
-                  alert("File is too big! Maximum size is 1MB.");
-                  elem.target.value = "";
-                }
-              }}
+              onBeforeFileLoad={handleBeforeFileLoad}
             />
           </div>
           {preview && (
