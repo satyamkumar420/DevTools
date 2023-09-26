@@ -2,7 +2,7 @@ import "./Notify.css";
 const Notify = ({ message, type }) => {
   const getNotificationClass = () => {
     if (type === "success") {
-      return "text-[#00ff91]";
+      return "text-[#09fa16]";
     } else if (type === "error") {
       return "text-[#ff0000]";
     } else if (type === "info") {

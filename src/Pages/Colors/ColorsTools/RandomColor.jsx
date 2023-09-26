@@ -1,31 +1,29 @@
 import React, { useState } from "react";
 import CopiedMessage from "../../../Components/utils/Clipboard/CopyMessage";
 
+const generateRandomColor = (format) => {
+  const randomColor = {
+    hex: `#${Math.floor(Math.random() * 16777215).toString(16)}`,
+    rgb: `rgb(${Math.floor(Math.random() * 256)}, ${Math.floor(
+      Math.random() * 256
+    )}, ${Math.floor(Math.random() * 256)})`,
+    hsl: `hsl(${Math.floor(Math.random() * 361)}, ${Math.floor(
+      Math.random() * 101
+    )}%, ${Math.floor(Math.random() * 101)}%)`,
+  };
+  return randomColor[format];
+};
+
 const RandomColor = () => {
   const [colors, setColors] = useState([]);
   const [format, setFormat] = useState("hex");
   const [copied, setCopied] = useState([]);
 
-  const generateRandomColor = () => {
-    const randomColor = {
-      hex: `#${Math.floor(Math.random() * 16777215).toString(16)}`,
-      rgb: `rgb(${Math.floor(Math.random() * 256)}, ${Math.floor(
-        Math.random() * 256
-      )}, ${Math.floor(Math.random() * 256)})`,
-      hsl: `hsl(${Math.floor(Math.random() * 361)}, ${Math.floor(
-        Math.random() * 101
-      )}%, ${Math.floor(Math.random() * 101)}%)`,
-    };
-    return randomColor[format];
-  };
-
   const generateColors = () => {
-    const newColors = [];
-    for (let i = 0; i < 12; i++) {
-      newColors.push(generateRandomColor());
-    }
+    const newColors = Array.from({ length: 16 }, () =>
+      generateRandomColor(format)
+    );
     setColors(newColors);
-    // Reset copied state for all colors when generating new colors
     setCopied(newColors.map(() => false));
   };
 
@@ -34,19 +32,26 @@ const RandomColor = () => {
     generateColors();
   };
 
-  //TODO: Click to copy color in Clipboard not work can you fix it?
-
   const handleCopy = (colorIndex) => {
-    navigator.clipboard.writeText(colors[colorIndex]);
-    const newCopied = [...copied]; // Create a copy of the copied state
-    newCopied[colorIndex] = true; // Set the copied state for the clicked color to true
-    setCopied(newCopied);
-    // Reset the "Copied" message after 2 seconds
-    setTimeout(() => {
-      const resetCopied = [...newCopied];
-      resetCopied[colorIndex] = false; // Reset the copied state for the clicked color
-      setCopied(resetCopied);
-    }, 1000);
+    const colorToCopy = colors[colorIndex];
+
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(colorToCopy);
+    } else {
+      const textarea = document.createElement("textarea");
+      textarea.value = colorToCopy;
+      document.body.appendChild(textarea);
+      textarea.focus();
+      textarea.select();
+      document.execCommand("copy");
+      document.body.removeChild(textarea);
+    }
+
+    setCopied((prevCopied) => {
+      const newCopied = [...prevCopied];
+      newCopied[colorIndex] = true;
+      return newCopied;
+    });
   };
 
   return (

@@ -10,6 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "diff": "^5.1.0",
+    "diff-sequences": "^29.6.3",
     "framer-motion": "^10.16.4",
     "lorem-ipsum": "^2.0.8",
     "react": "^18.2.0",
