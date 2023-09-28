@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { diffChars } from "diff";
 
 const TextComparator = () => {
   const [originalParagraph, setOriginalParagraph] = useState("");
@@ -11,39 +12,27 @@ const TextComparator = () => {
   }, [originalParagraph, modifiedParagraph]);
 
   const getDifferences = (original, modified) => {
-    const originalWords = original.split(/\s+/);
-    const modifiedWords = modified.split(/\s+/);
+    // Compare the original and modified texts using jsdiff
+    const differences = diffChars(original, modified);
 
-    const differences = [];
-    // TODO: add functionality to compare sentences as well
-
-    const maxLength = Math.max(originalWords.length, modifiedWords.length);
-
-    for (let i = 0; i < maxLength; i++) {
-      const originalWord = originalWords[i] || " ";
-      const modifiedWord = modifiedWords[i] || " ";
-
-      if (originalWord === modifiedWord) {
-        differences.push(<span key={i}>{originalWord} </span>);
+    // Map the differences to JSX elements
+    return differences.map((diff, index) => {
+      if (diff.added) {
+        return (
+          <span key={`${index}-mod`} className="text-green-600">
+            {diff.value}
+          </span>
+        );
+      } else if (diff.removed) {
+        return (
+          <del key={index} className="text-red-600">
+            {diff.value}
+          </del>
+        );
       } else {
-        if (originalWord) {
-          differences.push(
-            <del key={i} className="text-red-600">
-              {originalWord}
-            </del>
-          );
-        }
-        if (modifiedWord) {
-          differences.push(
-            <span key={`${i}-mod`} className="text-green-600">
-              {modifiedWord}{" "}
-            </span>
-          );
-        }
+        return <span key={index}>{diff.value}</span>;
       }
-    }
-
-    return differences;
+    });
   };
 
   return (
