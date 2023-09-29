@@ -22,7 +22,17 @@ const ImageToBase64Converter = () => {
   };
 
   const handleCopy = () => {
-    navigator.clipboard.writeText(base64Image);
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(base64Image);
+    } else {
+      const textarea = document.createElement("textarea");
+      textarea.value = base64Image;
+      document.body.appendChild(textarea);
+      textarea.focus();
+      textarea.select();
+      document.execCommand("copy");
+      document.body.removeChild(textarea);
+    }
     setCopied(true);
     setTimeout(() => {
       setCopied(false);

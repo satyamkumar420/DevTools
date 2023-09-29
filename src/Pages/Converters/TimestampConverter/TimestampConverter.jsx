@@ -15,26 +15,33 @@ const TimestampConverter = () => {
         </h3>
         <div className="my-5 ">
           <div className="flex flex-wrap">
-            <input
-              type="number"
-              placeholder="Enter timestamp"
-              value={timestamp}
-              onChange={(e) => setTimestamp(e.target.value)}
-              className="px-2 p-1 rounded border-2 border-blue-500 outline-none mr-2"
-            />
-            <button
-              onClick={convertTimestampToDate}
-              className="bg-blue-500 hover:bg-blue-700 text-blue-50 px-4 py-2 rounded"
-            >
-              Convert
-            </button>
+            <div className="mb-4">
+              <input
+                type="number"
+                placeholder="Enter timestamp"
+                value={timestamp}
+                onChange={(e) => setTimestamp(e.target.value)}
+                className="px-2 p-1 bg-[#0c111c] rounded border-2 border-blue-500 outline-none mr-2 "
+              />
+            </div>
+
+            <div className="">
+              <button
+                onClick={convertTimestampToDate}
+                className="bg-blue-500 hover:bg-blue-700 text-blue-50 px-4 py-2 rounded"
+              >
+                Convert
+              </button>
+            </div>
           </div>
           <div className="mt-5 bg-[#1a1c2e] p-2">
-            <p>
-              <span className="text-blue-200 md:text-lg font-medium">
+            <p className="flex flex-wrap">
+              <span className="text-blue-200 sm:text-lg font-medium">
                 Formatted Date:{" "}
               </span>
-              <span className="text-orange-500 text-base">{formattedDate}</span>
+              <span className="text-orange-500 text-base sm:text-xl">
+                {formattedDate}
+              </span>
             </p>
           </div>
         </div>

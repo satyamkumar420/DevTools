@@ -59,7 +59,17 @@ const ColorPicker = () => {
   const rgbColor = `rgb(${rgb.r},${rgb.g},${rgb.b})`;
 
   const handleCopyClick = (copyColor) => {
-    navigator.clipboard.writeText(copyColor);
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(copyColor);
+    } else {
+      const textarea = document.createElement("textarea");
+      textarea.value = colorToCopy;
+      document.body.appendChild(textarea);
+      textarea.focus();
+      textarea.select();
+      document.execCommand("copy");
+      document.body.removeChild(textarea);
+    }
     setCopied(true); // Set copied to true when the text is copied
     setTimeout(() => {
       setCopied(false); // Reset copied to false after 2 seconds

@@ -34,7 +34,17 @@ const DummyTextGenerator = () => {
 
   // Copy text to clipboard
   const handleCopyClick = () => {
-    navigator.clipboard.writeText(generatedText);
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(generatedText);
+    } else {
+      const textarea = document.createElement("textarea");
+      textarea.value = colorToCopy;
+      document.body.appendChild(textarea);
+      textarea.focus();
+      textarea.select();
+      document.execCommand("copy");
+      document.body.removeChild(textarea);
+    }
     setCopied(true); // Set copied to true when the text is copied
     setTimeout(() => {
       setCopied(false); // Reset copied to false after 2 seconds
@@ -50,7 +60,7 @@ const DummyTextGenerator = () => {
         <div className="container mx-auto p-4">
           <div className="p-4">
             <div className="flex flex-wrap gap-6">
-              <div className="mb-4">
+              <div className="sm:mb-4">
                 <label className="block font-medium mb-1 text-gray-400">
                   Number of Paragraphs:{" "}
                   <strong className="text-orange-500">{paragraphs}</strong>
@@ -65,7 +75,7 @@ const DummyTextGenerator = () => {
                   onChange={(e) => setParagraphs(e.target.value)}
                 />
               </div>
-              <div className="mb-4">
+              <div className="sm:mb-4">
                 <label className="block font-medium mb-1 text-gray-400">
                   Number of Words:{" "}
                   <strong className="text-orange-500">{words}</strong>

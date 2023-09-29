@@ -44,7 +44,17 @@ const PasswordGenerator = () => {
 
   // handleCopy function
   const handleCopy = (password) => {
-    navigator.clipboard.writeText(password);
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(password);
+    } else {
+      const textarea = document.createElement("textarea");
+      textarea.value = colorToCopy;
+      document.body.appendChild(textarea);
+      textarea.focus();
+      textarea.select();
+      document.execCommand("copy");
+      document.body.removeChild(textarea);
+    }
     const newCopied = [...copied]; // Create a copy of the copied state
     newCopied[0] = true; // Set the copied state for the clicked color to true
     setCopied(newCopied);

@@ -1,12 +1,27 @@
+import { useEffect, useRef } from "react";
 import { NavLink } from "react-router-dom";
 import { Links } from "../utils/Link/Links";
 
+// TODO: Implement handleClose arguments
 const Sidebar = ({ isOpen, setIsOpen }) => {
+  const sidebarRef = useRef(null);
+
   const handleNavLinkClick = () => {
     setIsOpen(false);
   };
+  const handleOutsideClick = (event) => {
+    if (sidebarRef.current && !sidebarRef.current.contains(event.target)) {
+      setIsOpen(false);
+    }
+  };
 
-  // TODO: while use random color then not use same color fix that
+  useEffect(() => {
+    document.addEventListener("mousedown", handleOutsideClick);
+    return () => {
+      document.removeEventListener("mousedown", handleOutsideClick);
+    };
+  }, []);
+
   let previousIndex;
   const getRandomColor = () => {
     const colors = [
@@ -33,16 +48,17 @@ const Sidebar = ({ isOpen, setIsOpen }) => {
 
   return (
     <aside
-      className="fixed h-screen top-0  left-0 bg-[#1a1c2e] p-4 shadow-2xl  border-r-2 border-r-cyan-500 z-50 "
+      ref={sidebarRef}
+      className="fixed h-screen top-0  left-0 bg-[#1a1c2e] p-4 shadow-2xl  border-r-2 border-r-cyan-500 z-50 transform transition-all duration-300 ease-in-out "
       aria-label="Sidebar"
     >
-      <div className="mt-20">
+      <div className="mt-20 ">
         <ul>
           {Links.map((item, index) => (
-            <li key={index} className="mb-4 whitespace-nowrap ">
+            <li key={index} className="mb-4 whitespace-nowrap">
               <NavLink
                 to={item.link}
-                className="transition-all ease-in-out shadow-2xl border-2 border-cyan-500 text-blue-50  flex items-center gap-2 rounded hover:bg-gray-900 hover:text-cyan-400"
+                className="transition-all ease-in-out shadow-2xl border-2 border-cyan-500 text-blue-50  flex items-center gap-2 rounded hover:bg-gray-900 hover:text-cyan-400 "
                 onClick={handleNavLinkClick}
               >
                 <span

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import CopiedMessage from "../../../Components/utils/Clipboard/CopyMessage";
+import Notify from "../../../Components/utils/Toastify/Notify";
 
 const generateRandomColor = (format) => {
   const randomColor = {
@@ -32,6 +32,8 @@ const RandomColor = () => {
     generateColors();
   };
 
+  // TODO fix handleCopy function to work with navigator.clipboard
+
   const handleCopy = (colorIndex) => {
     const colorToCopy = colors[colorIndex];
 
@@ -46,7 +48,13 @@ const RandomColor = () => {
       document.execCommand("copy");
       document.body.removeChild(textarea);
     }
-
+    setTimeout(() => {
+      setCopied((prevCopied) => {
+        const newCopied = [...prevCopied];
+        newCopied[colorIndex] = false;
+        return newCopied;
+      });
+    }, 1000);
     setCopied((prevCopied) => {
       const newCopied = [...prevCopied];
       newCopied[colorIndex] = true;
@@ -86,11 +94,11 @@ const RandomColor = () => {
               <div
                 key={index}
                 style={{ backgroundColor: color }}
-                className="relative px-2 py-10 min-w-[200px]  rounded-md shadow-md text-white text-center cursor-pointer"
+                className=" px-2 py-10 min-w-[200px]  rounded-md shadow-md text-white text-center cursor-pointer"
                 onClick={() => handleCopy(index)}
               >
                 <span className="font-medium">{color}</span>
-                {copied[index] && <CopiedMessage />}
+                {copied[index] && <Notify type="success" message="Copied ✔" />}
               </div>
             ))}
           </div>

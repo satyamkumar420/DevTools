@@ -12,17 +12,13 @@ const Navbar = () => {
     setIsOpen(!isOpen);
   };
 
-  const handleClick = () => {
-    setIsOpen(false);
-  };
-
   return (
     <>
-      <header className="fixed w-full top-0 left-0 right-0 z-50  backdrop-blur-xl firefox:bg-opacity-50 p-4  flex shadow-lg  justify-between items-center">
+      <header className="fixed w-full top-0 left-0 right-0 z-50  backdrop-blur-3xl firefox:bg-opacity-50 p-4  flex shadow-lg  justify-between items-center">
         <div className="ml-6 flex">
           <NavLink
             to="/"
-            className="text-blue-50 text-xl font-bold   cursor-pointer sm:block hidden"
+            className="text-blue-50 text-xl font-bold cursor-pointer sm:block hidden"
           >
             <div className="flex items-center">
               <img src={Logo} alt="Logo" className="w-10 h-auto mr-2" />
@@ -49,15 +45,15 @@ const Navbar = () => {
             //   onChange={(e) => console.log(e.target.value)} // Handle language change here
           >
             <option value="en">English</option>
-            <option value="es">Español</option>
-            <option value="fr">Français</option>
+            {/* <option value="es">Español</option>
+            <option value="fr">Français</option> */}
           </select>
         </div>
       </header>
-      {/*TODO animate left to right and right to left */}
+
       <div
         className={`z-50 transition-all duration-300 ease-in-out sm:block transform ${
-          isOpen ? "block" : "hidden"
+          isOpen ? "translate-x-0 " : "-translate-x-full sm:translate-x-0"
         }`}
       >
         <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} />
