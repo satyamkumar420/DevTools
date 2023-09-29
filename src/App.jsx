@@ -1,5 +1,7 @@
 import { lazy, Suspense } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { ToastContainer } from "react-toastify"; // Import the toast function
+import "react-toastify/dist/ReactToastify.css";
 import Navbar from "./Components/Navbar/Navbar";
 import Notfound from "./Components/Notfound/Notfound";
 import Loader from "./Components/utils/Loader/Loader";
@@ -55,13 +57,21 @@ const TimestampConverter = lazy(() =>
 const About = lazy(() => import("./Pages/About/About"));
 const Privacy = lazy(() => import("./Pages/About/PrivacyPolicy"));
 const Terms = lazy(() => import("./Pages/About/Terms"));
+const FormatCode = lazy(() => import("./Pages/FormatCode/FormatCode"));
+const VariousTools = lazy(() => import("./Pages/VariousTools/VariousTools"));
+const ShortUrl = lazy(() => import("./Pages/VariousTools/ShortUrl/ShortUrl"));
 
 function App() {
   return (
     <BrowserRouter>
       <Suspense fallback={<Loader />}>
         <Navbar />
-
+        <ToastContainer
+          position="top-center"
+          theme="dark"
+          autoClose={2000}
+          hideProgressBar
+        />
         <Routes>
           <Route path="*" element={<Notfound />} />
           <Route path="/" element={<Home />} />
@@ -105,6 +115,13 @@ function App() {
             element={<DummyTextGenerator />}
           />
           <Route path="/random-data/fake-details" element={<FakeDetails />} />
+
+          {/* Here are the routes for Format Code */}
+          <Route path="/format-code" element={<FormatCode />} />
+
+          {/* Here are the routes for Various Tools */}
+          <Route path="/various-tools" element={<VariousTools />} />
+          <Route path="/various-tools/short-url" element={<ShortUrl />} />
 
           {/* Here are the routes for About, Privacy Policy, and Terms */}
           <Route path="/about" element={<About />} />

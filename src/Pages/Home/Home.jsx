@@ -42,6 +42,20 @@ const Home = () => {
             </span>
           </div>
         </div>
+        <div className="mt-10">
+          <div className="border-l-4 border-l-purple-500 p-2 text-sm sm:text-lg bg-[#1a1c2e]">
+            <strong className="text-orange-500 text-center">Note</strong>{" "}
+            <span className="text-blue-300">
+              :- I've developed a website called DevTools that offers a variety
+              of tools to improve web development and design processes. Some of
+              these key features include image cropping, CSS generation, random
+              password generation, circle, and square image cropping, fake
+              details, text counters, text comparisons, emoji, and color
+              pickers, as well as image-to-base64 and timestamp conversion
+              capabilities.
+            </span>
+          </div>
+        </div>
       </div>
     </div>
   );
