@@ -60,6 +60,8 @@ const Terms = lazy(() => import("./Pages/About/Terms"));
 const FormatCode = lazy(() => import("./Pages/FormatCode/FormatCode"));
 const VariousTools = lazy(() => import("./Pages/VariousTools/VariousTools"));
 const ShortUrl = lazy(() => import("./Pages/VariousTools/ShortUrl/ShortUrl"));
+const EmojiPicker = lazy(() => import("./Pages/EmojiPicker/EmojiPicker"));
+const MinifyCode = lazy(() => import("./Pages/MinifyCode/MinifyCode"));
 
 function App() {
   return (
@@ -122,6 +124,12 @@ function App() {
           {/* Here are the routes for Various Tools */}
           <Route path="/various-tools" element={<VariousTools />} />
           <Route path="/various-tools/short-url" element={<ShortUrl />} />
+
+          {/* Here are the routes for Emoji Picker */}
+          <Route path="/emojis-picker" element={<EmojiPicker />} />
+
+          {/* Here are the routes for Minify Code */}
+          <Route path="/minify-code" element={<MinifyCode />} />
 
           {/* Here are the routes for About, Privacy Policy, and Terms */}
           <Route path="/about" element={<About />} />

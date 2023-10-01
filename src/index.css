@@ -42,7 +42,18 @@ a:hover {
 }
 
 * {
-  scrollbar-width: none;
+  /* scrollbar-width: none; */
+  font-family: 'Poppins', 'Noto Color Emoji', sans-serif;
+}
+
+body {
+  font-family: 'Poppins', 'Noto Color Emoji', sans-serif;
+  scroll-behavior: smooth;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'Poppins', 'Noto Color Emoji', sans-serif;
 }
 
 /* Set the scrollbar color (optional) */
