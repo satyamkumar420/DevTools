@@ -12,15 +12,15 @@ const EmojiPicker = () => {
   // Get unique categories from emoji data
   const MyCategories = [
     { id: 1, char: "😂", groupName: "Smileys & Emotion" },
-    { id: 2, char: "👋", groupName: "hands" },
+    { id: 2, char: "👋", groupName: "hand" },
     { id: 3, char: "🧑", groupName: "person" },
-    { id: 4, char: "🐱", groupName: "Animals" },
-    { id: 5, char: "☕", groupName: "Food" },
+    { id: 4, char: "🐱", groupName: "animal" },
+    { id: 5, char: "☕", groupName: "food" },
     { id: 6, char: "🚀", groupName: "Travel" },
     { id: 7, char: "⚽", groupName: "Activities" },
     { id: 8, char: "💡", groupName: "Objects" },
     { id: 9, char: "🚸", groupName: "Symbols" },
-    { id: 10, char: "🚩", groupName: "Flags" },
+    { id: 10, char: "🚩", groupName: "flag" },
   ];
 
   useEffect(() => {
@@ -42,7 +42,7 @@ const EmojiPicker = () => {
   const handleSearch = (e) => {
     setSearchTerm(e.target.value);
     const emojisForCategory = Emoji.filter((emoji) =>
-      emoji.name.includes(searchTerm)
+      emoji.name.includes(searchTerm) ? emoji : null
     );
     // Set the filtered emojis
     setFilteredEmojis(emojisForCategory);
