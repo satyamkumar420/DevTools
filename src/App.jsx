@@ -73,6 +73,11 @@ function App() {
           theme="dark"
           autoClose={2000}
           hideProgressBar
+          newestOnTop={false}
+          pauseOnHover={false}
+          draggable={false}
+          closeOnClick={false}
+          closeButton={false}
         />
         <Routes>
           <Route path="*" element={<Notfound />} />

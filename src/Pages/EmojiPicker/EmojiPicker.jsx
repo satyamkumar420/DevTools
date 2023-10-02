@@ -14,7 +14,7 @@ const EmojiPicker = () => {
     { id: 1, char: "😂", groupName: "Smileys & Emotion" },
     { id: 2, char: "👋", groupName: "hand" },
     { id: 3, char: "🧑", groupName: "person" },
-    { id: 4, char: "🐱", groupName: "animal" },
+    { id: 4, char: "🐯", groupName: "animal" },
     { id: 5, char: "☕", groupName: "food" },
     { id: 6, char: "🚀", groupName: "Travel" },
     { id: 7, char: "⚽", groupName: "Activities" },
@@ -38,7 +38,6 @@ const EmojiPicker = () => {
     }
   }, [selectedCategory]);
 
-  //TODO: Searching Technique not work can you fix that
   const handleSearch = (e) => {
     setSearchTerm(e.target.value);
     const emojisForCategory = Emoji.filter((emoji) =>
@@ -128,7 +127,7 @@ const EmojiPicker = () => {
                     // role="button"
                     onClick={() => copyEmoji(emoji)}
                   >
-                    <div className="mx-3 transition-all ease-in-out  hover:scale-125">
+                    <div className="mx-3 transition-all ease-in-out  hover:scale-150">
                       {emoji.char}
                     </div>
                   </div>
@@ -136,8 +135,8 @@ const EmojiPicker = () => {
               ))}
             </div>
           </div>
+          {showNotification && <Notify message="Copied" type="success" />}
         </div>
-        {showNotification && <Notify message="Copied ✔️" type="success" />}
       </div>
     </div>
   );

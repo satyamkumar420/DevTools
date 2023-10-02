@@ -93,7 +93,7 @@ const ShortUrl = () => {
                     onClick={handleCopyClick}
                     className="hover:text-green-500 hover:cursor-pointer"
                   />
-                  {copied && <Notify message="Copied! ✔" type="success" />}
+                  {copied && <Notify message="Copied" type="success" />}
                 </div>
               </div>
             )}

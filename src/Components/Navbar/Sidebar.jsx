@@ -68,7 +68,7 @@ const Sidebar = ({ isOpen, setIsOpen }) => {
                   {" "}
                   {item.icon}
                 </span>
-                <span className="py-2 pr-2 text-sm sm:text-base">
+                <span className="py-2 pr-2 text-sm sm:text-base font-normal">
                   {" "}
                   {item.text}
                 </span>

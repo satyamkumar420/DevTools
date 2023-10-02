@@ -553,3 +553,36 @@ export function IconSearch(props) {
     </svg>
   );
 }
+
+export function IconShieldTick(props) {
+  return (
+    <svg
+      fill="none"
+      viewBox="0 0 15 15"
+      height="1.8em"
+      width="1.8em"
+      {...props}
+    >
+      <path
+        fill="currentColor"
+        fillRule="evenodd"
+        d="M7.252.066a.5.5 0 01.496 0l7 4A.5.5 0 0115 4.5v.72c0 4.532-3.005 8.516-7.363 9.76a.5.5 0 01-.274 0A10.152 10.152 0 010 5.22V4.5a.5.5 0 01.252-.434l7-4zm-.18 10.645l4.318-5.399-.78-.624-3.682 4.601L4.32 7.116l-.64.768 3.392 2.827z"
+        clipRule="evenodd"
+      />
+    </svg>
+  );
+}
+
+export function IconCheck(props) {
+  return (
+    <svg
+      viewBox="0 0 665.8 1000"
+      fill="currentColor"
+      height="1.3em"
+      width="1.3em"
+      {...props}
+    >
+      <path d="M248 850c-22.667 0-41.333-9.333-56-28L12 586C1.333 570-2.667 552.667 0 534s11.333-34 26-46 31.667-16.667 51-14c19.333 2.667 35 12 47 28l118 154 296-474c10.667-16 25-26 43-30s35.667-1.333 53 8c16 10.667 26 25 30 43s1.333 35.667-8 53L306 816c-13.333 21.333-32 32-56 32l-2 2" />
+    </svg>
+  );
+}

@@ -71,7 +71,7 @@ const ImageToBase64Converter = () => {
                 >
                   Copy
                 </button>
-                {copied && <Notify message="Copied! ✔" type="success" />}
+                {copied && <Notify message="Copied!" type="success" />}
               </div>
             </div>
           )}

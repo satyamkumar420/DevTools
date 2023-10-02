@@ -43,17 +43,17 @@ const FakeDetails = () => {
         <h3 className="p-2 rounded text-lg sm:text-2xl text-yellow-500 w-full bg-[#1a1c2e]">
           Fake Details
         </h3>
-        <div className="mt-5 ">
-          <button
-            onClick={generateDetails}
-            className="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded"
-          >
-            Generate
-          </button>
-        </div>
-        <div className="mx-auto justify-center flex gap-3 flex-wrap flex-shrink  jus ">
-          <div className=" items-center max-w-[500px] py-4 px-3 rounded my-5 bg-[#1a1c2e] shadow-lg">
-            <div className="flex justify-center mt-5">
+        <div className="mt-5 items-center">
+          <div className="mx-auto justify-start flex gap-3 flex-wrap flex-shrink  ">
+            <button
+              onClick={generateDetails}
+              className="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded"
+            >
+              Generate
+            </button>
+          </div>
+          <div className=" sm:max-w-full items-center py-4 px-3 rounded my-5 bg-[#1a1c2e] shadow-lg">
+            <div className="flex w-[200px] justify-center mt-5">
               <img
                 src={details.profileImage}
                 alt="ProfileLogo"

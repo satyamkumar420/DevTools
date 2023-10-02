@@ -98,7 +98,7 @@ const RandomColor = () => {
                 onClick={() => handleCopy(index)}
               >
                 <span className="font-medium">{color}</span>
-                {copied[index] && <Notify type="success" message="Copied ✔" />}
+                {copied[index] && <Notify type="success" message="Copied" />}
               </div>
             ))}
           </div>

@@ -47,7 +47,7 @@ const FavoriteColor = () => {
             >
               <motion.div className="font-medium">{color}</motion.div>
               {copiedColor === color && (
-                <Notify type="success" message="Copied ✔" />
+                <Notify type="success" message="Copied" />
               )}
             </motion.div>
           ))}

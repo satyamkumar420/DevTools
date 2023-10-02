@@ -109,7 +109,7 @@ const ColorPicker = () => {
                 >
                   Copy
                 </button>
-                {copied && <Notify message="Copied! ✔" type="error" />}
+                {copied && <Notify message="Copied" type="success" />}
               </div>
             </div>
             <div className="shadow-lg min-w-[170px] min-h-[200px] text-center bg-[#1a1c2e] rounded">
@@ -130,7 +130,7 @@ const ColorPicker = () => {
                 >
                   Copy
                 </button>
-                {copied && <Notify message="Copied! ✔" type="success" />}
+                {copied && <Notify message="Copied" type="success" />}
               </div>
             </div>
             <div className="shadow-lg min-w-[170px] min-h-[200px] text-center bg-[#1a1c2e] rounded">
@@ -150,7 +150,7 @@ const ColorPicker = () => {
                 >
                   Copy
                 </button>
-                {copied && <Notify message="Copied! ✔" type="success" />}
+                {copied && <Notify message="Copied" type="success" />}
               </div>
             </div>
           </div>

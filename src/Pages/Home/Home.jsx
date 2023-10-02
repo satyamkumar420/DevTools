@@ -1,6 +1,7 @@
 import { HomeLinks } from "../../Components/utils/Link/Links";
 import Button from "../../Components/utils/Button/Button";
 import { NavLink } from "react-router-dom";
+import { IconShieldTick } from "../../Components/Icons/Icons";
 
 const Home = () => {
   return (
@@ -13,15 +14,17 @@ const Home = () => {
           <h1 className="font-extrabold text-transparent sm:text-4xl bg-clip-text bg-gradient-to-r from-pink-400 to-red-700 text-xl mt-3">
             Welcome to Online DevTools!
           </h1>
-          <p className="text-blue-50 mt-3 indent-8 leading-normal text-sm sm:text-lg">
-            The platform that prioritizes efficiency and usability in your daily
-            life. We endeavor to provide free online resources that are tailored
-            to your specific requirements.
+          <p className="text-blue-50 mt-3 leading-normal text-sm sm:text-lg">
+            Our platform is here to make your life easier! We provide a wide
+            variety of free online resources that are tailored to meet your
+            specific needs. With our platform, you'll experience unparalleled
+            efficiency and user-friendliness in all your day-to-day activities.
           </p>
         </div>
         <div className="mt-5">
-          <div className="text-green-400 font-semibold text-xl">
-            <h2>✔ Online tools available for you:</h2>
+          <div className=" my-5 text-green-400 font-semibold text-xl flex gap-2 items-center">
+            <IconShieldTick />
+            <h2>Online tools available for you:</h2>
           </div>
           <div className="flex flex-1 gap-4 flex-wrap mt-4">
             {HomeLinks.map((button, index) => (
