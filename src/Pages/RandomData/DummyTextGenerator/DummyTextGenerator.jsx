@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { LoremIpsum } from "lorem-ipsum";
-import Notify from "../../../Components/utils/Toastify/Notify";
+import { toastStyleSuccess } from "../../../Components/utils/Toastify/toastStyle";
+import { toast } from "react-toastify";
 
 const DummyTextGenerator = () => {
   const [paragraphs, setParagraphs] = useState(4);
   const [words, setWords] = useState(50);
   const [sentences, setSentences] = useState(5);
   const [generatedText, setGeneratedText] = useState("");
-  const [copied, setCopied] = useState(false);
+
   useEffect(() => {
     generateText();
   }, [paragraphs, words, sentences]);
@@ -45,10 +46,7 @@ const DummyTextGenerator = () => {
       document.execCommand("copy");
       document.body.removeChild(textarea);
     }
-    setCopied(true); // Set copied to true when the text is copied
-    setTimeout(() => {
-      setCopied(false); // Reset copied to false after 2 seconds
-    }, 2000);
+    toast("Text Copied to Clipboard!", { style: toastStyleSuccess });
   };
 
   return (
@@ -117,7 +115,7 @@ const DummyTextGenerator = () => {
                 className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700"
                 onClick={handleCopyClick}
               >
-                Copy Text {copied && <Notify message="Copied" type="success" />}
+                Copy Text
               </button>
             </div>
             <div className="bg-[#1a1c2e] p-3 shadow-md rounded">

@@ -1,9 +1,9 @@
 import { useState } from "react";
-import Notify from "../../../Components/utils/Toastify/Notify";
+import { toast } from "react-toastify";
+import { toastStyleSuccess } from "../../../Components/utils/Toastify/ToastStyle";
 
 const ColorPicker = () => {
   const [color, setColor] = useState("#00ffd5");
-  const [copied, setCopied] = useState(false);
 
   const handleColorChange = (e) => {
     const newColor = e.target.value;
@@ -70,10 +70,7 @@ const ColorPicker = () => {
       document.execCommand("copy");
       document.body.removeChild(textarea);
     }
-    setCopied(true); // Set copied to true when the text is copied
-    setTimeout(() => {
-      setCopied(false); // Reset copied to false after 2 seconds
-    }, 2000);
+    toast("Color Copied to Clipboard!", { style: toastStyleSuccess });
   };
 
   return (
@@ -109,7 +106,6 @@ const ColorPicker = () => {
                 >
                   Copy
                 </button>
-                {copied && <Notify message="Copied" type="success" />}
               </div>
             </div>
             <div className="shadow-lg min-w-[170px] min-h-[200px] text-center bg-[#1a1c2e] rounded">
@@ -130,7 +126,6 @@ const ColorPicker = () => {
                 >
                   Copy
                 </button>
-                {copied && <Notify message="Copied" type="success" />}
               </div>
             </div>
             <div className="shadow-lg min-w-[170px] min-h-[200px] text-center bg-[#1a1c2e] rounded">
@@ -150,7 +145,6 @@ const ColorPicker = () => {
                 >
                   Copy
                 </button>
-                {copied && <Notify message="Copied" type="success" />}
               </div>
             </div>
           </div>

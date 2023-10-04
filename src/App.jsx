@@ -1,6 +1,6 @@
 import { lazy, Suspense } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { ToastContainer } from "react-toastify"; // Import the toast function
+import { Slide, ToastContainer } from "react-toastify"; // Import the toast function
 import "react-toastify/dist/ReactToastify.css";
 import Navbar from "./Components/Navbar/Navbar";
 import Notfound from "./Components/Notfound/Notfound";
@@ -69,15 +69,16 @@ function App() {
       <Suspense fallback={<Loader />}>
         <Navbar />
         <ToastContainer
-          position="top-center"
+          position="top-right"
           theme="dark"
-          autoClose={2000}
+          autoClose={1000}
           hideProgressBar
           newestOnTop={false}
           pauseOnHover={false}
           draggable={false}
           closeOnClick={false}
           closeButton={false}
+          transition={Slide}
         />
         <Routes>
           <Route path="*" element={<Notfound />} />

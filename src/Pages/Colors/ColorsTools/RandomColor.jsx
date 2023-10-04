@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import Notify from "../../../Components/utils/Toastify/Notify";
+import { toastStyleSuccess } from "../../../Components/utils/Toastify/toastStyle";
+import { toast } from "react-toastify";
 
 const generateRandomColor = (format) => {
   const randomColor = {
@@ -48,18 +49,7 @@ const RandomColor = () => {
       document.execCommand("copy");
       document.body.removeChild(textarea);
     }
-    setTimeout(() => {
-      setCopied((prevCopied) => {
-        const newCopied = [...prevCopied];
-        newCopied[colorIndex] = false;
-        return newCopied;
-      });
-    }, 1000);
-    setCopied((prevCopied) => {
-      const newCopied = [...prevCopied];
-      newCopied[colorIndex] = true;
-      return newCopied;
-    });
+    toast("Color Copied to Clipboard!", { style: toastStyleSuccess });
   };
 
   return (
@@ -98,7 +88,6 @@ const RandomColor = () => {
                 onClick={() => handleCopy(index)}
               >
                 <span className="font-medium">{color}</span>
-                {copied[index] && <Notify type="success" message="Copied" />}
               </div>
             ))}
           </div>

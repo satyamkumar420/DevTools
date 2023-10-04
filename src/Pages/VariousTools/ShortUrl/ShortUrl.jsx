@@ -5,18 +5,16 @@ import {
   toastStyleError,
 } from "../../../Components/utils/Toastify/ToastStyle";
 import { IconContentCopy } from "../../../Components/Icons/Icons";
-import Notify from "../../../Components/utils/Toastify/Notify";
 
 const ShortUrl = () => {
   const [originalUrl, setOriginalUrl] = useState("");
   const [shortUrl, setShortUrl] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const [copied, setCopied] = useState(false);
 
   const handleGenerateShortUrl = async () => {
     // Validate the URL
     if (!originalUrl) {
-      toast.error("Please enter a valid url!", { style: toastStyleError });
+      toast("Please enter a valid url!", { style: toastStyleError });
       return;
     }
 
@@ -29,28 +27,34 @@ const ShortUrl = () => {
 
       if (data.result) {
         setShortUrl(data.result.full_short_link);
-        toast.success("URL generated successfully!", {
+        toast("URL generated successfully!", {
           style: toastStyleSuccess,
         });
       } else {
         // Handle error, e.g., data.error
-        toast.error("Please enter a valid url!", { style: toastStyleError });
+        toast("Please enter a valid url!", { style: toastStyleError });
       }
     } catch (error) {
       // Handle network or other errors
-      toast.error("Something went wrong!", { style: toastStyleError });
+      toast("Something went wrong!", { style: toastStyleError });
     } finally {
       setIsLoading(false);
     }
   };
   // Handle Url Copy Button
   const handleCopyClick = () => {
-    navigator.clipboard.writeText(shortUrl);
-    // toast.success("URL Copied!", { style: toastStyleSuccess });
-    setCopied(true); // Set copied to true when the text is copied
-    setTimeout(() => {
-      setCopied(false); // Reset copied to false after 2 seconds
-    }, 2000);
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(shortUrl);
+    } else {
+      const textarea = document.createElement("textarea");
+      textarea.value = shortUrl;
+      document.body.appendChild(textarea);
+      textarea.focus();
+      textarea.select();
+      document.execCommand("copy");
+      document.body.removeChild(textarea);
+    }
+    toast(`Url Copied to Clipboard!`, { style: toastStyleSuccess });
   };
   return (
     <div className="p-4 sm:ml-52   max-w-screen-lg overflow-y-auto max-h-screen">
@@ -93,7 +97,6 @@ const ShortUrl = () => {
                     onClick={handleCopyClick}
                     className="hover:text-green-500 hover:cursor-pointer"
                   />
-                  {copied && <Notify message="Copied" type="success" />}
                 </div>
               </div>
             )}

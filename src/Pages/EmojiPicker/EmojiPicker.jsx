@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
 import { IconSearch } from "../../Components/Icons/Icons";
 import Emoji from "emoji.json";
-import Notify from "../../Components/utils/Toastify/Notify";
+import { toast } from "react-toastify";
+import { toastStyleSuccess } from "../../Components/utils/Toastify/ToastStyle";
 
 const EmojiPicker = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredEmojis, setFilteredEmojis] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("Smileys & Emotion");
-  const [showNotification, setShowNotification] = useState(false);
 
   // Get unique categories from emoji data
   const MyCategories = [
@@ -70,10 +70,9 @@ const EmojiPicker = () => {
     document.execCommand("copy");
     document.body.removeChild(el);
 
-    setShowNotification(true);
-    setTimeout(() => {
-      setShowNotification(false);
-    }, 2000);
+    toast(`${emoji.char} Emoji Copied! ${emoji.char}`, {
+      style: toastStyleSuccess,
+    });
   };
 
   return (
@@ -119,12 +118,11 @@ const EmojiPicker = () => {
               </div>
             </div>
 
-            <div className="flex flex-wrap">
+            <div className="flex flex-wrap ">
               {filteredEmojis.map((emoji) => (
                 <div key={emoji.char} className="text-center">
                   <div
                     className="m-2 text-white mt-5 text-2xl sm:text-5xl hover:cursor-pointer "
-                    // role="button"
                     onClick={() => copyEmoji(emoji)}
                   >
                     <div className="mx-3 transition-all ease-in-out  hover:scale-150">
@@ -135,7 +133,6 @@ const EmojiPicker = () => {
               ))}
             </div>
           </div>
-          {showNotification && <Notify message="Copied" type="success" />}
         </div>
       </div>
     </div>

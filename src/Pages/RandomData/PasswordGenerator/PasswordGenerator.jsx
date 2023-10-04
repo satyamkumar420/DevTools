@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import Notify from "../../../Components/utils/Toastify/Notify";
+import { toastStyleSuccess } from "../../../Components/utils/Toastify/ToastStyle";
+import { toast } from "react-toastify";
 
 const PasswordGenerator = () => {
   const [password, setPassword] = useState("");
@@ -27,7 +28,6 @@ const PasswordGenerator = () => {
     // Set loading state to false after password is generated
     setLoading(true);
   };
-  // TODO: while password is being generated, then change the color of the hr line
 
   // Password Color
   const getPasswordColor = () => {
@@ -55,15 +55,7 @@ const PasswordGenerator = () => {
       document.execCommand("copy");
       document.body.removeChild(textarea);
     }
-    const newCopied = [...copied]; // Create a copy of the copied state
-    newCopied[0] = true; // Set the copied state for the clicked color to true
-    setCopied(newCopied);
-    // Reset the "Copied" message after 2 seconds
-    setTimeout(() => {
-      const resetCopied = [...newCopied];
-      resetCopied[0] = false; // Reset the copied state for the clicked color
-      setCopied(resetCopied);
-    }, 1000);
+    toast(`Password Copied!`, { style: toastStyleSuccess });
   };
 
   const getPasswordTips = () => {

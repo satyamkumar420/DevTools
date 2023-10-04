@@ -1,6 +1,8 @@
 import React, { useRef, useState } from "react";
 import "cropperjs/dist/cropper.css";
 import Cropper from "react-cropper";
+import { toast } from "react-toastify";
+import { toastStyleError } from "../../../Components/utils/Toastify/ToastStyle";
 const ImageCrop = () => {
   const [image, setImage] = useState(null);
   const [cropper, setCropper] = useState(null);
@@ -8,11 +10,21 @@ const ImageCrop = () => {
 
   const handleImageChange = (e) => {
     if (e.target.files && e.target.files.length > 0) {
-      const reader = new FileReader();
-      reader.onload = (e) => {
-        setImage(e.target.result);
-      };
-      reader.readAsDataURL(e.target.files[0]);
+      const file = e.target.files[0];
+      const fileType = file.type;
+      if (fileType.startsWith("image/")) {
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          setImage(e.target.result);
+        };
+        reader.readAsDataURL(file);
+      } else {
+        setImage(null);
+
+        toast("Only image files are accepted", {
+          style: toastStyleError,
+        });
+      }
     }
     setImage(null);
   };

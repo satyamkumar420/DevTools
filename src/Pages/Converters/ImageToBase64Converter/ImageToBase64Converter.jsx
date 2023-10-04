@@ -1,8 +1,11 @@
 import React, { useState } from "react";
-import Notify from "../../../Components/utils/Toastify/Notify";
+import {
+  toastStyleError,
+  toastStyleSuccess,
+} from "../../../Components/utils/Toastify/toastStyle";
+import { toast } from "react-toastify";
 
 const ImageToBase64Converter = () => {
-  const [copied, setCopied] = useState(null);
   const [base64Image, setBase64Image] = useState("");
   const [selectedFile, setSelectedFile] = useState(null);
 
@@ -10,14 +13,18 @@ const ImageToBase64Converter = () => {
     const file = event.target.files[0];
 
     if (file) {
-      const reader = new FileReader();
-
-      reader.onloadend = () => {
-        setBase64Image(reader.result);
-      };
-
-      reader.readAsDataURL(file);
-      setSelectedFile(file);
+      if (file.type.includes("image")) {
+        const reader = new FileReader();
+        reader.onloadend = () => {
+          setBase64Image(reader.result);
+        };
+        reader.readAsDataURL(file);
+        setSelectedFile(file);
+      } else {
+        setSelectedFile(null);
+        setBase64Image("");
+        toast("Please select an image file.", { style: toastStyleError });
+      }
     }
   };
 
@@ -33,10 +40,7 @@ const ImageToBase64Converter = () => {
       document.execCommand("copy");
       document.body.removeChild(textarea);
     }
-    setCopied(true);
-    setTimeout(() => {
-      setCopied(false);
-    }, 2000);
+    toast("Image Encoded Data Copied!", { style: toastStyleSuccess });
   };
 
   return (
@@ -71,7 +75,6 @@ const ImageToBase64Converter = () => {
                 >
                   Copy
                 </button>
-                {copied && <Notify message="Copied!" type="success" />}
               </div>
             </div>
           )}

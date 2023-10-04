@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import FavColors from "../../../Components/utils/Colors/Color";
-import Notify from "../../../Components/utils/Toastify/Notify";
 import { motion } from "framer-motion";
 import { container, item } from "../../../Components/utils/Motion/Motion";
+import { toast } from "react-toastify";
+import { toastStyleSuccess } from "../../../Components/utils/Toastify/toastStyle";
 const FavoriteColor = () => {
-  const [copiedColor, setCopiedColor] = useState(null);
-
   const copyToClipboard = (color) => {
     if (navigator.clipboard && navigator.clipboard.writeText) {
       navigator.clipboard.writeText(color);
@@ -18,11 +17,7 @@ const FavoriteColor = () => {
       document.execCommand("copy");
       document.body.removeChild(textarea);
     }
-
-    setCopiedColor(color);
-    setTimeout(() => {
-      setCopiedColor(null);
-    }, 1000);
+    toast("Color Copied to Clipboard!", { style: toastStyleSuccess });
   };
 
   return (
@@ -46,9 +41,6 @@ const FavoriteColor = () => {
               onClick={() => copyToClipboard(color)}
             >
               <motion.div className="font-medium">{color}</motion.div>
-              {copiedColor === color && (
-                <Notify type="success" message="Copied" />
-              )}
             </motion.div>
           ))}
         </motion.div>
