@@ -10,13 +10,18 @@ const options = ({
   includeHtml,
   setIncludeHtml,
 }) => {
+  const textToCopy =
+    includeHtml === "yes"
+      ? paragraphs.map((sentence) => `<${tag}>${sentence}</${tag}>`).join("\n")
+      : paragraphs.map((sentence) => sentence).join("\n");
+
   const handleCopy = () => {
     if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(paragraphs);
+      navigator.clipboard.writeText(textToCopy);
       toast("Paragraph Copied!", { style: toastStyleSuccess });
     } else {
       const textarea = document.createElement("textarea");
-      textarea.value = paragraphs;
+      textarea.value = textToCopy;
       document.body.appendChild(textarea);
       textarea.focus();
       textarea.select();

@@ -586,3 +586,36 @@ export function IconCheck(props) {
     </svg>
   );
 }
+
+export function IconImageFilterBlackWhite(props) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      height="1.6em"
+      width="1.6em"
+      {...props}
+    >
+      <path d="M19 19l-7-8v8H5l7-8V5h7m0-2H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2V5a2 2 0 00-2-2z" />
+    </svg>
+  );
+}
+
+export function IconFileJson(props) {
+  return (
+    <svg
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2}
+      viewBox="0 0 24 24"
+      height="1.6em"
+      width="1.6em"
+      {...props}
+    >
+      <path d="M14.5 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V7.5L14.5 2z" />
+      <path d="M14 2v6h6M10 12a1 1 0 00-1 1v1a1 1 0 01-1 1 1 1 0 011 1v1a1 1 0 001 1M14 18a1 1 0 001-1v-1a1 1 0 011-1 1 1 0 01-1-1v-1a1 1 0 00-1-1" />
+    </svg>
+  );
+}

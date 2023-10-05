@@ -4,6 +4,7 @@ import {
   IconBxsColorFill,
   IconColorPaletteSharp,
   IconColorBucket,
+  IconImageFilterBlackWhite,
 } from "../../Components/Icons/Icons";
 
 const Colors = () => {
@@ -27,6 +28,14 @@ const Colors = () => {
       text: "Favorite Color",
       icon: (
         <IconColorBucket className="text-emerald-500 text-xl md:text-4xl" />
+      ),
+      className: "p-2 grid place-items-center",
+    },
+    {
+      to: "/colors/image-color-picker",
+      text: "Image Color Picker",
+      icon: (
+        <IconImageFilterBlackWhite className="text-red-500 text-xl md:text-4xl" />
       ),
       className: "p-2 grid place-items-center",
     },

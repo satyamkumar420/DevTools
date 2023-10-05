@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 import "cropperjs/dist/cropper.css";
 import Cropper from "react-cropper";
 import { toast } from "react-toastify";
-import { toastStyleError } from "../../../Components/utils/Toastify/ToastStyle";
+import { toastStyleError } from "../../../Components/utils/Toastify/toastStyle";
 
 const ImageSquareCrop = () => {
   const [image, setImage] = useState(null);

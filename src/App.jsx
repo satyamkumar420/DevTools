@@ -35,6 +35,10 @@ const RandomColor = lazy(() =>
 const FavoriteColor = lazy(() =>
   import("./Pages/Colors/ColorsTools/FavoriteColor")
 );
+const ImageColorPicker = lazy(() =>
+  import("./Pages/Colors/ColorsTools/ImageColorPicker")
+);
+
 const RandomData = lazy(() => import("./Pages/RandomData/RandomData"));
 const PasswordGenerator = lazy(() =>
   import("./Pages/RandomData/PasswordGenerator/PasswordGenerator")
@@ -100,6 +104,10 @@ function App() {
           <Route path="/colors/color-picker" element={<ColorPicker />} />
           <Route path="/colors/random-color" element={<RandomColor />} />
           <Route path="/colors/favorite-color" element={<FavoriteColor />} />
+          <Route
+            path="/colors/image-color-picker"
+            element={<ImageColorPicker />}
+          />
 
           {/* Here are the routes for Converters */}
           <Route path="/converters" element={<Converters />} />
