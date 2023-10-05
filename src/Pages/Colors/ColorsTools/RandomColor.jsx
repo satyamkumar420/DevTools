@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { toastStyleSuccess } from "../../../Components/utils/Toastify/toastStyle";
+import { toastStyleSuccess } from "../../../Components/utils/Toastify/ToastStyle";
 import { toast } from "react-toastify";
 
 const generateRandomColor = (format) => {
@@ -18,22 +18,18 @@ const generateRandomColor = (format) => {
 const RandomColor = () => {
   const [colors, setColors] = useState([]);
   const [format, setFormat] = useState("hex");
-  const [copied, setCopied] = useState([]);
 
   const generateColors = () => {
     const newColors = Array.from({ length: 16 }, () =>
       generateRandomColor(format)
     );
     setColors(newColors);
-    setCopied(newColors.map(() => false));
   };
 
   const handleFormatChange = (newFormat) => {
     setFormat(newFormat);
     generateColors();
   };
-
-  // TODO fix handleCopy function to work with navigator.clipboard
 
   const handleCopy = (colorIndex) => {
     const colorToCopy = colors[colorIndex];
@@ -49,7 +45,7 @@ const RandomColor = () => {
       document.execCommand("copy");
       document.body.removeChild(textarea);
     }
-    toast("Color Copied to Clipboard!", { style: toastStyleSuccess });
+    toast(`[${colorToCopy}] Copied!`, { style: toastStyleSuccess });
   };
 
   return (

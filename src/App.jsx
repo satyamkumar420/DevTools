@@ -41,7 +41,7 @@ const PasswordGenerator = lazy(() =>
 );
 
 const DummyTextGenerator = lazy(() =>
-  import("./Pages/RandomData/DummyTextGenerator/DummyTextGenerator")
+  import("./Pages/RandomData/DummyTextGenerator/TextGenerator")
 );
 const FakeDetails = lazy(() =>
   import("./Pages/RandomData/FakeDetails/FakeDetails")

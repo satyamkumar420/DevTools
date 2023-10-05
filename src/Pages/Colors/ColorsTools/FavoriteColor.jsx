@@ -3,7 +3,7 @@ import FavColors from "../../../Components/utils/Colors/Color";
 import { motion } from "framer-motion";
 import { container, item } from "../../../Components/utils/Motion/Motion";
 import { toast } from "react-toastify";
-import { toastStyleSuccess } from "../../../Components/utils/Toastify/toastStyle";
+import { toastStyleSuccess } from "../../../Components/utils/Toastify/ToastStyle";
 const FavoriteColor = () => {
   const copyToClipboard = (color) => {
     if (navigator.clipboard && navigator.clipboard.writeText) {
@@ -17,7 +17,7 @@ const FavoriteColor = () => {
       document.execCommand("copy");
       document.body.removeChild(textarea);
     }
-    toast("Color Copied to Clipboard!", { style: toastStyleSuccess });
+    toast(`[${color}] Copied!`, { style: toastStyleSuccess });
   };
 
   return (

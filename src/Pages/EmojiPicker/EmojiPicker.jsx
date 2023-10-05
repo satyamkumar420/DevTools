@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { IconSearch } from "../../Components/Icons/Icons";
 import Emoji from "emoji.json";
 import { toast } from "react-toastify";
-import { toastStyleSuccess } from "../../Components/utils/Toastify/ToastStyle";
+import { toastStyleSuccess } from "../../Components/utils/Toastify/toastStyle";
 
 const EmojiPicker = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -62,17 +62,24 @@ const EmojiPicker = () => {
   }, []);
 
   const copyEmoji = (emoji) => {
-    // Implement logic to copy the emoji character to the clipboard
-    const el = document.createElement("textarea");
-    el.value = emoji.char;
-    document.body.appendChild(el);
-    el.select();
-    document.execCommand("copy");
-    document.body.removeChild(el);
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(emoji.char);
 
-    toast(`${emoji.char} Emoji Copied! ${emoji.char}`, {
-      style: toastStyleSuccess,
-    });
+      toast(`${emoji.char} Emoji Copied! ${emoji.char}`, {
+        style: toastStyleSuccess,
+      });
+    } else {
+      const textarea = document.createElement("textarea");
+      textarea.value = emoji.char;
+      document.body.appendChild(textarea);
+      textarea.focus();
+      textarea.select();
+      document.execCommand("copy");
+      document.body.removeChild(textarea);
+      toast(`${emoji.char} Emoji Copied! ${emoji.char}`, {
+        style: toastStyleSuccess,
+      });
+    }
   };
 
   return (
@@ -81,15 +88,17 @@ const EmojiPicker = () => {
         <h3 className="p-2 rounded text-lg sm:text-2xl text-yellow-500 w-full bg-[#1a1c2e]">
           Emoji Picker 😂
         </h3>
-        <div className="mt-5 flex relative">
-          <IconSearch className="absolute ml-2 top-1 text-gray-400" />
+        <div className="mt-5 px-2 flex items-center bg-[#1a1c2e] rounded font-medium border-2 border-blue-600 max-w-xl w-full xl:w-1/2">
+          <IconSearch className="text-gray-400" />
           <input
             type="text"
             placeholder="Search emoji"
-            className="p-1 pl-10 px-3 text-base  max-w-xl w-full xl:w-1/2 rounded bg-[#1a1c2e] outline-none border-2 border-gray-600 focus:border-2 focus:border-blue-600 text-blue-100 "
+            className="p-1  px-3 text-base w-full  rounded bg-[#1a1c2e] outline-none border-none focus:border-none focus:border-blue-600 text-blue-100"
             onChange={handleSearch}
+            autoComplete="off"
           />
         </div>
+
         <div className="mt-3">
           <div className="text-orange-500 text-base sm:text-lg">
             Categories:
@@ -123,6 +132,7 @@ const EmojiPicker = () => {
                 <div key={emoji.char} className="text-center">
                   <div
                     className="m-2 text-white mt-5 text-2xl sm:text-5xl hover:cursor-pointer "
+                    // role="button"
                     onClick={() => copyEmoji(emoji)}
                   >
                     <div className="mx-3 transition-all ease-in-out  hover:scale-150">
