@@ -7,7 +7,7 @@ const About = () => {
         <h3 className="p-2 rounded text-lg sm:text-2xl text-yellow-500 w-full bg-[#1a1c2e]">
           About
         </h3>
-        <div className="mt-5 bg-[#1a1c2e] p-4 shadow-md rounded text-sm sm:text-lg ">
+        <div className="text-left mt-5 bg-[#1a1c2e] p-4 shadow-md rounded text-sm sm:text-lg ">
           <img
             src={Logo}
             alt="logo"

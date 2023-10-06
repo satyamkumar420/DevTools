@@ -10,7 +10,7 @@ const Home = () => {
         <h3 className="p-2 rounded sm:text-2xl text-yellow-500 w-full bg-[#1a1c2e]">
           Home
         </h3>
-        <div>
+        <div className="text-left">
           <h1 className="font-extrabold text-transparent sm:text-4xl bg-clip-text bg-gradient-to-r from-pink-400 to-red-700 text-xl mt-3">
             Welcome to Online DevTools!
           </h1>
@@ -22,8 +22,8 @@ const Home = () => {
           </p>
         </div>
         <div className="mt-5">
-          <div className=" my-5 text-green-400 font-semibold text-xl flex gap-2 items-center">
-            <IconShieldTick />
+          <div className=" my-5 text-green-400 font-semibold text-sm sm:text-xl flex gap-2 items-center">
+            <IconShieldTick className="text-sm sm:text-xl" />
             <h2>Online tools available for you:</h2>
           </div>
           <div className="flex flex-1 gap-4 flex-wrap mt-4">

@@ -46,7 +46,7 @@ const ImageSquareCrop = () => {
   return (
     <div className="p-4 sm:ml-52 text-justify max-w-screen-lg overflow-y-auto max-h-screen">
       <div className="my-20">
-        <h3 className="p-2 rounded text-lg sm:text-2xl text-yellow-500 w-full bg-[#1a1c2e]">
+        <h3 className="text-left p-2 rounded text-lg sm:text-2xl text-yellow-500 w-full bg-[#1a1c2e]">
           Square Size Image Crop
         </h3>
         <div className="container mx-auto my-8">
@@ -99,9 +99,9 @@ const ImageSquareCrop = () => {
           )}
         </div>
         <div className="mt-10">
-          <div className="border-l-4 border-l-purple-500 p-2 text-sm sm:text-base bg-[#1a1c2e]">
-            <span className="text-blue-300">
-              <strong>Note:</strong>For a better experience, please use the
+          <div className="text-left border-l-4 border-l-purple-500 p-2 text-sm sm:text-base bg-[#1a1c2e]">
+            <span className="text-blue-300 ">
+              <strong>Note:</strong> For a better experience, please use the
               Chrome browser. If you are using Firefox, some functionality may
               not work.
             </span>

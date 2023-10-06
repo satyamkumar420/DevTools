@@ -46,7 +46,7 @@ const ImageCircleCrop = () => {
   return (
     <div className="p-4 sm:ml-52 text-justify max-w-screen-lg overflow-y-auto max-h-screen">
       <div className="my-20">
-        <h3 className="p-2 rounded text-lg sm:text-2xl text-yellow-500 w-full bg-[#1a1c2e]">
+        <h3 className="text-left p-2 rounded text-lg sm:text-2xl text-yellow-500 w-full bg-[#1a1c2e]">
           Crop Circle Size Image
         </h3>
         <div className="flex flex-col items-center mt-10 text-center ">
@@ -82,7 +82,7 @@ const ImageCircleCrop = () => {
           )}
         </div>
         <div className="mt-10">
-          <div className="border-l-4 border-l-purple-500 p-2 text-sm sm:text-lg bg-[#1a1c2e]">
+          <div className="text-left border-l-4 border-l-purple-500 p-2 text-sm sm:text-lg bg-[#1a1c2e]">
             <span className="text-blue-300">
               <strong>Note:</strong> For a better experience, please use Chrome
               browser. Also, ensure that the image size is less than 1MB. If you

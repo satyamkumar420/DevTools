@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 import Button from "../../Components/utils/Button/Button";
 import { NavLink } from "react-router-dom";
-import { IconImageSyncOutline, IconTime } from "../../Components/Icons/Icons";
+import {
+  IconImageSyncOutline,
+  IconTime,
+  IconSelectColor,
+} from "../../Components/Icons/Icons";
 
 const Converters = () => {
   const buttons = [
@@ -15,6 +19,12 @@ const Converters = () => {
       to: "/converters/timestamp-converter",
       text: "Timestamp Converter ",
       icon: <IconTime className="text-blue-500" />,
+      className: "p-2 grid place-items-center",
+    },
+    {
+      to: "/converters/color-converter",
+      text: "Color Converter",
+      icon: <IconSelectColor className="text-pink-500" />,
       className: "p-2 grid place-items-center",
     },
   ];

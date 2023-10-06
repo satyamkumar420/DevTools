@@ -6,13 +6,14 @@ import Navbar from "./Components/Navbar/Navbar";
 import Notfound from "./Components/Notfound/Notfound";
 import Loader from "./Components/utils/Loader/Loader";
 import Footer from "./Components/Footer/Footer";
-import Converters from "./Pages/Converters/Converters";
-
-// Lazy-loaded route components
 const Home = lazy(() => import("./Pages/Home/Home"));
+
+// Lazy-loaded route components 'Texts'
 const Texts = lazy(() => import("./Pages/Texts/Texts"));
 const TextCounter = lazy(() => import("./Pages/Texts/TextCounter"));
 const TextComparator = lazy(() => import("./Pages/Texts/TextComparator"));
+
+// Lazy-loaded route components 'Images'
 const Images = lazy(() => import("./Pages/Images/Images"));
 const ImageCircleCrop = lazy(() =>
   import("./Pages/Images/ImageCrop/ImageCircleCrop")
@@ -25,6 +26,7 @@ const ImageConverter = lazy(() =>
   import("./Pages/Images/ImageConvert/ImageConverter")
 );
 
+// Lazy-loaded route components 'Colors'
 const Colors = lazy(() => import("./Pages/Colors/Colors"));
 const ColorPicker = lazy(() =>
   import("./Pages/Colors/ColorsTools/ColorPicker")
@@ -39,34 +41,47 @@ const ImageColorPicker = lazy(() =>
   import("./Pages/Colors/ColorsTools/ImageColorPicker")
 );
 
+// Lazy-loaded route components 'RandomData'
 const RandomData = lazy(() => import("./Pages/RandomData/RandomData"));
 const PasswordGenerator = lazy(() =>
   import("./Pages/RandomData/PasswordGenerator/PasswordGenerator")
 );
-
 const DummyTextGenerator = lazy(() =>
   import("./Pages/RandomData/DummyTextGenerator/TextGenerator")
 );
 const FakeDetails = lazy(() =>
   import("./Pages/RandomData/FakeDetails/FakeDetails")
 );
+
+// Lazy-loaded route components 'Converters'
+const Converters = lazy(() => import("./Pages/Converters/Converters"));
 const ImageToBase64Converter = lazy(() =>
   import("./Pages/Converters/ImageToBase64Converter/ImageToBase64Converter")
 );
-
 const TimestampConverter = lazy(() =>
   import("./Pages/Converters/TimestampConverter/TimestampConverter")
 );
+const ColorConverter = lazy(() =>
+  import("./Pages/Converters/ColorConverter/ColorConverter")
+);
 
+// Lazy-loaded route components 'About'
 const About = lazy(() => import("./Pages/About/About"));
 const Privacy = lazy(() => import("./Pages/About/PrivacyPolicy"));
 const Terms = lazy(() => import("./Pages/About/Terms"));
+
+// Lazy-loaded route components 'FormatCode'
 const FormatCode = lazy(() => import("./Pages/FormatCode/FormatCode"));
+
+// Lazy-loaded route components 'VariousTools'
 const VariousTools = lazy(() => import("./Pages/VariousTools/VariousTools"));
 const ShortUrl = lazy(() => import("./Pages/VariousTools/ShortUrl/ShortUrl"));
-const EmojiPicker = lazy(() => import("./Pages/EmojiPicker/EmojiPicker"));
+
+// Lazy-loaded route components 'MinifyCode'
 const MinifyCode = lazy(() => import("./Pages/MinifyCode/MinifyCode"));
 
+// Lazy-loaded route components 'EmojiPicker'
+const EmojiPicker = lazy(() => import("./Pages/EmojiPicker/EmojiPicker"));
 function App() {
   return (
     <BrowserRouter>
@@ -75,7 +90,7 @@ function App() {
         <ToastContainer
           position="top-right"
           theme="dark"
-          autoClose={1000}
+          autoClose={2000}
           hideProgressBar
           newestOnTop={false}
           pauseOnHover={false}
@@ -87,19 +102,19 @@ function App() {
         <Routes>
           <Route path="*" element={<Notfound />} />
           <Route path="/" element={<Home />} />
-          {/* Here are the routes for Texts */}
+          {/* Here are the routes for 'Texts' */}
           <Route path="/texts" element={<Texts />} />
           <Route path="/texts/text-counter" element={<TextCounter />} />
           <Route path="/texts/text-comparator" element={<TextComparator />} />
 
-          {/* Here are the routes for Images */}
+          {/* Here are the routes for 'Images' */}
           <Route path="/image-tools" element={<Images />} />
           <Route path="/image/circle-crop" element={<ImageCircleCrop />} />
           <Route path="/images/square-crop" element={<ImageSquareCrop />} />
           <Route path="/images/images-crop" element={<ImageCrop />} />
           <Route path="/image/image-convert" element={<ImageConverter />} />
 
-          {/* Here are the routes for Colors */}
+          {/* Here are the routes for 'Colors' */}
           <Route path="/colors" element={<Colors />} />
           <Route path="/colors/color-picker" element={<ColorPicker />} />
           <Route path="/colors/random-color" element={<RandomColor />} />
@@ -109,7 +124,7 @@ function App() {
             element={<ImageColorPicker />}
           />
 
-          {/* Here are the routes for Converters */}
+          {/* Here are the routes for 'Converters' */}
           <Route path="/converters" element={<Converters />} />
           <Route
             path="/converters/ImageToBase64Converter"
@@ -119,8 +134,12 @@ function App() {
             path="/converters/timestamp-converter"
             element={<TimestampConverter />}
           />
+          <Route
+            path="/converters/color-converter"
+            element={<ColorConverter />}
+          />
 
-          {/* Here are the routes for Random Data */}
+          {/* Here are the routes for 'Random Data' */}
           <Route path="/random-data" element={<RandomData />} />
           <Route
             path="/random-data/password-generator"
@@ -132,20 +151,20 @@ function App() {
           />
           <Route path="/random-data/fake-details" element={<FakeDetails />} />
 
-          {/* Here are the routes for Format Code */}
+          {/* Here are the routes for 'Format Code' */}
           <Route path="/format-code" element={<FormatCode />} />
 
-          {/* Here are the routes for Various Tools */}
+          {/* Here are the routes for 'Various Tools' */}
           <Route path="/various-tools" element={<VariousTools />} />
           <Route path="/various-tools/short-url" element={<ShortUrl />} />
 
-          {/* Here are the routes for Emoji Picker */}
+          {/* Here are the routes for 'Emoji Picker' */}
           <Route path="/emojis-picker" element={<EmojiPicker />} />
 
-          {/* Here are the routes for Minify Code */}
+          {/* Here are the routes for 'Minify Code' */}
           <Route path="/minify-code" element={<MinifyCode />} />
 
-          {/* Here are the routes for About, Privacy Policy, and Terms */}
+          {/* Here are the routes for 'About',' Privacy Policy', and 'Terms' */}
           <Route path="/about" element={<About />} />
           <Route path="/privacy-policy" element={<Privacy />} />
           <Route path="/terms-and-conditions" element={<Terms />} />

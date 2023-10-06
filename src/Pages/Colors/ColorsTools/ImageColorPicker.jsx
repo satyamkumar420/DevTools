@@ -10,10 +10,9 @@ const ImageColorPicker = () => {
   const [imageSrc, setImageSrc] = useState(null);
   const { open, close, isSupported } = useEyeDropper();
   const [color, setColor] = useState("");
-  const [error, setError] = useState();
   const [colorHistory, setColorHistory] = useState([]);
 
-  // Load color history from local storage on component mount
+  // Load color history from local storage if it exists
   useEffect(() => {
     const storedColorHistory = localStorage.getItem("colorHistory");
     if (storedColorHistory) {
@@ -29,8 +28,16 @@ const ImageColorPicker = () => {
   const handleFileChange = (event) => {
     const file = event.target.files[0];
     if (file) {
-      const fileURL = URL.createObjectURL(file);
-      setImageSrc(fileURL);
+      // Check if the file type is an image (you can modify this check to include additional image types)
+      if (file.type.startsWith("image/")) {
+        const fileURL = URL.createObjectURL(file);
+        setImageSrc(fileURL);
+      } else {
+        // Show a toast or an alert for non-image file types
+        toast("Only image files are accepted", {
+          style: toastStyleError,
+        });
+      }
     }
   };
 
@@ -45,11 +52,7 @@ const ImageColorPicker = () => {
       // Add picked color to history
       setColorHistory([...colorHistory, sRGBHexColor]);
     } catch (e) {
-      console.log(e);
-      // Ensures component is still mounted before calling setState
-      if (!e.canceled) {
-        setError(e);
-      }
+      // return none
     }
   }, [open, colorHistory]);
 
@@ -122,6 +125,16 @@ const ImageColorPicker = () => {
               </div>
             </div>
           )}
+        </div>
+        <div className="mt-10">
+          <div className="border-l-4 border-l-purple-500 p-2 text-sm sm:text-lg bg-[#1a1c2e]">
+            <span className="text-blue-300">
+              If you're a developer, student, or professional, you might find
+              this tool pretty handy. It's an image color picker that lets you
+              easily select any color in hex format - just click on the color
+              pick button and you're good to go!
+            </span>
+          </div>
         </div>
       </div>
     </div>

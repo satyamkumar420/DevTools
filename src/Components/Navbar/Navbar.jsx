@@ -16,17 +16,6 @@ const Navbar = () => {
     <>
       <header className="fixed w-full top-0 left-0 right-0 z-50  backdrop-blur-3xl firefox:bg-opacity-50 p-4  flex shadow-lg  justify-between items-center">
         <div className="ml-6 flex">
-          <NavLink
-            to="/"
-            className="text-blue-50 text-xl font-bold cursor-pointer sm:block hidden"
-          >
-            <div className="flex items-center">
-              <img src={Logo} alt="Logo" className="w-10 h-auto mr-2" />
-              <span className="text-pink-500 underline">Dev</span>
-              <span className="text-blue-50">Tools</span>
-            </div>
-          </NavLink>
-
           <div
             className="sm:hidden transition-all duration-300 ease-in-out active:scale-50 p-1"
             onClick={toggleMenu}
@@ -37,6 +26,19 @@ const Navbar = () => {
               <IconMenu className="font-bold text-2xl cursor-pointer" />
             )}
           </div>
+
+          <NavLink
+            to="/"
+            className="text-blue-50 text-xl font-bold cursor-pointer "
+          >
+            <div className="flex items-center">
+              <img src={Logo} alt="Logo" className="w-8 sm:w-10 h-auto mr-2" />
+              <div className="hidden sm:block">
+                <span className="text-pink-500 underline">Dev</span>
+                <span className="text-blue-50">Tools</span>
+              </div>
+            </div>
+          </NavLink>
         </div>
         <div className="flex   items-center  border-[#1a1c2e] p-1 rounded bg-[#1a1c2e] border-2 mr-6">
           <IconLanguageHiragana />
