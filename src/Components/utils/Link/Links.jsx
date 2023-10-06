@@ -48,5 +48,5 @@ export const HomeLinks = [
   { text: "Circle Image Crop", link: "/image/circle-crop" },
   { text: "Square Image Crop", link: "/images/square-crop" },
   { text: "Dummy Text", link: "/random-data/dummy-text-generator" },
-  { text: "Short Url", link: "/various-tools/short-url" },
+  { text: "Short URL", link: "/various-tools/short-url" },
 ];

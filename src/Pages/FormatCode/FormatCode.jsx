@@ -32,8 +32,8 @@ const FormatCode = () => {
         <div className="mt-10">
           <div className="border-l-4 border-l-purple-500 p-2 text-sm sm:text-lg bg-[#1a1c2e]">
             <span className="text-blue-300">
-              Boost your work efficiency by utilizing our online CSS toolset,
-              which comprises a variety of tools.
+              Improve your work productivity by utilizing our collection of
+              online tools that include JSON Format.
             </span>
           </div>
         </div>

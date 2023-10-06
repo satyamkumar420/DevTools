@@ -144,6 +144,17 @@ const EmojiPicker = () => {
             </div>
           </div>
         </div>
+        <div className="mt-10">
+          <div className=" text-left border-l-4 border-l-purple-500 p-2 text-sm sm:text-lg bg-[#1a1c2e]">
+            <span className="text-blue-300">
+              This awesome tool offers an emoji picker that comes with handy
+              categories, making it an absolute gem for developers, students,
+              and professionals alike! Plus, it makes emoji copying a breeze
+              with just a simple click. 😄🚀 Give it a try and elevate your
+              emoji game effortlessly! 🎉
+            </span>
+          </div>
+        </div>
       </div>
     </div>
   );

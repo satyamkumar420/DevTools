@@ -5,72 +5,73 @@ import {
   toastStyleError,
 } from "../../../Components/utils/Toastify/toastStyle";
 
-const HexConverter = () => {
-  const [inputColor, setInputColor] = useState("#ff5733");
+const RGBConverter = () => {
+  const [inputColor, setInputColor] = useState("rgb(247, 7, 163)");
   const [convertedColor, setConvertedColor] = useState(inputColor);
-  const [format, setFormat] = useState("rgb");
+  const [format, setFormat] = useState("hsl");
 
   useEffect(() => {
     convertColor();
   }, [inputColor, format]);
 
-  // TODO: Show "Invalid Color" if input is not a valid HEX color
   const convertColor = () => {
-    const hexRegex = /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/;
+    const rgbMatch = inputColor.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
 
-    if (hexRegex.test(inputColor)) {
-      if (format === "hex") {
-        setConvertedColor(inputColor);
-      } else if (format === "hsl") {
-        // Convert HEX to HSL
-        const hex = inputColor.replace("#", "");
-        const r = parseInt(hex.substring(0, 2), 16) / 255;
-        const g = parseInt(hex.substring(2, 4), 16) / 255;
-        const b = parseInt(hex.substring(4, 6), 16) / 255;
+    if (!rgbMatch) {
+      // Invalid RGB format
+      return;
+    }
 
-        const max = Math.max(r, g, b);
-        const min = Math.min(r, g, b);
-        const l = (max + min) / 2;
+    const [, r, g, b] = rgbMatch.map(Number);
 
-        let h, s;
-        if (max === min) {
-          h = s = 0;
-        } else {
-          const d = max - min;
-          s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
-          switch (max) {
-            case r:
-              h = (g - b) / d + (g < b ? 6 : 0);
-              break;
-            case g:
-              h = (b - r) / d + 2;
-              break;
-            case b:
-              h = (r - g) / d + 4;
-              break;
-            default:
-              break;
-          }
-          h /= 6;
+    if (format === "hex") {
+      // Convert RGB to HEX
+      const hex = `#${r.toString(16).padStart(2, "0")}${g
+        .toString(16)
+        .padStart(2, "0")}${b.toString(16).padStart(2, "0")}`;
+      setConvertedColor(hex);
+    } else if (format === "hsl") {
+      // Convert RGB to HSL
+      const max = Math.max(r, g, b) / 255;
+      const min = Math.min(r, g, b) / 255;
+      const l = (max + min) / 2;
+
+      let h, s;
+
+      if (max === min) {
+        h = s = 0;
+      } else {
+        const d = max - min;
+        s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+
+        switch (max) {
+          case r / 255:
+            h = (g / 255 - b / 255) / d + (g / 255 < b / 255 ? 6 : 0);
+            break;
+          case g / 255:
+            h = (b / 255 - r / 255) / d + 2;
+            break;
+          case b / 255:
+            h = (r / 255 - g / 255) / d + 4;
+            break;
+          default:
+            break;
         }
-        const hsl = `hsl(${Math.round(h * 360)}, ${Math.round(
-          s * 100
-        )}%, ${Math.round(l * 100)}%)`;
-        setConvertedColor(hsl);
-      } else if (format === "rgb") {
-        // Convert HEX to RGB
-        const hex = inputColor.replace("#", "");
-        const r = parseInt(hex.substring(0, 2), 16);
-        const g = parseInt(hex.substring(2, 4), 16);
-        const b = parseInt(hex.substring(4, 6), 16);
-        const rgb = `rgb(${r}, ${g}, ${b})`;
-        setConvertedColor(rgb);
+        h /= 6;
       }
+
+      const hsl = `hsl(${Math.round(h * 360)}, ${Math.round(
+        s * 100
+      )}%, ${Math.round(l * 100)}%)`;
+      setConvertedColor(hsl);
+    } else if (format === "rgb") {
+      // Set the input color itself
+      setConvertedColor(inputColor);
     } else {
+      // Invalid HSL format
       setConvertedColor(inputColor);
     }
   };
-
   const handleCopy = () => {
     convertColor(); // Call convertColor here
     if (navigator.clipboard && navigator.clipboard.writeText) {
@@ -90,11 +91,11 @@ const HexConverter = () => {
 
   return (
     <div className="bg-[#1a1c2e] p-8 rounded shadow-md max-w-sm mt-5">
-      <h3 className="text-gray-400">Enter Hex Color:</h3>
+      <h3 className="text-gray-400">Enter RGB Color:</h3>
       <input
         type="text"
         className="w-full border-none p-2 mb-4 rounded outline-none focus-border-2 focus:ring-2 focus:ring-blue-500 bg-[#333659]"
-        placeholder="Enter HEX color code"
+        placeholder="Enter RGB color code"
         value={inputColor}
         onChange={(e) => setInputColor(e.target.value)}
       />
@@ -117,7 +118,7 @@ const HexConverter = () => {
         <div className="">Converted Color:</div>
         <div
           className={`w-full h-20 rounded flex items-center justify-center text-gray-800 sm:text-xl shadow-md cursor-pointer overflow-hidden ${
-            format === "hex" ? "text-gray-300" : "text-black"
+            format === "hex" ? "text-gray-900" : "text-white"
           }`}
           style={{ backgroundColor: convertedColor }}
           onClick={handleCopy}
@@ -129,4 +130,4 @@ const HexConverter = () => {
   );
 };
 
-export default HexConverter;
+export default RGBConverter;
