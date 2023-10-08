@@ -11,6 +11,7 @@ const TextGenerator = () => {
   const [includeHtml, setIncludeHtml] = useState(false);
 
   useEffect(() => {
+    // TODO: how can api protected be used?
     const fetchData = async () => {
       try {
         const response = await fetch(

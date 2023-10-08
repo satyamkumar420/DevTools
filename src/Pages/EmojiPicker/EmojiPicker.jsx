@@ -9,7 +9,6 @@ const EmojiPicker = () => {
   const [filteredEmojis, setFilteredEmojis] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("Smileys & Emotion");
 
-  // Get unique categories from emoji data
   const MyCategories = [
     { id: 1, char: "😂", groupName: "Smileys & Emotion" },
     { id: 2, char: "👋", groupName: "hand" },
@@ -22,7 +21,7 @@ const EmojiPicker = () => {
     { id: 9, char: "🚸", groupName: "Symbols" },
     { id: 10, char: "🚩", groupName: "flag" },
   ];
-
+  // TODO: search query show keyword on url search format
   useEffect(() => {
     // Find the matching category from MyCategories
     const selectedCategoryObject = MyCategories.find(
@@ -46,6 +45,7 @@ const EmojiPicker = () => {
     // Set the filtered emojis
     setFilteredEmojis(emojisForCategory);
   };
+
   useEffect(() => {
     if (MyCategories.length > 0) {
       // Find the first category in MyCategories
@@ -105,11 +105,14 @@ const EmojiPicker = () => {
           </div>
           <div>
             <div className="mb-4">
-              <div className="p-2 flex-wrap flex" value={selectedCategory}>
+              <div
+                className="p-2 overflow-x-auto flex  overflow-scroll"
+                value={selectedCategory}
+              >
                 {MyCategories.map((category) => (
                   <div
                     key={category.id}
-                    className={`text-lg sm:text-3xl  bg-[#1a1c2e] py-4 border-gray-600 border-b-[1px] `}
+                    className={`text-lg sm:text-xl md:text-2xl lg:text-3xl  bg-[#1a1c2e] py-4 border-gray-600 border-b-[1px]`}
                   >
                     <span
                       className={`hover:cursor-pointer md:mx-2 px-3 py-3 hover:bg-[#2c2f47] hover:border-b-2 border-blue-200 ${
@@ -131,11 +134,11 @@ const EmojiPicker = () => {
               {filteredEmojis.map((emoji) => (
                 <div key={emoji.char} className="text-center">
                   <div
-                    className="m-2 text-white mt-5 text-2xl sm:text-5xl hover:cursor-pointer "
+                    className="text-white mt-5 text-2xl sm:text-3xl md:text-5xl hover:cursor-pointer "
                     // role="button"
                     onClick={() => copyEmoji(emoji)}
                   >
-                    <div className="mx-3 transition-all ease-in-out  hover:scale-150">
+                    <div className="m-3 transition-all ease-in-out  hover:scale-150">
                       {emoji.char}
                     </div>
                   </div>

@@ -15,9 +15,9 @@ const Navbar = () => {
   return (
     <>
       <header className="fixed w-full top-0 left-0 right-0 z-50  backdrop-blur-3xl firefox:bg-opacity-50 p-4  flex shadow-lg  justify-between items-center">
-        <div className="ml-6 flex">
+        <div className="ml-3 flex">
           <div
-            className="sm:hidden transition-all duration-300 ease-in-out active:scale-50 p-1"
+            className="sm:hidden transition-all duration-100 ease-in-out active:scale-50 p-1"
             onClick={toggleMenu}
           >
             {isOpen ? (
@@ -54,7 +54,7 @@ const Navbar = () => {
       </header>
 
       <div
-        className={`z-50 transition-all duration-300 ease-in-out sm:block transform ${
+        className={`z-50 transition-all duration-100 ease-in-out sm:block transform ${
           isOpen ? "translate-x-0 " : "-translate-x-full sm:translate-x-0"
         }`}
       >

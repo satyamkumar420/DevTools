@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { toastStyleSuccess } from "../../../Components/utils/Toastify/ToastStyle";
+import { toastStyleSuccess } from "../../../Components/utils/Toastify/toastStyle";
 import { toast } from "react-toastify";
 
 const PasswordGenerator = () => {
@@ -108,11 +108,10 @@ const PasswordGenerator = () => {
                 Generated Password:
               </h3>
               <span
-                className="flex-wrap flex text-gray-50 bg-[#282a40] cursor-pointer rounded px-3  py-3 max-w-full min-w-full "
+                className="flex-wrap flex text-gray-50 bg-[#282a40] cursor-pointer rounded px-3  py-3 max-w-full min-w-full overflow-x-auto "
                 onClick={() => handleCopy(password)}
               >
                 {password}
-                {copied[0] && <Notify message="Copied" type="success" />}
               </span>
 
               <div className="mt-2 flex gap-1">
