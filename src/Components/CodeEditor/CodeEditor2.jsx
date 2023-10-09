@@ -1,5 +1,7 @@
+import { useCallback } from "react";
 import CodeMirror from "@uiw/react-codemirror";
 import { createTheme } from "@uiw/codemirror-themes";
+// import { javascript } from "@codemirror/lang-javascript";
 import { tags as t } from "@lezer/highlight";
 
 const myTheme = createTheme({
@@ -18,7 +20,7 @@ const myTheme = createTheme({
     gutterActiveForeground: "#c9d7e6aa",
   },
   styles: [
-    { tag: t.comment, color: "#3e4474" },
+    { tag: t.comment, color: "#59739df8" },
     { tag: t.variableName, color: "#28c8e8" },
     { tag: [t.string, t.special(t.brace)], color: "#0ab421" },
     { tag: t.number, color: "#fa3535" },
@@ -27,21 +29,16 @@ const myTheme = createTheme({
     { tag: t.keyword, color: "#e152ff" },
     { tag: t.operator, color: "#c70a3f" },
     { tag: t.className, color: "#caa812" },
-    { tag: t.definition(t.typeName), color: "#05be84" },
+    { tag: t.definition(t.typeName), color: "#037e57" },
     { tag: t.typeName, color: "#06ab9d" },
-    { tag: t.angleBracket, color: "#effaef" },
+    { tag: t.angleBracket, color: "#f1effa" },
     { tag: t.tagName, color: "#04ce81" },
     { tag: t.attributeName, color: "#ffda27" },
-    { tag: t.punctuation, color: "#fff127" },
-    { tag: t.meta, color: "#ffda27" },
-    { tag: t.regexp, color: "#06b226" },
-    { tag: t.url, color: "#4f55fa" },
-    { tag: t.escape, color: "#07b6b3" },
   ],
 });
 
-// const languages = [javascript({ jsx: true })];
-const CodeEditor = ({ value, onChange, languages, placeholder }) => {
+// const extensions = [javascript({ jsx: true })];
+const CodeEditor = ({ value, onChange, extensions }) => {
   const customStyles = {
     fontSize: "18px",
   };
@@ -52,10 +49,10 @@ const CodeEditor = ({ value, onChange, languages, placeholder }) => {
         value={value}
         height="60vh"
         theme={myTheme}
-        extensions={languages}
+        extensions={extensions}
         onChange={onChange}
         style={customStyles}
-        placeholder={placeholder}
+        placeholder={"Enter your code here"}
       />
     </div>
   );
