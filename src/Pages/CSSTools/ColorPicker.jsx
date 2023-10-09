@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { toast } from "react-toastify";
-import { toastStyleSuccess } from "../../../Components/utils/Toastify/toastStyle";
+import { toastStyleSuccess } from "../../Components/utils/Toastify/toastStyle";
 
 const ColorPicker = () => {
   const [color, setColor] = useState("#00ffd5");

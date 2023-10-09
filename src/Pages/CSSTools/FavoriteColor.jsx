@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import FavColors from "../../../Components/utils/Colors/Color";
+import FavColors from "../../Components/utils/Colors/Color";
 import { motion } from "framer-motion";
-import { container, item } from "../../../Components/utils/Motion/Motion";
+import { container, item } from "../../Components/utils/Motion/Motion";
 import { toast } from "react-toastify";
-import { toastStyleSuccess } from "../../../Components/utils/Toastify/toastStyle";
+import { toastStyleSuccess } from "../../Components/utils/Toastify/toastStyle";
 const FavoriteColor = () => {
   const copyToClipboard = (color) => {
     if (navigator.clipboard && navigator.clipboard.writeText) {

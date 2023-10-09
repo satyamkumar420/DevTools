@@ -5,6 +5,7 @@ import {
   IconColorPaletteSharp,
   IconColorBucket,
   IconImageFilterBlackWhite,
+  IconSelectColor,
 } from "../../Components/Icons/Icons";
 
 const Colors = () => {
@@ -39,6 +40,12 @@ const Colors = () => {
       ),
       className: "p-2 grid place-items-center",
     },
+    {
+      to: "/converters/color-converter",
+      text: "Color Converter",
+      icon: <IconSelectColor className="text-pink-500" />,
+      className: "p-2 grid place-items-center",
+    },
   ];
   return (
     <div className="p-4 sm:ml-52 max-w-screen-full overflow-y-auto  max-h-screen">
@@ -46,9 +53,9 @@ const Colors = () => {
         <h3 className="p-2 rounded text-lg sm:text-2xl text-yellow-500 w-full bg-[#1a1c2e]">
           Color Tools
         </h3>
-        <div className="mt-5 flex flex-wrap gap-6 ">
+        <div className="mt-5 sm:flex sm:flex-wrap sm:gap-6 ">
           {buttons.map((button, index) => (
-            <NavLink to={button.to} key={index}>
+            <NavLink to={button.to} key={index} className="grid mt-5 sm:mt-0">
               <Button
                 text={button.text}
                 icon={button.icon}

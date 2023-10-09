@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 import {
   toastStyleError,
   toastStyleSuccess,
-} from "../../../Components/utils/Toastify/toastStyle";
+} from "../../Components/utils/Toastify/toastStyle";
 
 const ImageColorPicker = () => {
   const [imageSrc, setImageSrc] = useState(null);

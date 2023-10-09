@@ -29,7 +29,7 @@ const Button = ({ text, icon, onClick, className }) => {
 
   return (
     <button
-      className="transition-all duration-300 ease-in-out items-center text-center"
+      className="items-center text-center"
       onClick={onClick}
       style={buttonStyle}
     >

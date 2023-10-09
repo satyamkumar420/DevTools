@@ -1,30 +1,13 @@
-import React, { useState } from "react";
 import Button from "../../Components/utils/Button/Button";
 import { NavLink } from "react-router-dom";
-import {
-  IconImageSyncOutline,
-  IconTime,
-  IconSelectColor,
-} from "../../Components/Icons/Icons";
+import { IconTime } from "../../Components/Icons/Icons";
 
 const Converters = () => {
   const buttons = [
     {
-      to: "/converters/ImageToBase64Converter",
-      text: "Image to Base64",
-      icon: <IconImageSyncOutline className="text-yellow-500" />,
-      className: "p-2 grid place-items-center",
-    },
-    {
       to: "/converters/timestamp-converter",
       text: "Timestamp Converter ",
       icon: <IconTime className="text-blue-500" />,
-      className: "p-2 grid place-items-center",
-    },
-    {
-      to: "/converters/color-converter",
-      text: "Color Converter",
-      icon: <IconSelectColor className="text-pink-500" />,
       className: "p-2 grid place-items-center",
     },
   ];
@@ -34,9 +17,9 @@ const Converters = () => {
         <h3 className="p-2 rounded text-lg sm:text-2xl text-yellow-500 w-full bg-[#1a1c2e]">
           Converters
         </h3>
-        <div className="mt-5 flex flex-wrap gap-6 ">
+        <div className="mt-5 sm:flex sm:flex-wrap sm:gap-6">
           {buttons.map((button, index) => (
-            <NavLink to={button.to} key={index}>
+            <NavLink to={button.to} key={index} className="grid mt-5 sm:mt-0">
               <Button
                 text={button.text}
                 icon={button.icon}

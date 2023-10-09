@@ -25,20 +25,20 @@ const ImageCrop = lazy(() => import("./Pages/Images/ImageCrop/ImageCrop"));
 const ImageConverter = lazy(() =>
   import("./Pages/Images/ImageConvert/ImageConverter")
 );
+const ImageToBase64Converter = lazy(() =>
+  import("./Pages/Images/ImageToBase64Converter/ImageToBase64Converter")
+);
 
-// Lazy-loaded route components 'Colors'
-const Colors = lazy(() => import("./Pages/Colors/Colors"));
-const ColorPicker = lazy(() =>
-  import("./Pages/Colors/ColorsTools/ColorPicker")
-);
-const RandomColor = lazy(() =>
-  import("./Pages/Colors/ColorsTools/RandomColor")
-);
-const FavoriteColor = lazy(() =>
-  import("./Pages/Colors/ColorsTools/FavoriteColor")
-);
+// Lazy-loaded route components 'CSS TOOLS'
+const Colors = lazy(() => import("./Pages/CSSTools/Colors"));
+const ColorPicker = lazy(() => import("./Pages/CSSTools/ColorPicker"));
+const RandomColor = lazy(() => import("./Pages/CSSTools/RandomColor"));
+const FavoriteColor = lazy(() => import("./Pages/CSSTools/FavoriteColor"));
 const ImageColorPicker = lazy(() =>
-  import("./Pages/Colors/ColorsTools/ImageColorPicker")
+  import("./Pages/CSSTools/ImageColorPicker")
+);
+const ColorConverter = lazy(() =>
+  import("./Pages/CSSTools/ColorConverter/ColorConverter")
 );
 
 // Lazy-loaded route components 'RandomData'
@@ -55,14 +55,9 @@ const FakeDetails = lazy(() =>
 
 // Lazy-loaded route components 'Converters'
 const Converters = lazy(() => import("./Pages/Converters/Converters"));
-const ImageToBase64Converter = lazy(() =>
-  import("./Pages/Converters/ImageToBase64Converter/ImageToBase64Converter")
-);
+
 const TimestampConverter = lazy(() =>
   import("./Pages/Converters/TimestampConverter/TimestampConverter")
-);
-const ColorConverter = lazy(() =>
-  import("./Pages/Converters/ColorConverter/ColorConverter")
 );
 
 // Lazy-loaded route components 'About'

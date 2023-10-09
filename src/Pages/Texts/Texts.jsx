@@ -7,13 +7,13 @@ const Texts = () => {
     {
       to: "/texts/text-counter",
       text: "Text Counter",
-      icon: <IconCounter className="text-yellow-500 text-lg md:text-3xl" />,
+      icon: <IconCounter className="text-yellow-500 text-lg md:text-3xl " />,
       className: "p-2 grid place-items-center",
     },
     {
       to: "/texts/text-comparator",
       text: "Text Comparator",
-      icon: <IconCompare className="text-red-500  md:text-4xl" />,
+      icon: <IconCompare className="text-red-500  md:text-4xl " />,
       className: "p-2 grid place-items-center",
     },
     // Add more buttons here
@@ -25,9 +25,9 @@ const Texts = () => {
         <h3 className="text-left p-2 rounded text-lg sm:text-2xl text-yellow-500 w-full bg-[#1a1c2e]">
           Text Tools
         </h3>
-        <div className="mt-5 flex flex-wrap gap-6 ">
+        <div className="mt-5 sm:flex sm:flex-wrap sm:gap-6">
           {buttons.map((button, index) => (
-            <NavLink to={button.to} key={index}>
+            <NavLink to={button.to} key={index} className="grid mt-5 sm:mt-0">
               <Button
                 text={button.text}
                 icon={button.icon}

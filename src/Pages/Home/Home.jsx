@@ -26,12 +26,16 @@ const Home = () => {
             <IconShieldTick className="text-sm sm:text-xl" />
             <h2>Online tools available for you:</h2>
           </div>
-          <div className="flex flex-1 gap-4 flex-wrap mt-4">
+          <div className=" sm:flex sm:flex-wrap sm:gap-6">
             {HomeLinks.map((button, index) => (
-              <NavLink to={button.link} key={index}>
+              <NavLink
+                to={button.link}
+                key={index}
+                className="grid mt-5 sm:mt-0"
+              >
                 <Button
                   text={button.text}
-                  className="text-lg md:text-xl sm:p-2 px-2"
+                  className="text-lg md:text-xl p-2 sm:p-2 px-2"
                 />
               </NavLink>
             ))}

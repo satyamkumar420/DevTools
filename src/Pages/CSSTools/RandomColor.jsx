@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { toastStyleSuccess } from "../../../Components/utils/Toastify/toastStyle";
+import { toastStyleSuccess } from "../../Components/utils/Toastify/toastStyle";
 import { toast } from "react-toastify";
 
 const generateRandomColor = (format) => {

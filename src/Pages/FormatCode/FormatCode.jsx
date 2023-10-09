@@ -18,9 +18,9 @@ const FormatCode = () => {
           Format Code
         </h3>
 
-        <div className="mt-5 flex flex-wrap gap-6 ">
+        <div className="mt-5 sm:flex sm:flex-wrap sm:gap-6">
           {buttons.map((button, index) => (
-            <NavLink to={button.to} key={index}>
+            <NavLink to={button.to} key={index} className="grid mt-5 sm:mt-0">
               <Button
                 text={button.text}
                 icon={button.icon}
