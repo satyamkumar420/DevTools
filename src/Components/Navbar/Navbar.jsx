@@ -1,7 +1,7 @@
 import Sidebar from "./Sidebar";
 import { NavLink } from "react-router-dom";
 import { IconLanguageHiragana } from "../Icons/Icons";
-import { IconMenu, IconCross2 } from "../Icons/Icons";
+import { IconMenuLeft } from "../Icons/Icons";
 import { useState } from "react";
 import Logo from "../../assets/favicon.png";
 
@@ -16,15 +16,8 @@ const Navbar = () => {
     <>
       <header className="fixed w-full top-0 left-0 right-0 z-50  backdrop-blur-3xl firefox:bg-opacity-50 p-4  flex shadow-lg  justify-between items-center">
         <div className="ml-3 flex">
-          <div
-            className="sm:hidden transition-all duration-100 ease-in-out active:scale-50 p-1"
-            onClick={toggleMenu}
-          >
-            {isOpen ? (
-              <IconCross2 className="font-bold text-2xl cursor-pointer" />
-            ) : (
-              <IconMenu className="font-bold text-2xl cursor-pointer" />
-            )}
+          <div className="sm:hidden  p-1" onClick={toggleMenu}>
+            <IconMenuLeft className="font-bold text-2xl cursor-pointer" />
           </div>
 
           <NavLink
@@ -55,7 +48,9 @@ const Navbar = () => {
 
       <div
         className={`z-50 transition-all duration-100 ease-in-out sm:block transform ${
-          isOpen ? "translate-x-0 " : "-translate-x-full sm:translate-x-0"
+          isOpen
+            ? "translate-x-0 z-[999999] relative opacity-100 "
+            : "-translate-x-full sm:translate-x-0"
         }`}
       >
         <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} />

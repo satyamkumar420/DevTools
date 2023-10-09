@@ -38,8 +38,8 @@ const FakeDetails = () => {
   };
 
   return (
-    <div className="p-4 sm:ml-52 text-justify max-w-screen-lg overflow-y-auto max-h-screen">
-      <div className="my-20">
+    <div className="p-4 sm:ml-52 text-justify max-w-screen-full overflow-y-auto max-h-screen">
+      <div className="my-20 max-w-screen-lg">
         <h3 className="p-2 rounded text-lg sm:text-2xl text-yellow-500 w-full bg-[#1a1c2e]">
           Fake Details
         </h3>
@@ -52,8 +52,8 @@ const FakeDetails = () => {
               Generate
             </button>
           </div>
-          <div className=" sm:max-w-full items-center py-4 px-3 rounded my-5 bg-[#1a1c2e] shadow-lg">
-            <div className="flex w-[200px] justify-center mt-5">
+          <div className=" max-w-screen-sm  items-center py-4 px-3 rounded my-5 bg-[#1a1c2e] shadow-lg">
+            <div className="flex justify-center mt-5">
               <img
                 src={details.profileImage}
                 alt="ProfileLogo"

@@ -3,8 +3,10 @@ import { IconSearch } from "../../Components/Icons/Icons";
 import Emoji from "emoji.json";
 import { toast } from "react-toastify";
 import { toastStyleSuccess } from "../../Components/utils/Toastify/toastStyle";
+import { debounce } from "lodash";
 
 const EmojiPicker = () => {
+  // TODO: Optimize search logic by using lodash
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredEmojis, setFilteredEmojis] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("Smileys & Emotion");
@@ -21,7 +23,7 @@ const EmojiPicker = () => {
     { id: 9, char: "🚸", groupName: "Symbols" },
     { id: 10, char: "🚩", groupName: "flag" },
   ];
-  // TODO: search query show keyword on url search format
+
   useEffect(() => {
     // Find the matching category from MyCategories
     const selectedCategoryObject = MyCategories.find(
@@ -37,14 +39,14 @@ const EmojiPicker = () => {
     }
   }, [selectedCategory]);
 
-  const handleSearch = (e) => {
-    setSearchTerm(e.target.value);
+  const handleSearch = debounce((searchTerm) => {
+    setSearchTerm(searchTerm);
     const emojisForCategory = Emoji.filter((emoji) =>
       emoji.name.includes(searchTerm) ? emoji : null
     );
     // Set the filtered emojis
     setFilteredEmojis(emojisForCategory);
-  };
+  }, 100);
 
   useEffect(() => {
     if (MyCategories.length > 0) {
@@ -83,18 +85,18 @@ const EmojiPicker = () => {
   };
 
   return (
-    <div className="p-4 sm:ml-52 max-w-screen-lg overflow-y-auto max-h-screen">
+    <div className="p-4 sm:ml-52 max-w-screen-full  overflow-y-auto max-h-screen">
       <div className="my-20">
-        <h3 className="p-2 rounded text-lg sm:text-2xl text-yellow-500 w-full bg-[#1a1c2e]">
+        <h3 className="p-2 rounded max-w-screen-lg text-lg sm:text-2xl text-yellow-500 w-full bg-[#1a1c2e]">
           Emoji Picker 😂
         </h3>
-        <div className="mt-5 px-2 flex items-center bg-[#1a1c2e] rounded font-medium border-2 border-blue-600 max-w-xl w-full xl:w-1/2">
-          <IconSearch className="text-gray-400" />
+        <div className="mt-5 px-2 flex items-center relative font-medium  max-w-xl w-full xl:w-1/2">
+          <IconSearch className="ml-2 absolute text-gray-400" />
           <input
             type="text"
             placeholder="Search emoji"
-            className="p-1  px-3 text-base w-full  rounded bg-[#1a1c2e] outline-none border-none focus:border-none focus:border-blue-600 text-blue-100"
-            onChange={handleSearch}
+            className="p-1 pl-10  px-3 text-base w-full  rounded bg-[#1a1c2e] outline-none border-none ring-2 focus:ring-2 focus:ring-yellow-500 text-blue-100"
+            onChange={(e) => handleSearch(e.target.value)}
             autoComplete="off"
           />
         </div>
@@ -148,14 +150,18 @@ const EmojiPicker = () => {
           </div>
         </div>
         <div className="mt-10">
-          <div className=" text-left border-l-4 border-l-purple-500 p-2 text-sm sm:text-lg bg-[#1a1c2e]">
-            <span className="text-blue-300">
+          <div className="text-blue-300 text-left border-l-4 border-l-purple-500 p-2 text-sm sm:text-lg bg-[#1a1c2e]">
+            <span className="">
               This awesome tool offers an emoji picker that comes with handy
               categories, making it an absolute gem for developers, students,
               and professionals alike! Plus, it makes emoji copying a breeze
               with just a simple click. 😄🚀 Give it a try and elevate your
               emoji game effortlessly! 🎉
             </span>
+            <p>
+              Note: Category scroll to the left and right using Left, Right
+              Arrow Key
+            </p>
           </div>
         </div>
       </div>

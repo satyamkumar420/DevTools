@@ -72,6 +72,9 @@ const Terms = lazy(() => import("./Pages/About/Terms"));
 
 // Lazy-loaded route components 'FormatCode'
 const FormatCode = lazy(() => import("./Pages/FormatCode/FormatCode"));
+const JSONFormat = lazy(() =>
+  import("./Pages/FormatCode/JSONFormat/JsonFormat")
+);
 
 // Lazy-loaded route components 'VariousTools'
 const VariousTools = lazy(() => import("./Pages/VariousTools/VariousTools"));
@@ -153,6 +156,7 @@ function App() {
 
           {/* Here are the routes for 'Format Code' */}
           <Route path="/format-code" element={<FormatCode />} />
+          <Route path="/format-code/json-format" element={<JSONFormat />} />
 
           {/* Here are the routes for 'Various Tools' */}
           <Route path="/various-tools" element={<VariousTools />} />

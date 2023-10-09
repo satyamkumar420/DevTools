@@ -3,7 +3,7 @@ import { toast } from "react-toastify";
 import {
   toastStyleSuccess,
   toastStyleError,
-} from "../../../Components/utils/Toastify/ToastStyle";
+} from "../../../Components/utils/Toastify/toastStyle";
 import { IconContentCopy } from "../../../Components/Icons/Icons";
 
 const ShortUrl = () => {
@@ -57,8 +57,8 @@ const ShortUrl = () => {
     toast(`Url Copied to Clipboard!`, { style: toastStyleSuccess });
   };
   return (
-    <div className="p-4 sm:ml-52   max-w-screen-lg overflow-y-auto max-h-screen">
-      <div className="my-20">
+    <div className="p-4 sm:ml-52   max-w-screen-full overflow-y-auto max-h-screen">
+      <div className="my-20 max-w-screen-lg">
         <h3 className="p-2 rounded text-lg sm:text-2xl text-yellow-500 w-full bg-[#1a1c2e]">
           Short URL Generator
         </h3>

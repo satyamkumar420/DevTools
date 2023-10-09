@@ -17,7 +17,7 @@ const FormatCode = () => {
         <h3 className="p-2 rounded text-lg sm:text-2xl text-yellow-500 w-full bg-[#1a1c2e]">
           Format Code
         </h3>
-        {/* <CodeEditor /> */}
+
         <div className="mt-5 flex flex-wrap gap-6 ">
           {buttons.map((button, index) => (
             <NavLink to={button.to} key={index}>

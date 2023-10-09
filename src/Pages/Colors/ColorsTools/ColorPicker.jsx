@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { toast } from "react-toastify";
-import { toastStyleSuccess } from "../../../Components/utils/Toastify/ToastStyle";
+import { toastStyleSuccess } from "../../../Components/utils/Toastify/toastStyle";
 
 const ColorPicker = () => {
   const [color, setColor] = useState("#00ffd5");
@@ -74,8 +74,8 @@ const ColorPicker = () => {
   };
 
   return (
-    <div className="p-4 sm:ml-52 max-w-screen-lg overflow-y-auto  max-h-screen">
-      <div className=" my-20 ">
+    <div className="p-4 sm:ml-52 max-w-screen-full overflow-y-auto  max-h-screen">
+      <div className=" my-20  max-w-screen-lg ">
         <h3 className="p-2 rounded text-lg sm:text-2xl text-yellow-500 w-full bg-[#1a1c2e]">
           Color Picker
         </h3>

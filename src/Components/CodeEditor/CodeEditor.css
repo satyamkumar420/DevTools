@@ -1,0 +1,10 @@
+/* custom-monaco-editor.css */
+/* Set the background color */
+.monaco-editor {
+    background-color: #1a1c2e;
+}
+
+/* Set the text color */
+.monaco-editor .monaco-editor .monaco-editor-content {
+    color: white;
+}

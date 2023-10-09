@@ -50,7 +50,7 @@ const Sidebar = ({ isOpen, setIsOpen }) => {
     <aside
       ref={sidebarRef}
       className="fixed h-screen top-0  left-0 bg-[#1a1c2e] p-4 shadow-2xl  border-r-2 border-r-cyan-500 z-50 transform transition-all duration-300 ease-in-out "
-      aria-label="Sidebar"
+      aria-label="Sidebar "
     >
       <div className="mt-20 ">
         <ul>

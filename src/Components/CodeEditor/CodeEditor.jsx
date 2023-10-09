@@ -1,29 +1,18 @@
-// * install monaco editor by using command "npm i react-monaco-editor"
+import React, { useState } from "react";
+import Editor from "@monaco-editor/react";
 
-import React from "react";
-import MonacoEditor from "react-monaco-editor";
-import "./jsonToXmlConverter.css";
-
-const CodeEditor = ({ value, onChange }) => {
+const CodeEditor = ({ onChange, language, code, theme }) => {
+  const [value, setValue] = useState(code || "");
   return (
-    <div className="m-8">
-      <MonacoEditor
-        options={{
-          wordWrap: "on",
-          autoIndent: "full",
-          scrollbar: {
-            vertical: "auto",
-            horizontal: "auto",
-          },
-          // Other options
-        }}
-        className="gradient-border"
-        height="300"
-        width="800"
-        language="javascript"
+    <div className="my-5 overlay  max-w-screen-lg rounded-md overflow-hidden w-full h-full shadow-4xl">
+      <Editor
+        height="85vh"
+        width={`100%`}
+        language={language || "javascript"}
+        // value={value}
         theme="vs-dark"
-        onChange={onChange}
-        value={value}
+        defaultValue="// some comment"
+        // onChange={handleEditorChange}
       />
     </div>
   );

@@ -216,32 +216,12 @@ export function IconCompare(props) {
   );
 }
 
-export function IconMenu(props) {
+export function IconMenuLeft(props) {
   return (
-    <svg
-      fill="none"
-      stroke="currentColor"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth={2}
-      viewBox="0 0 24 24"
-      height="1em"
-      width="1em"
-      {...props}
-    >
-      <path d="M3 12h18M3 6h18M3 18h18" />
-    </svg>
-  );
-}
-
-export function IconCross2(props) {
-  return (
-    <svg fill="none" viewBox="0 0 15 15" height="1em" width="1em" {...props}>
+    <svg fill="none" viewBox="0 0 24 24" height="1em" width="1em" {...props}>
       <path
         fill="currentColor"
-        fillRule="evenodd"
-        d="M11.782 4.032a.575.575 0 10-.813-.814L7.5 6.687 4.032 3.218a.575.575 0 00-.814.814L6.687 7.5l-3.469 3.468a.575.575 0 00.814.814L7.5 8.313l3.469 3.469a.575.575 0 00.813-.814L8.313 7.5l3.469-3.468z"
-        clipRule="evenodd"
+        d="M2 5.995c0-.55.446-.995.995-.995h8.01a.995.995 0 010 1.99h-8.01A.995.995 0 012 5.995zM2 12c0-.55.446-.995.995-.995h18.01a.995.995 0 110 1.99H2.995A.995.995 0 012 12zM2.995 17.01a.995.995 0 000 1.99h12.01a.995.995 0 000-1.99H2.995z"
       />
     </svg>
   );
