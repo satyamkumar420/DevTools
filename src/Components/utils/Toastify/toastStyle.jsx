@@ -25,7 +25,7 @@ export const toastStyleError = {
 export const toastStyleWarning = {
   fontWeight: "bold",
   textAlign: "center",
-  fontSize: "15px",
+  fontSize: "18px",
   color: "#FFC107",
   width: "auto",
   fontFamily: "Poppins",
@@ -36,7 +36,7 @@ export const toastStyleWarning = {
 export const toastStyleInfo = {
   fontWeight: "bold",
   textAlign: "center",
-  fontSize: "15px",
+  fontSize: "18px",
   width: "auto",
   color: "#0f42b8",
   fontFamily: "Poppins",

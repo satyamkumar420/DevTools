@@ -20,10 +20,10 @@ const myTheme = createTheme({
   styles: [
     { tag: t.comment, color: "#3e4474" },
     { tag: t.variableName, color: "#28c8e8" },
-    { tag: [t.string, t.special(t.brace)], color: "#0ab421" },
+    { tag: [t.string, t.special(t.brace)], color: "#0ae527" },
     { tag: t.number, color: "#fa3535" },
-    { tag: t.bool, color: "#800599" },
-    { tag: t.null, color: "#bb6918" },
+    { tag: t.bool, color: "#cd12f2" },
+    { tag: t.null, color: "#f4800c" },
     { tag: t.keyword, color: "#e152ff" },
     { tag: t.operator, color: "#c70a3f" },
     { tag: t.className, color: "#caa812" },
