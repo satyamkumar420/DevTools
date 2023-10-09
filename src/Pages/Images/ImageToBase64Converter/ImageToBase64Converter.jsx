@@ -82,7 +82,7 @@ const ImageToBase64Converter = () => {
           {selectedFile && (
             <div className="my-4">
               <h2 className="text-lg font-semibold my-2">Selected Image:</h2>
-              <div className="overflow-hidden border-2 border-dashed border-pink-500 p-4 rounded">
+              <div className="overflow-hidden border-2 max-w-fit border-dashed border-pink-500 p-4 rounded">
                 <img
                   src={URL.createObjectURL(selectedFile)}
                   alt="Selected"
