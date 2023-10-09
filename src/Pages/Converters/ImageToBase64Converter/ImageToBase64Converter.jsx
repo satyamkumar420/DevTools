@@ -67,6 +67,7 @@ const ImageToBase64Converter = () => {
                 value={base64Image}
                 readOnly
                 className="w-full h-48 border-2 rounded focus:border-green-500 border-green-500 p-2 outline-none bg-[#10121d]"
+                autoComplete="off"
               />
               <div className="my-3">
                 <button
@@ -85,7 +86,7 @@ const ImageToBase64Converter = () => {
                 <img
                   src={URL.createObjectURL(selectedFile)}
                   alt="Selected"
-                  className="max-w-full  rounded shadow-md"
+                  className=" max-h-screen  rounded shadow-md"
                 />
               </div>
             </div>

@@ -55,6 +55,7 @@ const TextComparator = () => {
               className="w-full h-48 border p-2 bg-[#1a1c2e] outline-none rounded border-green-500 text-blue-200"
               value={originalParagraph}
               onChange={(e) => setOriginalParagraph(e.target.value)}
+              autoComplete="off"
             />
           </div>
           <div className="">
@@ -70,6 +71,7 @@ const TextComparator = () => {
               className="w-full h-48 border p-2 bg-[#1a1c2e] outline-none rounded border-yellow-500 text-blue-200"
               value={modifiedParagraph}
               onChange={(e) => setModifiedParagraph(e.target.value)}
+              autoComplete="off"
             />
           </div>
         </div>

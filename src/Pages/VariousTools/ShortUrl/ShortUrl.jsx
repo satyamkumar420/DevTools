@@ -70,6 +70,7 @@ const ShortUrl = () => {
               className="rounded px-2 py-1 bg-[#131630]  w-full border-2 border-gray-600 focus:border-2 focus:border-blue-500 outline-none"
               value={originalUrl}
               onChange={(e) => setOriginalUrl(e.target.value)}
+              autoComplete="off"
             />
             <button
               className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700"

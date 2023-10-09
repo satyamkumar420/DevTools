@@ -65,6 +65,7 @@ const DateToTimestampConverter = () => {
               onChange={(e) => setInputDate(e.target.value)}
               className="border-2 border-blue-600 focus:border-2 focus:border-blue-700 rounded px-2 py-1 w-full outline-none bg-slate-900"
               placeholder="YYYY-MM-DD HH:MM:SS"
+              autoComplete="off"
             />
           </div>
           <div className="mb-4">

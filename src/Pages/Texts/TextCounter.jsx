@@ -41,6 +41,7 @@ function TextCounter() {
           value={text}
           cols="20"
           rows="5"
+          autoComplete="off"
         ></textarea>
         <div className="mt-4 border-2 border-dashed border-pink-500 rounded p-4 ">
           <h2 className="text-base md:text-lg font-bold text-green-400 uppercase">
