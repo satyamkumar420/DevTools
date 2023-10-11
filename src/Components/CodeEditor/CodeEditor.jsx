@@ -41,13 +41,14 @@ const myTheme = createTheme({
 });
 
 // const languages = [javascript({ jsx: true })];
+
 const CodeEditor = ({ value, onChange, languages, placeholder }) => {
   const customStyles = {
     fontSize: "18px",
   };
 
   return (
-    <div className="my-4 overflow-hidden rounded-md">
+    <div className="my-4 overflow-hidden rounded-md shadow-md p-2 bg-[#1a1c2e]">
       <CodeMirror
         value={value}
         height="60vh"
@@ -56,6 +57,7 @@ const CodeEditor = ({ value, onChange, languages, placeholder }) => {
         onChange={onChange}
         style={customStyles}
         placeholder={placeholder}
+        security="true"
       />
     </div>
   );

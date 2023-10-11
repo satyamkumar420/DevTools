@@ -59,6 +59,7 @@ const Converters = lazy(() => import("./Pages/Converters/Converters"));
 const TimestampConverter = lazy(() =>
   import("./Pages/Converters/TimestampConverter/TimestampConverter")
 );
+const JsonToXml = lazy(() => import("./Pages/Converters/JsonToXml/JsonToXml"));
 
 // Lazy-loaded route components 'About'
 const About = lazy(() => import("./Pages/About/About"));
@@ -121,6 +122,10 @@ function App() {
             path="/colors/image-color-picker"
             element={<ImageColorPicker />}
           />
+          <Route
+            path="/converters/color-converter"
+            element={<ColorConverter />}
+          />
 
           {/* Here are the routes for 'Converters' */}
           <Route path="/converters" element={<Converters />} />
@@ -132,10 +137,7 @@ function App() {
             path="/converters/timestamp-converter"
             element={<TimestampConverter />}
           />
-          <Route
-            path="/converters/color-converter"
-            element={<ColorConverter />}
-          />
+          <Route path="/converters/json-to-xml" element={<JsonToXml />} />
 
           {/* Here are the routes for 'Random Data' */}
           <Route path="/random-data" element={<RandomData />} />

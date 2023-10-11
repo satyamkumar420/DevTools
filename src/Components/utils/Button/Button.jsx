@@ -21,7 +21,7 @@ const Button = ({ text, icon, onClick, className }) => {
     color: "#e9e9ff",
     padding: "5px 20px",
     border: "3px solid transparent",
-    borderRadius: "5px",
+    borderRadius: "10px",
     display: "inline-block",
     fontSize: "22px",
     cursor: "pointer",

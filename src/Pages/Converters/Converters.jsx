@@ -1,13 +1,19 @@
 import Button from "../../Components/utils/Button/Button";
 import { NavLink } from "react-router-dom";
-import { IconTime } from "../../Components/Icons/Icons";
+import { IconTime, IconArrowLeftRight } from "../../Components/Icons/Icons";
 
 const Converters = () => {
   const buttons = [
     {
       to: "/converters/timestamp-converter",
       text: "Timestamp Converter ",
-      icon: <IconTime className="text-blue-500" />,
+      icon: <IconTime className="text-blue-100" />,
+      className: "p-2 grid place-items-center",
+    },
+    {
+      to: "/converters/json-to-xml",
+      text: "JSON To XML",
+      icon: <IconArrowLeftRight className="text-yellow-400" />,
       className: "p-2 grid place-items-center",
     },
   ];
