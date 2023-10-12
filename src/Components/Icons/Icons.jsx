@@ -614,19 +614,16 @@ export function IconSelectColor(props) {
   );
 }
 
-export function IconArrowLeftRight(props) {
+export function IconXml(props) {
   return (
     <svg
+      viewBox="0 0 24 24"
       fill="currentColor"
-      viewBox="0 0 16 16"
-      height="1.8em"
-      width="1.8em"
+      height="1.9em"
+      width="1.9em"
       {...props}
     >
-      <path
-        fillRule="evenodd"
-        d="M1 11.5a.5.5 0 00.5.5h11.793l-3.147 3.146a.5.5 0 00.708.708l4-4a.5.5 0 000-.708l-4-4a.5.5 0 00-.708.708L13.293 11H1.5a.5.5 0 00-.5.5zm14-7a.5.5 0 01-.5.5H2.707l3.147 3.146a.5.5 0 11-.708.708l-4-4a.5.5 0 010-.708l4-4a.5.5 0 11.708.708L2.707 4H14.5a.5.5 0 01.5.5z"
-      />
+      <path d="M12.89 3l1.96.4L11.11 21l-1.96-.4L12.89 3m6.7 9L16 8.41V5.58L22.42 12 16 18.41v-2.83L19.59 12M1.58 12L8 5.58v2.83L4.41 12 8 15.58v2.83L1.58 12z" />
     </svg>
   );
 }

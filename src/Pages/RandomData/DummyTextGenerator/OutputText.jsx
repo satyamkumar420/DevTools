@@ -7,7 +7,7 @@ const OutputText = ({ paragraphs, tag, includeHtml }) => {
 
   return (
     <div className="bg-[#1a1c2e] bg-4 text-md rounded shadow-md p-4">
-      <div>
+      <div className="text-left">
         {paragraphs.length > 0 ? (
           includeHtml === "yes" ? (
             paragraphs.map((sentence, index) => (

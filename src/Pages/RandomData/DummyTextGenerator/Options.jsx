@@ -37,7 +37,7 @@ const options = ({
         <h3 className="mb-2 font-semibold">Paragraphs</h3>
         <input
           type="number"
-          placeholder="Number of Paragraphs"
+          placeholder="Paragraphs"
           value={inputValue}
           onChange={(e) => {
             setInputValue(e.target.value);
