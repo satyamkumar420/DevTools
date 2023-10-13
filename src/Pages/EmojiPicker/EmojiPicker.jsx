@@ -108,7 +108,7 @@ const EmojiPicker = () => {
           <div>
             <div className="mb-4">
               <div
-                className="p-2 overflow-x-auto flex  overflow-scroll"
+                className=" overflow-x-auto flex  bg-[#1a1c2e] rounded max-w-fit"
                 value={selectedCategory}
               >
                 {MyCategories.map((category) => (
@@ -117,9 +117,9 @@ const EmojiPicker = () => {
                     className={`text-lg sm:text-xl md:text-2xl lg:text-3xl  bg-[#1a1c2e] py-4 border-gray-600 border-b-[1px]`}
                   >
                     <span
-                      className={`hover:cursor-pointer md:mx-2 px-3 py-3 hover:bg-[#2c2f47] hover:border-b-2 border-blue-200 ${
+                      className={`hover:cursor-pointer md:mx-2 px-3 py-3 pt-6 hover:bg-[#2c2f47] hover:border-b-2 border-blue-200 ${
                         selectedCategory === category.char
-                          ? "bg-[#2c2f47] border-b-2 border-blue-600 px-3 py-3"
+                          ? "bg-[#2c2f47] border-b-2 border-blue-600 px-3 py-3 pt-6"
                           : ""
                       }`}
                       value={category.char}
@@ -158,10 +158,6 @@ const EmojiPicker = () => {
               with just a simple click. 😄🚀 Give it a try and elevate your
               emoji game effortlessly! 🎉
             </span>
-            <p>
-              Note: Category scroll to the left and right using Left, Right
-              Arrow Key
-            </p>
           </div>
         </div>
       </div>

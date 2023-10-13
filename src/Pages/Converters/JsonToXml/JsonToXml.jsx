@@ -8,6 +8,7 @@ import {
   toastStyleError,
   toastStyleSuccess,
 } from "../../../Components/utils/Toastify/toastStyle";
+import PrimaryButton from "../../../Components/utils/Button/PrimaryButton";
 
 const JsonToXml = () => {
   const [jsonInput, setJsonInput] = useState(""); // JSON input
@@ -81,18 +82,8 @@ const JsonToXml = () => {
             languages={languageMode}
           />
           <div className="flex flex-wrap gap-2 mb-10 justify-center sm:justify-start">
-            <button
-              className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700"
-              onClick={handleConvertClick}
-            >
-              Convert
-            </button>
-            <button
-              className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700"
-              onClick={handleCopyClick}
-            >
-              Copy
-            </button>
+            <PrimaryButton onClick={handleConvertClick} text="Convert" />
+            <PrimaryButton onClick={handleCopyClick} text="Copy" />
           </div>
         </div>
       </div>

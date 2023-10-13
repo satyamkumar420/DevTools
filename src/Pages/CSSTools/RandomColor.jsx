@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { toastStyleSuccess } from "../../Components/utils/Toastify/toastStyle";
 import { toast } from "react-toastify";
+import PrimaryButton from "../../Components/utils/Button/PrimaryButton";
 
 const generateRandomColor = (format) => {
   const randomColor = {
@@ -54,27 +55,30 @@ const RandomColor = () => {
         <h3 className="p-2 rounded text-lg sm:text-2xl text-yellow-500 w-full bg-[#1a1c2e]">
           Random Colors
         </h3>
+
         <div className="p-4">
-          <div className="mb-2">
-            <label className="mr-2">Color Format:</label>
-            <select
-              onChange={(e) => handleFormatChange(e.target.value)}
-              value={format}
-              className="px-2 py-3 border-none  rounded bg-[#1a1c2e] shadow-md cursor-pointer ring-transparent"
-            >
-              <option value="hex">HEX</option>
-              <option value="rgb">RGB</option>
-              <option value="hsl">HSL</option>
-            </select>
+          <div className="flex justify-start gap-3 flex-wrap">
+            <div className="">
+              <PrimaryButton
+                onClick={generateColors}
+                text={"Generate Colors"}
+                className={"py-2"}
+              />
+            </div>
+            <div className="mb-4 flex flex-wrap items-center">
+              <label className="mr-2 text-lg">Color Format:</label>
+              <select
+                onChange={(e) => handleFormatChange(e.target.value)}
+                value={format}
+                className="px-2 py-3 border-none  rounded bg-[#1a1c2e] shadow-md cursor-pointer ring-transparent focus:outline-none min-w-[200px]"
+              >
+                <option value="hex">HEX</option>
+                <option value="rgb">RGB</option>
+                <option value="hsl">HSL</option>
+              </select>
+            </div>
           </div>
-          <div className="mb-8">
-            <button
-              onClick={generateColors}
-              className="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700"
-            >
-              Generate Colors
-            </button>
-          </div>
+
           <div className="flex flex-wrap  gap-4 justify-center items-center">
             {colors.map((color, index) => (
               <div

@@ -76,16 +76,18 @@ const TextComparator = () => {
           </div>
         </div>
 
-        <div className="mt-8">
-          <h2 className="text-base sm:text-lg p-2 text-orange-600 rounded">
-            Result:
-          </h2>
-          <div className="border-dashed border-2 border-pink-500 mt-1 p-3 rounded">
-            <div className="text-base sm:text-lg text-start bg-[#1a1c2e] p-2 ">
-              <div className="mb-2 text-left text-w">{difference}</div>
+        {originalParagraph && (
+          <div className="mt-5">
+            <h2 className="text-base sm:text-lg p-2 text-orange-600 rounded">
+              Result:
+            </h2>
+            <div className="border-dashed border-2 border-pink-500 mt-1 p-3 rounded">
+              <div className="text-base sm:text-lg text-start bg-[#1a1c2e] p-2 ">
+                <div className="mb-2 text-left text-w">{difference}</div>
+              </div>
             </div>
           </div>
-        </div>
+        )}
         <div className="mt-5">
           <div className="text-left border-l-4 border-l-purple-500 p-2 text-sm sm:text-lg bg-[#1a1c2e]">
             <p className="text-blue-300">

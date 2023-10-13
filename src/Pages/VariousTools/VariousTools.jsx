@@ -4,13 +4,12 @@ import { IconLink } from "../../Components/Icons/Icons";
 
 const VariousTools = () => {
   const buttons = [
-    {
-      to: "/various-tools/short-url",
-      text: "Short URL",
-      icon: <IconLink className="text-yellow-500 text-lg md:text-3xl" />,
-      className: "p-2 grid place-items-center",
-    },
-
+    // {
+    //   to: "/various-tools/short-url",
+    //   text: "Short URL",
+    //   icon: <IconLink className="text-yellow-500 text-lg md:text-3xl" />,
+    //   className: "p-2 grid place-items-center",
+    // },
     // Add more buttons here
   ];
 

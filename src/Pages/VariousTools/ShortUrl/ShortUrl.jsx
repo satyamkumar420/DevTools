@@ -5,6 +5,7 @@ import {
   toastStyleError,
 } from "../../../Components/utils/Toastify/toastStyle";
 import { IconContentCopy } from "../../../Components/Icons/Icons";
+import PrimaryButton from "../../../Components/utils/Button/PrimaryButton";
 
 const ShortUrl = () => {
   const [originalUrl, setOriginalUrl] = useState("");
@@ -63,7 +64,7 @@ const ShortUrl = () => {
           Short URL Generator
         </h3>
         <div className="mt-5 flex flex-wrap gap-6 justify-center  ">
-          <div className="bg-[#1a1c2e] w-full min-w-min p-5 items-center space-y-4">
+          <div className="bg-[#1a1c2e] w-full min-w-min p-5 items-center space-y-4 rounded-md">
             <input
               type="text"
               placeholder="Enter the original URL"
@@ -72,13 +73,10 @@ const ShortUrl = () => {
               onChange={(e) => setOriginalUrl(e.target.value)}
               autoComplete="off"
             />
-            <button
-              className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700"
+            <PrimaryButton
               onClick={handleGenerateShortUrl}
-              disabled={isLoading}
-            >
-              {isLoading ? "Generating..." : "Generate Short URL"}
-            </button>
+              text={`${isLoading ? "Generating..." : "Generate Short URL"}`}
+            />
 
             {shortUrl && (
               <div className="flex my-5 flex-wrap">

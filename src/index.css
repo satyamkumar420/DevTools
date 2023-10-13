@@ -35,7 +35,7 @@ a:hover {
   /* width: 5px;
   border-radius: 5px;
   background: #161725; */
-  display: none;
+  /* display: none; */
 }
 
 * {
@@ -54,34 +54,16 @@ html {
   font-family: 'Poppins', 'Noto Color Emoji', sans-serif;
 }
 
-/* Set the scrollbar color (optional) */
+
 *::-webkit-scrollbar {
-  width: 12px;
-  /* Adjust the width as needed */
+  width: 7px;
+  height: 7px;
+  border-radius: 10px;
+
 }
 
 *::-webkit-scrollbar-thumb {
-  background-color: #333;
-  /* Adjust the color as needed */
-  border-radius: 6px;
-  /* Adjust the radius as needed */
-}
-
-/* 
-::-webkit-scrollbar-thumb {
-  background: #2f3263;
+  background-color: #3d4157;
   border-radius: 10px;
+
 }
-
-
-/* Track */
-/* ::-webkit-scrollbar-track {
-  background: #232538;
-} */
-
-
-
-/* Handle on hover */
-/* ::-webkit-scrollbar-thumb:hover {
-  background: #4a4c85;
-}  */

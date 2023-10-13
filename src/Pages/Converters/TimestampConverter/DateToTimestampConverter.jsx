@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { toast } from "react-toastify";
 import { toastStyleError } from "../../../Components/utils/Toastify/toastStyle";
+import PrimaryButton from "../../../Components/utils/Button/PrimaryButton";
 
 const DateToTimestampConverter = () => {
   const [inputDate, setInputDate] = useState("");
@@ -69,12 +70,7 @@ const DateToTimestampConverter = () => {
             />
           </div>
           <div className="mb-4">
-            <button
-              onClick={convertToTimestamp}
-              className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-md"
-            >
-              Convert
-            </button>
+            <PrimaryButton onClick={convertToTimestamp} text={"Convert"} />
           </div>
           {timestamp !== null && (
             <p className="text-green-600">

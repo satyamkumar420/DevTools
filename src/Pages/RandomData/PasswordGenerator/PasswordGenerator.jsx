@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { toastStyleSuccess } from "../../../Components/utils/Toastify/toastStyle";
 import { toast } from "react-toastify";
+import PrimaryButton from "../../../Components/utils/Button/PrimaryButton";
 
 const PasswordGenerator = () => {
   const [password, setPassword] = useState("");
@@ -96,12 +97,10 @@ const PasswordGenerator = () => {
               className="range accent-blue-700 bg-[#1a1c2e] rounded w-full cursor-pointer"
             />
           </div>
-          <button
+          <PrimaryButton
             onClick={generatePassword}
-            className="bg-blue-500 hover:bg-blue-700 text-blue-50 px-4 py-2 rounded "
-          >
-            Generate Password
-          </button>
+            text={`Generate Password`}
+          />
           {loading && (
             <div className="mt-4 mb-2">
               <h3 className=" font-medium  text-gray-400">

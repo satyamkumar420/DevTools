@@ -1,5 +1,6 @@
 import { toast } from "react-toastify";
 import { toastStyleSuccess } from "../../../Components/utils/Toastify/toastStyle";
+import PrimaryButton from "../../../Components/utils/Button/PrimaryButton";
 
 const options = ({
   paragraphs,
@@ -44,7 +45,7 @@ const options = ({
           }}
           autoComplete="off"
           min="1"
-          className="text-lg py-2 px-5 rounded outline-none bg-[#1a1c2e] shadow-md text-orange-500 w-52"
+          className="text-lg py-2 px-5 rounded outline-none bg-[#1a1c2e] shadow-md text-orange-500 w-52 appearance-none"
         />
       </div>
       <div className="">
@@ -79,12 +80,17 @@ const options = ({
         </select>
       </div>
       <div className="flex justify-end">
-        <button
+        {/* <button
           className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700 mt-7 w-52 transition-all ease-in-out hover:font-semibold"
           onClick={handleCopy}
         >
           Copy Text
-        </button>
+        </button> */}
+        <PrimaryButton
+          onClick={handleCopy}
+          text="Copy Text"
+          className={"w-52 px-4 py-2 mt-7"}
+        />
       </div>
     </div>
   );

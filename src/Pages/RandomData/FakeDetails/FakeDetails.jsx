@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { faker } from "@faker-js/faker";
+import Loader from "../../../Components/utils/Loader/Loader";
+import PrimaryButton from "../../../Components/utils/Button/PrimaryButton";
 
 const FakeDetails = () => {
   const [details, setDetails] = useState({
@@ -28,7 +30,6 @@ const FakeDetails = () => {
       address: faker.location.streetAddress(),
       company: faker.company.name(),
       website: faker.internet.url(),
-      // TODO how to get only phone number
       phone: faker.phone.number(),
       country: faker.location.country(),
       city: faker.location.city(),
@@ -45,72 +46,75 @@ const FakeDetails = () => {
         </h3>
         <div className="mt-5 items-center">
           <div className="mx-auto justify-start flex gap-3 flex-wrap flex-shrink  ">
-            <button
+            <PrimaryButton
+              text="Generate Fake Details"
               onClick={generateDetails}
-              className="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded"
-            >
-              Generate
-            </button>
+            />
           </div>
-          <div className=" max-w-screen-sm  items-center py-4 px-3 rounded my-5 bg-[#1a1c2e] shadow-lg">
-            <div className="flex justify-center mt-5">
-              <img
-                src={details.profileImage}
-                alt="ProfileLogo"
-                className="rounded-full w-14 sm:w-24 text-center"
-              />
+          {/* TODO: if content not show then show loader component */}
+          {Object.keys(details).length === 0 ? (
+            <Loader />
+          ) : (
+            <div className=" max-w-screen-sm  items-center py-4 px-3 rounded my-5 bg-[#1a1c2e] shadow-lg">
+              <div className="flex justify-center mt-5">
+                <img
+                  src={details.profileImage}
+                  alt="ProfileLogo"
+                  className="rounded-full w-14 sm:w-24 text-center"
+                />
+              </div>
+              <div className="mt-5 px-4">
+                <div className="px-2 mb-4 text-sm sm:text-base flex flex-wrap gap-2 border-1 border-b-2 rounded-sm border-gray-500">
+                  <div className="font-bold"> Name:</div>
+                  <div className="text-blue-300"> {details.randomName}</div>
+                </div>
+                <div className="px-2 mb-4 text-sm sm:text-base flex flex-wrap gap-2 border-1 border-b-2 rounded-sm border-gray-500">
+                  <div className="font-bold"> Bio:</div>
+                  <div className="text-blue-300"> {details.bio}</div>
+                </div>
+                <div className="mb-4 px-2 text-sm sm:text-base flex flex-wrap gap-2 border-1 border-b-2 rounded-sm border-gray-500">
+                  <div className="font-bold text-base"> Email:</div>
+                  <div className="text-blue-300"> {details.randomEmail}</div>
+                </div>
+                <div className="mb-4 px-2 text-sm sm:text-base flex flex-wrap gap-2 border-1 border-b-2 rounded-sm border-gray-500">
+                  <div className="font-bold">Password:</div>
+                  <div className="text-blue-300"> {details.randomPassword}</div>
+                </div>
+                <div className="mb-4 px-2 text-sm sm:text-base flex flex-wrap gap-2 border-1 border-b-2 rounded-sm border-gray-500">
+                  <div className="font-bold">Street Address:</div>
+                  <div className="text-blue-300"> {details.address}</div>
+                </div>
+                <div className="mb-4 px-2 text-sm sm:text-base flex flex-wrap gap-2 border-1 border-b-2 rounded-sm border-gray-500">
+                  <div className="font-bold"> Company:</div>
+                  <div className="text-blue-300"> {details.company}</div>
+                </div>
+                <div className="mb-4 px-2 text-sm sm:text-base flex flex-wrap gap-2 border-1 border-b-2 rounded-sm border-gray-500">
+                  <div className="font-bold">Website:</div>
+                  <div className="text-blue-300"> {details.website}</div>
+                </div>
+                <div className="mb-4 px-2 text-sm sm:text-base flex flex-wrap gap-2 border-1 border-b-2 rounded-sm border-gray-500">
+                  <div className="font-bold">Phone:</div>
+                  <div className="text-blue-300"> {details.phone}</div>
+                </div>
+                <div className="mb-4 px-2 text-sm sm:text-base flex flex-wrap gap-2 border-1 border-b-2 rounded-sm border-gray-500">
+                  <div className="font-bold">PIN Code:</div>
+                  <div className="text-blue-300">{details.Pin}</div>
+                </div>
+                <div className="mb-4 px-2 text-sm sm:text-base flex flex-wrap gap-2 border-1 border-b-2 rounded-sm border-gray-500">
+                  <div className="font-bold">City:</div>
+                  <div className="text-blue-300">{details.city}</div>
+                </div>
+                <div className="mb-4 px-2 text-sm sm:text-base flex flex-wrap gap-2 border-1 border-b-2 rounded-sm border-gray-500">
+                  <div className="font-bold">State:</div>
+                  <div className="text-blue-300">{details.state}</div>
+                </div>
+                <div className="mb-4 px-2 text-sm sm:text-base flex flex-wrap gap-2 border-1 border-b-2 rounded-sm border-gray-500">
+                  <div className="font-bold">Country:</div>
+                  <div className="text-blue-300">{details.country}</div>
+                </div>
+              </div>
             </div>
-            <div className="mt-5 px-4">
-              <div className="px-2 mb-4 text-sm sm:text-base flex flex-wrap gap-2 border-1 border-b-2 rounded-sm border-gray-500">
-                <div className="font-bold"> Name:</div>
-                <div className="text-blue-300"> {details.randomName}</div>
-              </div>
-              <div className="px-2 mb-4 text-sm sm:text-base flex flex-wrap gap-2 border-1 border-b-2 rounded-sm border-gray-500">
-                <div className="font-bold"> Bio:</div>
-                <div className="text-blue-300"> {details.bio}</div>
-              </div>
-              <div className="mb-4 px-2 text-sm sm:text-base flex flex-wrap gap-2 border-1 border-b-2 rounded-sm border-gray-500">
-                <div className="font-bold text-base"> Email:</div>
-                <div className="text-blue-300"> {details.randomEmail}</div>
-              </div>
-              <div className="mb-4 px-2 text-sm sm:text-base flex flex-wrap gap-2 border-1 border-b-2 rounded-sm border-gray-500">
-                <div className="font-bold">Password:</div>
-                <div className="text-blue-300"> {details.randomPassword}</div>
-              </div>
-              <div className="mb-4 px-2 text-sm sm:text-base flex flex-wrap gap-2 border-1 border-b-2 rounded-sm border-gray-500">
-                <div className="font-bold">Street Address:</div>
-                <div className="text-blue-300"> {details.address}</div>
-              </div>
-              <div className="mb-4 px-2 text-sm sm:text-base flex flex-wrap gap-2 border-1 border-b-2 rounded-sm border-gray-500">
-                <div className="font-bold"> Company:</div>
-                <div className="text-blue-300"> {details.company}</div>
-              </div>
-              <div className="mb-4 px-2 text-sm sm:text-base flex flex-wrap gap-2 border-1 border-b-2 rounded-sm border-gray-500">
-                <div className="font-bold">Website:</div>
-                <div className="text-blue-300"> {details.website}</div>
-              </div>
-              <div className="mb-4 px-2 text-sm sm:text-base flex flex-wrap gap-2 border-1 border-b-2 rounded-sm border-gray-500">
-                <div className="font-bold">Phone:</div>
-                <div className="text-blue-300"> {details.phone}</div>
-              </div>
-              <div className="mb-4 px-2 text-sm sm:text-base flex flex-wrap gap-2 border-1 border-b-2 rounded-sm border-gray-500">
-                <div className="font-bold">PIN Code:</div>
-                <div className="text-blue-300">{details.Pin}</div>
-              </div>
-              <div className="mb-4 px-2 text-sm sm:text-base flex flex-wrap gap-2 border-1 border-b-2 rounded-sm border-gray-500">
-                <div className="font-bold">City:</div>
-                <div className="text-blue-300">{details.city}</div>
-              </div>
-              <div className="mb-4 px-2 text-sm sm:text-base flex flex-wrap gap-2 border-1 border-b-2 rounded-sm border-gray-500">
-                <div className="font-bold">State:</div>
-                <div className="text-blue-300">{details.state}</div>
-              </div>
-              <div className="mb-4 px-2 text-sm sm:text-base flex flex-wrap gap-2 border-1 border-b-2 rounded-sm border-gray-500">
-                <div className="font-bold">Country:</div>
-                <div className="text-blue-300">{details.country}</div>
-              </div>
-            </div>
-          </div>
+          )}
         </div>
         <div className="mt-10">
           <div className="border-l-4 border-l-purple-500 p-2 text-sm sm:text-lg bg-[#1a1c2e]">

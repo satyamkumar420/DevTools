@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { toast } from "react-toastify";
 import { toastStyleSuccess } from "../../Components/utils/Toastify/toastStyle";
+import PrimaryButton from "../../Components/utils/Button/PrimaryButton";
 
 const ColorPicker = () => {
   const [color, setColor] = useState("#00ffd5");
@@ -100,12 +101,10 @@ const ColorPicker = () => {
                 {rgbColor}
               </div>
               <div className="mt-10">
-                <button
-                  className="px-3 py-1 text-blue-50 bg-blue-500 hover:bg-blue-700  rounded"
+                <PrimaryButton
                   onClick={() => handleCopyClick(rgbColor)}
-                >
-                  Copy
-                </button>
+                  text={"Copy"}
+                />
               </div>
             </div>
             <div className="shadow-lg min-w-[170px] min-h-[200px] text-center bg-[#1a1c2e] rounded">
@@ -120,12 +119,10 @@ const ColorPicker = () => {
               </div>
 
               <div className="mt-10">
-                <button
-                  className="px-3 py-1 text-blue-50 bg-blue-500 hover:bg-blue-700  rounded"
+                <PrimaryButton
                   onClick={() => handleCopyClick(hslColor)}
-                >
-                  Copy
-                </button>
+                  text={"Copy"}
+                />
               </div>
             </div>
             <div className="shadow-lg min-w-[170px] min-h-[200px] text-center bg-[#1a1c2e] rounded">
@@ -139,12 +136,10 @@ const ColorPicker = () => {
                 {color}
               </div>
               <div className="mt-10">
-                <button
-                  className="px-3 py-1 text-blue-50 bg-blue-500 hover:bg-blue-700  rounded"
+                <PrimaryButton
                   onClick={() => handleCopyClick(color)}
-                >
-                  Copy
-                </button>
+                  text={"Copy"}
+                />
               </div>
             </div>
           </div>

@@ -3,6 +3,8 @@ import Options from "./Options";
 import OutputText from "./OutputText";
 import { toast } from "react-toastify";
 import { toastStyleError } from "../../../Components/utils/Toastify/toastStyle";
+import lodash from "lodash";
+import { faker } from "@faker-js/faker";
 
 const TextGenerator = () => {
   const [paragraphs, setParagraphs] = useState([]);
@@ -11,23 +13,25 @@ const TextGenerator = () => {
   const [includeHtml, setIncludeHtml] = useState(false);
 
   useEffect(() => {
-    // TODO: how can api protected be used?
-    const fetchData = async () => {
+    const generateRandomText = () => {
       try {
-        const response = await fetch(
-          `https://baconipsum.com/api/?type=all-meat&paras=${inputValue}&start-with-lorem=1`,
-          {
-            mode: "cors", // Add this line for cross-origin support
-          }
+        // Generate random text using faker
+        const randomText = Array.from({ length: inputValue }, () =>
+          faker.lorem.paragraph()
         );
-        const data = await response.json();
-        setParagraphs(data);
+
+        // Use Lodash to manipulate the data
+        const modifiedData = lodash.map(randomText, (item) => {
+          return lodash.capitalize(item);
+        });
+
+        setParagraphs(modifiedData);
       } catch (error) {
         toast("Something went wrong!", { style: toastStyleError });
       }
     };
 
-    fetchData();
+    generateRandomText();
   }, [inputValue]);
 
   return (
