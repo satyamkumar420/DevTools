@@ -65,16 +65,18 @@ const JsonFormat = () => {
           languages={languages}
           placeholder="Enter JSON code here"
         />
-        <div className="flex flex-wrap gap-2 mb-10 justify-center sm:justify-start">
-          <PrimaryButton onClick={handleFormatClick} text="Format" />
-          <PrimaryButton onClick={handleCopyClick} text="Copy" />
-        </div>
+        {jsonText && (
+          <div className="flex flex-wrap gap-2 mb-10 justify-center sm:justify-start">
+            <PrimaryButton onClick={handleFormatClick} text="Format" />
+            <PrimaryButton onClick={handleCopyClick} text="Copy" />
+          </div>
+        )}
         <div className="mt-10">
           <div className="text-left border-l-4 border-l-purple-500 p-2 text-sm sm:text-lg bg-[#1a1c2e]">
             <span className="text-blue-300">
-              🙋‍♂️ Hey there. If you need to format JSON code, we've got you
+              👋 Hey there. If you need to format JSON code, we've got you
               covered with an Awesome tool! It's super easy to use and you can
-              copy the code with just one click!
+              copy the code with just one click! 😊
             </span>
           </div>
         </div>

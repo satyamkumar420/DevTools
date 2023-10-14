@@ -1,6 +1,8 @@
+import { useState } from "react";
 import CodeMirror from "@uiw/react-codemirror";
 import { createTheme } from "@uiw/codemirror-themes";
 import { tags as t } from "@lezer/highlight";
+import Loader from "../utils/Loader/Loader";
 
 const myTheme = createTheme({
   theme: "dark",
@@ -40,26 +42,30 @@ const myTheme = createTheme({
   ],
 });
 
-// const languages = [javascript({ jsx: true })];
-
 const CodeEditor = ({ value, onChange, languages, placeholder }) => {
+  const [isLoading, setIsLoading] = useState(false);
+
   const customStyles = {
     fontSize: "18px",
   };
 
   return (
-    <div className="my-4 overflow-hidden rounded-md shadow-md p-2 bg-[#1a1c2e]">
-      <CodeMirror
-        value={value}
-        height="60vh"
-        theme={myTheme}
-        extensions={languages}
-        onChange={onChange}
-        style={customStyles}
-        placeholder={placeholder}
-        security="true"
-      />
-    </div>
+    <>
+      {isLoading && <Loader />}
+      <div className="my-4 overflow-hidden rounded-md shadow-md p-2 bg-[#1a1c2e]">
+        <CodeMirror
+          value={value}
+          height="60vh"
+          theme={myTheme}
+          extensions={languages}
+          onChange={onChange}
+          style={customStyles}
+          placeholder={placeholder}
+          security="true"
+          onLoad={() => setIsLoading(false)}
+        />
+      </div>
+    </>
   );
 };
 
