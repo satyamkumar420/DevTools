@@ -86,6 +86,16 @@ const JsonToXml = () => {
             <PrimaryButton onClick={handleCopyClick} text="Copy" />
           </div>
         </div>
+        <div className="mt-10">
+          <div className="text-left border-l-4 border-l-purple-500 p-2 text-sm sm:text-lg bg-[#1a1c2e]">
+            <span className="text-blue-300">
+              🙋‍♂️ Hey there! If you need to convert JSON to XML, we've got you
+              covered with our awesome tool! It's super easy to use and you can
+              copy the code with just one click! So go ahead and give it a try -
+              we promise it'll be a hassle-free experience!
+            </span>
+          </div>
+        </div>
       </div>
     </div>
   );

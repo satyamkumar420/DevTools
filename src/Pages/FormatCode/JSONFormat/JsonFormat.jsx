@@ -69,6 +69,15 @@ const JsonFormat = () => {
           <PrimaryButton onClick={handleFormatClick} text="Format" />
           <PrimaryButton onClick={handleCopyClick} text="Copy" />
         </div>
+        <div className="mt-10">
+          <div className="text-left border-l-4 border-l-purple-500 p-2 text-sm sm:text-lg bg-[#1a1c2e]">
+            <span className="text-blue-300">
+              🙋‍♂️ Hey there. If you need to format JSON code, we've got you
+              covered with an Awesome tool! It's super easy to use and you can
+              copy the code with just one click!
+            </span>
+          </div>
+        </div>
       </div>
     </div>
   );

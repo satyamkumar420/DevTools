@@ -5,6 +5,7 @@ import PrimaryButton from "../../../Components/utils/Button/PrimaryButton";
 
 const FakeDetails = () => {
   const [details, setDetails] = useState({
+    // Initial data
     profileImage: faker.image.avatar(),
     randomName: faker.person.fullName(),
     bio: faker.person.bio(),
@@ -20,23 +21,45 @@ const FakeDetails = () => {
     Pin: faker.finance.pin(6),
   });
 
+  const [isLoading, setIsLoading] = useState(false);
+
   const generateDetails = () => {
-    setDetails({
-      profileImage: faker.image.avatar(),
-      randomName: faker.person.fullName(),
-      bio: faker.person.bio(),
-      randomEmail: faker.internet.email(),
-      randomPassword: faker.internet.password(),
-      address: faker.location.streetAddress(),
-      company: faker.company.name(),
-      website: faker.internet.url(),
-      phone: faker.phone.number(),
-      country: faker.location.country(),
-      city: faker.location.city(),
-      state: faker.location.state(),
-      Pin: faker.finance.pin(6),
-    });
+    setIsLoading(true);
+
+    setTimeout(() => {
+      setDetails({
+        profileImage: faker.image.avatar(),
+        randomName: faker.person.fullName(),
+        bio: faker.person.bio(),
+        randomEmail: faker.internet.email(),
+        randomPassword: faker.internet.password(),
+        address: faker.location.streetAddress(),
+        company: faker.company.name(),
+        website: faker.internet.url(),
+        phone: faker.phone.number(),
+        country: faker.location.country(),
+        city: faker.location.city(),
+        state: faker.location.state(),
+        Pin: faker.finance.pin(6),
+      });
+      setIsLoading(false);
+    }, 1000);
   };
+
+  const detailItems = [
+    { label: "Name:", value: details.randomName },
+    { label: "Bio:", value: details.bio },
+    { label: "Email:", value: details.randomEmail },
+    { label: "Password:", value: details.randomPassword },
+    { label: "Street Address:", value: details.address },
+    { label: "Company:", value: details.company },
+    { label: "Website:", value: details.website },
+    { label: "Phone:", value: details.phone },
+    { label: "PIN Code:", value: details.Pin },
+    { label: "City:", value: details.city },
+    { label: "State:", value: details.state },
+    { label: "Country:", value: details.country },
+  ];
 
   return (
     <div className="p-4 sm:ml-52 text-justify max-w-screen-full overflow-y-auto max-h-screen">
@@ -49,13 +72,13 @@ const FakeDetails = () => {
             <PrimaryButton
               text="Generate Fake Details"
               onClick={generateDetails}
+              className="py-2"
             />
           </div>
-          {/* TODO: if content not show then show loader component */}
-          {Object.keys(details).length === 0 ? (
+          {isLoading ? (
             <Loader />
           ) : (
-            <div className=" max-w-screen-sm  items-center py-4 px-3 rounded my-5 bg-[#1a1c2e] shadow-lg">
+            <div className="max-w-screen-sm items-center py-4 px-3 rounded my-5 bg-[#1a1c2e] shadow-lg">
               <div className="flex justify-center mt-5">
                 <img
                   src={details.profileImage}
@@ -64,54 +87,15 @@ const FakeDetails = () => {
                 />
               </div>
               <div className="mt-5 px-4">
-                <div className="px-2 mb-4 text-sm sm:text-base flex flex-wrap gap-2 border-1 border-b-2 rounded-sm border-gray-500">
-                  <div className="font-bold"> Name:</div>
-                  <div className="text-blue-300"> {details.randomName}</div>
-                </div>
-                <div className="px-2 mb-4 text-sm sm:text-base flex flex-wrap gap-2 border-1 border-b-2 rounded-sm border-gray-500">
-                  <div className="font-bold"> Bio:</div>
-                  <div className="text-blue-300"> {details.bio}</div>
-                </div>
-                <div className="mb-4 px-2 text-sm sm:text-base flex flex-wrap gap-2 border-1 border-b-2 rounded-sm border-gray-500">
-                  <div className="font-bold text-base"> Email:</div>
-                  <div className="text-blue-300"> {details.randomEmail}</div>
-                </div>
-                <div className="mb-4 px-2 text-sm sm:text-base flex flex-wrap gap-2 border-1 border-b-2 rounded-sm border-gray-500">
-                  <div className="font-bold">Password:</div>
-                  <div className="text-blue-300"> {details.randomPassword}</div>
-                </div>
-                <div className="mb-4 px-2 text-sm sm:text-base flex flex-wrap gap-2 border-1 border-b-2 rounded-sm border-gray-500">
-                  <div className="font-bold">Street Address:</div>
-                  <div className="text-blue-300"> {details.address}</div>
-                </div>
-                <div className="mb-4 px-2 text-sm sm:text-base flex flex-wrap gap-2 border-1 border-b-2 rounded-sm border-gray-500">
-                  <div className="font-bold"> Company:</div>
-                  <div className="text-blue-300"> {details.company}</div>
-                </div>
-                <div className="mb-4 px-2 text-sm sm:text-base flex flex-wrap gap-2 border-1 border-b-2 rounded-sm border-gray-500">
-                  <div className="font-bold">Website:</div>
-                  <div className="text-blue-300"> {details.website}</div>
-                </div>
-                <div className="mb-4 px-2 text-sm sm:text-base flex flex-wrap gap-2 border-1 border-b-2 rounded-sm border-gray-500">
-                  <div className="font-bold">Phone:</div>
-                  <div className="text-blue-300"> {details.phone}</div>
-                </div>
-                <div className="mb-4 px-2 text-sm sm:text-base flex flex-wrap gap-2 border-1 border-b-2 rounded-sm border-gray-500">
-                  <div className="font-bold">PIN Code:</div>
-                  <div className="text-blue-300">{details.Pin}</div>
-                </div>
-                <div className="mb-4 px-2 text-sm sm:text-base flex flex-wrap gap-2 border-1 border-b-2 rounded-sm border-gray-500">
-                  <div className="font-bold">City:</div>
-                  <div className="text-blue-300">{details.city}</div>
-                </div>
-                <div className="mb-4 px-2 text-sm sm:text-base flex flex-wrap gap-2 border-1 border-b-2 rounded-sm border-gray-500">
-                  <div className="font-bold">State:</div>
-                  <div className="text-blue-300">{details.state}</div>
-                </div>
-                <div className="mb-4 px-2 text-sm sm:text-base flex flex-wrap gap-2 border-1 border-b-2 rounded-sm border-gray-500">
-                  <div className="font-bold">Country:</div>
-                  <div className="text-blue-300">{details.country}</div>
-                </div>
+                {detailItems.map((item, index) => (
+                  <div
+                    key={index}
+                    className="px-2 mb-4 text-sm sm:text-base flex flex-wrap gap-2 border-1 border-b-2 rounded-sm border-gray-500"
+                  >
+                    <div className="font-bold">{item.label}</div>
+                    <div className="text-blue-300">{item.value}</div>
+                  </div>
+                ))}
               </div>
             </div>
           )}
@@ -119,10 +103,9 @@ const FakeDetails = () => {
         <div className="mt-10">
           <div className="border-l-4 border-l-purple-500 p-2 text-sm sm:text-lg bg-[#1a1c2e]">
             <span className="text-blue-300">
-              With just a simple refresh of the page, this powerful tool creates
-              unique personal details such as name, email, password, address,
-              bio, and country. Enjoy the convenience and efficiency of this
-              amazing feature.
+              🙋‍♂️ Hey there! If you're looking to generate some random fake
+              details, just click on the button and let me take care of the rest
+              for you. It's super easy!
             </span>
           </div>
         </div>
