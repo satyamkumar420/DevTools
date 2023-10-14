@@ -13,6 +13,7 @@ const JsonFormat = () => {
   const [formattedJson, setFormattedJson] = useState("");
   const [showJsonEditor, setShowJsonEditor] = useState(false);
   const languages = [json()];
+  const [required, setRequired] = useState(false);
 
   const handleFormatClick = () => {
     if (!jsonText) {
@@ -24,6 +25,7 @@ const JsonFormat = () => {
       const formatted = JSON.stringify(parsedJson, null, 4);
       setFormattedJson(formatted);
       setShowJsonEditor(true);
+      setRequired(true);
     } catch (error) {
       toast("Please enter valid json!", { style: toastStyleError });
     }
@@ -53,6 +55,14 @@ const JsonFormat = () => {
     }
   };
 
+  // handle reset editor
+  const handleResetEditor = () => {
+    setShowJsonEditor(false);
+    setFormattedJson("");
+    setJsonText("");
+    setRequired(false);
+  };
+
   return (
     <div className="p-4 sm:ml-52   max-w-screen-xl overflow-y-auto max-h-screen">
       <div className="my-20 max-w-screen-lg">
@@ -63,12 +73,18 @@ const JsonFormat = () => {
           value={showJsonEditor ? formattedJson : jsonText}
           onChange={handleEditorChange}
           languages={languages}
-          placeholder="Enter JSON code here"
+          placeholder="Enter JSON here"
+          required={required}
         />
         {jsonText && (
           <div className="flex flex-wrap gap-2 mb-10 justify-center sm:justify-start">
             <PrimaryButton onClick={handleFormatClick} text="Format" />
             <PrimaryButton onClick={handleCopyClick} text="Copy" />
+            <PrimaryButton
+              onClick={handleResetEditor}
+              text="Reset"
+              className={"bg-orange-600 hover:bg-orange-800"}
+            />
           </div>
         )}
         <div className="mt-10">

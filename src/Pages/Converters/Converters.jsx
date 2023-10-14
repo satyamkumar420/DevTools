@@ -16,6 +16,12 @@ const Converters = () => {
       icon: <IconXml className="text-pink-600" />,
       className: "p-2 grid place-items-center",
     },
+    {
+      to: "/converters/xml-to-json",
+      text: "XML To JSON",
+      icon: <IconXml className="text-red-600" />,
+      className: "p-2 grid place-items-center",
+    },
   ];
   return (
     <div className="p-4 sm:ml-52 text-justify max-w-screen-full overflow-y-auto max-h-screen">

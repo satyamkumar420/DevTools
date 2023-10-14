@@ -1,31 +1,19 @@
 export function jsonToXml(json, indent = "") {
   let xml = "";
-
   for (const key in json) {
     if (json.hasOwnProperty(key)) {
       const value = json[key];
 
-      // Check if the key is a numeric index
-      const isNumericIndex = /^[0-9]+$/.test(key);
-
-      if (!isNumericIndex) {
-        xml += `${indent}<${key}>`;
-
-        if (typeof value === "object") {
-          xml += "\n"; // Add a line break for nested elements
-          xml += jsonToXml(value, indent + "  "); // Increase the indentation for nested elements
-          xml += `${indent}`;
-        } else {
-          xml += value; // Convert primitive values to text
-        }
-
-        xml += `</${key}>\n`; // Close the element and add a line break
+      if (Array.isArray(value)) {
+        xml += value.map((item) => jsonToXml({ [key]: item }, indent)).join("");
+      } else if (typeof value === "object") {
+        xml += `${indent}<${key}>\n`;
+        xml += jsonToXml(value, indent + "\t\t");
+        xml += `${indent}</${key}>\n`;
       } else {
-        // If it's a numeric index, just process the value recursively
-        xml += jsonToXml(value, indent);
+        xml += `${indent}<${key}>${value}</${key}>\n`;
       }
     }
   }
-
   return xml;
 }

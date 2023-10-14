@@ -60,6 +60,7 @@ const TimestampConverter = lazy(() =>
   import("./Pages/Converters/TimestampConverter/TimestampConverter")
 );
 const JsonToXml = lazy(() => import("./Pages/Converters/JsonToXml/JsonToXml"));
+const XmlToJson = lazy(() => import("./Pages/Converters/XmlToJson/XmlToJson"));
 
 // Lazy-loaded route components 'About'
 const About = lazy(() => import("./Pages/About/About"));
@@ -138,6 +139,7 @@ function App() {
             element={<TimestampConverter />}
           />
           <Route path="/converters/json-to-xml" element={<JsonToXml />} />
+          <Route path="/converters/xml-to-json" element={<XmlToJson />} />
 
           {/* Here are the routes for 'Random Data' */}
           <Route path="/random-data" element={<RandomData />} />

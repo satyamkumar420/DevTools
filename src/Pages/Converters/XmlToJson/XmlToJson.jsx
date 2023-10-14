@@ -2,7 +2,7 @@ import { useState } from "react";
 import { json } from "@codemirror/lang-json";
 import { xml } from "@codemirror/lang-xml";
 import CodeEditor from "../../../Components/CodeEditor/CodeEditor";
-import { jsonToXml } from "./json_to_xml";
+// import { xmlToJson } from "./xml_to_json"; // You will need to implement xmlToJson
 import { toast } from "react-toastify";
 import {
   toastStyleError,
@@ -10,58 +10,51 @@ import {
 } from "../../../Components/utils/Toastify/toastStyle";
 import PrimaryButton from "../../../Components/utils/Button/PrimaryButton";
 
-const JsonToXml = () => {
-  const [jsonInput, setJsonInput] = useState(""); // JSON input
-  const [xmlValue, setXmlValue] = useState("");
-  const [showXmlEditor, setShowXmlEditor] = useState(false);
-  const [languageMode, setLanguageMode] = useState(json());
+const XmlToJson = () => {
+  const [xmlInput, setXmlInput] = useState(""); // XML input
+  const [jsonValue, setJsonValue] = useState("");
+  const [showJsonEditor, setShowJsonEditor] = useState(false);
+  const [languageMode, setLanguageMode] = useState(xml());
   const [required, setRequired] = useState(false);
 
-  // Event handler to update state when the user types JSON input
-  const handleJsonInputChange = (newValue) => {
-    setJsonInput(newValue);
-    setLanguageMode(json());
+  // Event handler to update state when the user types XML input
+  const handleXmlInputChange = (newValue) => {
+    setXmlInput(newValue);
+    setShowJsonEditor(false);
+    setLanguageMode(xml());
+    setJsonValue("");
   };
 
   // Event handler for the "Start Over" button
   const handleConvertClick = () => {
-    // Convert JSON to XML
+    // Convert XML to JSON
     try {
-      const jsonData = JSON.parse(jsonInput);
-      const xmlData = jsonToXml(jsonData);
-      const xmlValue = `<?xml version="1.0" encoding="UTF-8"?>\n${xmlData}`;
-      setLanguageMode(xml());
-      setXmlValue(xmlValue);
-      setShowXmlEditor(true);
-      setRequired(true);
+      const parser = new DOMParser();
+      const xmlDoc = parser.parseFromString(xmlInput, "text/xml");
+      const jsonValue = JSON.stringify(xmlToJson(xmlDoc), null, 4);
+      setLanguageMode(json());
+      setJsonValue(jsonValue);
+      setShowJsonEditor(true);
     } catch (error) {
-      toast("JSON is not valid!", { style: toastStyleError });
+      toast("XML is not valid!", { style: toastStyleError });
     }
-  };
-
-  // handle Reset Editor
-  const handleResetEditor = () => {
-    setShowXmlEditor(false);
-    setXmlValue("");
-    setRequired(false);
-    setJsonInput("");
   };
 
   // handle copy
   const handleCopyClick = () => {
-    if (xmlValue) {
+    if (jsonValue) {
       if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard
-          .writeText(xmlValue)
+          .writeText(jsonValue)
           .then(() => {
-            toast(`XML Data is Copied!`, { style: toastStyleSuccess });
+            toast(`JSON Data is Copied!`, { style: toastStyleSuccess });
           })
           .catch((error) => {
             console.error("Error copying to clipboard:", error);
-            fallbackCopyToClipboard(xmlValue);
+            fallbackCopyToClipboard(jsonValue);
           });
       } else {
-        fallbackCopyToClipboard(xmlValue);
+        fallbackCopyToClipboard(jsonValue);
       }
     }
   };
@@ -74,31 +67,39 @@ const JsonToXml = () => {
     textarea.select();
     document.execCommand("copy");
     document.body.removeChild(textarea);
-    toast(`XML Data is Copied!`, { style: toastStyleSuccess });
+    toast(`JSON Data is Copied!`, { style: toastStyleSuccess });
   }
+
+  // handle Reset Editor
+  const handleResetEditor = () => {
+    setShowJsonEditor(false);
+    setJsonValue("");
+    setXmlInput("");
+    setRequired(false);
+  };
 
   return (
     <div className="p-4 sm:ml-52 text-justify max-w-screen-full overflow-y-auto max-h-screen">
       <div className="my-20  max-w-screen-lg">
         <h3 className="p-2 rounded text-lg sm:text-2xl text-yellow-500 w-full bg-[#1a1c2e]">
-          JSON To XML Converter
+          XML To JSON Converter
         </h3>
         <div>
           <CodeEditor
-            value={showXmlEditor ? xmlValue : jsonInput}
-            onChange={handleJsonInputChange}
-            placeholder={"Enter JSON code here to convert to XML"}
+            value={showJsonEditor ? jsonValue : xmlInput}
+            onChange={handleXmlInputChange}
+            placeholder={"Enter XML code here to convert to JSON"}
             languages={languageMode}
             required={required}
           />
-          {jsonInput && (
+          {xmlInput && (
             <div className="flex flex-wrap gap-2 mb-10 justify-center sm:justify-start">
               <PrimaryButton onClick={handleConvertClick} text="Convert" />
               <PrimaryButton onClick={handleCopyClick} text="Copy" />
               <PrimaryButton
                 onClick={handleResetEditor}
                 text="Reset"
-                className={"bg-orange-700 hover:bg-orange-800"}
+                className="bg-orange-700 hover:bg-orange-800"
               />
             </div>
           )}
@@ -106,11 +107,10 @@ const JsonToXml = () => {
         <div className="mt-10">
           <div className="text-left border-l-4 border-l-purple-500 p-2 text-sm sm:text-lg bg-[#1a1c2e]">
             <span className="text-blue-300">
-              👋 Hello there! Looking to convert your JSON to XML? Great news!
-              Our fantastic tool is here to assist you effortlessly. It's
-              incredibly user-friendly, and with just a single click, you can
-              copy the code and convert it. Don't hesitate to give it a try –
-              we're confident you'll love the experience! 😄
+              🙋‍♂️ Hey there! If you need to convert XML to JSON, we've got you
+              covered with our awesome tool! It's super easy to use, and you can
+              copy the code with just one click. So go ahead and give it a try -
+              we promise it'll be a hassle-free experience!
             </span>
           </div>
         </div>
@@ -119,4 +119,4 @@ const JsonToXml = () => {
   );
 };
 
-export default JsonToXml;
+export default XmlToJson;
