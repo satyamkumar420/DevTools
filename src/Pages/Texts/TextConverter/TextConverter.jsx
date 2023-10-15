@@ -201,23 +201,23 @@ const TextConverter = () => {
           </div>
         </div>
         <div className="mt-10">
-          <div className="text-left border-l-4 border-l-purple-500 p-2 text-sm sm:text-lg bg-[#1a1c2e]">
+          <div className="text-left border-l-4 border-l-purple-500 p-2 text-sm sm:text-base bg-[#1a1c2e]">
             <span className="text-blue-300">
-              <ul>
-                <li className="flex flex-wrap">
+              <ul className="">
+                <li className="flex flex-wrap gap-1">
                   <IconCheck /> <strong>Capitalize: </strong> Converts the text
                   to capitalize each word.
                 </li>
-                <li className="flex flex-wrap">
+                <li className="flex flex-wrap gap-1">
                   <IconCheck /> <strong>Uppercase: </strong> Converts the text
                   to all uppercase.
                 </li>
-                <li className="flex flex-wrap">
+                <li className="flex flex-wrap gap-1">
                   <IconCheck /> <strong>CamelCase: </strong> Converts the text
                   to camel case, where the first letter of each word is
                   capitalized and spaces are removed.
                 </li>
-                <li className="flex flex-wrap">
+                <li className="flex flex-wrap gap-1">
                   <IconCheck /> <strong>Lowercase: </strong> Converts the text
                   to all lowercase.
                 </li>
