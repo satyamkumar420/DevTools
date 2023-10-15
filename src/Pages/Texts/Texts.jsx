@@ -1,6 +1,10 @@
 import { NavLink } from "react-router-dom";
 import Button from "../../Components/utils/Button/Button";
-import { IconCounter, IconCompare } from "../../Components/Icons/Icons";
+import {
+  IconCounter,
+  IconCompare,
+  IconTextEditOutline,
+} from "../../Components/Icons/Icons";
 
 const Texts = () => {
   const buttons = [
@@ -14,6 +18,12 @@ const Texts = () => {
       to: "/texts/text-comparator",
       text: "Text Comparator",
       icon: <IconCompare className="text-red-500  md:text-4xl " />,
+      className: "p-2 grid place-items-center",
+    },
+    {
+      to: "/texts/text-converter",
+      text: "Text Converter",
+      icon: <IconTextEditOutline className="text-green-500  md:text-4xl " />,
       className: "p-2 grid place-items-center",
     },
     // Add more buttons here

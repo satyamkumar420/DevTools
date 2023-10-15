@@ -3,15 +3,18 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Slide, ToastContainer } from "react-toastify"; // Import the toast function
 import "react-toastify/dist/ReactToastify.css";
 import Navbar from "./Components/Navbar/Navbar";
-import Notfound from "./Components/Notfound/Notfound";
 import Loader from "./Components/utils/Loader/Loader";
 import Footer from "./Components/Footer/Footer";
+const Notfound = lazy(() => import("./Components/Notfound/Notfound"));
 const Home = lazy(() => import("./Pages/Home/Home"));
 
 // Lazy-loaded route components 'Texts'
 const Texts = lazy(() => import("./Pages/Texts/Texts"));
 const TextCounter = lazy(() => import("./Pages/Texts/TextCounter"));
 const TextComparator = lazy(() => import("./Pages/Texts/TextComparator"));
+const TextConverter = lazy(() =>
+  import("./Pages/Texts/TextConverter/TextConverter")
+);
 
 // Lazy-loaded route components 'Images'
 const Images = lazy(() => import("./Pages/Images/Images"));
@@ -76,6 +79,9 @@ const JSONFormat = lazy(() =>
 // Lazy-loaded route components 'VariousTools'
 const VariousTools = lazy(() => import("./Pages/VariousTools/VariousTools"));
 const ShortUrl = lazy(() => import("./Pages/VariousTools/ShortUrl/ShortUrl"));
+const AgeCalculator = lazy(() =>
+  import("./Pages/VariousTools/AgeCalculator/AgeCalculator")
+);
 
 // Lazy-loaded route components 'MinifyCode'
 const MinifyCode = lazy(() => import("./Pages/MinifyCode/MinifyCode"));
@@ -106,6 +112,7 @@ function App() {
           <Route path="/texts" element={<Texts />} />
           <Route path="/texts/text-counter" element={<TextCounter />} />
           <Route path="/texts/text-comparator" element={<TextComparator />} />
+          <Route path="/texts/text-converter" element={<TextConverter />} />
 
           {/* Here are the routes for 'Images' */}
           <Route path="/image-tools" element={<Images />} />
@@ -160,6 +167,10 @@ function App() {
           {/* Here are the routes for 'Various Tools' */}
           <Route path="/various-tools" element={<VariousTools />} />
           <Route path="/various-tools/short-url" element={<ShortUrl />} />
+          <Route
+            path="/various-tools/age-calculator"
+            element={<AgeCalculator />}
+          />
 
           {/* Here are the routes for 'Emoji Picker' */}
           <Route path="/emojis-picker" element={<EmojiPicker />} />

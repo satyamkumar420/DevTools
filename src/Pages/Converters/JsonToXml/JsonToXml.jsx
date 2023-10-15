@@ -93,7 +93,11 @@ const JsonToXml = () => {
           />
           {jsonInput && (
             <div className="flex flex-wrap gap-2 mb-10 justify-center sm:justify-start">
-              <PrimaryButton onClick={handleConvertClick} text="Convert" />
+              <PrimaryButton
+                onClick={handleConvertClick}
+                text="Convert"
+                className="bg-green-600 hover:bg-green-700"
+              />
               <PrimaryButton onClick={handleCopyClick} text="Copy" />
               <PrimaryButton
                 onClick={handleResetEditor}

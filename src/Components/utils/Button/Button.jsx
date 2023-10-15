@@ -32,6 +32,7 @@ const Button = ({ text, icon, onClick, className }) => {
       className="items-center text-center"
       onClick={onClick}
       style={buttonStyle}
+      type="button"
     >
       <div className={`${className}`}>
         {icon && <span className="md:text-3xl">{icon}</span>}

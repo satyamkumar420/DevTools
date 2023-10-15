@@ -1,37 +1,77 @@
 export function xmlToJson(xml) {
-  // Convert XML to JSON
-  const obj = {};
+  try {
+    const xmlDoc = new DOMParser().parseFromString(xml, "text/xml");
+    function parseNode(node) {
+      if (node.nodeType === Node.ELEMENT_NODE) {
+        let result = {};
 
-  if (xml.nodeType === 1) {
-    if (xml.attributes.length > 0) {
-      obj["@attributes"] = {};
-      for (let j = 0; j < xml.attributes.length; j++) {
-        const attribute = xml.attributes.item(j);
-        obj["@attributes"][attribute.nodeName] = attribute.nodeValue;
-      }
-    }
-  } else if (xml.nodeType === 3) {
-    obj = xml.nodeValue;
-  }
-
-  if (xml.hasChildNodes()) {
-    for (let i = 0; i < xml.childNodes.length; i++) {
-      const item = xml.childNodes.item(i);
-      const nodeName = item.nodeName;
-
-      if (typeof obj[nodeName] === "undefined") {
-        obj[nodeName] = this.xmlToJson(item);
-      } else {
-        if (typeof obj[nodeName].push === "undefined") {
-          const old = obj[nodeName];
-          obj[nodeName] = [];
-          obj[nodeName].push(old);
+        if (node.hasAttributes()) {
+          result["@attributes"] = {};
+          for (let i = 0; i < node.attributes.length; i++) {
+            const attribute = node.attributes[i];
+            result["@attributes"][attribute.name] = attribute.value;
+          }
         }
+        if (node.hasChildNodes()) {
+          if (
+            node.childNodes.length === 1 &&
+            node.childNodes[0].nodeType === Node.TEXT_NODE
+          ) {
+            // If the element has only one child which is a text node, set it as the value
+            return node.childNodes[0].textContent.trim();
+          } else {
+            for (let i = 0; i < node.childNodes.length; i++) {
+              const childNode = node.childNodes[i];
+              const childResult = parseNode(childNode);
+              if (childNode.nodeType === Node.ELEMENT_NODE) {
+                if (result[childNode.nodeName]) {
+                  if (!Array.isArray(result[childNode.nodeName])) {
+                    result[childNode.nodeName] = [result[childNode.nodeName]];
+                  }
+                  result[childNode.nodeName].push(childResult);
+                } else {
+                  result[childNode.nodeName] = childResult;
+                }
+              } else if (childNode.nodeType === Node.CDATA_SECTION_NODE) {
+                result["#cdata"] = childNode.textContent;
+              }
+            }
+          }
+        }
+        return result;
+      } else if (
+        node.nodeType === Node.TEXT_NODE ||
+        node.nodeType === Node.CDATA_SECTION_NODE
+      ) {
+        return node.nodeValue.trim();
+      }
+    }
+    const jsonResult = parseNode(xmlDoc.documentElement);
+    return { [xmlDoc.documentElement.nodeName]: jsonResult };
+  } catch (error) {
+    return { error };
+  }
+}
 
-        obj[nodeName].push(this.xmlToJson(item));
+export function processJson(json) {
+  function removeTextProperty(obj) {
+    if (typeof obj === "object" && obj.hasOwnProperty("#text")) {
+      return obj["#text"];
+    } else if (typeof obj === "object") {
+      for (const key in obj) {
+        obj[key] = removeTextProperty(obj[key]);
+      }
+    }
+    return obj;
+  }
+
+  if (json && typeof json === "object") {
+    json = removeTextProperty(json);
+    if (json instanceof Array) {
+      for (let i = 0; i < json.length; i++) {
+        json[i] = removeTextProperty(json[i]);
       }
     }
   }
-
-  return obj;
+  return json;
 }

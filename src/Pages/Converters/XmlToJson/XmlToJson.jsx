@@ -2,7 +2,7 @@ import { useState } from "react";
 import { json } from "@codemirror/lang-json";
 import { xml } from "@codemirror/lang-xml";
 import CodeEditor from "../../../Components/CodeEditor/CodeEditor";
-// import { xmlToJson } from "./xml_to_json"; // You will need to implement xmlToJson
+import { xmlToJson, processJson } from "./xml_to_json";
 import { toast } from "react-toastify";
 import {
   toastStyleError,
@@ -25,16 +25,17 @@ const XmlToJson = () => {
     setJsonValue("");
   };
 
-  // Event handler for the "Start Over" button
+  // Event handler for the "Convert" button
   const handleConvertClick = () => {
     // Convert XML to JSON
     try {
-      const parser = new DOMParser();
-      const xmlDoc = parser.parseFromString(xmlInput, "text/xml");
-      const jsonValue = JSON.stringify(xmlToJson(xmlDoc), null, 4);
+      const xmlData = xmlToJson(xmlInput);
+      const processedJson = processJson(xmlData);
+      const jsonData = JSON.stringify(processedJson, null, 4);
       setLanguageMode(json());
-      setJsonValue(jsonValue);
+      setJsonValue(jsonData);
       setShowJsonEditor(true);
+      setRequired(true);
     } catch (error) {
       toast("XML is not valid!", { style: toastStyleError });
     }
@@ -94,7 +95,11 @@ const XmlToJson = () => {
           />
           {xmlInput && (
             <div className="flex flex-wrap gap-2 mb-10 justify-center sm:justify-start">
-              <PrimaryButton onClick={handleConvertClick} text="Convert" />
+              <PrimaryButton
+                onClick={handleConvertClick}
+                text="Convert"
+                className="bg-green-600 hover:bg-green-700"
+              />
               <PrimaryButton onClick={handleCopyClick} text="Copy" />
               <PrimaryButton
                 onClick={handleResetEditor}

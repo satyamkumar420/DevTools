@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import Button from "../../Components/utils/Button/Button";
-import { IconLink } from "../../Components/Icons/Icons";
+import { IconLink, IconCalculator } from "../../Components/Icons/Icons";
 
 const VariousTools = () => {
   const buttons = [
@@ -10,6 +10,12 @@ const VariousTools = () => {
     //   icon: <IconLink className="text-yellow-500 text-lg md:text-3xl" />,
     //   className: "p-2 grid place-items-center",
     // },
+    {
+      to: "/various-tools/age-calculator",
+      text: "Age Calculator",
+      icon: <IconCalculator className="text-blue-100 text-lg md:text-3xl" />,
+      className: "p-2 grid place-items-center",
+    },
     // Add more buttons here
   ];
 
