@@ -2,7 +2,7 @@ import { useState } from "react";
 import { json } from "@codemirror/lang-json";
 import { xml } from "@codemirror/lang-xml";
 import CodeEditor from "../../../Components/CodeEditor/CodeEditor";
-import { xmlToJson, processJson } from "./xml_to_json";
+import { xmlToJson, processJson, isXMLFormat } from "./xml_to_json";
 import { toast } from "react-toastify";
 import {
   toastStyleError,
@@ -27,12 +27,18 @@ const XmlToJson = () => {
 
   // Event handler for the "Convert" button
   const handleConvertClick = () => {
+    setLanguageMode(json());
     // Convert XML to JSON
     try {
+      if (!isXMLFormat(xmlInput)) {
+        toast("XML is not valid!", {
+          style: toastStyleError,
+        });
+        return;
+      }
       const xmlData = xmlToJson(xmlInput);
       const processedJson = processJson(xmlData);
       const jsonData = JSON.stringify(processedJson, null, 4);
-      setLanguageMode(json());
       setJsonValue(jsonData);
       setShowJsonEditor(true);
       setRequired(true);
@@ -112,7 +118,7 @@ const XmlToJson = () => {
         <div className="mt-10">
           <div className="text-left border-l-4 border-l-purple-500 p-2 text-sm sm:text-lg bg-[#1a1c2e]">
             <span className="text-blue-300">
-              🙋‍♂️ Hey there! If you need to convert XML to JSON, we've got you
+              👋 Hey there! If you need to convert XML to JSON, we've got you
               covered with our awesome tool! It's super easy to use, and you can
               copy the code with just one click. So go ahead and give it a try -
               we promise it'll be a hassle-free experience!

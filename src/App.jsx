@@ -1,6 +1,7 @@
 import { lazy, Suspense } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Slide, ToastContainer } from "react-toastify"; // Import the toast function
+import { HelmetProvider } from "react-helmet-async";
 import "react-toastify/dist/ReactToastify.css";
 import Navbar from "./Components/Navbar/Navbar";
 import Loader from "./Components/utils/Loader/Loader";
@@ -105,84 +106,86 @@ function App() {
           closeButton={false}
           transition={Slide}
         />
-        <Routes>
-          <Route path="*" element={<Notfound />} />
-          <Route path="/" element={<Home />} />
-          {/* Here are the routes for 'Texts' */}
-          <Route path="/texts" element={<Texts />} />
-          <Route path="/texts/text-counter" element={<TextCounter />} />
-          <Route path="/texts/text-comparator" element={<TextComparator />} />
-          <Route path="/texts/text-converter" element={<TextConverter />} />
+        <HelmetProvider>
+          <Routes>
+            <Route path="*" element={<Notfound />} />
+            <Route path="/" element={<Home />} />
+            {/* Here are the routes for 'Texts' */}
+            <Route path="/texts" element={<Texts />} />
+            <Route path="/texts/text-counter" element={<TextCounter />} />
+            <Route path="/texts/text-comparator" element={<TextComparator />} />
+            <Route path="/texts/text-converter" element={<TextConverter />} />
 
-          {/* Here are the routes for 'Images' */}
-          <Route path="/image-tools" element={<Images />} />
-          <Route path="/image/circle-crop" element={<ImageCircleCrop />} />
-          <Route path="/images/square-crop" element={<ImageSquareCrop />} />
-          <Route path="/images/images-crop" element={<ImageCrop />} />
-          <Route path="/image/image-convert" element={<ImageConverter />} />
+            {/* Here are the routes for 'Images' */}
+            <Route path="/image-tools" element={<Images />} />
+            <Route path="/image/circle-crop" element={<ImageCircleCrop />} />
+            <Route path="/images/square-crop" element={<ImageSquareCrop />} />
+            <Route path="/images/images-crop" element={<ImageCrop />} />
+            <Route path="/image/image-convert" element={<ImageConverter />} />
 
-          {/* Here are the routes for 'Colors' */}
-          <Route path="/colors" element={<Colors />} />
-          <Route path="/colors/color-picker" element={<ColorPicker />} />
-          <Route path="/colors/random-color" element={<RandomColor />} />
-          <Route path="/colors/favorite-color" element={<FavoriteColor />} />
-          <Route
-            path="/colors/image-color-picker"
-            element={<ImageColorPicker />}
-          />
-          <Route
-            path="/converters/color-converter"
-            element={<ColorConverter />}
-          />
+            {/* Here are the routes for 'Colors' */}
+            <Route path="/colors" element={<Colors />} />
+            <Route path="/colors/color-picker" element={<ColorPicker />} />
+            <Route path="/colors/random-color" element={<RandomColor />} />
+            <Route path="/colors/favorite-color" element={<FavoriteColor />} />
+            <Route
+              path="/colors/image-color-picker"
+              element={<ImageColorPicker />}
+            />
+            <Route
+              path="/converters/color-converter"
+              element={<ColorConverter />}
+            />
 
-          {/* Here are the routes for 'Converters' */}
-          <Route path="/converters" element={<Converters />} />
-          <Route
-            path="/converters/ImageToBase64Converter"
-            element={<ImageToBase64Converter />}
-          />
-          <Route
-            path="/converters/timestamp-converter"
-            element={<TimestampConverter />}
-          />
-          <Route path="/converters/json-to-xml" element={<JsonToXml />} />
-          <Route path="/converters/xml-to-json" element={<XmlToJson />} />
+            {/* Here are the routes for 'Converters' */}
+            <Route path="/converters" element={<Converters />} />
+            <Route
+              path="/converters/ImageToBase64Converter"
+              element={<ImageToBase64Converter />}
+            />
+            <Route
+              path="/converters/timestamp-converter"
+              element={<TimestampConverter />}
+            />
+            <Route path="/converters/json-to-xml" element={<JsonToXml />} />
+            <Route path="/converters/xml-to-json" element={<XmlToJson />} />
 
-          {/* Here are the routes for 'Random Data' */}
-          <Route path="/random-data" element={<RandomData />} />
-          <Route
-            path="/random-data/password-generator"
-            element={<PasswordGenerator />}
-          />
-          <Route
-            path="/random-data/dummy-text-generator"
-            element={<DummyTextGenerator />}
-          />
-          <Route path="/random-data/fake-details" element={<FakeDetails />} />
+            {/* Here are the routes for 'Random Data' */}
+            <Route path="/random-data" element={<RandomData />} />
+            <Route
+              path="/random-data/password-generator"
+              element={<PasswordGenerator />}
+            />
+            <Route
+              path="/random-data/dummy-text-generator"
+              element={<DummyTextGenerator />}
+            />
+            <Route path="/random-data/fake-details" element={<FakeDetails />} />
 
-          {/* Here are the routes for 'Format Code' */}
-          <Route path="/format-code" element={<FormatCode />} />
-          <Route path="/format-code/json-format" element={<JSONFormat />} />
+            {/* Here are the routes for 'Format Code' */}
+            <Route path="/format-code" element={<FormatCode />} />
+            <Route path="/format-code/json-format" element={<JSONFormat />} />
 
-          {/* Here are the routes for 'Various Tools' */}
-          <Route path="/various-tools" element={<VariousTools />} />
-          <Route path="/various-tools/short-url" element={<ShortUrl />} />
-          <Route
-            path="/various-tools/age-calculator"
-            element={<AgeCalculator />}
-          />
+            {/* Here are the routes for 'Various Tools' */}
+            <Route path="/various-tools" element={<VariousTools />} />
+            <Route path="/various-tools/short-url" element={<ShortUrl />} />
+            <Route
+              path="/various-tools/age-calculator"
+              element={<AgeCalculator />}
+            />
 
-          {/* Here are the routes for 'Emoji Picker' */}
-          <Route path="/emojis-picker" element={<EmojiPicker />} />
+            {/* Here are the routes for 'Emoji Picker' */}
+            <Route path="/emojis-picker" element={<EmojiPicker />} />
 
-          {/* Here are the routes for 'Minify Code' */}
-          <Route path="/minify-code" element={<MinifyCode />} />
+            {/* Here are the routes for 'Minify Code' */}
+            <Route path="/minify-code" element={<MinifyCode />} />
 
-          {/* Here are the routes for 'About',' Privacy Policy', and 'Terms' */}
-          <Route path="/about" element={<About />} />
-          <Route path="/privacy-policy" element={<Privacy />} />
-          <Route path="/terms-and-conditions" element={<Terms />} />
-        </Routes>
+            {/* Here are the routes for 'About',' Privacy Policy', and 'Terms' */}
+            <Route path="/about" element={<About />} />
+            <Route path="/privacy-policy" element={<Privacy />} />
+            <Route path="/terms-and-conditions" element={<Terms />} />
+          </Routes>
+        </HelmetProvider>
         <Footer />
       </Suspense>
     </BrowserRouter>

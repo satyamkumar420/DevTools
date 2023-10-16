@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { IconCheck } from "../../../Components/Icons/Icons";
+import { Helmet } from "react-helmet-async";
 
 const TextConverter = () => {
   const [inputText, setInputText] = useState("");
@@ -23,7 +24,7 @@ const TextConverter = () => {
     { label: "Snake_Case_Word", fn: convertToSnakeCaseWord },
     { label: "Hyphen-Case", fn: hyphenCase },
     { label: "Remove Line Breaks", fn: removeLineBreaks },
-    { label: "Remove Blank Line", fn: removeBlankLine },
+    { label: "Remove Blank Lines", fn: removeBlankLine },
     { label: "Remove Accents", fn: removeAccents },
     { label: "Remove HTML Tags", fn: removeHtmlTags },
     { label: "Remove Digits", fn: removeDigits },
@@ -174,107 +175,112 @@ const TextConverter = () => {
   }
 
   return (
-    <div className="p-4 sm:ml-52   max-w-screen-full overflow-y-auto max-h-screen">
-      <div className="my-20 max-w-screen-lg">
-        <h3 className="text-left p-2 rounded text-lg sm:text-2xl text-yellow-500 w-full bg-[#1a1c2e]">
-          Text Converter
-        </h3>
-        <div>
-          <div className="p-4">
-            <textarea
-              className="border-none p-2 w-full h-40  ring-2 focus:ring-blue-600 outline-none rounded-md bg-[#0c0e1b]"
-              placeholder="Enter text to convert"
-              value={showOutput ? outputText : inputText}
-              onChange={handleInputChange}
-            />
-            <div className="my-4 flex flex-wrap gap-2 justify-center">
-              {conversions.map((conversion, index) => (
-                <button
-                  key={index}
-                  className="bg-[#21243b] hover:bg-[#1a1c2e] p-3 w-full sm:w-52 px-2 rounded shadow-md text-white transition-all ease-in-out duration-100 "
-                  onClick={conversion.fn}
-                >
-                  {conversion.label}
-                </button>
-              ))}
+    <>
+      <Helmet>
+        <title>Text Converter</title>
+      </Helmet>
+      <div className="p-4 sm:ml-52   max-w-screen-full overflow-y-auto max-h-screen">
+        <div className="my-20 max-w-screen-lg">
+          <h3 className="text-left p-2 rounded text-lg sm:text-2xl text-yellow-500 w-full bg-[#1a1c2e]">
+            Text Converter
+          </h3>
+          <div>
+            <div className="p-4">
+              <textarea
+                className="border-none p-2 w-full h-40  ring-2 focus:ring-blue-600 outline-none rounded-md bg-[#0c0e1b]"
+                placeholder="Enter text to convert"
+                value={showOutput ? outputText : inputText}
+                onChange={handleInputChange}
+              />
+              <div className="my-4 flex flex-wrap gap-2 justify-center">
+                {conversions.map((conversion, index) => (
+                  <button
+                    key={index}
+                    className="bg-[#21243b] hover:bg-[#1a1c2e] p-3 w-full sm:w-52 px-2 rounded shadow-md text-gray-400 transition-all ease-in-out duration-100 "
+                    onClick={conversion.fn}
+                  >
+                    {conversion.label}
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
+          <div className="mt-10">
+            <div className="text-left border-l-4 border-l-purple-500 p-2 text-sm sm:text-base bg-[#1a1c2e]">
+              <span className="text-blue-300">
+                <ul className="">
+                  <li className="flex flex-wrap gap-1">
+                    <IconCheck /> <strong>Capitalize: </strong> Converts the
+                    text to capitalize each word.
+                  </li>
+                  <li className="flex flex-wrap gap-1">
+                    <IconCheck /> <strong>Uppercase: </strong> Converts the text
+                    to all uppercase.
+                  </li>
+                  <li className="flex flex-wrap gap-1">
+                    <IconCheck /> <strong>CamelCase: </strong> Converts the text
+                    to camel case, where the first letter of each word is
+                    capitalized and spaces are removed.
+                  </li>
+                  <li className="flex flex-wrap gap-1">
+                    <IconCheck /> <strong>Lowercase: </strong> Converts the text
+                    to all lowercase.
+                  </li>
+                  <li className="flex flex-wrap gap-1">
+                    <IconCheck /> <strong>Reverse: </strong> Reverses the text.
+                  </li>
+                  <li className="flex flex-wrap gap-1">
+                    <IconCheck /> <strong>Remove Extra Spaces: </strong> Removes
+                    extra spaces and trims the text.
+                  </li>
+                  <li className="flex flex-wrap gap-1">
+                    <IconCheck /> <strong>Alternate: </strong> Converts the text
+                    to alternate case, where even-positioned characters are in
+                    uppercase and odd-positioned characters are in lowercase.
+                  </li>
+                  <li className="flex flex-wrap gap-1">
+                    <IconCheck /> <strong>Snake_Case_Char:</strong> Converts the
+                    text to snake case with alternating case for each character.
+                  </li>
+                  <li className="flex flex-wrap gap-1">
+                    <IconCheck /> <strong>Snake_Case_Word: </strong> Converts
+                    the text to snake case with alternating case for each word.
+                  </li>
+                  <li className="flex flex-wrap gap-1">
+                    <IconCheck /> <strong>Hyphen-Case: </strong> Converts the
+                    text to hyphen case, where spaces are replaced with hyphens.
+                  </li>
+                  <li className="flex flex-wrap gap-1">
+                    <IconCheck /> <strong>Remove Line Breaks: </strong> Removes
+                    line breaks from the text.
+                  </li>
+                  <li className="flex flex-wrap gap-1">
+                    <IconCheck /> <strong>Remove Blank Line: </strong> Removes
+                    blank lines from the text.
+                  </li>
+                  <li className="flex flex-wrap gap-1">
+                    <IconCheck /> <strong>Remove Accents: </strong> Removes
+                    accents (diacritics) from accented characters.
+                  </li>
+                  <li className="flex flex-wrap gap-1">
+                    <IconCheck /> <strong>Remove HTML Tags: </strong> Removes
+                    HTML tags from the text.
+                  </li>
+                  <li className="flex flex-wrap gap-1">
+                    <IconCheck /> <strong>Remove Digits: </strong> Removes
+                    digits (numeric characters) from the text.
+                  </li>
+                  <li className="flex flex-wrap gap-1">
+                    <IconCheck /> <strong>Reset Output: </strong> Resets the
+                    output field to an empty state.
+                  </li>
+                </ul>
+              </span>
             </div>
           </div>
         </div>
-        <div className="mt-10">
-          <div className="text-left border-l-4 border-l-purple-500 p-2 text-sm sm:text-base bg-[#1a1c2e]">
-            <span className="text-blue-300">
-              <ul className="">
-                <li className="flex flex-wrap gap-1">
-                  <IconCheck /> <strong>Capitalize: </strong> Converts the text
-                  to capitalize each word.
-                </li>
-                <li className="flex flex-wrap gap-1">
-                  <IconCheck /> <strong>Uppercase: </strong> Converts the text
-                  to all uppercase.
-                </li>
-                <li className="flex flex-wrap gap-1">
-                  <IconCheck /> <strong>CamelCase: </strong> Converts the text
-                  to camel case, where the first letter of each word is
-                  capitalized and spaces are removed.
-                </li>
-                <li className="flex flex-wrap gap-1">
-                  <IconCheck /> <strong>Lowercase: </strong> Converts the text
-                  to all lowercase.
-                </li>
-                <li className="flex flex-wrap gap-1">
-                  <IconCheck /> <strong>Reverse: </strong> Reverses the text.
-                </li>
-                <li className="flex flex-wrap gap-1">
-                  <IconCheck /> <strong>Remove Extra Spaces: </strong> Removes
-                  extra spaces and trims the text.
-                </li>
-                <li className="flex flex-wrap gap-1">
-                  <IconCheck /> <strong>Alternate: </strong> Converts the text
-                  to alternate case, where even-positioned characters are in
-                  uppercase and odd-positioned characters are in lowercase.
-                </li>
-                <li className="flex flex-wrap gap-1">
-                  <IconCheck /> <strong>Snake_Case_Char:</strong> Converts the
-                  text to snake case with alternating case for each character.
-                </li>
-                <li className="flex flex-wrap gap-1">
-                  <IconCheck /> <strong>Snake_Case_Word: </strong> Converts the
-                  text to snake case with alternating case for each word.
-                </li>
-                <li className="flex flex-wrap gap-1">
-                  <IconCheck /> <strong>Hyphen-Case: </strong> Converts the text
-                  to hyphen case, where spaces are replaced with hyphens.
-                </li>
-                <li className="flex flex-wrap gap-1">
-                  <IconCheck /> <strong>Remove Line Breaks: </strong> Removes
-                  line breaks from the text.
-                </li>
-                <li className="flex flex-wrap gap-1">
-                  <IconCheck /> <strong>Remove Blank Line: </strong> Removes
-                  blank lines from the text.
-                </li>
-                <li className="flex flex-wrap gap-1">
-                  <IconCheck /> <strong>Remove Accents: </strong> Removes
-                  accents (diacritics) from accented characters.
-                </li>
-                <li className="flex flex-wrap gap-1">
-                  <IconCheck /> <strong>Remove HTML Tags: </strong> Removes HTML
-                  tags from the text.
-                </li>
-                <li className="flex flex-wrap gap-1">
-                  <IconCheck /> <strong>Remove Digits: </strong> Removes digits
-                  (numeric characters) from the text.
-                </li>
-                <li className="flex flex-wrap gap-1">
-                  <IconCheck /> <strong>Reset Output: </strong> Resets the
-                  output field to an empty state.
-                </li>
-              </ul>
-            </span>
-          </div>
-        </div>
       </div>
-    </div>
+    </>
   );
 };
 

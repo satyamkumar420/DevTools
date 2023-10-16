@@ -2,6 +2,7 @@ import { useState } from "react";
 import { toast } from "react-toastify";
 import { toastStyleSuccess } from "../../Components/utils/Toastify/toastStyle";
 import PrimaryButton from "../../Components/utils/Button/PrimaryButton";
+import { Helmet } from "react-helmet-async";
 
 const ColorPicker = () => {
   const [color, setColor] = useState("#00ffd5");
@@ -75,86 +76,91 @@ const ColorPicker = () => {
   };
 
   return (
-    <div className="p-4 sm:ml-52 max-w-screen-full overflow-y-auto  max-h-screen">
-      <div className=" my-20  max-w-screen-lg ">
-        <h3 className="p-2 rounded text-lg sm:text-2xl text-yellow-500 w-full bg-[#1a1c2e]">
-          Color Picker
-        </h3>
-        <div className="mt-10 flex flex-wrap gap-6 items-center justify-center">
-          <div>
-            <input
-              type="color"
-              value={color}
-              onChange={handleColorChange}
-              className="min-w-[200px] min-h-[200px]  rounded border-slate-900 focus:ring focus:ring-opacity-50"
-            />
-          </div>
-          <div className=" flex flex-wrap gap-5 justify-center">
-            <div className="shadow-lg min-w-[170px] min-h-[200px] text-center bg-[#1a1c2e] rounded">
-              <span className="block text-blue-300 text-sm font-bold mb-5 mt-3">
-                RGB
-              </span>
-              <div
-                className="mx-2 bg-[#0d111d] p-2 rounded"
-                style={{ color: color }}
-              >
-                {rgbColor}
-              </div>
-              <div className="mt-10">
-                <PrimaryButton
-                  onClick={() => handleCopyClick(rgbColor)}
-                  text={"Copy"}
-                />
-              </div>
+    <>
+      <Helmet>
+        <title>Color Picker</title>
+      </Helmet>
+      <div className="p-4 sm:ml-52 max-w-screen-full overflow-y-auto  max-h-screen">
+        <div className=" my-20  max-w-screen-lg ">
+          <h3 className="p-2 rounded text-lg sm:text-2xl text-yellow-500 w-full bg-[#1a1c2e]">
+            Color Picker
+          </h3>
+          <div className="mt-10 flex flex-wrap gap-6 items-center justify-center">
+            <div>
+              <input
+                type="color"
+                value={color}
+                onChange={handleColorChange}
+                className="min-w-[200px] min-h-[200px]  rounded border-slate-900 focus:ring focus:ring-opacity-50"
+              />
             </div>
-            <div className="shadow-lg min-w-[170px] min-h-[200px] text-center bg-[#1a1c2e] rounded">
-              <span className="block text-blue-300 text-sm font-bold mb-5 mt-3">
-                HSL
-              </span>
-              <div
-                className="mx-2 bg-[#0d111d] p-2 rounded"
-                style={{ color: color }}
-              >
-                {hslColor}
+            <div className=" flex flex-wrap gap-5 justify-center">
+              <div className="shadow-lg min-w-[170px] min-h-[200px] text-center bg-[#1a1c2e] rounded">
+                <span className="block text-blue-300 text-sm font-bold mb-5 mt-3">
+                  RGB
+                </span>
+                <div
+                  className="mx-2 bg-[#0d111d] p-2 rounded"
+                  style={{ color: color }}
+                >
+                  {rgbColor}
+                </div>
+                <div className="mt-10">
+                  <PrimaryButton
+                    onClick={() => handleCopyClick(rgbColor)}
+                    text={"Copy"}
+                  />
+                </div>
               </div>
+              <div className="shadow-lg min-w-[170px] min-h-[200px] text-center bg-[#1a1c2e] rounded">
+                <span className="block text-blue-300 text-sm font-bold mb-5 mt-3">
+                  HSL
+                </span>
+                <div
+                  className="mx-2 bg-[#0d111d] p-2 rounded"
+                  style={{ color: color }}
+                >
+                  {hslColor}
+                </div>
 
-              <div className="mt-10">
-                <PrimaryButton
-                  onClick={() => handleCopyClick(hslColor)}
-                  text={"Copy"}
-                />
+                <div className="mt-10">
+                  <PrimaryButton
+                    onClick={() => handleCopyClick(hslColor)}
+                    text={"Copy"}
+                  />
+                </div>
               </div>
-            </div>
-            <div className="shadow-lg min-w-[170px] min-h-[200px] text-center bg-[#1a1c2e] rounded">
-              <span className="block text-blue-300 text-sm font-bold mb-5 mt-3">
-                HEX
-              </span>
-              <div
-                className="mx-2 bg-[#0d111d] p-2 rounded"
-                style={{ color: color }}
-              >
-                {color}
-              </div>
-              <div className="mt-10">
-                <PrimaryButton
-                  onClick={() => handleCopyClick(color)}
-                  text={"Copy"}
-                />
+              <div className="shadow-lg min-w-[170px] min-h-[200px] text-center bg-[#1a1c2e] rounded">
+                <span className="block text-blue-300 text-sm font-bold mb-5 mt-3">
+                  HEX
+                </span>
+                <div
+                  className="mx-2 bg-[#0d111d] p-2 rounded"
+                  style={{ color: color }}
+                >
+                  {color}
+                </div>
+                <div className="mt-10">
+                  <PrimaryButton
+                    onClick={() => handleCopyClick(color)}
+                    text={"Copy"}
+                  />
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div className="mt-10">
-          <div className="border-l-4 border-l-purple-500 p-2 text-sm sm:text-lg bg-[#1a1c2e]">
-            <span className="text-blue-300">
-              This tool can help you choose colors in RGB, HSL, and HEX formats.
-              It's essential for anyone who wants to ensure their colors are
-              accurate.
-            </span>
+          <div className="mt-10">
+            <div className="border-l-4 border-l-purple-500 p-2 text-sm sm:text-lg bg-[#1a1c2e]">
+              <span className="text-blue-300">
+                This tool can help you choose colors in RGB, HSL, and HEX
+                formats. It's essential for anyone who wants to ensure their
+                colors are accurate.
+              </span>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

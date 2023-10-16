@@ -1,14 +1,19 @@
-import React from "react";
+import { Helmet } from "react-helmet-async";
 
 const Terms = () => {
   return (
-    <div className="p-4 sm:ml-52 text-justify max-w-screen-lg overflow-y-auto max-h-screen">
-      <div className="my-20">
-        <h3 className="text-left p-2 rounded text-lg sm:text-2xl text-yellow-500 w-full bg-[#1a1c2e]">
-          Terms and Conditions
-        </h3>
+    <>
+      <Helmet>
+        <title>Terms and Conditions</title>
+      </Helmet>
+      <div className="p-4 sm:ml-52 text-justify max-w-screen-lg overflow-y-auto max-h-screen">
+        <div className="my-20">
+          <h3 className="text-left p-2 rounded text-lg sm:text-2xl text-yellow-500 w-full bg-[#1a1c2e]">
+            Terms and Conditions
+          </h3>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

@@ -1,6 +1,8 @@
 import React, { useRef, useState } from "react";
 import Avatar from "react-avatar-edit";
 import CustomAlert from "../../../Components/utils/Toastify/CustomAlert";
+import { Helmet } from "react-helmet-async";
+
 
 const ImageCircleCrop = () => {
   const [preview, setPreview] = useState(null);
@@ -44,6 +46,10 @@ const ImageCircleCrop = () => {
   };
 
   return (
+     <>
+      <Helmet>
+        <title>Image Circle Crop</title>
+      </Helmet>
     <div className="p-4 sm:ml-52 text-justify max-w-screen-full overflow-y-auto max-h-screen">
       <div className="my-20  max-w-screen-lg">
         <h3 className="text-left p-2 rounded text-lg sm:text-2xl text-yellow-500 w-full bg-[#1a1c2e]">
@@ -91,7 +97,8 @@ const ImageCircleCrop = () => {
           </div>
         </div>
       </div>
-    </div>
+      </div>
+    </>
   );
 };
 

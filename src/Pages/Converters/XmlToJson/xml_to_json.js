@@ -1,6 +1,10 @@
 export function xmlToJson(xml) {
   try {
     const xmlDoc = new DOMParser().parseFromString(xml, "text/xml");
+    // Check if the document is empty, which is often the case for non-XML content
+    if (!xmlDoc.documentElement) {
+      return { error: "Invalid Input" };
+    }
     function parseNode(node) {
       if (node.nodeType === Node.ELEMENT_NODE) {
         let result = {};
@@ -49,7 +53,7 @@ export function xmlToJson(xml) {
     const jsonResult = parseNode(xmlDoc.documentElement);
     return { [xmlDoc.documentElement.nodeName]: jsonResult };
   } catch (error) {
-    return { error };
+    return { error: "Invalid Input" };
   }
 }
 
@@ -74,4 +78,11 @@ export function processJson(json) {
     }
   }
   return json;
+}
+
+// Function to check if input is in XML format
+export function isXMLFormat(input) {
+  // Regular expression to match common XML structure patterns
+  const xmlPattern = /<([a-zA-Z][a-zA-Z0-9]*)([^>]*)>(.*?)<\/\1>/;
+  return xmlPattern.test(input);
 }

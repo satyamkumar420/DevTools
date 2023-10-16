@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { faker } from "@faker-js/faker";
 import Loader from "../../../Components/utils/Loader/Loader";
 import PrimaryButton from "../../../Components/utils/Button/PrimaryButton";
+import { Helmet } from "react-helmet-async";
 
 const FakeDetails = () => {
   const [details, setDetails] = useState({
@@ -62,55 +63,60 @@ const FakeDetails = () => {
   ];
 
   return (
-    <div className="p-4 sm:ml-52 text-justify max-w-screen-full overflow-y-auto max-h-screen">
-      <div className="my-20 max-w-screen-lg">
-        <h3 className="p-2 rounded text-lg sm:text-2xl text-yellow-500 w-full bg-[#1a1c2e]">
-          Fake Details
-        </h3>
-        <div className="mt-5 items-center">
-          <div className="mx-auto justify-start flex gap-3 flex-wrap flex-shrink  ">
-            <PrimaryButton
-              text="Generate Fake Details"
-              onClick={generateDetails}
-              className="py-2"
-            />
-          </div>
-          {isLoading ? (
-            <Loader />
-          ) : (
-            <div className="max-w-screen-sm items-center py-4 px-3 rounded my-5 bg-[#1a1c2e] shadow-lg">
-              <div className="flex justify-center mt-5">
-                <img
-                  src={details.profileImage}
-                  alt="ProfileLogo"
-                  className="rounded-full w-14 sm:w-24 text-center"
-                />
-              </div>
-              <div className="mt-5 px-4">
-                {detailItems.map((item, index) => (
-                  <div
-                    key={index}
-                    className="px-2 mb-4 text-sm sm:text-base flex flex-wrap gap-2 border-1 border-b-2 rounded-sm border-gray-500"
-                  >
-                    <div className="font-bold">{item.label}</div>
-                    <div className="text-blue-300">{item.value}</div>
-                  </div>
-                ))}
-              </div>
+    <>
+      <Helmet>
+        <title>Fake Details</title>
+      </Helmet>
+      <div className="p-4 sm:ml-52 text-justify max-w-screen-full overflow-y-auto max-h-screen">
+        <div className="my-20 max-w-screen-lg">
+          <h3 className="p-2 rounded text-lg sm:text-2xl text-yellow-500 w-full bg-[#1a1c2e]">
+            Fake Details
+          </h3>
+          <div className="mt-5 items-center">
+            <div className="mx-auto justify-start flex gap-3 flex-wrap flex-shrink  ">
+              <PrimaryButton
+                text="Generate Fake Details"
+                onClick={generateDetails}
+                className="py-2"
+              />
             </div>
-          )}
-        </div>
-        <div className="mt-10">
-          <div className="border-l-4 border-l-purple-500 p-2 text-sm sm:text-lg bg-[#1a1c2e]">
-            <span className="text-blue-300">
-              🙋‍♂️ Hey there! If you're looking to generate some random fake
-              details, just click on the button and let me take care of the rest
-              for you. It's super easy!
-            </span>
+            {isLoading ? (
+              <Loader />
+            ) : (
+              <div className="max-w-screen-sm items-center py-4 px-3 rounded my-5 bg-[#1a1c2e] shadow-lg">
+                <div className="flex justify-center mt-5">
+                  <img
+                    src={details.profileImage}
+                    alt="ProfileLogo"
+                    className="rounded-full w-14 sm:w-24 text-center"
+                  />
+                </div>
+                <div className="mt-5 px-4">
+                  {detailItems.map((item, index) => (
+                    <div
+                      key={index}
+                      className="px-2 mb-4 text-sm sm:text-base flex flex-wrap gap-2 border-1 border-b-2 rounded-sm border-gray-500"
+                    >
+                      <div className="font-bold">{item.label}</div>
+                      <div className="text-blue-300">{item.value}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+          <div className="mt-10">
+            <div className="border-l-4 border-l-purple-500 p-2 text-sm sm:text-lg bg-[#1a1c2e]">
+              <span className="text-blue-300">
+                🙋‍♂️ Hey there! If you're looking to generate some random fake
+                details, just click on the button and let me take care of the
+                rest for you. It's super easy!
+              </span>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
