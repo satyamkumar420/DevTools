@@ -29,11 +29,11 @@ const Sidebar = ({ isOpen, setIsOpen }) => {
       "#ff0099",
       "#00ff91",
       "#00FFFF",
-      "#00ff1e",
       "#2469fe",
       "#b023fc",
-      "#ee1d2f",
+      "#ed3b59",
       "#f96c26",
+      "#391080",
     ];
 
     // Generate a random index different from the previous one

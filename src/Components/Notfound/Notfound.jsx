@@ -19,7 +19,10 @@ const Notfound = () => {
           </div>
         </div>
         <NavLink to="/" className="my-10">
-          <Button text={"Go Home"} className={"text-sm sm:text-base"} />
+          <Button
+            text={"Go Home"}
+            className={"text-sm sm:text-base w-40 sm:w-52 py-2"}
+          />
         </NavLink>
       </div>
     </div>
