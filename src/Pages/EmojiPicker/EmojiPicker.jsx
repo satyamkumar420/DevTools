@@ -158,11 +158,21 @@ const EmojiPicker = () => {
           <div className="mt-10">
             <div className="text-blue-300 text-left border-l-4 border-l-purple-500 p-2 text-sm sm:text-lg bg-[#1a1c2e]">
               <span className="">
-                This awesome tool offers an emoji picker that comes with handy
-                categories, making it an absolute gem for developers, students,
-                and professionals alike! Plus, it makes emoji copying a breeze
-                with just a simple click. 😄🚀 Give it a try and elevate your
-                emoji game effortlessly! 🎉
+                Looking for the perfect 😂 😍 emoji to express your feelings?
+                Our Emoji Picker is here to help you out! With our easy to use
+                tool, you can find the emoji that speaks to your heart, whether
+                you're searching by name, category, or keyword. Emojis are an
+                amazing way to express a wide range of emotions, from happiness
+                and sadness to love and anger. Our search tool makes it super
+                easy to find the emoji that perfectly complements your message
+                or context. You can browse through categories or type in a
+                keyword to display the corresponding emojis. Once you've found
+                your desired emoji, simply click on it to copy and paste it
+                wherever you want. Whether you're celebrating a birthday with a
+                cake emoji or expressing your love with a heart, our Emoji
+                Picker is always ready to help you find the perfect emoji for
+                any occasion! 😄🚀 Give it a try and elevate your emoji game
+                effortlessly! 🎉
               </span>
             </div>
           </div>

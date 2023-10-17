@@ -60,6 +60,10 @@ const CreditCard = lazy(() =>
   import("./Pages/RandomData/CreditCard/CreditCard")
 );
 
+const TokenGenerator = lazy(() =>
+  import("./Pages/RandomData/TokeGenerator/TokenGenerator")
+);
+
 // Lazy-loaded route components 'Converters'
 const Converters = lazy(() => import("./Pages/Converters/Converters"));
 
@@ -165,6 +169,10 @@ function App() {
             />
             <Route path="/random-data/fake-details" element={<FakeDetails />} />
             <Route path="/random-data/credit-card" element={<CreditCard />} />
+            <Route
+              path="/random-data/token-generator"
+              element={<TokenGenerator />}
+            />
 
             {/* Here are the routes for 'Format Code' */}
             <Route path="/format-code" element={<FormatCode />} />

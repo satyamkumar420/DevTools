@@ -3,6 +3,7 @@ import {
   IconTextSlash,
   IconProfile,
   IconCreditCard,
+  IconTokens,
 } from "../../Components/Icons/Icons";
 import Button from "../../Components/utils/Button/Button";
 import { NavLink } from "react-router-dom";
@@ -20,6 +21,12 @@ const RandomData = () => {
       to: "/random-data/dummy-text-generator",
       text: "Dummy Text Generator",
       icon: <IconTextSlash className="text-pink-500" />,
+      className: "p-2 grid place-items-center",
+    },
+    {
+      to: "/random-data/token-generator",
+      text: "Token Generator",
+      icon: <IconTokens className="text-violet-800" />,
       className: "p-2 grid place-items-center",
     },
     {

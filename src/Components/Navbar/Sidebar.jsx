@@ -58,7 +58,7 @@ const Sidebar = ({ isOpen, setIsOpen }) => {
             <li key={index} className="mb-4 whitespace-nowrap">
               <NavLink
                 to={item.link}
-                className="transition-all ease-in-out shadow-2xl border-2 border-cyan-500 text-blue-50  flex items-center gap-2 rounded hover:bg-gray-900 hover:text-cyan-400 "
+                className="transition-all ease-in-out shadow-2xl border-2 border-cyan-500 text-blue-50  flex items-center gap-2 rounded hover:bg-gray-900 hover:text-cyan-400 hover:bg-gradient-to-l hover:from-pink-800 hover:to-slate-900"
                 onClick={handleNavLinkClick}
               >
                 <span

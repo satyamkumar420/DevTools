@@ -22,7 +22,9 @@ const CreditCard = () => {
   const generateCreditCardData = () => {
     const newCreditCardData = {
       cardHolder: faker.person.fullName(),
-      cardNumber: faker.finance.creditCardNumber(16).substring(0),
+      cardNumber: faker.finance.creditCardNumber({
+        issuer: "25[7-9]#-####-####-###L",
+      }),
       validFrom: new Date(faker.date.past()).toLocaleDateString(undefined, {
         month: "2-digit",
         year: "numeric",
@@ -77,9 +79,7 @@ const CreditCard = () => {
                 <div className="text-left">
                   <p className="font-light">Name</p>
                   <div className="flex gap-1">
-                    <p className="font-medium tracking-widest">
-                      {creditCardData.cardHolder}
-                    </p>
+                    <p className="font-medium ">{creditCardData.cardHolder}</p>
                     <IconCopy
                       className="cursor-pointer text-green-400"
                       onClick={() =>
@@ -154,6 +154,31 @@ const CreditCard = () => {
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+          <div className="mt-10">
+            <div className="border-l-4 border-l-purple-500 p-2 text-sm sm:text-lg bg-[#1a1c2e]">
+              <span className="text-blue-300">
+                <p>
+                  👋 Hey there! Our Credit Card Generator is a super useful tool
+                  for software developers and testers. It allows you to create
+                  fictitious credit card data for use in software testing and
+                  system demonstrations. This way, you can simulate financial
+                  transactions within your systems without the need to use real
+                  credit card information. It's perfect for e-commerce systems
+                  and fintech projects!
+                </p>
+                <p>
+                  🪪 By using our generator, you can easily create basic
+                  information for a fictitious credit card, such as the card
+                  number, the cardholder's name, the expiration date, and the
+                  CVV code. However, it's important to note that this data is
+                  not linked to any real account and is only meant for
+                  educational and testing purposes. So, it can't be used for
+                  conducting real financial transactions like payments or
+                  purchases.
+                </p>
+              </span>
             </div>
           </div>
         </div>
