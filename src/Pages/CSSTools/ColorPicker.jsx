@@ -63,6 +63,7 @@ const ColorPicker = () => {
   const handleCopyClick = (copyColor) => {
     if (navigator.clipboard && navigator.clipboard.writeText) {
       navigator.clipboard.writeText(copyColor);
+      toast(`[${copyColor}] Copied!`, { style: toastStyleSuccess });
     } else {
       const textarea = document.createElement("textarea");
       textarea.value = colorToCopy;
@@ -71,8 +72,8 @@ const ColorPicker = () => {
       textarea.select();
       document.execCommand("copy");
       document.body.removeChild(textarea);
+      toast(`[${copyColor}] Copied!`, { style: toastStyleSuccess });
     }
-    toast("Color Copied to Clipboard!", { style: toastStyleSuccess });
   };
 
   return (

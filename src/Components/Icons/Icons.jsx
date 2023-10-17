@@ -193,8 +193,8 @@ export function IconCounter(props) {
     <svg
       viewBox="0 0 24 24"
       fill="currentColor"
-      height="1.9em"
-      width="1.9em"
+      height="1.8em"
+      width="1.8em"
       {...props}
     >
       <path d="M4 4h16a2 2 0 012 2v12a2 2 0 01-2 2H4a2 2 0 01-2-2V6a2 2 0 012-2m0 2v12h7V6H4m16 12V6h-1.24c.24.54.19 1.07.19 1.13-.07.67-.54 1.37-.71 1.62l-2.33 2.55 3.32-.02.01 1.22-5.2-.03-.04-1s3.05-3.23 3.2-3.52c.14-.28.71-1.95-.7-1.95-1.23.05-1.09 1.3-1.09 1.3l-1.54.01s.01-.66.38-1.31H13v12h2.58l-.01-.86.97-.01s.91-.16.92-1.05c.04-1-.81-1-.96-1-.13 0-1.07.05-1.07.87h-1.52s.04-2.06 2.59-2.06c2.6 0 2.46 2.02 2.46 2.02s.04 1.25-1.11 1.72l.52.37H20M8.92 16h-1.5v-5.8l-1.8.56V9.53l3.14-1.12h.16V16z" />
@@ -207,8 +207,8 @@ export function IconCompare(props) {
     <svg
       viewBox="0 0 24 24"
       fill="currentColor"
-      height="1.6em"
-      width="1.6em"
+      height="1.8em"
+      width="1.8em"
       {...props}
     >
       <path d="M19 3h-5v2h5v13l-5-6v9h5a2 2 0 002-2V5a2 2 0 00-2-2m-9 15H5l5-6m0-9H5c-1.11 0-2 .89-2 2v14a2 2 0 002 2h5v2h2V1h-2v2z" />
@@ -647,8 +647,8 @@ export function IconTextEditOutline(props) {
     <svg
       viewBox="0 0 24 24"
       fill="currentColor"
-      height="1.9em"
-      width="1.9em"
+      height="1.8em"
+      width="1.8em"
       {...props}
     >
       <path d="M8 12h8v2H8v-2m2 8H6V4h7v5h5v3.1l2-2V8l-6-6H6a2 2 0 00-2 2v16a2 2 0 002 2h4v-2m-2-2h4.1l.9-.9V16H8v2m12.2-5c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1z" />
@@ -720,6 +720,33 @@ export function IconHash(props) {
       {...props}
     >
       <path d="M4 9h16M4 15h16M10 3L8 21M16 3l-2 18" />
+    </svg>
+  );
+}
+
+export function IconFormatTextVariantOutline(props) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      height="1.8em"
+      width="1.8em"
+      {...props}
+    >
+      <path d="M11 3c-.82 0-1.56.5-1.86 1.27l-5.5 14C3.12 19.58 4.09 21 5.5 21h2.25c.84 0 1.58-.5 1.87-1.3l.64-1.7h3.48l.64 1.7c.29.8 1.04 1.3 1.87 1.3h2.25c1.41 0 2.38-1.42 1.86-2.73l-5.5-14C14.56 3.5 13.82 3 13 3m-2 2h2l5.5 14h-2.25l-1.13-3H8.87l-1.12 3H5.5M12 7.67L9.62 14h4.75z" />
+    </svg>
+  );
+}
+export function IconBold(props) {
+  return (
+    <svg
+      viewBox="0 0 1024 1024"
+      fill="currentColor"
+      height="1.8em"
+      width="1.8em"
+      {...props}
+    >
+      <path d="M697.8 481.4c33.6-35 54.2-82.3 54.2-134.3v-10.2C752 229.3 663.9 142 555.3 142H259.4c-15.1 0-27.4 12.3-27.4 27.4v679.1c0 16.3 13.2 29.5 29.5 29.5h318.7c117 0 211.8-94.2 211.8-210.5v-11c0-73-37.4-137.3-94.2-175.1zM328 238h224.7c57.1 0 103.3 44.4 103.3 99.3v9.5c0 54.8-46.3 99.3-103.3 99.3H328V238zm366.6 429.4c0 62.9-51.7 113.9-115.5 113.9H328V542.7h251.1c63.8 0 115.5 51 115.5 113.9v10.8z" />
     </svg>
   );
 }

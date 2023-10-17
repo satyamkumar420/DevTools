@@ -16,6 +16,7 @@ const TextComparator = lazy(() => import("./Pages/Texts/TextComparator"));
 const TextConverter = lazy(() =>
   import("./Pages/Texts/TextConverter/TextConverter")
 );
+const AsciiArt = lazy(() => import("./Pages/Texts/AsciiArt/AsciiArt"));
 
 // Lazy-loaded route components 'Images'
 const Images = lazy(() => import("./Pages/Images/Images"));
@@ -91,6 +92,9 @@ const AgeCalculator = lazy(() =>
   import("./Pages/VariousTools/AgeCalculator/AgeCalculator")
 );
 const Md5Hash = lazy(() => import("./Pages/VariousTools/Md5Hash/Md5Hash"));
+const Base64Encoder = lazy(() =>
+  import("./Pages/VariousTools/Base64Encoder/Base64Encoder")
+);
 
 // Lazy-loaded route components 'MinifyCode'
 const MinifyCode = lazy(() => import("./Pages/MinifyCode/MinifyCode"));
@@ -123,6 +127,7 @@ function App() {
             <Route path="/texts/text-counter" element={<TextCounter />} />
             <Route path="/texts/text-comparator" element={<TextComparator />} />
             <Route path="/texts/text-converter" element={<TextConverter />} />
+            <Route path="/texts/ascii-art" element={<AsciiArt />} />
 
             {/* Here are the routes for 'Images' */}
             <Route path="/image-tools" element={<Images />} />
@@ -187,6 +192,10 @@ function App() {
               element={<AgeCalculator />}
             />
             <Route path="/various-tools/md5-hash" element={<Md5Hash />} />
+            <Route
+              path="/various-tools/base64-encoder"
+              element={<Base64Encoder />}
+            />
 
             {/* Here are the routes for 'Emoji Picker' */}
             <Route path="/emojis-picker" element={<EmojiPicker />} />

@@ -4,6 +4,7 @@ import {
   IconCounter,
   IconCompare,
   IconTextEditOutline,
+  IconFormatTextVariantOutline,
 } from "../../Components/Icons/Icons";
 import { Helmet } from "react-helmet-async";
 
@@ -25,6 +26,14 @@ const Texts = () => {
       to: "/texts/text-converter",
       text: "Text Converter",
       icon: <IconTextEditOutline className="text-green-500  md:text-4xl " />,
+      className: "p-2 grid place-items-center",
+    },
+    {
+      to: "/texts/ascii-art",
+      text: "ASCII Letter",
+      icon: (
+        <IconFormatTextVariantOutline className="text-blue-200  md:text-4xl " />
+      ),
       className: "p-2 grid place-items-center",
     },
     // Add more buttons here

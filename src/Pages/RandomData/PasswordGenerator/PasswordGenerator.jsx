@@ -24,10 +24,7 @@ const PasswordGenerator = () => {
       const randomIndex = Math.floor(Math.random() * allChars.length);
       newPassword += allChars[randomIndex];
     }
-
     setPassword(newPassword);
-
-    // Set loading state to false after password is generated
     setLoading(true);
   };
 

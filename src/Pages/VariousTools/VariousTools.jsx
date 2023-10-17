@@ -4,6 +4,7 @@ import {
   IconLink,
   IconCalculator,
   IconHash,
+  IconBold,
 } from "../../Components/Icons/Icons";
 import { Helmet } from "react-helmet-async";
 
@@ -25,6 +26,12 @@ const VariousTools = () => {
       to: "/various-tools/md5-hash",
       text: "MD5 Hash",
       icon: <IconHash className="text-green-500 text-lg md:text-3xl" />,
+      className: "p-2 grid place-items-center",
+    },
+    {
+      to: "/various-tools/base64-encoder",
+      text: "Base64 Encoder",
+      icon: <IconBold className="text-green-500 text-lg md:text-3xl" />,
       className: "p-2 grid place-items-center",
     },
     // Add more buttons here
