@@ -18,8 +18,8 @@ const RandomData = () => {
       className: "p-2 grid place-items-center",
     },
     {
-      to: "/random-data/dummy-text-generator",
-      text: "Dummy Text Generator",
+      to: "/random-data/text-generator",
+      text: "Text Generator",
       icon: <IconTextSlash className="text-pink-500" />,
       className: "p-2 grid place-items-center",
     },

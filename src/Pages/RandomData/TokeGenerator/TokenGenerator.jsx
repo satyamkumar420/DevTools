@@ -76,6 +76,30 @@ const TokenGenerator = () => {
               </div>
             )}
           </div>
+          <div className="mt-10">
+            <div className="border-l-4 border-l-purple-500 p-2 text-sm sm:text-lg bg-[#1a1c2e]">
+              <span className="text-blue-300">
+                <p>
+                  👋 Hello there! Generating tokens has never been easier with
+                  our amazing tool! Our team has worked hard to ensure that our
+                  tool features a simple and intuitive interface, so you can
+                  have a delightful user experience. You have the flexibility to
+                  specify your desired token length, making it adaptable to your
+                  specific needs. Whether you need a short token for a session
+                  key or a longer one for enhanced security, our tool has
+                  definitely got you covered.
+                </p>
+                <p>
+                  All you have to do is specify your preferred token length,
+                  click the "Generate Token" button, and voilà! Our tool will
+                  instantly generate a base64 encoded token that you can use for
+                  a variety of purposes, including authentication, API keys, or
+                  any application that requires secure random data. We hope you
+                  find our tool useful and enjoy using it!
+                </p>
+              </span>
+            </div>
+          </div>
         </div>
       </div>
     </>

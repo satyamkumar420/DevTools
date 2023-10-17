@@ -165,7 +165,7 @@ function App() {
               element={<PasswordGenerator />}
             />
             <Route
-              path="/random-data/dummy-text-generator"
+              path="/random-data/text-generator"
               element={<DummyTextGenerator />}
             />
             <Route path="/random-data/fake-details" element={<FakeDetails />} />

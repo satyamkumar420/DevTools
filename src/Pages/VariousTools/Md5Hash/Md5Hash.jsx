@@ -88,6 +88,25 @@ const Md5Hash = () => {
               )}
             </div>
           </div>
+          <div className="mt-10">
+            <div className="border-l-4 border-l-purple-500 p-2 text-sm sm:text-lg bg-[#1a1c2e]">
+              <span className="text-blue-300">
+                Our Hash Code Generator makes it easy for you to calculate the
+                MD5 hash of any text you like! MD5 (Message Digest Algorithm 5)
+                is a widely used cryptographic hash algorithm that generates a
+                unique 32-character fingerprint for any input text or data. It's
+                awesome for checking data integrity because it produces a
+                constant hash, no matter the size of the input data. This means
+                that even tiny alterations in the file will change the code,
+                making it easy to identify any changes made to the original
+                data. MD5 is also great for encrypting passwords in some
+                authentication systems, but we recommend using more secure
+                algorithms like SHA-256 for such purposes. All you have to do is
+                input the text and click on the 'Calculate MD5 Hash' button.
+                Let's get started!
+              </span>
+            </div>
+          </div>
         </div>
       </div>
     </>
