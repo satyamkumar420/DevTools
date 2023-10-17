@@ -21,7 +21,7 @@ function Base64Encoder() {
   const handleCopy = () => {
     if (navigator.clipboard && navigator.clipboard.writeText) {
       navigator.clipboard.writeText(base64);
-      toast("Token Copied!", { style: toastStyleSuccess });
+      toast("Base64 encoded data copied!", { style: toastStyleSuccess });
     } else {
       const textarea = document.createElement("textarea");
       textarea.value = base64;
@@ -30,7 +30,7 @@ function Base64Encoder() {
       textarea.select();
       document.execCommand("copy");
       document.body.removeChild(textarea);
-      toast("Token Copied!", { style: toastStyleSuccess });
+      toast("Base64 encoded data copied!", { style: toastStyleSuccess });
     }
   };
   return (
