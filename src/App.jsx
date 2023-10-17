@@ -90,6 +90,7 @@ const ShortUrl = lazy(() => import("./Pages/VariousTools/ShortUrl/ShortUrl"));
 const AgeCalculator = lazy(() =>
   import("./Pages/VariousTools/AgeCalculator/AgeCalculator")
 );
+const Md5Hash = lazy(() => import("./Pages/VariousTools/Md5Hash/Md5Hash"));
 
 // Lazy-loaded route components 'MinifyCode'
 const MinifyCode = lazy(() => import("./Pages/MinifyCode/MinifyCode"));
@@ -185,6 +186,7 @@ function App() {
               path="/various-tools/age-calculator"
               element={<AgeCalculator />}
             />
+            <Route path="/various-tools/md5-hash" element={<Md5Hash />} />
 
             {/* Here are the routes for 'Emoji Picker' */}
             <Route path="/emojis-picker" element={<EmojiPicker />} />

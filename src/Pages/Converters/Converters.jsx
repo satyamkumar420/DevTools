@@ -7,7 +7,7 @@ const Converters = () => {
   const buttons = [
     {
       to: "/converters/timestamp-converter",
-      text: "Timestamp Converter ",
+      text: "Timestamp",
       icon: <IconTime className="text-blue-100" />,
       className: "p-2 grid place-items-center",
     },

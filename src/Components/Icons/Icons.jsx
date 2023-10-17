@@ -692,8 +692,8 @@ export function IconTokens(props) {
     <svg
       fill="none"
       viewBox="0 0 15 15"
-      height="1.9em"
-      width="1.9em"
+      height="1.8em"
+      width="1.8em"
       {...props}
     >
       <path
@@ -702,6 +702,24 @@ export function IconTokens(props) {
         d="M4.5 2a2.5 2.5 0 100 5 2.5 2.5 0 000-5zM3 4.5a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0zM10.5 2a2.5 2.5 0 100 5 2.5 2.5 0 000-5zM9 4.5a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0zm-7 6a2.5 2.5 0 115 0 2.5 2.5 0 01-5 0zM4.5 9a1.5 1.5 0 100 3 1.5 1.5 0 000-3zm6-1a2.5 2.5 0 100 5 2.5 2.5 0 000-5zM9 10.5a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0z"
         clipRule="evenodd"
       />
+    </svg>
+  );
+}
+
+export function IconHash(props) {
+  return (
+    <svg
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2}
+      viewBox="0 0 24 24"
+      height="1.8em"
+      width="1.8em"
+      {...props}
+    >
+      <path d="M4 9h16M4 15h16M10 3L8 21M16 3l-2 18" />
     </svg>
   );
 }

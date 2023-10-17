@@ -1,6 +1,10 @@
 import { NavLink } from "react-router-dom";
 import Button from "../../Components/utils/Button/Button";
-import { IconLink, IconCalculator } from "../../Components/Icons/Icons";
+import {
+  IconLink,
+  IconCalculator,
+  IconHash,
+} from "../../Components/Icons/Icons";
 import { Helmet } from "react-helmet-async";
 
 const VariousTools = () => {
@@ -15,6 +19,12 @@ const VariousTools = () => {
       to: "/various-tools/age-calculator",
       text: "Age Calculator",
       icon: <IconCalculator className="text-blue-100 text-lg md:text-3xl" />,
+      className: "p-2 grid place-items-center",
+    },
+    {
+      to: "/various-tools/md5-hash",
+      text: "MD5 Hash",
+      icon: <IconHash className="text-green-500 text-lg md:text-3xl" />,
       className: "p-2 grid place-items-center",
     },
     // Add more buttons here
