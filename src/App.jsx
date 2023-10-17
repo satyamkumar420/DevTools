@@ -56,6 +56,9 @@ const DummyTextGenerator = lazy(() =>
 const FakeDetails = lazy(() =>
   import("./Pages/RandomData/FakeDetails/FakeDetails")
 );
+const CreditCard = lazy(() =>
+  import("./Pages/RandomData/CreditCard/CreditCard")
+);
 
 // Lazy-loaded route components 'Converters'
 const Converters = lazy(() => import("./Pages/Converters/Converters"));
@@ -161,6 +164,7 @@ function App() {
               element={<DummyTextGenerator />}
             />
             <Route path="/random-data/fake-details" element={<FakeDetails />} />
+            <Route path="/random-data/credit-card" element={<CreditCard />} />
 
             {/* Here are the routes for 'Format Code' */}
             <Route path="/format-code" element={<FormatCode />} />

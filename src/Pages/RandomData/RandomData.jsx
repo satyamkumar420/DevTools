@@ -2,6 +2,7 @@ import {
   IconPassword,
   IconTextSlash,
   IconProfile,
+  IconCreditCard,
 } from "../../Components/Icons/Icons";
 import Button from "../../Components/utils/Button/Button";
 import { NavLink } from "react-router-dom";
@@ -25,6 +26,12 @@ const RandomData = () => {
       to: "/random-data/fake-details",
       text: "Fake Details",
       icon: <IconProfile className="text-yellow-500" />,
+      className: "p-2 grid place-items-center",
+    },
+    {
+      to: "/random-data/credit-card",
+      text: "Credit Card",
+      icon: <IconCreditCard className="text-purple-500" />,
       className: "p-2 grid place-items-center",
     },
   ];

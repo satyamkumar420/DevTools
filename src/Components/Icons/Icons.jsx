@@ -655,3 +655,34 @@ export function IconTextEditOutline(props) {
     </svg>
   );
 }
+
+export function IconCreditCard(props) {
+  return (
+    <svg
+      fill="none"
+      viewBox="0 0 15 15"
+      height="1.9em"
+      width="1.9em"
+      {...props}
+    >
+      <path
+        stroke="currentColor"
+        d="M.5 5.5h14M2 9.5h6m2 0h3M.5 3.5v8a1 1 0 001 1h12a1 1 0 001-1v-8a1 1 0 00-1-1h-12a1 1 0 00-1 1z"
+      />
+    </svg>
+  );
+}
+
+export function IconCopy(props) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      height="1.3em"
+      width="1.3em"
+      {...props}
+    >
+      <path d="M19 21H8V7h11m0-2H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2m-3-4H4a2 2 0 00-2 2v14h2V3h12V1z" />
+    </svg>
+  );
+}
