@@ -42,6 +42,7 @@ const AgeCalculator = () => {
       setAge(ageString);
     }
   };
+
   return (
     <>
       <Helmet>
@@ -54,7 +55,7 @@ const AgeCalculator = () => {
           </h3>
           <div className="mt-5 max-w-md bg-[#1a1c2e] p-5 rounded-md shadow-md">
             <div className="mb-4">
-              <label htmlFor="birthdate">Select Birthdate:</label>
+              <label>Select Birthdate:</label>
               <input
                 type="date"
                 id="birthdate"
@@ -64,7 +65,7 @@ const AgeCalculator = () => {
               />
             </div>
             <div className="mb-4">
-              <label htmlFor="currentDate">Select Current Date:</label>
+              <label>Select Current Date:</label>
               <input
                 type="date"
                 id="currentDate"

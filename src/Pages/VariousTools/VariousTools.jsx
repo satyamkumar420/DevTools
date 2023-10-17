@@ -45,7 +45,7 @@ const VariousTools = () => {
             <div className="border-l-4 border-l-purple-500 p-2 text-sm sm:text-lg bg-[#1a1c2e]">
               <span className="text-blue-300">
                 Improve your work productivity by utilizing our collection of
-                online tools that include Short URL.
+                online tools that include a variety of tools.
               </span>
             </div>
           </div>

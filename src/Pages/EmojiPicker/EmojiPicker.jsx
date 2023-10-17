@@ -40,6 +40,7 @@ const EmojiPicker = () => {
     }
   }, [selectedCategory]);
 
+  // filter searchTerm if
   const handleSearch = debounce((searchTerm) => {
     setSearchTerm(searchTerm);
     const emojisForCategory = Emoji.filter((emoji) =>
@@ -88,7 +89,7 @@ const EmojiPicker = () => {
   return (
     <>
       <Helmet>
-        <title>Emoji Picker</title>
+        <title>Emoji Picker 🥰 🎉 🐱 ☔ </title>
       </Helmet>
       <div className="p-4 sm:ml-52 max-w-screen-full  overflow-y-auto max-h-screen">
         <div className="my-20">
