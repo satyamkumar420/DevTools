@@ -1,6 +1,8 @@
 import { Helmet } from "react-helmet-async";
 import { useState } from "react";
 import PrimaryButton from "../../../Components/utils/Button/PrimaryButton";
+import { toast } from "react-toastify";
+import { toastStyleSuccess } from "../../../Components/utils/Toastify/toastStyle";
 
 const TokenGenerator = () => {
   const [token, setToken] = useState("");
@@ -23,6 +25,23 @@ const TokenGenerator = () => {
     setToken(encodedToken);
   };
 
+  // handleCopy function to copy the generated token
+  const handleCopy = () => {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(token);
+      toast("Token Copied!", { style: toastStyleSuccess });
+    } else {
+      const textarea = document.createElement("textarea");
+      textarea.value = token;
+      document.body.appendChild(textarea);
+      textarea.focus();
+      textarea.select();
+      document.execCommand("copy");
+      document.body.removeChild(textarea);
+      toast("Token Copied!", { style: toastStyleSuccess });
+    }
+  };
+
   return (
     <>
       <Helmet>
@@ -42,9 +61,12 @@ const TokenGenerator = () => {
                 onChange={(e) => setTokenLength(e.target.value)}
                 className="px-3 bg-[#1a1c2e] outline-none border-none ring-2 focus:ring-2 focus:ring-blue-500 text-blue-100 rounded w-40 sm:w-52"
               />
+              {token && (
+                <PrimaryButton text={"Copy Token"} onClick={handleCopy} />
+              )}
             </div>
             {token && (
-              <div className="my-5 text-left  ">
+              <div className="my-5 text-left ">
                 <p className="text-base sm:text-lg text-orange-500">
                   Generated Token:{" "}
                 </p>
