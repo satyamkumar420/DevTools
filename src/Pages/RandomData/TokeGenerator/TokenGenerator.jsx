@@ -70,9 +70,9 @@ const TokenGenerator = () => {
                 <p className="text-base sm:text-lg text-orange-500">
                   Generated Token:{" "}
                 </p>
-                <p className="text-left bg-[#1a1c2e] rounded-md py-3 px-4 break-words">
+                <pre className="text-left bg-[#1a1c2e] rounded-md py-3 px-4 break-words">
                   {token}
-                </p>
+                </pre>
               </div>
             )}
           </div>

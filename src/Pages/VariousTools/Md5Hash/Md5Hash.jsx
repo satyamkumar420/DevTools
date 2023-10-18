@@ -18,7 +18,7 @@ const Md5Hash = () => {
 
   const generateMD5 = () => {
     if (input.trim() === "") {
-      toast("Please Enter Text!", { style: toastStyleError });
+      toast("Please Enter a Text!", { style: toastStyleError });
       return;
     }
 

@@ -2,7 +2,10 @@ import React, { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import PrimaryButton from "../../../Components/utils/Button/PrimaryButton";
 import { toast } from "react-toastify";
-import { toastStyleSuccess } from "../../../Components/utils/Toastify/toastStyle";
+import {
+  toastStyleSuccess,
+  toastStyleError,
+} from "../../../Components/utils/Toastify/toastStyle";
 
 function Base64Encoder() {
   const [text, setText] = useState("");
@@ -13,6 +16,11 @@ function Base64Encoder() {
   };
 
   const encodeToBase64 = () => {
+    // check if text is empty
+    if (text.trim() === "") {
+      toast("Please Enter a Text!", { style: toastStyleError });
+      return;
+    }
     const base64String = btoa(text);
     setBase64(base64String);
   };
@@ -33,6 +41,7 @@ function Base64Encoder() {
       toast("Base64 encoded data copied!", { style: toastStyleSuccess });
     }
   };
+
   return (
     <>
       <Helmet>
@@ -61,13 +70,13 @@ function Base64Encoder() {
             <PrimaryButton text={"Encode base64"} onClick={encodeToBase64} />
 
             {base64 && (
-              <div className="mt-4">
-                <p className="text-base sm:text-lg text-orange-500">
+              <div className="mt-4 break-words">
+                <p className="text-medium font-medium sm:text-lg text-orange-500">
                   Encoded Base64:{" "}
                 </p>
-                <p className="mb-2 text-left bg-[#202236] rounded-md py-3 px-4 break-words shadow-md">
+                <pre className="mb-2 sm:text-lg  text-left bg-[#202236] rounded-md py-3 px-4 break-words shadow-md">
                   {base64}
-                </p>
+                </pre>
                 <PrimaryButton text={"Copy Token"} onClick={handleCopy} />
               </div>
             )}
