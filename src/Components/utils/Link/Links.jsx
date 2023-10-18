@@ -47,8 +47,8 @@ export const HomeLinks = [
   { text: "Password Generator", link: "/random-data/password-generator" },
   { text: "Circle Image Crop", link: "/image/circle-crop" },
   { text: "Square Image Crop", link: "/images/square-crop" },
-  { text: "Dummy Text", link: "/random-data/dummy-text-generator" },
-  { text: "Age Calculator", link: "/various-tools/age-calculator" },
+  { text: "Text Generator", link: "/random-data/text-generator" },
   { text: "Token Generator", link: "/random-data/token-generator" },
+  { text: "MD5 Hash", link: "/random-data/md5-hash" },
   // { text: "Short URL", link: "/various-tools/short-url" },
 ];

@@ -38,12 +38,12 @@ const TextGenerator = () => {
   return (
     <>
       <Helmet>
-        <title>Dummy Text Generator</title>
+        <title>Text Generator</title>
       </Helmet>
       <div className="p-4 sm:ml-52 text-justify max-w-screen-full overflow-y-auto max-h-screen">
         <div className="my-20 max-w-screen-lg">
           <h3 className="p-2 rounded max-w-screen-lg text-lg sm:text-2xl text-yellow-500 w-full bg-[#1a1c2e]">
-            Dummy Text Generator
+            Text Generator
           </h3>
           <div>
             <Options
@@ -64,14 +64,20 @@ const TextGenerator = () => {
             />
           </div>
           <div className="mt-10">
-            <div className="border-l-4 border-l-purple-500 p-2 text-sm sm:text-lg bg-[#1a1c2e]">
-              <span className="text-blue-300">
-                If you're a student or a developer, you know how important it is
-                to have good dummy text for your websites. Well, this tool is
-                just what you need! It's a valuable resource that you can't
-                afford to overlook. Just remember to use it wisely, and you'll
-                be all set!
-              </span>
+            <div className="text-left border-l-4 border-l-purple-500 p-2 text-sm sm:text-lg bg-[#1a1c2e]">
+              <p className="text-blue-300">
+                The Random Text Generator is an indispensable tool that empowers
+                creators to bring their imagination to life. Whether you're
+                working on a website, brochure, magazine, or presentation, this
+                tool allows you to quickly and effortlessly generate words,
+                phrases, lists, and paragraphs. By creating fictitious content,
+                you can preview and plan the layout and design before
+                incorporating actual content, ensuring that everything meets
+                your exact specifications. With just a few clicks, you can
+                unleash your creativity and bring your ideas to fruition. So go
+                ahead, explore the possibilities, and let the Random Text
+                Generator be your guiding light on your creative journey.
+              </p>
             </div>
           </div>
         </div>

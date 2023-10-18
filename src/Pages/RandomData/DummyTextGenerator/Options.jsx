@@ -35,7 +35,7 @@ const options = ({
   return (
     <div className="flex flex-wrap gap-3 mt-5 items-center justify-center">
       <div className="">
-        <h3 className="mb-2 font-semibold">Paragraphs</h3>
+        <h3 className="mb-2 font-semibold">No. of Paragraphs</h3>
         <input
           type="number"
           placeholder="Paragraphs"
