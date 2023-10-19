@@ -52,32 +52,19 @@ const JsonToXml = () => {
   const handleCopyClick = () => {
     if (xmlValue) {
       if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard
-          .writeText(xmlValue)
-          .then(() => {
-            toast(`XML Data is Copied!`, { style: toastStyleSuccess });
-          })
-          .catch((error) => {
-            console.error("Error copying to clipboard:", error);
-            fallbackCopyToClipboard(xmlValue);
-          });
+        navigator.clipboard.writeText(xmlValue);
+        toast(`XML Data is Copied!`, { style: toastStyleSuccess });
       } else {
-        fallbackCopyToClipboard(xmlValue);
+        const textarea = document.createElement("textarea");
+        textarea.value = xmlValue;
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand("copy");
+        textarea.remove();
+        toast(`XML Data is Copied!`, { style: toastStyleSuccess });
       }
     }
   };
-
-  function fallbackCopyToClipboard(text) {
-    const textarea = document.createElement("textarea");
-    textarea.value = text;
-    document.body.appendChild(textarea);
-    textarea.focus();
-    textarea.select();
-    document.execCommand("copy");
-    document.body.removeChild(textarea);
-    toast(`XML Data is Copied!`, { style: toastStyleSuccess });
-  }
-
   return (
     <>
       <Helmet>

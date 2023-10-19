@@ -83,8 +83,16 @@ const JsonFormat = () => {
           />
           {jsonText && (
             <div className="flex flex-wrap gap-2 mb-10 justify-center sm:justify-start">
-              <PrimaryButton onClick={handleFormatClick} text="Format" />
-              <PrimaryButton onClick={handleCopyClick} text="Copy" />
+              <PrimaryButton
+                onClick={handleFormatClick}
+                text="Format"
+                className={"bg-green-600 hover:bg-green-700"}
+              />
+              {formattedJson && (
+                <div>
+                  <PrimaryButton onClick={handleCopyClick} text="Copy" />
+                </div>
+              )}
               <PrimaryButton
                 onClick={handleResetEditor}
                 text="Reset"

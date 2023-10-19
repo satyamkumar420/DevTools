@@ -108,12 +108,12 @@ const PasswordGenerator = () => {
                 <h3 className=" font-medium  text-gray-400">
                   Generated Password:
                 </h3>
-                <span
-                  className="flex-wrap flex text-gray-50 bg-[#282a40] cursor-pointer rounded px-3  py-3 max-w-full min-w-full overflow-x-auto "
+                <pre
+                  className=" text-gray-50 bg-[#282a40] cursor-pointer rounded px-3  py-3  "
                   onClick={() => handleCopy(password)}
                 >
                   {password}
-                </span>
+                </pre>
 
                 <div className="mt-2 flex gap-1">
                   <hr

@@ -67,12 +67,13 @@ const TokenGenerator = lazy(() =>
 
 // Lazy-loaded route components 'Converters'
 const Converters = lazy(() => import("./Pages/Converters/Converters"));
-
 const TimestampConverter = lazy(() =>
   import("./Pages/Converters/TimestampConverter/TimestampConverter")
 );
 const JsonToXml = lazy(() => import("./Pages/Converters/JsonToXml/JsonToXml"));
 const XmlToJson = lazy(() => import("./Pages/Converters/XmlToJson/XmlToJson"));
+const LessToCss = lazy(() => import("./Pages/Converters/LessToCss/LessToCss"));
+// const CssToLess = lazy(() => import("./Pages/Converters/CssToLess/CssToLess"));
 
 // Lazy-loaded route components 'About'
 const About = lazy(() => import("./Pages/About/About"));
@@ -162,6 +163,7 @@ function App() {
             />
             <Route path="/converters/json-to-xml" element={<JsonToXml />} />
             <Route path="/converters/xml-to-json" element={<XmlToJson />} />
+            <Route path="/converters/less-to-css" element={<LessToCss />} />
 
             {/* Here are the routes for 'Random Data' */}
             <Route path="/random-data" element={<RandomData />} />

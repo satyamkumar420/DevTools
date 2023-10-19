@@ -5,6 +5,7 @@ import PrimaryButton from "../../../Components/utils/Button/PrimaryButton";
 import { IconCopy } from "../../../Components/Icons/Icons";
 import { toast } from "react-toastify";
 import { toastStyleSuccess } from "../../../Components/utils/Toastify/toastStyle";
+import MasterCardLogo from "../../../assets/masterCard.png";
 
 const CreditCard = () => {
   // Define the initial credit card data
@@ -88,10 +89,7 @@ const CreditCard = () => {
                     />
                   </div>
                 </div>
-                <img
-                  className="w-14 h-14"
-                  src="https://i.imgur.com/bbPHJVe.png"
-                />
+                <img className="w-14 h-14" src={MasterCardLogo} />
               </div>
               <div className="pt-1">
                 <p className="font-light">Card Number</p>
@@ -157,7 +155,7 @@ const CreditCard = () => {
             </div>
           </div>
           <div className="mt-10">
-            <div className="border-l-4 border-l-purple-500 p-2 text-sm sm:text-lg bg-[#1a1c2e]">
+            <div className="text-left border-l-4 border-l-purple-500 p-2 text-sm sm:text-lg bg-[#1a1c2e]">
               <span className="text-blue-300">
                 <p>
                   👋 Hey there! Our Credit Card Generator is a super useful tool

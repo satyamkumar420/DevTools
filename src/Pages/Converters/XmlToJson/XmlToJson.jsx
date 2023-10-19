@@ -52,31 +52,19 @@ const XmlToJson = () => {
   const handleCopyClick = () => {
     if (jsonValue) {
       if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard
-          .writeText(jsonValue)
-          .then(() => {
-            toast(`JSON Data is Copied!`, { style: toastStyleSuccess });
-          })
-          .catch((error) => {
-            console.error("Error copying to clipboard:", error);
-            fallbackCopyToClipboard(jsonValue);
-          });
+        navigator.clipboard.writeText(jsonValue);
+        toast(`JSON Data is Copied!`, { style: toastStyleSuccess });
       } else {
-        fallbackCopyToClipboard(jsonValue);
+        const textarea = document.createElement("textarea");
+        textarea.value = jsonValue;
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand("copy");
+        textarea.remove();
+        toast(`JSON Data is Copied!`, { style: toastStyleSuccess });
       }
     }
   };
-
-  function fallbackCopyToClipboard(text) {
-    const textarea = document.createElement("textarea");
-    textarea.value = text;
-    document.body.appendChild(textarea);
-    textarea.focus();
-    textarea.select();
-    document.execCommand("copy");
-    document.body.removeChild(textarea);
-    toast(`JSON Data is Copied!`, { style: toastStyleSuccess });
-  }
 
   // handle Reset Editor
   const handleResetEditor = () => {
@@ -111,7 +99,11 @@ const XmlToJson = () => {
                   text="Convert"
                   className="bg-green-600 hover:bg-green-700"
                 />
-                <PrimaryButton onClick={handleCopyClick} text="Copy" />
+                {jsonValue && (
+                  <div>
+                    <PrimaryButton onClick={handleCopyClick} text="Copy" />
+                  </div>
+                )}
                 <PrimaryButton
                   onClick={handleResetEditor}
                   text="Reset"

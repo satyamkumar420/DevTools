@@ -5,23 +5,24 @@ import PrimaryButton from "../../../Components/utils/Button/PrimaryButton";
 import { Helmet } from "react-helmet-async";
 import { toast } from "react-toastify";
 import { toastStyleSuccess } from "../../../Components/utils/Toastify/toastStyle";
+import Avatar from "../../../assets/favicon.png";
 
 const FakeDetails = () => {
   const [details, setDetails] = useState({
     // Initial data
-    profileImage: faker.image.avatar(),
-    randomName: faker.person.fullName(),
-    bio: faker.person.bio(),
-    randomEmail: faker.internet.email(),
-    randomPassword: faker.internet.password(),
-    address: faker.location.streetAddress(),
-    company: faker.company.name(),
-    website: faker.internet.url(),
-    phone: faker.phone.number(),
-    country: faker.location.country(),
-    city: faker.location.city(),
-    state: faker.location.state(),
-    Pin: faker.finance.pin(6),
+    profileImage: Avatar,
+    randomName: "Annie Feest",
+    bio: "engineer, coach, traveler",
+    randomEmail: "Stone_Schuster19@hotmail.com",
+    randomPassword: "Z30m_y5lhVoXdfD",
+    address: "472 Larson Forks",
+    company: "Hartmann - Reinger",
+    website: "https://simplistic-calcification.net/",
+    phone: "952-499-1887",
+    country: "Jamaica",
+    city: "Erie",
+    state: "New Jersey",
+    Pin: "261919",
   });
 
   const [isLoading, setIsLoading] = useState(false);
@@ -114,12 +115,12 @@ const FakeDetails = () => {
                   {detailItems.map((item, index) => (
                     <div
                       key={index}
-                      className="px-2 mb-4 text-sm sm:text-base flex flex-wrap gap-2 border-1 border-b-2 rounded-sm border-gray-500"
+                      className="px-2 mb-4 text-sm sm:text-base flex  gap-2 border-1 border-b-2 rounded-sm border-gray-500 text-ellipsis"
                     >
                       <div className="font-bold">{item.label}</div>
                       <strong>:</strong>
                       <div
-                        className="text-blue-300 cursor-pointer"
+                        className="text-blue-300 text-left cursor-pointer text-ellipsis"
                         onClick={() => handleCopy(item.label, item.value)}
                       >
                         {item.value}

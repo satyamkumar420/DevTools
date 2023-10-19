@@ -23,6 +23,12 @@ const Converters = () => {
       icon: <IconXml className="text-red-600" />,
       className: "p-2 grid place-items-center",
     },
+    {
+      to: "/converters/less-to-css",
+      text: "LESS TO CSS",
+      icon: <IconXml className="text-green-500" />,
+      className: "p-2 grid place-items-center",
+    },
   ];
   return (
     <>
