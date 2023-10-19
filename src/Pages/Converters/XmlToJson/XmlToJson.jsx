@@ -93,22 +93,30 @@ const XmlToJson = () => {
               required={required}
             />
             {xmlInput && (
-              <div className="flex flex-wrap gap-2 mb-10 justify-center sm:justify-start">
-                <PrimaryButton
-                  onClick={handleConvertClick}
-                  text="Convert"
-                  className="bg-green-600 hover:bg-green-700"
-                />
+              <div className="flex flex-wrap gap-3 justify-center sm:justify-start">
+                <div className="my-2">
+                  <PrimaryButton
+                    onClick={handleConvertClick}
+                    text="Convert"
+                    className="bg-green-600 hover:bg-green-800 w-32"
+                  />
+                </div>
                 {jsonValue && (
-                  <div>
-                    <PrimaryButton onClick={handleCopyClick} text="Copy" />
+                  <div className="my-2">
+                    <PrimaryButton
+                      onClick={handleCopyClick}
+                      text="Copy"
+                      className={"w-32"}
+                    />
                   </div>
                 )}
-                <PrimaryButton
-                  onClick={handleResetEditor}
-                  text="Reset"
-                  className="bg-orange-700 hover:bg-orange-800"
-                />
+                <div className="my-2">
+                  <PrimaryButton
+                    onClick={handleResetEditor}
+                    text="Reset"
+                    className="bg-orange-600 hover:bg-orange-800 w-32"
+                  />
+                </div>
               </div>
             )}
           </div>

@@ -89,27 +89,30 @@ const LessToCss = () => {
             />
 
             {lessInput && (
-              <div className="flex flex-wrap gap-3">
-                <PrimaryButton
-                  text="Convert"
-                  onClick={handleConvertClick}
-                  className={"bg-green-600 hover:bg-green-800 px-4"}
-                />
-
+              <div className="flex flex-wrap gap-3 justify-center sm:justify-start">
+                <div className="my-2">
+                  <PrimaryButton
+                    text="Convert"
+                    onClick={handleConvertClick}
+                    className={"bg-green-600 hover:bg-green-800 w-32"}
+                  />
+                </div>
                 {cssOutput && (
-                  <div>
+                  <div className="my-2">
                     <PrimaryButton
                       text="Copy"
                       onClick={handleCopy}
-                      className={"px-4"}
+                      className={"w-32"}
                     />
                   </div>
                 )}
-                <PrimaryButton
-                  text="Reset"
-                  onClick={handleResetEditor}
-                  className={"px-4 bg-orange-600 hover:bg-orange-800"}
-                />
+                <div className="my-2">
+                  <PrimaryButton
+                    text="Reset"
+                    onClick={handleResetEditor}
+                    className={"bg-orange-600 hover:bg-orange-800 w-32"}
+                  />
+                </div>
               </div>
             )}
           </div>

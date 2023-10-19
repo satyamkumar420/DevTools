@@ -102,6 +102,11 @@ const Base64Encoder = lazy(() =>
 
 // Lazy-loaded route components 'MinifyCode'
 const MinifyCode = lazy(() => import("./Pages/MinifyCode/MinifyCode"));
+const HtmlMinify = lazy(() =>
+  import("./Pages/MinifyCode/HtmlMinify/HtmlMinify")
+);
+const CssMinify = lazy(() => import("./Pages/MinifyCode/CssMinify/CssMinify"));
+const JSMinify = lazy(() => import("./Pages/MinifyCode/JSMinify/JSMinify"));
 
 // Lazy-loaded route components 'EmojiPicker'
 const EmojiPicker = lazy(() => import("./Pages/EmojiPicker/EmojiPicker"));
@@ -211,6 +216,9 @@ function App() {
 
             {/* Here are the routes for 'Minify Code' */}
             <Route path="/minify-code" element={<MinifyCode />} />
+            <Route path="/minify-code/html-minify" element={<HtmlMinify />} />
+            <Route path="/minify-code/css-minify" element={<CssMinify />} />
+            <Route path="/minify-code/js-minify" element={<JSMinify />} />
 
             {/* Here are the routes for 'About',' Privacy Policy', and 'Terms' */}
             <Route path="/about" element={<About />} />
