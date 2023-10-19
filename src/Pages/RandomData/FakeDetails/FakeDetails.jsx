@@ -11,13 +11,13 @@ const FakeDetails = () => {
   const [details, setDetails] = useState({
     // Initial data
     profileImage: Avatar,
-    randomName: "Annie Feest",
-    bio: "engineer, coach, traveler",
-    randomEmail: "Stone_Schuster19@hotmail.com",
+    randomName: "Developer",
+    bio: "I'm Engineer",
+    randomEmail: "dev@hotmail.com",
     randomPassword: "Z30m_y5lhVoXdfD",
     address: "472 Larson Forks",
     company: "Hartmann - Reinger",
-    website: "https://simplistic-calcification.net/",
+    website: "https://developer.net/",
     phone: "952-499-1887",
     country: "Jamaica",
     city: "Erie",
@@ -47,7 +47,7 @@ const FakeDetails = () => {
         Pin: faker.finance.pin(6),
       });
       setIsLoading(false);
-    }, 1000);
+    }, 500);
   };
 
   const detailItems = [
@@ -104,7 +104,7 @@ const FakeDetails = () => {
               <Loader />
             ) : (
               <div className="max-w-screen-sm items-center py-4 px- rounded my-5 bg-[#1a1c2e] shadow-lg">
-                <div className="flex justify-center mt-5">
+                <div className="flex justify-center ">
                   <img
                     src={details.profileImage}
                     alt="ProfileLogo"

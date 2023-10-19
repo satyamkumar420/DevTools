@@ -29,7 +29,14 @@ const Converters = () => {
       icon: <IconXml className="text-green-500" />,
       className: "p-2 grid place-items-center",
     },
+    {
+      to: "/converters/storage-unit-converter",
+      text: "MB To KB",
+      icon: "MB",
+      className: "p-2 grid place-items-center",
+    },
   ];
+
   return (
     <>
       <Helmet>
@@ -52,11 +59,11 @@ const Converters = () => {
             ))}
           </div>
           <div className="mt-10">
-            <div className="border-l-4 border-l-purple-500 p-2 text-sm sm:text-lg bg-[#1a1c2e]">
-              <span className="text-blue-300">
+            <div className="text-left border-l-4 border-l-purple-500 p-2 text-sm sm:text-lg bg-[#1a1c2e]">
+              <p className="text-blue-300">
                 Improve your work productivity by utilizing our collection of
                 online tools.
-              </span>
+              </p>
             </div>
           </div>
         </div>

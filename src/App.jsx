@@ -73,6 +73,9 @@ const TimestampConverter = lazy(() =>
 const JsonToXml = lazy(() => import("./Pages/Converters/JsonToXml/JsonToXml"));
 const XmlToJson = lazy(() => import("./Pages/Converters/XmlToJson/XmlToJson"));
 const LessToCss = lazy(() => import("./Pages/Converters/LessToCss/LessToCss"));
+const StorageUnitConverter = lazy(() =>
+  import("./Pages/Converters/StorageUnitConverter/StorageUnitConverter")
+);
 // const CssToLess = lazy(() => import("./Pages/Converters/CssToLess/CssToLess"));
 
 // Lazy-loaded route components 'About'
@@ -164,6 +167,10 @@ function App() {
             <Route path="/converters/json-to-xml" element={<JsonToXml />} />
             <Route path="/converters/xml-to-json" element={<XmlToJson />} />
             <Route path="/converters/less-to-css" element={<LessToCss />} />
+            <Route
+              path="/converters/storage-unit-converter"
+              element={<StorageUnitConverter />}
+            />
 
             {/* Here are the routes for 'Random Data' */}
             <Route path="/random-data" element={<RandomData />} />

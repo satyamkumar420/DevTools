@@ -53,16 +53,26 @@ const TokenGenerator = () => {
             Token Generator
           </h3>
           <div className="">
-            <div className="flex flex-wrap gap-3 mt-5">
-              <PrimaryButton text={"Generate Token"} onClick={generateToken} />
+            <div className="flex flex-wrap gap-3 mt-5 justify-center sm:justify-start">
+              <PrimaryButton
+                text={"Generate Token"}
+                onClick={generateToken}
+                className="bg-gradient-to-r from-blue-800  to-orange-700 text-white px-4 py-2 rounded-md hover:bg-blue-800 w-52 sm:w-60"
+              />
               <input
                 type="number"
                 value={tokenLength}
                 onChange={(e) => setTokenLength(e.target.value)}
-                className="px-3 bg-[#1a1c2e] outline-none border-none ring-2 focus:ring-2 focus:ring-blue-500 text-blue-100 rounded w-40 sm:w-52"
+                className="px-3 bg-[#1a1c2e] outline-none border-none ring-2 focus:ring-2 focus:ring-blue-500 text-blue-100 rounded w-52  py-2 sm:w-60"
               />
               {token && (
-                <PrimaryButton text={"Copy Token"} onClick={handleCopy} />
+                <PrimaryButton
+                  text={"Copy Token"}
+                  onClick={handleCopy}
+                  className={
+                    "bg-gradient-to-r from-orange-500 via-orange-600 to-orange-700 text-white px-4 py-2 rounded-md hover:bg-orange-800 w-52 sm:w-60"
+                  }
+                />
               )}
             </div>
             {token && (

@@ -51,7 +51,7 @@ const options = ({
       <div className="">
         <h3 className="mb-2 font-semibold">Select Tag</h3>
         <select
-          className="appearance-none rounded bg-[#1a1c2e] p-2 text-lg w-52 px-4 focus:ring-none focus:outline-none cursor-pointer"
+          className="appearance-none rounded bg-[#1a1c2e] p-2 text-lg w-52 px-4 focus:ring-none focus:outline-none cursor-pointer "
           value={tag}
           onChange={(e) => setTag(e.target.value)}
         >

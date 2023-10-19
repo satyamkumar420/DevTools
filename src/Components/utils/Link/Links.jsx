@@ -50,5 +50,6 @@ export const HomeLinks = [
   { text: "Text Generator", link: "/random-data/text-generator" },
   { text: "Token Generator", link: "/random-data/token-generator" },
   { text: "MD5 Hash", link: "/random-data/md5-hash" },
+  { text: "KB To MB, GB, TB", link: "/converters/storage-unit-converter" },
   // { text: "Short URL", link: "/various-tools/short-url" },
 ];

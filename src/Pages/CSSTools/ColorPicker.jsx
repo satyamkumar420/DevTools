@@ -109,7 +109,7 @@ const ColorPicker = () => {
                 <div className="mt-10">
                   <PrimaryButton
                     onClick={() => handleCopyClick(rgbColor)}
-                    text={"Copy"}
+                    text={"Copy Color"}
                   />
                 </div>
               </div>
@@ -127,7 +127,7 @@ const ColorPicker = () => {
                 <div className="mt-10">
                   <PrimaryButton
                     onClick={() => handleCopyClick(hslColor)}
-                    text={"Copy"}
+                    text={"Copy Color"}
                   />
                 </div>
               </div>
@@ -144,7 +144,7 @@ const ColorPicker = () => {
                 <div className="mt-10">
                   <PrimaryButton
                     onClick={() => handleCopyClick(color)}
-                    text={"Copy"}
+                    text={"Copy Color"}
                   />
                 </div>
               </div>

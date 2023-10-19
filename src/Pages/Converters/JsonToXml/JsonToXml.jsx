@@ -90,7 +90,9 @@ const JsonToXml = () => {
                   text="Convert"
                   className="bg-green-600 hover:bg-green-700"
                 />
-                <PrimaryButton onClick={handleCopyClick} text="Copy" />
+                {xmlValue && (
+                  <PrimaryButton onClick={handleCopyClick} text="Copy" />
+                )}
                 <PrimaryButton
                   onClick={handleResetEditor}
                   text="Reset"
