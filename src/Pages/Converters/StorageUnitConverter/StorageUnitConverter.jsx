@@ -6,7 +6,7 @@ import { IconBxTransfer } from "../../../Components/Icons/Icons";
 const StorageUnitConverter = () => {
   const [inputValue, setInputValue] = useState("1024");
   const [fromUnit, setFromUnit] = useState("MB");
-  const [toUnit, setToUnit] = useState("KB");
+  const [toUnit, setToUnit] = useState("GB");
   const [result, setResult] = useState("");
 
   const units = ["B", "KB", "MB", "GB", "TB"];
