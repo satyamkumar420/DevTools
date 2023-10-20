@@ -13,6 +13,7 @@ const HtmlMinify = () => {
   const [htmlText, setHtmlText] = useState("");
   const [minifiedHtml, setMinifiedHtml] = useState("");
   const [showHtmlEditor, setShowHtmlEditor] = useState(false);
+  const [required, setRequired] = useState(false);
 
   // Function to handle the minification
   const handleMinifyClick = () => {
@@ -33,9 +34,15 @@ const HtmlMinify = () => {
       return;
     }
 
-    const minified = htmlText.replace(/>\s+</g, "><");
+    const minified = htmlText
+      .replace(/\s+/g, " ")
+      .replace(/<!--[\s\S]*?-->/g, "")
+      .replace(/> </g, "><")
+      .trim();
+
     setMinifiedHtml(minified);
     setShowHtmlEditor(true);
+    setRequired(true);
   };
 
   // function handleEditorChange
@@ -43,6 +50,7 @@ const HtmlMinify = () => {
     setHtmlText(newValue);
     setMinifiedHtml("");
     setShowHtmlEditor(false);
+    setRequired(false);
   };
 
   // handle copy html
@@ -67,17 +75,18 @@ const HtmlMinify = () => {
     setHtmlText("");
     setMinifiedHtml("");
     setShowHtmlEditor(false);
+    setRequired(false);
   };
 
   return (
     <>
       <Helmet>
-        <title>HTML Minify</title>
+        <title>HTML Minifier</title>
       </Helmet>
       <div className="p-4 sm:ml-52 max-w-screen-lg overflow-y-auto max-h-screen">
         <div className="my-20">
           <h3 className="p-2 rounded text-lg sm:text-2xl text-yellow-500 w-full bg-[#1a1c2e]">
-            HTML Minify
+            HTML Minifier
           </h3>
           <div>
             <Editor
@@ -85,6 +94,7 @@ const HtmlMinify = () => {
               value={showHtmlEditor ? minifiedHtml : htmlText}
               onChange={handleEditorChange}
               placeholder={"Enter HTML here"}
+              required={required}
             />
             {htmlText && (
               <div className="flex flex-wrap gap-3 justify-center sm:justify-start">
@@ -116,7 +126,7 @@ const HtmlMinify = () => {
           </div>
           <div className="mt-10">
             <div className="text-left border-l-4 border-l-purple-500 p-2 text-sm sm:text-lg bg-[#1a1c2e]">
-              <span className="text-blue-300">
+              <p className="text-blue-300">
                 Improve your website's performance by optimizing the HTML code
                 using our online minification tool for production environments.
                 Minification is an essential technique for website optimization,
@@ -130,7 +140,7 @@ const HtmlMinify = () => {
                 insert the HTML source code into the text field and click on the
                 'Minify HTML' button. Our tool will process your code and
                 provide an optimized version, ready for use.
-              </span>
+              </p>
             </div>
           </div>
         </div>

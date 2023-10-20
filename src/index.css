@@ -38,11 +38,7 @@ a:hover {
   /* display: none; */
 }
 
-* {
-  /* scrollbar-width: none; */
-  font-family: 'Poppins', 'Noto Color Emoji', sans-serif;
 
-}
 
 body {
   font-family: 'Poppins', 'Noto Color Emoji', sans-serif;
@@ -56,8 +52,8 @@ html {
 
 
 *::-webkit-scrollbar {
-  width: 7px;
-  height: 7px;
+  width: 10px;
+  height: 10px;
   border-radius: 10px;
 
 }

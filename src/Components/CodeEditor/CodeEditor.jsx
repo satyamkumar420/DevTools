@@ -1,13 +1,9 @@
 import { useState } from "react";
 import CodeMirror from "@uiw/react-codemirror";
-import { createTheme } from "@uiw/codemirror-themes";
 import { tags as t } from "@lezer/highlight";
 import Loader from "../utils/Loader/Loader";
-import {
-  tokyoNightStorm,
-  tokyoNightStormInit,
-} from "@uiw/codemirror-theme-tokyo-night-storm";
-
+import { andromeda, andromedaInit } from "@uiw/codemirror-theme-andromeda";
+import "./CodeEditor.css";
 const myTheme = {
   settings: {
     background: "#1a1c2e",
@@ -22,26 +18,26 @@ const myTheme = {
     gutterActiveForeground: "#c9d7e6aa",
   },
   styles: [
-    { tag: t.comment, color: "#3e4474" },
-    { tag: t.variableName, color: "#28c8e8" },
-    { tag: [t.string, t.special(t.brace)], color: "#0db723" },
-    { tag: t.number, color: "#fa3535" },
+    // { tag: t.comment, color: "#3e4474" },
+    // { tag: t.variableName, color: "#28c8e8" },
+    // { tag: [t.string, t.special(t.brace)], color: "#0db723" },
+    // { tag: t.number, color: "#fa3535" },
     { tag: t.bool, color: "#cd12f2" },
     { tag: t.null, color: "#f4800c" },
-    { tag: t.keyword, color: "#e152ff" },
-    { tag: t.operator, color: "#c70a3f" },
-    { tag: t.className, color: "#caa812" },
+    // { tag: t.keyword, color: "#e152ff" },
+    // { tag: t.operator, color: "#c70a3f" },
+    // { tag: t.className, color: "#caa812" },
     { tag: t.typeName, color: "#06ab9d" },
-    { tag: t.angleBracket, color: "#effaef" },
-    { tag: t.tagName, color: "#00e394c6" },
-    { tag: t.attributeName, color: "#ffda27" },
-    { tag: t.punctuation, color: "#ff6347" },
-    { tag: t.meta, color: "#ffda27" },
-    { tag: t.regexp, color: "#06b226" },
-    { tag: t.url, color: "#4f55fa" },
-    { tag: t.escape, color: "#07b6b3" },
-    { tag: t.brace, color: "#ffda27" },
-    { tag: t.special(t.brace), color: "#ffda27" },
+    { tag: t.angleBracket, color: "#faf3ef" },
+    // { tag: t.tagName, color: "#00e394c6" },
+    // { tag: t.attributeName, color: "#ffda27" },
+    { tag: t.punctuation, color: "#ffda27" },
+    // { tag: t.meta, color: "#ffda27" },
+    // { tag: t.regexp, color: "#06b226" },
+    // { tag: t.url, color: "#4f55fa" },
+    // { tag: t.escape, color: "#07b6b3" },
+    // { tag: t.brace, color: "#ffda27" },
+    // { tag: t.special(t.brace), color: "#ffda27" },
   ],
 };
 
@@ -50,7 +46,8 @@ const CodeEditor = ({ value, onChange, languages, placeholder, required }) => {
 
   const customStyles = {
     fontSize: "18px",
-    fontWeight: "405",
+    fontWeight: "400",
+    // fontFamily: "Fira Code",
   };
 
   return (
@@ -60,7 +57,7 @@ const CodeEditor = ({ value, onChange, languages, placeholder, required }) => {
         <CodeMirror
           value={value}
           height="60vh"
-          theme={tokyoNightStormInit(myTheme)}
+          theme={andromedaInit(myTheme)}
           extensions={languages}
           onChange={onChange}
           style={customStyles}

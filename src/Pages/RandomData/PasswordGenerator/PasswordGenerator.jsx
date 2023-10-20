@@ -79,8 +79,8 @@ const PasswordGenerator = () => {
           <h3 className="p-2 rounded text-lg sm:text-2xl text-yellow-500 w-full bg-[#1a1c2e]">
             Password Generator
           </h3>
-          <div className="max-w-md max-h-screen mx-auto mt-8 p-4 bg-[#1a1c2e] rounded-md shadow-lg">
-            <h1 className="text-lg sm:text-2xl  mb-4 text-blue-100 ">
+          <div className="max-w-md max-h-screen mx-auto sm:mx-0 mt-5 p-3 sm:p-5 bg-[#1a1c2e] rounded-md shadow-lg">
+            <h1 className="text-lg sm:text-2xl text-center sm:text-left  mb-4 text-blue-100 ">
               Generate Strong Password
             </h1>
             <div className="mb-4">
@@ -102,6 +102,7 @@ const PasswordGenerator = () => {
             <PrimaryButton
               onClick={generatePassword}
               text={`Generate Password`}
+              className={"py-2"}
             />
             {loading && (
               <div className="mt-4 mb-2">
@@ -179,12 +180,12 @@ const PasswordGenerator = () => {
             )}
           </div>
           <div className="mt-10">
-            <div className="border-l-4 border-l-purple-500 p-2 text-sm sm:text-lg bg-[#1a1c2e]">
-              <span className="text-blue-300">
+            <div className="border-l-4 text-left border-l-purple-500 p-2 text-sm sm:text-lg bg-[#1a1c2e]">
+              <p className="text-blue-300">
                 Generating strong passwords is crucial to keeping your account
                 secure and productive. Our online toolset excels in this area,
                 providing you with passwords that are highly secure.
-              </span>
+              </p>
             </div>
           </div>
         </div>

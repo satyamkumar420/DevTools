@@ -56,7 +56,7 @@ const TextComparator = () => {
               <textarea
                 id="text1"
                 placeholder="Enter your original text here..."
-                className="w-full h-48 border p-2 bg-[#1a1c2e] outline-none rounded border-green-500 text-blue-200"
+                className="w-full h-48 border p-2 bg-[#1a1c2e] outline-none rounded border-green-500 text-blue-200 focus:border-2 resize-none"
                 value={originalParagraph}
                 onChange={(e) => setOriginalParagraph(e.target.value)}
                 autoComplete="off"
@@ -72,7 +72,7 @@ const TextComparator = () => {
               <textarea
                 id="text2"
                 placeholder="Enter your modified text here..."
-                className="w-full h-48 border p-2 bg-[#1a1c2e] outline-none rounded border-yellow-500 text-blue-200"
+                className="w-full h-48 border p-2 bg-[#1a1c2e] outline-none rounded border-yellow-500 text-blue-200 focus:border-2 resize-none"
                 value={modifiedParagraph}
                 onChange={(e) => setModifiedParagraph(e.target.value)}
                 autoComplete="off"

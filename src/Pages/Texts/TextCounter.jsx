@@ -38,12 +38,12 @@ function TextCounter() {
             Text Counter
           </h1>
           <textarea
-            className="w-full p-2 border border-blue-500 rounded-md focus:outline-none  bg-[#1a1c2e] text-white mt-5"
+            className="w-full p-2  rounded-md focus:outline-none  bg-[#1a1c2e] text-white mt-5 focus:outline-blue-500 resize-none"
             placeholder="Enter your text here..."
             onChange={handleTextChange}
             value={text}
             cols="20"
-            rows="5"
+            rows="7"
             autoComplete="off"
           ></textarea>
           <div className="mt-4 border-2 border-dashed border-pink-500 rounded p-4 ">

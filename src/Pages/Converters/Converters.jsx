@@ -1,6 +1,6 @@
 import Button from "../../Components/utils/Button/Button";
 import { NavLink } from "react-router-dom";
-import { IconTime, IconXml } from "../../Components/Icons/Icons";
+import { IconTime, IconXml, IconConvertio } from "../../Components/Icons/Icons";
 import { Helmet } from "react-helmet-async";
 
 const Converters = () => {
@@ -27,13 +27,13 @@ const Converters = () => {
       to: "/converters/less-to-css",
       text: "LESS TO CSS",
       icon: <IconXml className="text-green-500" />,
-      className: "p-2 grid place-items-center",
+      className: "p-2 grid place-items-center ",
     },
     {
       to: "/converters/storage-unit-converter",
       text: "MB To KB",
-      icon: "MB",
-      className: "p-2 grid place-items-center",
+      icon: <IconConvertio className="text-yellow-500" />,
+      className: "p-2 grid place-items-center sm:w-32",
     },
   ];
 

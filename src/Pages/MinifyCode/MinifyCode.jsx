@@ -13,13 +13,13 @@ const MinifyCode = () => {
       to: "/minify-code/html-minify",
       text: "HTML",
       icon: <IconBxsFileHtml className="text-red-600 text-lg md:text-3xl" />,
-      className: "p-2 grid place-items-center",
+      className: "p-2 grid place-items-center sm:w-32",
     },
     {
       to: "/minify-code/css-minify",
       text: "CSS",
       icon: <IconBxlCss3 className="text-blue-600 text-lg md:text-3xl" />,
-      className: "p-2 grid place-items-center",
+      className: "p-2 grid place-items-center sm:w-32",
     },
     {
       to: "/minify-code/js-minify",
@@ -27,7 +27,7 @@ const MinifyCode = () => {
       icon: (
         <IconBrandJavascript className="text-yellow-600 text-lg md:text-3xl" />
       ),
-      className: "p-2 grid place-items-center",
+      className: "p-2 grid place-items-center sm:w-32",
     },
   ];
   return (
