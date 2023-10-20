@@ -1,4 +1,4 @@
-import { IconFileJson } from "../../Components/Icons/Icons";
+import { IconFileJson, IconBxsFileHtml } from "../../Components/Icons/Icons";
 import Button from "../../Components/utils/Button/Button";
 import { NavLink } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
@@ -9,6 +9,12 @@ const FormatCode = () => {
       to: "/format-code/json-format",
       text: "JSON Format",
       icon: <IconFileJson className="text-yellow-500 text-lg md:text-3xl" />,
+      className: "p-2 grid place-items-center",
+    },
+    {
+      to: "/format-code/html-format",
+      text: "HTML Format",
+      icon: <IconBxsFileHtml className="text-orange-800 text-lg md:text-3xl" />,
       className: "p-2 grid place-items-center",
     },
   ];

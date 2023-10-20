@@ -33,7 +33,7 @@ const StorageUnitConverter = () => {
       // Convert the base unit value to the target unit
       const resultValue = fromValueInBytes / conversionFactors[toUnit];
 
-      setResult(resultValue.toFixed(0)); // Adjust the number of decimal places as needed
+      setResult(resultValue.toFixed(2)); // Adjust the number of decimal places as needed
     }
   };
   return (
