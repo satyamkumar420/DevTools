@@ -20,6 +20,12 @@ const CssMinify = () => {
     if (cssText.trim() === "") {
       return;
     }
+    // Define a regex pattern to match valid CSS code
+    const regexPattern = /^[\s\S]*\{[\s\S]*:[\s\S]*;[\s\S]*\}[\s\S]*$/;
+    if (!regexPattern.test(cssText)) {
+      toast("Invalid CSS Code!", { style: toastStyleError });
+      return;
+    }
     // Perform the minification logic here
     const minified = cssText
       .replace(/\s+/g, " ") // Remove extra spaces

@@ -187,7 +187,7 @@ const TextConverter = () => {
           <div>
             <div className="p-4">
               <textarea
-                className="border-none p-2 w-full h-40  ring-2 focus:ring-blue-600 outline-none rounded-md bg-[#0c0e1b]"
+                className="border-none p-2 w-full h-40   rounded-md focus:outline-none  bg-[#1a1c2e] text-blue-100  focus:outline-blue-500 resize-none"
                 placeholder="Enter text to convert"
                 value={showOutput ? outputText : inputText}
                 onChange={handleInputChange}

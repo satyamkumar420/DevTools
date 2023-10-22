@@ -18,18 +18,12 @@ const HtmlMinify = () => {
   // Function to handle the minification
   const handleMinifyClick = () => {
     if (htmlText.trim() === "") {
+      toast("Invalid HTML Code!", { style: toastStyleError });
       return;
     }
-    // Validate HTML code
-    const parser = new DOMParser();
-    let isValidHtml = true;
-    try {
-      parser.parseFromString(htmlText, "text/html");
-    } catch (error) {
-      isValidHtml = false;
-    }
-
-    if (!isValidHtml) {
+    const htmlRegex = `<([a-z]+)(?![^>]*\/>)[^>]*>`;
+    const ValidHtml = htmlText.match(htmlRegex);
+    if (!ValidHtml) {
       toast("Invalid HTML Code!", { style: toastStyleError });
       return;
     }

@@ -8,6 +8,8 @@ import {
 } from "../../../Components/utils/Toastify/toastStyle";
 import PrimaryButton from "../../../Components/utils/Button/PrimaryButton";
 import { Helmet } from "react-helmet-async";
+import * as prettier from "prettier/standalone";
+// import parserJson from "prettier/plugins/";
 
 const JsonFormat = () => {
   const [jsonText, setJsonText] = useState("");

@@ -58,7 +58,7 @@ function Base64Encoder() {
             </h1>
             <div className="mb-2">
               <textarea
-                className="w-full p-2 border-none outline-none rounded-md ring-2 focus:ring-blue-700 bg-[#1f202f] text-blue-200 resize-none"
+                className="w-full p-2  rounded-md focus:outline-none  bg-[#161727] text-blue-100  focus:outline-blue-500 resize-none"
                 placeholder="Enter text or Base64 to Encode and Decode"
                 value={text}
                 onChange={handleTextChange}

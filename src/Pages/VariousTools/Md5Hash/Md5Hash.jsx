@@ -61,7 +61,7 @@ const Md5Hash = () => {
                   placeholder="Enter text here"
                   value={input}
                   onChange={handleInputChange}
-                  className="p-2 ring-2 bg-[#1a1c2e] focus:ring-blue-600 rounded-md w-full border-none outline-none"
+                  className="p-2 w-full rounded-md focus:outline-none  bg-[#1a1c2e] text-blue-100  focus:outline-blue-500 resize-none"
                   rows="5"
                   cols="50"
                   autoComplete="off"

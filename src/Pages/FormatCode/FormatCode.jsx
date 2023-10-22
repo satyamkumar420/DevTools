@@ -1,4 +1,8 @@
-import { IconFileJson, IconBxsFileHtml } from "../../Components/Icons/Icons";
+import {
+  IconFileJson,
+  IconBxsFileHtml,
+  IconBxlCss3,
+} from "../../Components/Icons/Icons";
 import Button from "../../Components/utils/Button/Button";
 import { NavLink } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
@@ -11,12 +15,24 @@ const FormatCode = () => {
       icon: <IconFileJson className="text-yellow-500 text-lg md:text-3xl" />,
       className: "p-2 grid place-items-center",
     },
-    // {
-    //   to: "/format-code/html-format",
-    //   text: "HTML Format",
-    //   icon: <IconBxsFileHtml className="text-orange-800 text-lg md:text-3xl" />,
-    //   className: "p-2 grid place-items-center",
-    // },
+    {
+      to: "/format-code/html-format",
+      text: "HTML Format",
+      icon: <IconBxsFileHtml className="text-orange-800 text-lg md:text-3xl" />,
+      className: "p-2 grid place-items-center",
+    },
+    {
+      to: "/format-code/css-format",
+      text: "CSS Format",
+      icon: <IconBxlCss3 className="text-blue-600 text-lg md:text-3xl" />,
+      className: "p-2 grid place-items-center",
+    },
+    {
+      to: "/format-code/js-format",
+      text: "JS Format",
+      icon: <IconBxlCss3 className="text-yellow-600 text-lg md:text-3xl" />,
+      className: "p-2 grid place-items-center",
+    },
   ];
   return (
     <>

@@ -38,7 +38,7 @@ function TextCounter() {
             Text Counter
           </h1>
           <textarea
-            className="w-full p-2  rounded-md focus:outline-none  bg-[#1a1c2e] text-white mt-5 focus:outline-blue-500 resize-none"
+            className="w-full p-2 mt-5 rounded-md focus:outline-none  bg-[#1a1c2e] text-blue-100  focus:outline-blue-500 resize-none"
             placeholder="Enter your text here..."
             onChange={handleTextChange}
             value={text}

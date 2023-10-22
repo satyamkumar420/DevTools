@@ -56,7 +56,7 @@ const TextComparator = () => {
               <textarea
                 id="text1"
                 placeholder="Enter your original text here..."
-                className="w-full h-48 border p-2 bg-[#1a1c2e] outline-none rounded border-green-500 text-blue-200 focus:border-2 resize-none"
+                className="w-full h-48  p-2  rounded-md focus:outline-none  bg-[#1a1c2e] text-blue-100  focus:outline-green-500 resize-none"
                 value={originalParagraph}
                 onChange={(e) => setOriginalParagraph(e.target.value)}
                 autoComplete="off"
@@ -72,7 +72,7 @@ const TextComparator = () => {
               <textarea
                 id="text2"
                 placeholder="Enter your modified text here..."
-                className="w-full h-48 border p-2 bg-[#1a1c2e] outline-none rounded border-yellow-500 text-blue-200 focus:border-2 resize-none"
+                className="w-full h-48  p-2  rounded-md focus:outline-none  bg-[#1a1c2e] text-blue-100  focus:outline-yellow-500 resize-none"
                 value={modifiedParagraph}
                 onChange={(e) => setModifiedParagraph(e.target.value)}
                 autoComplete="off"
@@ -82,12 +82,14 @@ const TextComparator = () => {
 
           {originalParagraph && (
             <div className="mt-5">
-              <h2 className="text-base sm:text-lg p-2 text-orange-600 rounded">
+              <h2 className="text-base sm:text-lg p-2 font-medium text-yellow-600 rounded">
                 Result:
               </h2>
-              <div className="border-dashed border-2 border-pink-500 mt-1 p-3 rounded">
-                <div className="text-base sm:text-lg text-start bg-[#1a1c2e] p-2 ">
-                  <div className="mb-2 text-left text-w">{difference}</div>
+              <div className="">
+                <div className="rounded-md text-base sm:text-lg text-start bg-[#1a1c2e] p-4 ">
+                  <div className="mb-2 text-left text-w break-words">
+                    {difference}
+                  </div>
                 </div>
               </div>
             </div>

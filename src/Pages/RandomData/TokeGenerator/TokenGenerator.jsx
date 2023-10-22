@@ -57,7 +57,7 @@ const TokenGenerator = () => {
               <PrimaryButton
                 text={"Generate Token"}
                 onClick={generateToken}
-                className="bg-gradient-to-r from-blue-800  to-orange-700 text-white px-4 py-2 rounded-md hover:bg-blue-800 w-52 sm:w-60"
+                className=" px-4 py-2 rounded-md  w-52 sm:w-60"
               />
               <input
                 type="number"
@@ -70,7 +70,7 @@ const TokenGenerator = () => {
                   text={"Copy Token"}
                   onClick={handleCopy}
                   className={
-                    "bg-gradient-to-r from-orange-500 via-orange-600 to-orange-700 text-white px-4 py-2 rounded-md hover:bg-orange-800 w-52 sm:w-60"
+                    "bg-gradient-to-r px-4 py-2 rounded-md  w-52 sm:w-60"
                   }
                 />
               )}

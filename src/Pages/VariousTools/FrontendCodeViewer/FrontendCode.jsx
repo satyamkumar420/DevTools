@@ -33,9 +33,9 @@ const FrontendCode = () => {
           <h3 className="p-2 max-w-screen-xl rounded text-lg sm:text-2xl text-yellow-500 w-full bg-[#1a1c2e]">
             Frontend Code Viewer
           </h3>
-          <div className="">
-            <div className="flex justify-center gap-3 flex-wrap">
-              <div className="w-[400px]">
+          <div className="container mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
+              <div className="f">
                 <CodeEditor
                   displayName={"HTML"}
                   languages={[html()]}
@@ -44,7 +44,7 @@ const FrontendCode = () => {
                   placeholder={"Enter HTML code here"}
                 />
               </div>
-              <div className="w-[400px]">
+              <div className="">
                 <CodeEditor
                   displayName={"CSS"}
                   languages={[css()]}
@@ -53,7 +53,7 @@ const FrontendCode = () => {
                   placeholder={"Enter CSS code here"}
                 />
               </div>
-              <div className="w-[400px]">
+              <div className="flex justify-center">
                 <CodeEditor
                   displayName={"JavaScript"}
                   languages={[javascript()]}
@@ -63,14 +63,30 @@ const FrontendCode = () => {
                 />
               </div>
             </div>
-            <div className="">
+            <div className="bg-[#1a1c2e] rounded-md">
+              <h1 className="text-yellow-500 text-center p-2 md:text-lg font-medium">
+                PREVIEW
+              </h1>
               <iframe
-                className="bg-[#1a1c2e] p-3 rounded-md h-[500px] w-full"
+                className=" rounded-md h-[500px] w-full"
                 srcDoc={srcDoc}
                 title="Output"
                 referrerPolicy="no-referrer"
                 sandbox="allow-scripts"
               ></iframe>
+            </div>
+          </div>
+          <div className="mt-10">
+            <div className="border-l-4 border-l-purple-500 p-2 text-sm sm:text-lg bg-[#1a1c2e]">
+              <p className="text-blue-300">
+                👋 Hey there! Are you a developer, student, or professional
+                looking for a frontend code preview tool? Look no further! Our
+                tool is user-friendly and super easy to use. You can preview
+                your code and make any necessary changes before implementation,
+                ensuring that your final product is perfect. Give our tool a try
+                today and experience the simplicity it brings to your coding
+                process.
+              </p>
             </div>
           </div>
         </div>

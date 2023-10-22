@@ -91,6 +91,8 @@ const JSONFormat = lazy(() =>
 const HTMLFormat = lazy(() =>
   import("./Pages/FormatCode/HTMLFormat/HTMLFormat")
 );
+const CssFormat = lazy(() => import("./Pages/FormatCode/CssFormat/CssFormat"));
+const JSFormat = lazy(() => import("./Pages/FormatCode/JsFormat/JsFormat"));
 
 // Lazy-loaded route components 'VariousTools'
 const VariousTools = lazy(() => import("./Pages/VariousTools/VariousTools"));
@@ -204,6 +206,8 @@ function App() {
             <Route path="/format-code" element={<FormatCode />} />
             <Route path="/format-code/json-format" element={<JSONFormat />} />
             <Route path="/format-code/html-format" element={<HTMLFormat />} />
+            <Route path="/format-code/css-format" element={<CssFormat />} />
+            <Route path="/format-code/js-format" element={<JSFormat />} />
 
             {/* Here are the routes for 'Various Tools' */}
             <Route path="/various-tools" element={<VariousTools />} />
