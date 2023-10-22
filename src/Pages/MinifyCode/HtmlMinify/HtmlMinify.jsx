@@ -95,6 +95,7 @@ const HtmlMinify = () => {
               onChange={handleEditorChange}
               placeholder={"Enter HTML here"}
               required={required}
+              displayName={"HTML"}
             />
             {htmlText && (
               <div className="flex flex-wrap gap-3 justify-center sm:justify-start">

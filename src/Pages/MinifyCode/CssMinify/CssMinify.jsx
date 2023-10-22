@@ -83,6 +83,7 @@ const CssMinify = () => {
               languages={[css()]}
               placeholder={"Enter CSS here"}
               required={required}
+              displayName={"CSS"}
             />
           </div>
           {cssText && (

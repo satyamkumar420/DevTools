@@ -82,6 +82,7 @@ const JsonToXml = () => {
               placeholder={"Enter JSON code here to convert to XML"}
               languages={languageMode}
               required={required}
+              displayName={"JSON To XML"}
             />
             {jsonInput && (
               <div className="flex flex-wrap gap-3 justify-center sm:justify-start">

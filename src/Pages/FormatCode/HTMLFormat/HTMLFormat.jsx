@@ -17,22 +17,20 @@ const HTMLFormat = () => {
 
   // Format the HTML code
   const handleFormatHtml = () => {
-    const htmlRegex = `<([a-z]+)(?![^>]*\/>)[^>]*>`
+    const htmlRegex = `<([a-z]+)(?![^>]*\/>)[^>]*>`;
     const ValidHtml = htmlText.match(htmlRegex);
     if (!ValidHtml) {
       toast("Invalid HTML Code!", { style: toastStyleError });
       return;
     }
-    const formattedHtml = html(htmlText);
-    setFormattedHtml(formattedHtml);
-    setShowHtmlEditor(true);
-    setRequired(true);
-  }
+    // setShowHtmlEditor(false);
+    // setRequired(true);
+  };
 
   // handle editor change
   const handleEditorChange = (newValue) => {
     setHtmlText(newValue);
-    setFormattedHtml("");
+    // setFormattedHtml("");
     setShowHtmlEditor(false);
     setRequired(false);
   };
@@ -80,6 +78,7 @@ const HTMLFormat = () => {
               onChange={handleEditorChange}
               required={required}
               placeholder={"Enter HTML code here"}
+              displayName={"HTML"}
             />
           </div>
           {htmlText && (

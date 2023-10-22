@@ -91,6 +91,7 @@ const XmlToJson = () => {
               placeholder={"Enter XML code here to convert to JSON"}
               languages={languageMode}
               required={required}
+              displayName={"XML To JSON"}
             />
             {xmlInput && (
               <div className="flex flex-wrap gap-3 justify-center sm:justify-start">

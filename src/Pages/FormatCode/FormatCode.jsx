@@ -11,12 +11,12 @@ const FormatCode = () => {
       icon: <IconFileJson className="text-yellow-500 text-lg md:text-3xl" />,
       className: "p-2 grid place-items-center",
     },
-    {
-      to: "/format-code/html-format",
-      text: "HTML Format",
-      icon: <IconBxsFileHtml className="text-orange-800 text-lg md:text-3xl" />,
-      className: "p-2 grid place-items-center",
-    },
+    // {
+    //   to: "/format-code/html-format",
+    //   text: "HTML Format",
+    //   icon: <IconBxsFileHtml className="text-orange-800 text-lg md:text-3xl" />,
+    //   className: "p-2 grid place-items-center",
+    // },
   ];
   return (
     <>

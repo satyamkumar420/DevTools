@@ -82,6 +82,7 @@ const JSMinify = () => {
               languages={[javascript()]}
               placeholder={"Enter JavaScript here"}
               required={required}
+              displayName={"JavaScript"}
             />
           </div>
           {jsText && (

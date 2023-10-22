@@ -28,14 +28,14 @@ const Texts = () => {
       icon: <IconTextEditOutline className="text-green-500  md:text-4xl " />,
       className: "p-2 grid place-items-center",
     },
-    {
-      to: "/texts/ascii-art",
-      text: "ASCII Letter",
-      icon: (
-        <IconFormatTextVariantOutline className="text-blue-200  md:text-4xl " />
-      ),
-      className: "p-2 grid place-items-center",
-    },
+    // {
+    //   to: "/texts/ascii-later",
+    //   text: "ASCII Letter",
+    //   icon: (
+    //     <IconFormatTextVariantOutline className="text-blue-200  md:text-4xl " />
+    //   ),
+    //   className: "p-2 grid place-items-center",
+    // },
     // Add more buttons here
   ];
 
@@ -61,7 +61,7 @@ const Texts = () => {
             ))}
           </div>
           <div className="mt-10">
-            <div className="text-left border-l-4 border-l-purple-500 p-2 text-sm sm:text-lg bg-[#1a1c2e]">
+            <div className="text-left border-l-4 border-l-purple-500 p-2 text-sm sm:text-lg bg-[#23274a]">
               <span className="text-blue-300">
                 Boost your work productivity with our online tool collection for
                 text editing.

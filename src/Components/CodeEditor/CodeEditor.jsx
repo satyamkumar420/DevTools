@@ -41,7 +41,14 @@ const myTheme = {
   ],
 };
 
-const CodeEditor = ({ value, onChange, languages, placeholder, required }) => {
+const CodeEditor = ({
+  value,
+  onChange,
+  languages,
+  placeholder,
+  required,
+  displayName,
+}) => {
   const [isLoading, setIsLoading] = useState(false);
 
   const customStyles = {
@@ -54,6 +61,14 @@ const CodeEditor = ({ value, onChange, languages, placeholder, required }) => {
     <>
       {isLoading && <Loader />}
       <div className="my-4 overflow-hidden rounded-md shadow-md py-1 pr-1 bg-[#21233a]">
+        <div className="flex gap-2 p-2 items-center">
+          <div className="w-3 h-3 p-1 bg-red-500 rounded-full"></div>
+          <div className="w-3 h-3 p-1 bg-yellow-500 rounded-full"></div>
+          <div className="w-3 h-3 p-1 bg-green-500 rounded-full"></div>
+          <div className="flex justify-center text-center mx-auto">
+            <div className=" ">{displayName}</div>
+          </div>
+        </div>
         <CodeMirror
           value={value}
           height="60vh"

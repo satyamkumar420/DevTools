@@ -5,6 +5,7 @@ import {
   IconCalculator,
   IconHash,
   IconBold,
+  IconXml,
 } from "../../Components/Icons/Icons";
 import { Helmet } from "react-helmet-async";
 
@@ -31,9 +32,16 @@ const VariousTools = () => {
     {
       to: "/various-tools/base64-encoder",
       text: "Base64 Encoder",
-      icon: <IconBold className="text-green-500 text-lg md:text-3xl" />,
+      icon: <IconBold className="text-red-500 text-lg md:text-3xl" />,
       className: "p-2 grid place-items-center",
     },
+    {
+      to: "/various-tools/frontend-code",
+      text: "HTML, CSS, JS",
+      icon: <IconXml className="text-pink-500 text-lg md:text-3xl" />,
+      className: "p-2 grid place-items-center",
+    },
+
     // Add more buttons here
   ];
 

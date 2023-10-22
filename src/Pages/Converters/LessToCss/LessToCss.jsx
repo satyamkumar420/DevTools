@@ -86,6 +86,7 @@ const LessToCss = () => {
               placeholder="Enter Less code here..."
               languages={css()}
               required={required}
+              displayName={"Less to CSS"}
             />
 
             {lessInput && (

@@ -23,6 +23,7 @@
     "@uiw/react-codemirror": "^4.21.19",
     "diff": "^5.1.0",
     "emoji.json": "^15.0.0",
+    "figlet": "^1.6.0",
     "framer-motion": "^10.16.4",
     "jsdiff": "^1.1.1",
     "less": "^4.2.0",

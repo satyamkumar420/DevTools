@@ -80,6 +80,7 @@ const JsonFormat = () => {
             languages={languages}
             placeholder="Enter JSON here"
             required={required}
+            displayName="JSON"
           />
           {jsonText && (
             <div className="flex flex-wrap gap-3 justify-center sm:justify-start">
