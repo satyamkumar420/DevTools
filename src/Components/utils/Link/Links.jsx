@@ -22,17 +22,17 @@ export const Links = [
   { text: "Converters", link: "converters", icon: <IconBxTransfer /> },
   { text: "Format Code", link: "format-code", icon: <IconBxCodeAlt /> },
   { text: "Minify Code", link: "minify-code", icon: <IconArrowsMinimize /> },
-  {
-    text: "Various Tools",
-    link: "various-tools",
-    icon: <IconGrid_squares />,
-  },
+  { text: "Random Data", link: "/random-data", icon: <IconDatabase /> },
   {
     text: "Emojis Picker",
     link: "emojis-picker",
     icon: <IconEmojiSunglasses />,
   },
-  { text: "Random Data", link: "/random-data", icon: <IconDatabase /> },
+  {
+    text: "Various Tools",
+    link: "various-tools",
+    icon: <IconGrid_squares />,
+  },
 ];
 
 export const HomeLinks = [
@@ -51,5 +51,6 @@ export const HomeLinks = [
   { text: "Token Generator", link: "/random-data/token-generator" },
   { text: "MD5 Hash", link: "/random-data/md5-hash" },
   { text: "KB To MB, GB, TB", link: "/converters/storage-unit-converter" },
+  { text: "Code Viewer", link: "/various-tools/frontend-code" },
   // { text: "Short URL", link: "/various-tools/short-url" },
 ];

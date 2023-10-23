@@ -48,6 +48,9 @@ const CodeEditor = ({
   placeholder,
   required,
   displayName,
+  Height,
+  Button,
+  Icon,
 }) => {
   const [isLoading, setIsLoading] = useState(false);
 
@@ -60,7 +63,7 @@ const CodeEditor = ({
   return (
     <>
       {isLoading && <Loader />}
-      <div className="my-4 overflow-hidden rounded-md shadow-md py-1 pr-1 bg-[#21233a]">
+      <div className="overflow-hidden rounded-md shadow-md py-1 pr-1 bg-[#21233a] ">
         <div className="flex gap-2 p-2 items-center">
           <div className="w-3 h-3 p-1 bg-red-500 rounded-full"></div>
           <div className="w-3 h-3 p-1 bg-yellow-500 rounded-full"></div>
@@ -68,10 +71,13 @@ const CodeEditor = ({
           <div className="flex justify-center text-center mx-auto">
             <div className=" ">{displayName}</div>
           </div>
+          <button className="" onClick={Button}>
+            {Icon}
+          </button>
         </div>
         <CodeMirror
           value={value}
-          height="60vh"
+          height={`${Height || "60vh"}`}
           theme={andromedaInit(myTheme)}
           extensions={languages}
           onChange={onChange}

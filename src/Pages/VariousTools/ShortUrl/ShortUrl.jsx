@@ -18,7 +18,6 @@ const ShortUrl = () => {
       toast("Please enter a valid url!", { style: toastStyleError });
       return;
     }
-
     setIsLoading(true);
     try {
       const response = await fetch(
@@ -37,6 +36,7 @@ const ShortUrl = () => {
       }
     } catch (error) {
       // Handle network or other errors
+      console.log(error);
       toast("Something went wrong!", { style: toastStyleError });
     } finally {
       setIsLoading(false);
@@ -77,7 +77,6 @@ const ShortUrl = () => {
               onClick={handleGenerateShortUrl}
               text={`${isLoading ? "Generating..." : "Generate Short URL"}`}
             />
-
             {shortUrl && (
               <div className="flex my-5 flex-wrap">
                 <p className="text-orange-500 font-semibold mr-3 py-2">

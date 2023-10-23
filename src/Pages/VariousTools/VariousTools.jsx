@@ -37,7 +37,7 @@ const VariousTools = () => {
     },
     {
       to: "/various-tools/frontend-code",
-      text: "HTML, CSS, JS",
+      text: "Code Viewer",
       icon: <IconXml className="text-pink-500 text-lg md:text-3xl" />,
       className: "p-2 grid place-items-center",
     },
