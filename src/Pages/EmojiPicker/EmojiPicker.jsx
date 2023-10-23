@@ -100,7 +100,7 @@ const EmojiPicker = () => {
             <IconSearch className="ml-2 absolute text-gray-400" />
             <input
               type="text"
-              placeholder="Search emoji"
+              placeholder="Search your favorite emoji"
               className="p-1 pl-10  px-3 text-base w-full  rounded bg-[#1a1c2e] outline-none border-none ring-2 focus:ring-2 focus:ring-blue-700 text-blue-100"
               onChange={(e) => handleSearch(e.target.value)}
               autoComplete="off"

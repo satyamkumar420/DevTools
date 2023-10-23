@@ -28,6 +28,8 @@ const TextConverter = () => {
     { label: "Remove Accents", fn: removeAccents },
     { label: "Remove HTML Tags", fn: removeHtmlTags },
     { label: "Remove Digits", fn: removeDigits },
+    { label: "Remove Special Characters", fn: removeSpecialCharacters },
+    { label: "Remove Spaces", fn: removeSpaces },
     { label: "Reset Output", fn: resetOutput },
   ];
 
@@ -167,6 +169,19 @@ const TextConverter = () => {
     setShowOutput(true);
   }
 
+  // Remove Special Characters
+  function removeSpecialCharacters() {
+    const updatedText = inputText.replace(/[^\w\s]/gi, "");
+    setOutputText(updatedText);
+    setShowOutput(true);
+  }
+
+  // Remove Spaces
+  function removeSpaces() {
+    const updatedText = inputText.replace(/\s/g, "");
+    setOutputText(updatedText);
+    setShowOutput(true);
+  }
   // Reset Output
   function resetOutput() {
     setInputText("");

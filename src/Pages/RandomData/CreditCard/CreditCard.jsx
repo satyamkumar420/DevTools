@@ -71,7 +71,7 @@ const CreditCard = () => {
             <PrimaryButton
               text={"Generate Credit Card"}
               onClick={generateCreditCardData}
-              className={"py-3"}
+              className={"py-2"}
             />
           </div>
           <div className="w-full sm:w-96 h-60 m-auto bg-gradient-to-r from-slate-900 to-cyan-800 bg-cyan-900 rounded-xl relative text-white shadow-2xl  my-5">
