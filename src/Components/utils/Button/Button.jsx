@@ -21,7 +21,7 @@ const Button = ({ text, icon, onClick, className }) => {
   };
 
   const getRandomColor = () => {
-    const colors = ["#961541", "#144948"];
+    const colors = ["#961541", "#05bd73", "#ff0099", "#f5d939", "#1538de"];
     let randomIndex;
 
     do {

@@ -61,8 +61,15 @@ const TokenGenerator = () => {
               />
               <input
                 type="number"
+                min={1}
+                max={1000}
                 value={tokenLength}
-                onChange={(e) => setTokenLength(e.target.value)}
+                // max length of token 1000
+                onChange={(e) => {
+                  if (e.target.value <= 1000) {
+                    setTokenLength(e.target.value);
+                  }
+                }}
                 className="px-3 bg-[#1a1c2e] outline-none border-none ring-2 focus:ring-2 focus:ring-blue-500 text-blue-100 rounded w-52  py-2 sm:w-60"
               />
               {token && (
