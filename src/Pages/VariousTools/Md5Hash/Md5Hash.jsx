@@ -7,6 +7,7 @@ import {
   toastStyleSuccess,
   toastStyleError,
 } from "../../../Components/utils/Toastify/toastStyle";
+import TextArea from "../../../Components/utils/textArea/textArea";
 
 const Md5Hash = () => {
   const [input, setInput] = useState("");
@@ -48,7 +49,7 @@ const Md5Hash = () => {
       <Helmet>
         <title>MD5 Hash Generator</title>
       </Helmet>
-      <div className="p-4 sm:ml-52 max-w-screen-full overflow-y-auto max-h-screen">
+      <div className="p-4 sm:ml-52 max-w-screen overflow-y-auto max-h-screen">
         <div className="my-20 max-w-screen-lg">
           <h3 className="p-2 rounded text-lg sm:text-2xl text-yellow-500 w-full bg-[#1a1c2e]">
             MD5 Hash Generator
@@ -56,15 +57,10 @@ const Md5Hash = () => {
           <div className="container mx-auto mt-5">
             <div className=" gap-3">
               <div className="">
-                <textarea
-                  type="text"
-                  placeholder="Enter text here"
-                  value={input}
-                  onChange={handleInputChange}
-                  className="p-2 w-full rounded-md focus:outline-none  bg-[#1a1c2e] text-blue-100  focus:outline-blue-500 resize-none"
-                  rows="5"
-                  cols="50"
-                  autoComplete="off"
+                <TextArea
+                  Value={input}
+                  OnChange={handleInputChange}
+                  Placeholder={"Enter Text Here"}
                 />
                 <div className="mt-2">
                   <PrimaryButton

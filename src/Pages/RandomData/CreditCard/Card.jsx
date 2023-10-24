@@ -14,7 +14,7 @@ const Card = ({
   const handleCopy = (label, text) => {
     if (navigator.clipboard && navigator.clipboard.writeText) {
       navigator.clipboard.writeText(text);
-      toast(`${label} Copied!`, { style: toastStyleSuccess });
+      toast(`Card ${label} Copied!`, { style: toastStyleSuccess });
     } else {
       const textarea = document.createElement("textarea");
       textarea.value = text;
@@ -23,7 +23,7 @@ const Card = ({
       textarea.select();
       document.execCommand("copy");
       document.body.removeChild(textarea);
-      toast(`${label} Copied!`, { style: toastStyleSuccess });
+      toast(`Card ${label} Copied!`, { style: toastStyleSuccess });
     }
   };
   return (
@@ -39,7 +39,7 @@ const Card = ({
                 <p className="font-medium ">{cardHolder}</p>
                 <IconCopy
                   className="cursor-pointer text-green-400"
-                  onClick={() => handleCopy("Card Name", cardHolder)}
+                  onClick={() => handleCopy("Name", cardHolder)}
                 />
               </div>
             </div>
@@ -51,7 +51,7 @@ const Card = ({
               <p className="font-medium tracking-more-wider">{cardNumber}</p>
               <IconCopy
                 className="cursor-pointer text-green-400"
-                onClick={() => handleCopy("Card Number", cardNumber)}
+                onClick={() => handleCopy("Number", cardNumber)}
               />
             </div>
           </div>
@@ -81,7 +81,6 @@ const Card = ({
                   />
                 </div>
               </div>
-
               <div className="">
                 <p className="font-light text-base">CVV</p>
                 <div className="flex gap-1">

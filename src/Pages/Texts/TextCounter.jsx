@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Helmet } from "react-helmet-async";
+import TextArea from "../../Components/utils/textArea/textArea";
 function TextCounter() {
   const [text, setText] = useState("");
 
@@ -32,20 +33,16 @@ function TextCounter() {
       <Helmet>
         <title>Text Counter</title>
       </Helmet>
-      <div className="p-4 sm:ml-52   max-w-screen-full overflow-y-auto max-h-screen">
+      <div className="p-4 sm:ml-52   max-w-screen overflow-y-auto max-h-screen">
         <div className="my-20 max-w-screen-lg">
           <h1 className="p-2 rounded text-lg md:text-2xl text-yellow-500 w-full bg-[#1a1c2e]">
             Text Counter
           </h1>
-          <textarea
-            className="w-full p-2 mt-5 rounded-md focus:outline-none  bg-[#1a1c2e] text-blue-100  focus:outline-blue-500 resize-none"
-            placeholder="Enter your text here..."
-            onChange={handleTextChange}
-            value={text}
-            cols="20"
-            rows="7"
-            autoComplete="off"
-          ></textarea>
+          <TextArea
+            Value={text}
+            OnChange={handleTextChange}
+            Placeholder={"Enter Text Here"}
+          />
           <div className="mt-4 border-2 border-dashed border-pink-500 rounded p-4 ">
             <h2 className="text-base md:text-lg font-bold text-green-400 uppercase">
               Text Info:

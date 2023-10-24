@@ -91,7 +91,7 @@ const EmojiPicker = () => {
       <Helmet>
         <title>Emoji Picker 🥰 🎉 🐱 ☔ </title>
       </Helmet>
-      <div className="p-4 sm:ml-52 max-w-screen-full  overflow-y-auto max-h-screen">
+      <div className="p-4 sm:ml-52 max-w-screen  overflow-y-auto max-h-screen">
         <div className="my-20">
           <h3 className="p-2 rounded max-w-screen-lg text-lg sm:text-2xl text-yellow-500 w-full bg-[#1a1c2e]">
             Emoji Picker 😂
@@ -100,10 +100,11 @@ const EmojiPicker = () => {
             <IconSearch className="ml-2 absolute text-gray-400" />
             <input
               type="text"
-              placeholder="Search your favorite emoji"
-              className="p-1 pl-10  px-3 text-base w-full  rounded bg-[#1a1c2e] outline-none border-none ring-2 focus:ring-2 focus:ring-blue-700 text-blue-100"
+              placeholder="Search Your Favorite Emoji"
+              className="p-1 pl-10  px-3 text-base w-full  rounded-md bg-[#1a1c2e] outline-none border-2 border-gray-600 focus:border-blue-600 text-blue-100 sm:text-lg"
               onChange={(e) => handleSearch(e.target.value)}
               autoComplete="off"
+              value={searchTerm}
             />
           </div>
 

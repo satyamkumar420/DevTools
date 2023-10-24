@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { IconCheck } from "../../../Components/Icons/Icons";
 import { Helmet } from "react-helmet-async";
+import TextArea from "../../../Components/utils/textArea/textArea";
 
 const TextConverter = () => {
   const [inputText, setInputText] = useState("");
@@ -194,19 +195,19 @@ const TextConverter = () => {
       <Helmet>
         <title>Text Converter</title>
       </Helmet>
-      <div className="p-4 sm:ml-52   max-w-screen-full overflow-y-auto max-h-screen">
+      <div className="p-4 sm:ml-52   max-w-screen overflow-y-auto max-h-screen">
         <div className="my-20 max-w-screen-lg">
           <h3 className="text-left p-2 rounded text-lg sm:text-2xl text-yellow-500 w-full bg-[#1a1c2e]">
             Text Converter
           </h3>
           <div>
             <div className="p-4">
-              <textarea
-                className="border-none p-2 w-full h-40   rounded-md focus:outline-none  bg-[#1a1c2e] text-blue-100  focus:outline-blue-500 resize-none"
-                placeholder="Enter text to convert"
-                value={showOutput ? outputText : inputText}
-                onChange={handleInputChange}
+              <TextArea
+                Value={showOutput ? outputText : inputText}
+                OnChange={handleInputChange}
+                Placeholder={"Enter Text Here"}
               />
+
               <div className="my-4 flex flex-wrap gap-2 justify-center">
                 {conversions.map((conversion, index) => (
                   <button

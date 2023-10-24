@@ -10,7 +10,7 @@ const Home = () => {
       <Helmet>
         <title>Home | DevTools.dev</title>
       </Helmet>
-      <div className="p-4 sm:ml-52 max-w-screen-full  overflow-y-auto max-h-screen">
+      <div className="p-4 sm:ml-52 max-w-screen  overflow-y-auto max-h-screen">
         <div className="max-w-screen-lg p-4 border-gray-200 rounded-lg mt-20 mb-20">
           <h3 className="p-2 rounded sm:text-2xl text-yellow-500 w-full bg-[#1a1c2e]">
             Home

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { diffChars } from "diff";
 import { Helmet } from "react-helmet-async";
+import TextArea from "../../Components/utils/textArea/textArea";
 const TextComparator = () => {
   const [originalParagraph, setOriginalParagraph] = useState("");
   const [modifiedParagraph, setModifiedParagraph] = useState("");
@@ -40,7 +41,7 @@ const TextComparator = () => {
       <Helmet>
         <title>Text Comparator</title>
       </Helmet>
-      <div className="p-4 sm:ml-52 text-justify max-w-screen-full overflow-y-auto max-h-screen">
+      <div className="p-4 sm:ml-52 text-justify max-w-screen overflow-y-auto max-h-screen">
         <div className="my-20 max-w-screen-lg">
           <h3 className="p-2 rounded text-lg sm:text-2xl text-yellow-500 w-full bg-[#1a1c2e]">
             Text Comparator
@@ -49,33 +50,29 @@ const TextComparator = () => {
             <div className="">
               <label
                 htmlFor="text1"
-                className="block mb-2 bg-[#1a1c2e] px-2 py-1 rounded text-green-500 sm:text-lg text-base "
+                className="block  bg-[#1a1c2e] px-2 py-1 rounded text-green-500 sm:text-lg text-base "
               >
                 Original Text
               </label>
-              <textarea
-                id="text1"
-                placeholder="Enter your original text here..."
-                className="w-full h-48  p-2  rounded-md focus:outline-none  bg-[#1a1c2e] text-blue-100  focus:outline-green-500 resize-none"
-                value={originalParagraph}
-                onChange={(e) => setOriginalParagraph(e.target.value)}
-                autoComplete="off"
+              <TextArea
+                Value={originalParagraph}
+                OnChange={(e) => setOriginalParagraph(e.target.value)}
+                className={"focus:border-green-600"}
+                Placeholder="Enter Original Text Here"
               />
             </div>
             <div className="">
               <label
                 htmlFor="text2"
-                className="block mb-2 bg-[#1a1c2e] px-2 py-1 rounded text-yellow-500 sm:text-lg text-base "
+                className="block  bg-[#1a1c2e] px-2 py-1 rounded text-yellow-500 sm:text-lg text-base "
               >
                 Modified Text
               </label>
-              <textarea
-                id="text2"
-                placeholder="Enter your modified text here..."
-                className="w-full h-48  p-2  rounded-md focus:outline-none  bg-[#1a1c2e] text-blue-100  focus:outline-yellow-500 resize-none"
-                value={modifiedParagraph}
-                onChange={(e) => setModifiedParagraph(e.target.value)}
-                autoComplete="off"
+              <TextArea
+                Value={modifiedParagraph}
+                OnChange={(e) => setModifiedParagraph(e.target.value)}
+                className={"focus:border-yellow-600"}
+                Placeholder="Enter Modified Text Here"
               />
             </div>
           </div>

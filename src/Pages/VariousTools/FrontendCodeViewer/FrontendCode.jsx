@@ -38,7 +38,7 @@ const FrontendCode = () => {
       <Helmet>
         <title>Frontend Code Viewer</title>
       </Helmet>
-      <div className="p-4 sm:ml-52   max-w-screen-xl overflow-y-auto max-h-screen">
+      <div className="p-4 sm:ml-52   max-w-screen overflow-y-auto max-h-screen">
         <div className="my-20 max-w-screen-xl">
           <h3 className="mb-5 p-2 max-w-screen-xl rounded text-lg sm:text-2xl text-yellow-500 w-full bg-[#1a1c2e]">
             Frontend Code Viewer

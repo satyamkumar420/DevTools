@@ -6,6 +6,7 @@ import {
   toastStyleSuccess,
   toastStyleError,
 } from "../../../Components/utils/Toastify/toastStyle";
+import TextArea from "../../../Components/utils/textArea/textArea";
 
 function Base64Encoder() {
   const [text, setText] = useState("");
@@ -47,24 +48,20 @@ function Base64Encoder() {
       <Helmet>
         <title>Base64 Encoder</title>
       </Helmet>
-      <div className="p-4 sm:ml-52 max-w-screen-full overflow-y-auto max-h-screen">
+      <div className="p-4 sm:ml-52 max-w-screen overflow-y-auto max-h-screen">
         <div className="my-20 max-w-screen-lg">
           <h3 className="p-2 rounded text-lg sm:text-2xl text-yellow-500 w-full bg-[#1a1c2e]">
             Text to Base64 Encoder
           </h3>
-          <div className="w-full sm:max-w-lg  mt-5 p-4 bg-[#1a1c2e] shadow-md rounded-md">
+          <div className="w-full   mt-5 p-4 bg-[#1a1c2e] shadow-md rounded-md">
             <h1 className="text-sm text-gray-400 mb-1">
               Text to Base64 Encoder
             </h1>
             <div className="mb-2">
-              <textarea
-                className="w-full p-2  rounded-md focus:outline-none  bg-[#161727] text-blue-100  focus:outline-blue-500 resize-none"
-                placeholder="Enter text or Base64 to Encode and Decode"
-                value={text}
-                onChange={handleTextChange}
-                autoComplete="off"
-                cols={30}
-                rows={6}
+              <TextArea
+                Value={text}
+                OnChange={handleTextChange}
+                Placeholder={"Enter Text Here"}
               />
             </div>
             <PrimaryButton text={"Encode base64"} onClick={encodeToBase64} />

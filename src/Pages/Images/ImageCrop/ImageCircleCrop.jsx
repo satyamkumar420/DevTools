@@ -3,7 +3,6 @@ import Avatar from "react-avatar-edit";
 import CustomAlert from "../../../Components/utils/Toastify/CustomAlert";
 import { Helmet } from "react-helmet-async";
 
-
 const ImageCircleCrop = () => {
   const [preview, setPreview] = useState(null);
 
@@ -46,57 +45,57 @@ const ImageCircleCrop = () => {
   };
 
   return (
-     <>
+    <>
       <Helmet>
         <title>Image Circle Crop</title>
       </Helmet>
-    <div className="p-4 sm:ml-52 text-justify max-w-screen-full overflow-y-auto max-h-screen">
-      <div className="my-20  max-w-screen-lg">
-        <h3 className="text-left p-2 rounded text-lg sm:text-2xl text-yellow-500 w-full bg-[#1a1c2e]">
-          Crop Circle Size Image
-        </h3>
-        <div className="flex flex-col items-center mt-10 text-center ">
-          {showAlert && (
-            <CustomAlert
-              message={currentError}
-              onClose={() => {
-                setShowAlert(false);
-                setCurrentError("");
-              }}
-            />
-          )}
-          <div className=" rounded-lg overflow-hidden">
-            <Avatar
-              width={300}
-              height={300}
-              onCrop={handleCrop}
-              onClose={() => setPreview(null)}
-              onBeforeFileLoad={handleBeforeFileLoad}
-            />
-          </div>
-          {preview && (
-            <div className="mt-4 text-center">
-              <h1 className="text-2xl my-5 text-blue-50">Cropped Image</h1>
-              <img src={preview} alt="Cropped Avatar" className="w-48 h-48" />
-              <button
-                className="mt-8 bg-blue-500 hover:bg-blue-700 text-blue-50 text-center font-semibold py-2 px-4 rounded"
-                onClick={handleSave}
-              >
-                Download
-              </button>
+      <div className="p-4 sm:ml-52 text-justify max-w-screen overflow-y-auto max-h-screen">
+        <div className="my-20  max-w-screen-lg">
+          <h3 className="text-left p-2 rounded text-lg sm:text-2xl text-yellow-500 w-full bg-[#1a1c2e]">
+            Crop Circle Size Image
+          </h3>
+          <div className="flex flex-col items-center mt-10 text-center ">
+            {showAlert && (
+              <CustomAlert
+                message={currentError}
+                onClose={() => {
+                  setShowAlert(false);
+                  setCurrentError("");
+                }}
+              />
+            )}
+            <div className=" rounded-lg overflow-hidden">
+              <Avatar
+                width={300}
+                height={300}
+                onCrop={handleCrop}
+                onClose={() => setPreview(null)}
+                onBeforeFileLoad={handleBeforeFileLoad}
+              />
             </div>
-          )}
-        </div>
-        <div className="mt-10">
-          <div className="text-left border-l-4 border-l-purple-500 p-2 text-sm sm:text-lg bg-[#1a1c2e]">
-            <span className="text-blue-300">
-              <strong>Note:</strong> For a better experience, please use Chrome
-              browser. Also, ensure that the image size is less than 1MB. If you
-              are using Firefox, some functionality may not work.
-            </span>
+            {preview && (
+              <div className="mt-4 text-center">
+                <h1 className="text-2xl my-5 text-blue-50">Cropped Image</h1>
+                <img src={preview} alt="Cropped Avatar" className="w-48 h-48" />
+                <button
+                  className="mt-8 bg-blue-500 hover:bg-blue-700 text-blue-50 text-center font-semibold py-2 px-4 rounded"
+                  onClick={handleSave}
+                >
+                  Download
+                </button>
+              </div>
+            )}
+          </div>
+          <div className="mt-10">
+            <div className="text-left border-l-4 border-l-purple-500 p-2 text-sm sm:text-lg bg-[#1a1c2e]">
+              <span className="text-blue-300">
+                <strong>Note:</strong> For a better experience, please use
+                Chrome browser. Also, ensure that the image size is less than
+                1MB. If you are using Firefox, some functionality may not work.
+              </span>
+            </div>
           </div>
         </div>
-      </div>
       </div>
     </>
   );
