@@ -3,10 +3,12 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Slide, ToastContainer } from "react-toastify"; // Import the toast function
 import { HelmetProvider } from "react-helmet-async";
 import "react-toastify/dist/ReactToastify.css";
-import Navbar from "./Components/Navbar/Navbar";
 import Loader from "./Components/utils/Loader/Loader";
-import Footer from "./Components/Footer/Footer";
+import ScrollToTopButton from "./utils/ScrollToTopButton/ScrollToTopButton";
+
+const Navbar = lazy(() => import("./Components/Navbar/Navbar"));
 const Notfound = lazy(() => import("./Components/Notfound/Notfound"));
+const Footer = lazy(() => import("./Components/Footer/Footer"));
 const Home = lazy(() => import("./Pages/Home/Home"));
 
 // Lazy-loaded route components 'Texts'
@@ -135,6 +137,7 @@ function App() {
           closeButton={false}
           transition={Slide}
         />
+        <ScrollToTopButton />
         <HelmetProvider>
           <Routes>
             <Route path="*" element={<Notfound />} />

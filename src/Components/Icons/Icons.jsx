@@ -6,7 +6,8 @@ export function IconFileText(props) {
       viewBox="0 0 24 24"
       strokeWidth={1.5}
       stroke="currentColor"
-      className="w-5 h-5"
+      height="1.3em"
+      width="1.3em"
     >
       <path
         strokeLinecap="round"
@@ -25,7 +26,8 @@ export function IconColorPalette(props) {
       viewBox="0 0 24 24"
       strokeWidth={1.5}
       stroke="currentColor"
-      className="w-6 h-6"
+      height="1.3em"
+      width="1.3em"
     >
       <path
         strokeLinecap="round"
@@ -120,7 +122,8 @@ export function IconGrid_squares(props) {
       viewBox="0 0 24 24"
       strokeWidth={1.5}
       stroke="currentColor"
-      className="w-6 h-6"
+      height="1.3em"
+      width="1.3em"
     >
       <path
         strokeLinecap="round"
@@ -154,7 +157,8 @@ export function IconLanguageHiragana(props) {
 export function SidebarMenu(props) {
   return (
     <svg
-      className="w-6 h-6"
+      height="1.3em"
+      width="1.3em"
       aria-hidden="true"
       fill="currentColor"
       viewBox="0 0 20 20"
@@ -177,7 +181,8 @@ export function IconTick(props) {
       viewBox="0 0 24 24"
       strokeWidth={1.5}
       stroke="currentColor"
-      className="w-6 h-6"
+      height="1.3em"
+      width="1.3em"
     >
       <path
         strokeLinecap="round"
@@ -828,6 +833,23 @@ export function IconArrowsMaximize(props) {
     >
       <path stroke="none" d="M0 0h24v24H0z" />
       <path d="M16 4h4v4M14 10l6-6M8 20H4v-4M4 20l6-6M16 20h4v-4M14 14l6 6M8 4H4v4M4 4l6 6" />
+    </svg>
+  );
+}
+
+export function IconArrowUpShort(props) {
+  return (
+    <svg
+      fill="currentColor"
+      viewBox="0 0 16 16"
+      height="1.5em"
+      width="1.5em"
+      {...props}
+    >
+      <path
+        fillRule="evenodd"
+        d="M8 12a.5.5 0 00.5-.5V5.707l2.146 2.147a.5.5 0 00.708-.708l-3-3a.5.5 0 00-.708 0l-3 3a.5.5 0 10.708.708L7.5 5.707V11.5a.5.5 0 00.5.5z"
+      />
     </svg>
   );
 }

@@ -30,10 +30,9 @@ const Sidebar = ({ isOpen, setIsOpen }) => {
       "#00ff91",
       "#00FFFF",
       "#2469fe",
-      "#b023fc",
-      "#ed3b59",
-      "#f96c26",
-      "#391080",
+      "#ffac07",
+      "#ff163d",
+      "#f78045",
     ];
 
     // Generate a random index different from the previous one
@@ -58,17 +57,17 @@ const Sidebar = ({ isOpen, setIsOpen }) => {
             <li key={index} className="mb-4 whitespace-nowrap">
               <NavLink
                 to={item.link}
-                className="transition-all ease-in-out shadow-2xl border-2 border-cyan-500 text-blue-100  flex items-center gap-2 rounded hover:bg-gray-900 hover:text-medium hover:text-white hover:bg-gradient-to-l hover:from-pink-900 hover:to-slate-900"
+                className="transition-all ease-in-out shadow-2xl border-2 border-cyan-500 text-blue-100  flex items-center gap-2 rounded hover:bg-gray-900  hover:text-white hover:bg-gradient-to-l hover:from-pink-900 hover:to-slate-900"
                 onClick={handleNavLinkClick}
               >
                 <span
-                  className="text-cyan-500 py-2 pl-2"
+                  className="text-cyan-500 my-2 ml-2 text-lg sm:text-xl"
                   style={{ color: getRandomColor() }}
                 >
                   {" "}
                   {item.icon}
                 </span>
-                <span className="py-2 pr-2 text-sm sm:text-base font-normal">
+                <span className="my-2 mr-2 text-sm sm:text-base font-normal">
                   {" "}
                   {item.text}
                 </span>

@@ -104,7 +104,6 @@ const EmojiPicker = () => {
               className="p-1 pl-10  px-3 text-base w-full  rounded-md bg-[#1a1c2e] outline-none border-2 border-gray-600 focus:border-blue-600 text-blue-100 sm:text-lg"
               onChange={(e) => handleSearch(e.target.value)}
               autoComplete="off"
-              value={searchTerm}
             />
           </div>
 
