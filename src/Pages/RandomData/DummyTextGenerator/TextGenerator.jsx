@@ -10,7 +10,7 @@ import { Helmet } from "react-helmet-async";
 const TextGenerator = () => {
   const [paragraphs, setParagraphs] = useState([]);
   const [tag, setTag] = useState("p");
-  const [inputValue, setInputValue] = useState(1);
+  const [inputValue, setInputValue] = useState(5);
   const [includeHtml, setIncludeHtml] = useState(false);
 
   useEffect(() => {
@@ -42,7 +42,7 @@ const TextGenerator = () => {
       </Helmet>
       <div className="p-4 sm:ml-52 text-justify max-w-screen overflow-y-auto max-h-screen">
         <div className="my-20 max-w-screen-lg">
-          <h3 className="p-2 rounded max-w-screen-lg text-lg sm:text-2xl text-yellow-500 w-full bg-[#1a1c2e]">
+          <h3 className="p-2 rounded-md max-w-screen-lg text-lg sm:text-2xl text-yellow-500 w-full bg-[#1a1c2e]">
             Random Text Generator
           </h3>
           <div>
@@ -77,6 +77,10 @@ const TextGenerator = () => {
                 unleash your creativity and bring your ideas to fruition. So go
                 ahead, explore the possibilities, and let the Random Text
                 Generator be your guiding light on your creative journey.
+              </p>
+              <p className="text-blue-300">
+                <strong>Note: </strong>
+                We have increased the maximum number of paragraphs to 1000.
               </p>
             </div>
           </div>

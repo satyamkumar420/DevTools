@@ -8,7 +8,8 @@ const ScrollToTopButton = () => {
     if (window.pageYOffset > 500) {
       setIsVisible(true);
     } else {
-      setIsVisible(true);
+      console.log("Scroll event listener attached");
+      setIsVisible(false);
     }
   };
 
@@ -20,18 +21,19 @@ const ScrollToTopButton = () => {
   };
 
   useEffect(() => {
+    // console.log("Scroll event listener attached");
     window.addEventListener("scroll", toggleVisibility);
 
     return () => {
+      console.log("Scroll event listener removed");
       window.removeEventListener("scroll", toggleVisibility);
     };
   }, []);
-
   return (
     <div
       className={`${
         isVisible ? "block" : "hidden"
-      } fixed right-4 bottom-4 bg-blue-500 hover:bg-blue-600 text-white p-2 rounded-full cursor-pointer transition-opacity ease-in-out duration-300 z-[999]`}
+      } fixed right-10 bottom-10 bg-blue-500 hover:bg-blue-600 text-white p-2 rounded-full cursor-pointer transition-opacity ease-in-out h-6 w-6 duration-300 z-[999]`}
       onClick={scrollToTop}
     >
       <IconArrowUpShort className="w-6 h-6 " />

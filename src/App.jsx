@@ -5,6 +5,7 @@ import { HelmetProvider } from "react-helmet-async";
 import "react-toastify/dist/ReactToastify.css";
 import Loader from "./Components/utils/Loader/Loader";
 import ScrollToTopButton from "./utils/ScrollToTopButton/ScrollToTopButton";
+import ScrollToTop from "react-scroll-to-top";
 
 const Navbar = lazy(() => import("./Components/Navbar/Navbar"));
 const Notfound = lazy(() => import("./Components/Notfound/Notfound"));
@@ -137,8 +138,9 @@ function App() {
           closeButton={false}
           transition={Slide}
         />
-        <ScrollToTopButton />
         <HelmetProvider>
+          <ScrollToTopButton />
+          <ScrollToTop />
           <Routes>
             <Route path="*" element={<Notfound />} />
             <Route path="/" element={<Home />} />

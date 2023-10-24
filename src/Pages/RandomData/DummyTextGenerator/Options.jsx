@@ -36,15 +36,19 @@ const options = ({
     <div className="flex flex-wrap gap-3 mt-5 items-center justify-center">
       <div className="">
         <h3 className="mb-2 font-semibold">No. of Paragraphs</h3>
+
         <input
           type="number"
           placeholder="Paragraphs"
           value={inputValue}
           onChange={(e) => {
-            setInputValue(e.target.value);
+            if (e.target.value <= 1000) {
+              setInputValue(e.target.value);
+            }
           }}
           autoComplete="off"
           min="1"
+          max="1000"
           className="text-lg py-2 px-5 rounded outline-none bg-[#1a1c2e] shadow-md text-orange-500 w-52 appearance-none"
         />
       </div>
@@ -80,12 +84,6 @@ const options = ({
         </select>
       </div>
       <div className="flex justify-end">
-        {/* <button
-          className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700 mt-7 w-52 transition-all ease-in-out hover:font-semibold"
-          onClick={handleCopy}
-        >
-          Copy Text
-        </button> */}
         <PrimaryButton
           onClick={handleCopy}
           text="Copy Text"
