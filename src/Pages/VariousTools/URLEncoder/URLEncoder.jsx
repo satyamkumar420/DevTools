@@ -14,14 +14,14 @@ const UrlEncoder = () => {
   const [encoded, setEncoded] = useState("");
   const [operation, setOperation] = useState("encode"); // Default to encoding
 
-  const handleEncodeDecode = () => {
-    if (operation === "encode") {
-      const encodedValue = encodeURIComponent(input);
-      setEncoded(encodedValue);
-    } else if (operation === "decode") {
-      const decodedValue = decodeURIComponent(input);
-      setEncoded(decodedValue);
-    }
+  const handleEncode = () => {
+    const encodedValue = encodeURIComponent(input);
+    setEncoded(encodedValue);
+  };
+
+  const handleDecode = () => {
+    const decodedValue = decodeURIComponent(input);
+    setEncoded(decodedValue);
   };
 
   // Function to COpy the Encode or Decode URL
@@ -56,19 +56,6 @@ const UrlEncoder = () => {
           </h3>
 
           <div className="m-1 ">
-            <div className="mb-2">
-              <label htmlFor="operation" className="mr-2">
-                Select Options
-              </label>
-              <select
-                className="border-none outline-none rounded-md bg-[#1a1c2e] p-2 w-32 px-4 cursor-pointer mt-2 "
-                value={operation}
-                onChange={(e) => setOperation(e.target.value)}
-              >
-                <option value="encode">Encode</option>
-                <option value="decode">Decode</option>
-              </select>
-            </div>
             <div className="">
               <TextArea
                 Value={input}
@@ -77,11 +64,16 @@ const UrlEncoder = () => {
                 Rows={"5"}
               />
             </div>
-            <div className="flex gap-4 flex-wrap">
-              <div>
+            <div className="flex gap-4 flex-wrap my-2">
+              <div className="flex gap-2 flex-wrap">
                 <PrimaryButton
-                  onClick={handleEncodeDecode}
-                  text={operation === "encode" ? "Encode" : "Decode"}
+                  onClick={handleEncode}
+                  text={"Encode Url"}
+                  className={"w-32"}
+                />
+                <PrimaryButton
+                  onClick={handleDecode}
+                  text={"Decode Url"}
                   className={"w-32"}
                 />
               </div>
