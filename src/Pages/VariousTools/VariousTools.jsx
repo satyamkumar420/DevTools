@@ -11,12 +11,12 @@ import { Helmet } from "react-helmet-async";
 
 const VariousTools = () => {
   const buttons = [
-    // {
-    //   to: "/various-tools/short-url",
-    //   text: "Short URL",
-    //   icon: <IconLink className="text-yellow-500 text-lg md:text-3xl" />,
-    //   className: "p-2 grid place-items-center",
-    // },
+    {
+      to: "/various-tools/encode-url",
+      text: "URL Encoder",
+      icon: <IconLink className="text-yellow-500 text-lg md:text-3xl" />,
+      className: "p-2 grid place-items-center",
+    },
     {
       to: "/various-tools/age-calculator",
       text: "Age Calculator",

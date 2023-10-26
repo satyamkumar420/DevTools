@@ -3,6 +3,7 @@ import { toastStyleSuccess } from "../../../Components/utils/Toastify/toastStyle
 import { toast } from "react-toastify";
 import PrimaryButton from "../../../Components/utils/Button/PrimaryButton";
 import { Helmet } from "react-helmet-async";
+import { IconCopy } from "../../../Components/Icons/Icons";
 
 const PasswordGenerator = () => {
   const [password, setPassword] = useState("");
@@ -79,7 +80,7 @@ const PasswordGenerator = () => {
           <h3 className="p-2 rounded text-lg sm:text-2xl text-yellow-500 w-full bg-[#1a1c2e]">
             Password Generator
           </h3>
-          <div className="max-w-md max-h-screen mx-auto sm:mx-0 mt-5 p-3 sm:p-5 bg-[#1a1c2e] rounded-md shadow-lg">
+          <div className="max-w-screen-sm mx-auto sm:mx-0 mt-5 p-3 sm:p-5 bg-[#1a1c2e] rounded-md shadow-lg">
             <h1 className="text-lg sm:text-2xl text-center sm:text-left  mb-4 text-blue-100 ">
               Generate Strong Password
             </h1>
@@ -96,7 +97,7 @@ const PasswordGenerator = () => {
                 step="1"
                 value={passwordLength}
                 onChange={(e) => setPasswordLength(parseInt(e.target.value))}
-                className="range accent-blue-700 bg-[#1a1c2e] rounded w-full cursor-pointer"
+                className="range accent-blue-700 bg-[#1a1c2e]  rounded w-full cursor-pointer  "
               />
             </div>
             <PrimaryButton
@@ -109,12 +110,15 @@ const PasswordGenerator = () => {
                 <h3 className=" font-medium  text-gray-400">
                   Generated Password:
                 </h3>
-                <pre
-                  className=" text-gray-50 bg-[#282a40] cursor-pointer rounded px-3  py-3  "
-                  onClick={() => handleCopy(password)}
-                >
-                  {password}
-                </pre>
+                <div className="flex items-center bg-[#202236] rounded-md px-2 sm:px-4 py-3 w-fit">
+                  <pre className=" text-blue-100 mr-4 ">{password}</pre>
+                  <div className="ml-auto">
+                    <IconCopy
+                      className="sm:w-7 sm:h-7 cursor-pointer text-green-400"
+                      onClick={() => handleCopy(password)}
+                    />
+                  </div>
+                </div>
 
                 <div className="mt-2 flex gap-1">
                   <hr
@@ -182,9 +186,14 @@ const PasswordGenerator = () => {
           <div className="mt-10">
             <div className="border-l-4 text-left border-l-purple-500 p-2 text-sm sm:text-lg bg-[#1a1c2e]">
               <p className="text-blue-300">
-                Generating strong passwords is crucial to keeping your account
-                secure and productive. Our online toolset excels in this area,
-                providing you with passwords that are highly secure.
+                It's essential to have strong passwords in order to keep your
+                accounts safe and secure. With our online toolset, you can
+                generate highly secure passwords that include numbers, special
+                characters, and alphabets. This tool is easy to use as it
+                generates and copies a unique password every time. The algorithm
+                used by this tool ensures that no two generated passwords are
+                the same, making it an excellent option for staying productive
+                and secure..
               </p>
             </div>
           </div>

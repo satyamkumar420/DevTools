@@ -4,8 +4,6 @@ import { Slide, ToastContainer } from "react-toastify"; // Import the toast func
 import { HelmetProvider } from "react-helmet-async";
 import "react-toastify/dist/ReactToastify.css";
 import Loader from "./Components/utils/Loader/Loader";
-import ScrollToTopButton from "./utils/ScrollToTopButton/ScrollToTopButton";
-import ScrollToTop from "react-scroll-to-top";
 
 const Navbar = lazy(() => import("./Components/Navbar/Navbar"));
 const Notfound = lazy(() => import("./Components/Notfound/Notfound"));
@@ -111,6 +109,10 @@ const FrontendCode = lazy(() =>
   import("./Pages/VariousTools/FrontendCodeViewer/FrontendCode")
 );
 
+const EncodeURL = lazy(() =>
+  import("./Pages/VariousTools/URLEncoder/URLEncoder")
+);
+
 // Lazy-loaded route components 'MinifyCode'
 const MinifyCode = lazy(() => import("./Pages/MinifyCode/MinifyCode"));
 const HtmlMinify = lazy(() =>
@@ -139,8 +141,6 @@ function App() {
           transition={Slide}
         />
         <HelmetProvider>
-          <ScrollToTopButton />
-          <ScrollToTop />
           <Routes>
             <Route path="*" element={<Notfound />} />
             <Route path="/" element={<Home />} />
@@ -230,6 +230,7 @@ function App() {
               path="/various-tools/frontend-code"
               element={<FrontendCode />}
             />
+            <Route path="/various-tools/encode-url" element={<EncodeURL />} />
 
             {/* Here are the routes for 'Emoji Picker' */}
             <Route path="/emojis-picker" element={<EmojiPicker />} />

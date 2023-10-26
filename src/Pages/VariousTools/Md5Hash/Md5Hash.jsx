@@ -8,6 +8,7 @@ import {
   toastStyleError,
 } from "../../../Components/utils/Toastify/toastStyle";
 import TextArea from "../../../Components/utils/textArea/textArea";
+import { IconCopy } from "../../../Components/Icons/Icons";
 
 const Md5Hash = () => {
   const [input, setInput] = useState("");
@@ -73,12 +74,14 @@ const Md5Hash = () => {
             <div className="mt-4">
               {output && (
                 <div>
-                  <strong className="text-orange-500">MD5 Hash:</strong>
-                  <pre className="bg-[#1a1c2e] p-3 px-5 rounded-md">
-                    {output}
-                  </pre>
-                  <div className="mt-3">
-                    <PrimaryButton text={"Copy"} onClick={handleCopyMd5Hash} />
+                  <div className="text-orange-500 text-lg font-medium">
+                    MD5 Hash:
+                  </div>
+                  <div className="flex py-3 w-fit px-2 sm:px-4 rounded-md bg-[#1a1c2e] items-center">
+                    <pre className="mr-4 text-blue-100  ">{output}</pre>
+                    <div className="ml-auto">
+                      <IconCopy className="sm:w-7 sm:h-7 cursor-pointer text-green-400" />
+                    </div>
                   </div>
                 </div>
               )}

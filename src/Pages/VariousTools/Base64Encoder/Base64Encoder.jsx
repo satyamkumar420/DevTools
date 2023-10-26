@@ -78,6 +78,19 @@ function Base64Encoder() {
               </div>
             )}
           </div>
+          <div className="mt-10">
+            <div className="border-l-4 text-left border-l-purple-500 p-2 text-sm sm:text-lg bg-[#1a1c2e]">
+              <p className="text-blue-300">
+                Base64 is a simple and effective encoding algorithm that can
+                convert any character, including emojis and images, into a
+                readable string. The Base64 tool makes it easy to encode and
+                copy text with a single click. This encoding algorithm uses
+                Latin letters, digits, plus, and slash to represent any
+                character, ensuring that even Chinese characters can be
+                converted and read.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </>

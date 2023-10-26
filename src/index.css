@@ -66,6 +66,7 @@ html {
 
 
 pre {
+  min-width: 0;
   white-space: pre-wrap;
   /* Since CSS 2.1 */
   white-space: -moz-pre-wrap;

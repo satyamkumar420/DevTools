@@ -6,6 +6,7 @@ import { Helmet } from "react-helmet-async";
 import { toast } from "react-toastify";
 import { toastStyleSuccess } from "../../../Components/utils/Toastify/toastStyle";
 import Avatar from "../../../assets/favicon.png";
+import { IconCopy } from "../../../Components/Icons/Icons";
 
 const FakeDetails = () => {
   const [details, setDetails] = useState({
@@ -51,18 +52,18 @@ const FakeDetails = () => {
   };
 
   const detailItems = [
-    { label: "Name", value: details.randomName },
-    { label: "Bio", value: details.bio },
-    { label: "Email", value: details.randomEmail },
-    { label: "Password", value: details.randomPassword },
-    { label: "Address", value: details.address },
-    { label: "Company", value: details.company },
-    { label: "Website", value: details.website },
-    { label: "Phone", value: details.phone },
-    { label: "PIN Code", value: details.Pin },
-    { label: "City", value: details.city },
-    { label: "State", value: details.state },
-    { label: "Country", value: details.country },
+    { label: "Name", value: details.randomName, Icon: <IconCopy /> },
+    { label: "Bio", value: details.bio, Icon: <IconCopy /> },
+    { label: "Email", value: details.randomEmail, Icon: <IconCopy /> },
+    { label: "Password", value: details.randomPassword, Icon: <IconCopy /> },
+    { label: "Address", value: details.address, Icon: <IconCopy /> },
+    { label: "Company", value: details.company, Icon: <IconCopy /> },
+    { label: "Website", value: details.website, Icon: <IconCopy /> },
+    { label: "Phone", value: details.phone, Icon: <IconCopy /> },
+    { label: "PIN Code", value: details.Pin, Icon: <IconCopy /> },
+    { label: "City", value: details.city, Icon: <IconCopy /> },
+    { label: "State", value: details.state, Icon: <IconCopy /> },
+    { label: "Country", value: details.country, Icon: <IconCopy /> },
   ];
 
   // handleCopy function to copy text to clipboard
@@ -115,15 +116,18 @@ const FakeDetails = () => {
                   {detailItems.map((item, index) => (
                     <div
                       key={index}
-                      className="px-2 mb-4 text-sm sm:text-base flex  gap-2 border-1 border-b-2 rounded-sm border-gray-500 text-ellipsis"
+                      className="px-2 mb-4 text-sm sm:text-base flex  gap-2 border-1 border-b-2 rounded-sm border-gray-500 text-ellipsis items-center"
                     >
                       <div className="font-bold">{item.label}</div>
                       <strong>:</strong>
-                      <div
-                        className="text-blue-300 text-left cursor-pointer text-ellipsis"
-                        onClick={() => handleCopy(item.label, item.value)}
-                      >
+                      <div className="text-blue-200 text-left  text-ellipsis">
                         {item.value}
+                      </div>
+                      <div
+                        onClick={() => handleCopy(item.label, item.value)}
+                        className="text-blue-300 cursor-pointer"
+                      >
+                        {item.Icon}
                       </div>
                     </div>
                   ))}
