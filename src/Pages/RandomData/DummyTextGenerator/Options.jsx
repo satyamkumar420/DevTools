@@ -48,7 +48,7 @@ const options = ({
           autoComplete="off"
           min="1"
           max="1000"
-          className="text-lg py-2 px-5 rounded outline-none bg-[#1a1c2e] shadow-md text-orange-500 w-52 appearance-none"
+          className="text-lg py-2 px-5 rounded outline-none bg-[#1a1c2e] shadow-md text-white w-52 appearance-none"
         />
       </div>
       <div className="">

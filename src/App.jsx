@@ -28,9 +28,7 @@ const ImageSquareCrop = lazy(() =>
   import("./Pages/Images/ImageCrop/ImageSquareCrop")
 );
 const ImageCrop = lazy(() => import("./Pages/Images/ImageCrop/ImageCrop"));
-const ImageConverter = lazy(() =>
-  import("./Pages/Images/ImageConvert/ImageConverter")
-);
+
 const ImageToBase64Converter = lazy(() =>
   import("./Pages/Images/ImageToBase64Converter/ImageToBase64Converter")
 );
@@ -158,7 +156,10 @@ function App() {
             <Route path="/image/circle-crop" element={<ImageCircleCrop />} />
             <Route path="/images/square-crop" element={<ImageSquareCrop />} />
             <Route path="/images/images-crop" element={<ImageCrop />} />
-            <Route path="/image/image-convert" element={<ImageConverter />} />
+            <Route
+              path="/converters/ImageToBase64Converter"
+              element={<ImageToBase64Converter />}
+            />
 
             {/* Here are the routes for 'Colors' */}
             <Route path="/colors" element={<Colors />} />
@@ -176,10 +177,7 @@ function App() {
 
             {/* Here are the routes for 'Converters' */}
             <Route path="/converters" element={<Converters />} />
-            <Route
-              path="/converters/ImageToBase64Converter"
-              element={<ImageToBase64Converter />}
-            />
+
             <Route
               path="/converters/timestamp-converter"
               element={<TimestampConverter />}

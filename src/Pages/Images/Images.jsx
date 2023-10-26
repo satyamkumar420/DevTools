@@ -34,17 +34,9 @@ const Images = () => {
     {
       to: "/converters/ImageToBase64Converter",
       text: "Image to Base64",
-      icon: <IconImageSyncOutline className="text-yellow-500" />,
+      icon: <IconImageSyncOutline className="text-pink-500" />,
       className: "p-2 grid place-items-center",
     },
-    // {
-    //   to: "/image/image-convert",
-    //   text: "Image Convert",
-    //   icon: (
-    //     <IconImageSyncOutline className="text-pink-500 text-lg md:text-3xl" />
-    //   ),
-    //   className: "p-2 grid place-items-center",
-    // },
   ];
 
   return (

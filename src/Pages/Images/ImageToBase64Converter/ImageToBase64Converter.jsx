@@ -5,6 +5,7 @@ import {
 } from "../../../Components/utils/Toastify/toastStyle";
 import { toast } from "react-toastify";
 import { Helmet } from "react-helmet-async";
+import PrimaryButton from "../../../Components/utils/Button/PrimaryButton";
 
 const ImageToBase64Converter = () => {
   const [base64Image, setBase64Image] = useState("");
@@ -60,10 +61,10 @@ const ImageToBase64Converter = () => {
               accept="image/*"
               onChange={handleImageUpload}
               className="block w-full text-sm text-slate-500 
-        file:mr-4 file:py-2 file:px-4 file:rounded
-        file:border-0 file:text-sm sm:file:text-base file:font-medium
-        file:bg-blue-500 file:text-blue-50 
-        hover:file:bg-blue-700 cursor-pointer file:cursor-pointer"
+              file:mr-4 file:py-2 file:px-4 file:rounded
+              file:border-0 file:text-sm sm:file:text-base file:font-medium
+              file:bg-blue-500 file:text-blue-50 
+              hover:file:bg-blue-700 cursor-pointer file:cursor-pointer"
             />
             {base64Image && (
               <div className="my-4">
@@ -74,13 +75,14 @@ const ImageToBase64Converter = () => {
                   className="w-full h-48 border-2 rounded focus:border-green-500 border-green-500 p-2 outline-none bg-[#10121d]"
                   autoComplete="off"
                 />
-                <div className="my-3">
-                  <button
+                <div>
+                  <PrimaryButton
                     onClick={handleCopy}
-                    className="bg-blue-500 hover:bg-blue-700 text-blue-50 px-4 py-2 rounded "
-                  >
-                    Copy
-                  </button>
+                    text={"Convert"}
+                    className={
+                      " text-white px-4 py-2 rounded-md w-full sm:w-60 mt-2"
+                    }
+                  />
                 </div>
               </div>
             )}

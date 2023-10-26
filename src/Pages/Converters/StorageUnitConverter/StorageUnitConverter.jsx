@@ -78,7 +78,7 @@ const StorageUnitConverter = () => {
               <div className="my-4 flex flex-col justify-center sm:justify-start">
                 <input
                   type="number"
-                  className="bg-[#202336] text-white px-3 py-2 w-full sm:w-60 rounded-md outline-none focus:border-blue-500 ring-2 focus:ring-blue-500"
+                  className=" px-3 py-2 w-full sm:w-60 rounded-md outline-none border-2 border-gray-600 focus:border-blue-600  bg-[#141522] text-white"
                   placeholder="Enter value"
                   value={inputValue}
                   onChange={(e) => setInputValue(e.target.value)}
@@ -97,11 +97,13 @@ const StorageUnitConverter = () => {
               </div>
               <div className="mt-4">
                 {result && (
-                  <div className="w-full bg-[#202336] text-orange-500 px-4 py-2 rounded-md flex ">
-                    <h1 className="flex gap-4 text-xl font-light">
-                      Result :{" "}
-                      <p className="text-blue-100 font-medium">{result}</p>
-                    </h1>
+                  <div>
+                    <span className="text-gray-400">Result : </span>
+                    <div className="w-full bg-[#202336] px-4 py-2 rounded-md flex ">
+                      <div className="flex gap-4 text-lg">
+                        <p className="text-white font-medium">{result}</p>
+                      </div>
+                    </div>
                   </div>
                 )}
               </div>

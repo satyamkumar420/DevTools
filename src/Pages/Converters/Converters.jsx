@@ -38,7 +38,7 @@ const Converters = () => {
     {
       to: "/converters/time-converter",
       text: "Time Converter",
-      icon: <IconTime className="text-cyan-500" />,
+      icon: <IconTime className="text-orange-500" />,
       className: "p-2 grid place-items-center ",
     },
   ];

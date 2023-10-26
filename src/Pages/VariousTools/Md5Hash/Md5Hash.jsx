@@ -7,7 +7,7 @@ import {
   toastStyleSuccess,
   toastStyleError,
 } from "../../../Components/utils/Toastify/toastStyle";
-import TextArea from "../../../Components/utils/textArea/textArea";
+import TextArea from "../../../Components/utils/textArea/TextArea";
 import { IconCopy } from "../../../Components/Icons/Icons";
 
 const Md5Hash = () => {
@@ -77,7 +77,7 @@ const Md5Hash = () => {
             <div className="mt-4">
               {output && (
                 <div>
-                  <div className="text-orange-500 text-lg font-medium">
+                  <div className="text-gray-400 text-lg font-medium">
                     MD5 Hash:
                   </div>
                   <div className="flex py-3 w-fit px-2 sm:px-4 rounded-md bg-[#1a1c2e] items-center">

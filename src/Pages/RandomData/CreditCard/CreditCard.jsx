@@ -81,7 +81,7 @@ const CreditCard = () => {
               className={" text-white px-4 py-2 rounded-md w-full sm:w-60 "}
             />
           </div>
-          <div className="mt-5 flex flex-wrap gap-3 justify-center lg:justify-start">
+          <div className="mt-2 flex flex-wrap gap-3 justify-center lg:justify-start">
             {cardDataArray.map((cardData, index) => (
               <Card
                 key={index}
@@ -102,8 +102,8 @@ const CreditCard = () => {
 
           <div className="mt-10">
             <div className="text-left border-l-4 border-l-purple-500 p-2 text-sm sm:text-lg bg-[#1a1c2e]">
-              <span className="text-blue-300">
-                <p>
+              <div className="text-blue-300">
+                <p className="mb-1">
                   👋 Hey there! Our Credit Card Generator is a super useful tool
                   for software developers and testers. It allows you to create
                   fictitious credit card data for use in software testing and
@@ -112,7 +112,7 @@ const CreditCard = () => {
                   credit card information. It's perfect for e-commerce systems
                   and fintech projects!
                 </p>
-                <p>
+                <p className="mb-1">
                   🪪 By using our generator, you can easily create basic
                   information for a fictitious credit card, such as the card
                   number, the cardholder's name, the expiration date, and the
@@ -122,7 +122,7 @@ const CreditCard = () => {
                   conducting real financial transactions like payments or
                   purchases.
                 </p>
-              </span>
+              </div>
             </div>
           </div>
         </div>
