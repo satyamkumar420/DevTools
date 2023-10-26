@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { IconCheck } from "../../../Components/Icons/Icons";
 import { Helmet } from "react-helmet-async";
 import TextArea from "../../../Components/utils/textArea/textArea";
+import StickyContent from "./StickyContent";
 
 const TextConverter = () => {
   const [inputText, setInputText] = useState("");
@@ -221,79 +221,7 @@ const TextConverter = () => {
               </div>
             </div>
           </div>
-          <div className="mt-10">
-            <div className="text-left border-l-4 border-l-purple-500 p-2 text-sm sm:text-base bg-[#1a1c2e]">
-              <span className="text-blue-300">
-                <ul className="">
-                  <li className="flex flex-wrap gap-1">
-                    <IconCheck /> <strong>Capitalize: </strong> Converts the
-                    text to capitalize each word.
-                  </li>
-                  <li className="flex flex-wrap gap-1">
-                    <IconCheck /> <strong>Uppercase: </strong> Converts the text
-                    to all uppercase.
-                  </li>
-                  <li className="flex flex-wrap gap-1">
-                    <IconCheck /> <strong>CamelCase: </strong> Converts the text
-                    to camel case, where the first letter of each word is
-                    capitalized and spaces are removed.
-                  </li>
-                  <li className="flex flex-wrap gap-1">
-                    <IconCheck /> <strong>Lowercase: </strong> Converts the text
-                    to all lowercase.
-                  </li>
-                  <li className="flex flex-wrap gap-1">
-                    <IconCheck /> <strong>Reverse: </strong> Reverses the text.
-                  </li>
-                  <li className="flex flex-wrap gap-1">
-                    <IconCheck /> <strong>Remove Extra Spaces: </strong> Removes
-                    extra spaces and trims the text.
-                  </li>
-                  <li className="flex flex-wrap gap-1">
-                    <IconCheck /> <strong>Alternate: </strong> Converts the text
-                    to alternate case, where even-positioned characters are in
-                    uppercase and odd-positioned characters are in lowercase.
-                  </li>
-                  <li className="flex flex-wrap gap-1">
-                    <IconCheck /> <strong>Snake_Case_Char:</strong> Converts the
-                    text to snake case with alternating case for each character.
-                  </li>
-                  <li className="flex flex-wrap gap-1">
-                    <IconCheck /> <strong>Snake_Case_Word: </strong> Converts
-                    the text to snake case with alternating case for each word.
-                  </li>
-                  <li className="flex flex-wrap gap-1">
-                    <IconCheck /> <strong>Hyphen-Case: </strong> Converts the
-                    text to hyphen case, where spaces are replaced with hyphens.
-                  </li>
-                  <li className="flex flex-wrap gap-1">
-                    <IconCheck /> <strong>Remove Line Breaks: </strong> Removes
-                    line breaks from the text.
-                  </li>
-                  <li className="flex flex-wrap gap-1">
-                    <IconCheck /> <strong>Remove Blank Line: </strong> Removes
-                    blank lines from the text.
-                  </li>
-                  <li className="flex flex-wrap gap-1">
-                    <IconCheck /> <strong>Remove Accents: </strong> Removes
-                    accents (diacritics) from accented characters.
-                  </li>
-                  <li className="flex flex-wrap gap-1">
-                    <IconCheck /> <strong>Remove HTML Tags: </strong> Removes
-                    HTML tags from the text.
-                  </li>
-                  <li className="flex flex-wrap gap-1">
-                    <IconCheck /> <strong>Remove Digits: </strong> Removes
-                    digits (numeric characters) from the text.
-                  </li>
-                  <li className="flex flex-wrap gap-1">
-                    <IconCheck /> <strong>Reset Output: </strong> Resets the
-                    output field to an empty state.
-                  </li>
-                </ul>
-              </span>
-            </div>
-          </div>
+          <StickyContent />
         </div>
       </div>
     </>

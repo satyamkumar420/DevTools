@@ -67,7 +67,7 @@ const RandomColor = () => {
                 <PrimaryButton
                   onClick={generateColors}
                   text={"Generate Colors"}
-                  className={"py-2"}
+                  className={" text-white px-4 py-2 rounded-md w-full sm:w-60 "}
                 />
               </div>
               <div className="mb-4 flex flex-wrap items-center">

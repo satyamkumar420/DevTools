@@ -63,6 +63,7 @@ const TimestampConverter = () => {
                 <PrimaryButton
                   onClick={convertTimestampToDate}
                   text={"Convert"}
+                  className={" text-white px-4 py-2 rounded-md w-full sm:w-60"}
                 />
               </div>
             </div>

@@ -77,7 +77,7 @@ const AgeCalculator = () => {
             <PrimaryButton
               onClick={calculateAge}
               text={"Calculate Age"}
-              className={""}
+              className={" text-white px-4 py-2 rounded-md w-full sm:w-60 "}
             />
             <div className="mt-4 overflow-hidden">
               {age && (
@@ -86,6 +86,18 @@ const AgeCalculator = () => {
                   <div className="font-semibold">{age}</div>
                 </div>
               )}
+            </div>
+          </div>
+          <div className="mt-10">
+            <div className="border-l-4 border-l-purple-500 p-2 text-sm sm:text-lg bg-[#1a1c2e]">
+              <p className="text-blue-300">
+                👋 Hey there! Want to know your age in more detail than just
+                years? Our Age Calculator is here to help! All you need to do is
+                enter your date of birth, and voila! You'll instantly get your
+                age in months, weeks, and days. It's a fun and simple tool that
+                will help you gain a better understanding of the amount of time
+                you've spent on this Earth. We hope you enjoy using it!
+              </p>
             </div>
           </div>
         </div>

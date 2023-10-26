@@ -64,7 +64,11 @@ function Base64Encoder() {
                 Placeholder={"Enter Text Here"}
               />
             </div>
-            <PrimaryButton text={"Encode base64"} onClick={encodeToBase64} />
+            <PrimaryButton
+              text={"Encode base64"}
+              onClick={encodeToBase64}
+              className={" text-white px-4 py-2 rounded-md w-full sm:w-60 "}
+            />
 
             {base64 && (
               <div className="mt-4 break-words">
@@ -74,7 +78,11 @@ function Base64Encoder() {
                 <pre className="mb-2 sm:text-lg  text-left bg-[#202236] rounded-md py-3 px-4 break-words shadow-md">
                   {base64}
                 </pre>
-                <PrimaryButton text={"Copy Token"} onClick={handleCopy} />
+                <PrimaryButton
+                  text={"Copy Token"}
+                  onClick={handleCopy}
+                  className={" text-white px-4 py-2 rounded-md w-full sm:w-60 "}
+                />
               </div>
             )}
           </div>

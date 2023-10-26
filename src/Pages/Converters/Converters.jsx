@@ -1,6 +1,6 @@
 import Button from "../../Components/utils/Button/Button";
 import { NavLink } from "react-router-dom";
-import { IconTime, IconXml, IconConvertio } from "../../Components/Icons/Icons";
+import { IconTime, IconXml, IconConverter } from "../../Components/Icons/Icons";
 import { Helmet } from "react-helmet-async";
 
 const Converters = () => {
@@ -32,8 +32,14 @@ const Converters = () => {
     {
       to: "/converters/storage-unit-converter",
       text: "MB To KB",
-      icon: <IconConvertio className="text-yellow-500" />,
+      icon: <IconConverter className="text-yellow-500" />,
       className: "p-2 grid place-items-center sm:w-32",
+    },
+    {
+      to: "/converters/time-converter",
+      text: "Time Converter",
+      icon: <IconTime className="text-cyan-500" />,
+      className: "p-2 grid place-items-center ",
     },
   ];
 

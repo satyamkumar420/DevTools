@@ -77,7 +77,9 @@ const LessToCss = lazy(() => import("./Pages/Converters/LessToCss/LessToCss"));
 const StorageUnitConverter = lazy(() =>
   import("./Pages/Converters/StorageUnitConverter/StorageUnitConverter")
 );
-// const CssToLess = lazy(() => import("./Pages/Converters/CssToLess/CssToLess"));
+const TimeConverter = lazy(() =>
+  import("./Pages/Converters/TimeConverter/TimeConverter")
+);
 
 // Lazy-loaded route components 'About'
 const About = lazy(() => import("./Pages/About/About"));
@@ -188,6 +190,10 @@ function App() {
             <Route
               path="/converters/storage-unit-converter"
               element={<StorageUnitConverter />}
+            />
+            <Route
+              path="/converters/time-converter"
+              element={<TimeConverter />}
             />
 
             {/* Here are the routes for 'Random Data' */}

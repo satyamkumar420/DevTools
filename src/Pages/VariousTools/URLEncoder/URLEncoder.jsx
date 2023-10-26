@@ -65,16 +65,18 @@ const UrlEncoder = () => {
               />
             </div>
             <div className="flex gap-4 flex-wrap my-2">
-              <div className="flex gap-2 flex-wrap">
+              <div className="flex gap-4 flex-wrap">
                 <PrimaryButton
                   onClick={handleEncode}
                   text={"Encode Url"}
-                  className={"w-32"}
+                  className={" text-white px-4 py-2 rounded-md w-full sm:w-60 "}
                 />
                 <PrimaryButton
                   onClick={handleDecode}
                   text={"Decode Url"}
-                  className={"w-32"}
+                  className={
+                    " text-white px-4 py-2 rounded-md w-full sm:w-60 bg-orange-500 hover:bg-orange-800"
+                  }
                 />
               </div>
             </div>

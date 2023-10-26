@@ -804,7 +804,7 @@ export function IconBrandJavascript(props) {
   );
 }
 
-export function IconConvertio(props) {
+export function IconConverter(props) {
   return (
     <svg
       viewBox="0 0 24 24"

@@ -78,7 +78,7 @@ const CreditCard = () => {
             <PrimaryButton
               text={"Generate Credit Card"}
               onClick={generateCreditCardData}
-              className={"py-2"}
+              className={" text-white px-4 py-2 rounded-md w-full sm:w-60 "}
             />
           </div>
           <div className="mt-5 flex flex-wrap gap-3 justify-center lg:justify-start">

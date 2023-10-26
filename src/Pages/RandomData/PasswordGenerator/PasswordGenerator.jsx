@@ -103,7 +103,7 @@ const PasswordGenerator = () => {
             <PrimaryButton
               onClick={generatePassword}
               text={`Generate Password`}
-              className={"py-2"}
+              className={" text-white px-4 py-2 rounded-md w-full sm:w-60 "}
             />
             {loading && (
               <div className="mt-4 mb-2">
