@@ -49,8 +49,12 @@ export const HomeLinks = [
   { text: "Square Image Crop", link: "/images/square-crop" },
   { text: "Text Generator", link: "/random-data/text-generator" },
   { text: "Token Generator", link: "/random-data/token-generator" },
-  { text: "MD5 Hash", link: "/random-data/md5-hash" },
+  { text: "MD5 Hash", link: "/various-tools/md5-hash" },
   { text: "KB To MB, GB, TB", link: "/converters/storage-unit-converter" },
   { text: "Code Viewer", link: "/various-tools/frontend-code" },
+  { text: "Credit Card", link: "/random-data/credit-card" },
+  { text: "Time Converter", link: "/converters/time-converter" },
+  { text: "Text Converter", link: "/texts/text-converter" },
+
   // { text: "Short URL", link: "/various-tools/short-url" },
 ];

@@ -5,6 +5,7 @@ import {
   IconCompare,
   IconTextEditOutline,
   IconFormatTextVariantOutline,
+  IconScriptTextPlay,
 } from "../../Components/Icons/Icons";
 import { Helmet } from "react-helmet-async";
 
@@ -28,14 +29,12 @@ const Texts = () => {
       icon: <IconTextEditOutline className="text-green-500  md:text-4xl " />,
       className: "p-2 grid place-items-center",
     },
-    // {
-    //   to: "/texts/ascii-later",
-    //   text: "ASCII Letter",
-    //   icon: (
-    //     <IconFormatTextVariantOutline className="text-blue-200  md:text-4xl " />
-    //   ),
-    //   className: "p-2 grid place-items-center",
-    // },
+    {
+      to: "/texts/text-to-speech",
+      text: "Text to Speech",
+      icon: <IconScriptTextPlay className="text-blue-200  md:text-4xl " />,
+      className: "p-2 grid place-items-center",
+    },
     // Add more buttons here
   ];
 

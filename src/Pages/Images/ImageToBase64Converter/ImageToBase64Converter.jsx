@@ -72,15 +72,16 @@ const ImageToBase64Converter = () => {
                 <textarea
                   value={base64Image}
                   readOnly
-                  className="w-full h-48 border-2 rounded focus:border-green-500 border-green-500 p-2 outline-none bg-[#10121d]"
+                  className="w-full p-2 mt-2 rounded-md outline-none border-2 border-gray-600 focus:border-blue-600 bg-[#141522] text-white resize-none"
                   autoComplete="off"
+                  rows={8}
                 />
                 <div>
                   <PrimaryButton
                     onClick={handleCopy}
-                    text={"Convert"}
+                    text={"Copy"}
                     className={
-                      " text-white px-4 py-2 rounded-md w-full sm:w-60 mt-2"
+                      "text-white px-4 py-2 rounded-md w-full sm:w-60 mt-2"
                     }
                   />
                 </div>
