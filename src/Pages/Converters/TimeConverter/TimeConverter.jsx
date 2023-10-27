@@ -97,7 +97,11 @@ const TimeConverter = () => {
                   <div className="w-full bg-[#202336] text-orange-500 px-4 py-2 rounded-md flex ">
                     <div className="text-lg font-light">
                       <p className="text-left text-blue-100 font-medium my-2">
-                        {inputValue} {fromUnit} is approximately {result}{" "}
+                        <strong className="text-green-500">
+                          {inputValue}{" "}
+                        </strong>
+                        {fromUnit} is approximately{" "}
+                        <strong className="text-green-500">{result} </strong>{" "}
                         {toUnit}.
                       </p>
                     </div>

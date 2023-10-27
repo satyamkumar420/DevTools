@@ -80,7 +80,7 @@ const PasswordGenerator = () => {
           <h3 className="p-2 rounded text-lg sm:text-2xl text-yellow-500 w-full bg-[#1a1c2e]">
             Password Generator
           </h3>
-          <div className="max-w-screen-sm mx-auto sm:mx-0 mt-5 p-3 sm:p-5 bg-[#1a1c2e] rounded-md shadow-lg">
+          <div className="max-w-md mx-auto sm:mx-0 mt-5 p-3 sm:p-5 bg-[#1a1c2e] rounded-md shadow-lg">
             <h1 className="text-lg sm:text-2xl text-center sm:text-left  mb-4 text-blue-100 ">
               Generate Strong Password
             </h1>
@@ -110,7 +110,7 @@ const PasswordGenerator = () => {
                 <h3 className=" font-medium  text-gray-400">
                   Generated Password:
                 </h3>
-                <div className="flex items-center bg-[#202236] rounded-md px-2 sm:px-4 py-3 w-fit">
+                <div className="flex items-center bg-[#202236] rounded-md px-2 sm:px-4 py-3 w-full">
                   <pre className=" text-blue-100 mr-4 ">{password}</pre>
                   <div className="ml-auto">
                     <IconCopy
