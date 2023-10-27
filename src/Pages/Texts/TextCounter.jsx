@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Helmet } from "react-helmet-async";
-import TextArea from "../../Components/utils/textArea/textArea";
+import TextArea from "../../Components/utils/textArea/TextArea";
 function TextCounter() {
   const [text, setText] = useState("");
 
