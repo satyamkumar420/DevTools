@@ -6,7 +6,7 @@ import {
   toastStyleSuccess,
   toastStyleError,
 } from "../../../Components/utils/Toastify/toastStyle";
-import TextArea from "../../../Components/utils/textArea/textArea";
+import TextArea from "../../../Components/utils/textArea/TextArea";
 
 function Base64Encoder() {
   const [text, setText] = useState("");

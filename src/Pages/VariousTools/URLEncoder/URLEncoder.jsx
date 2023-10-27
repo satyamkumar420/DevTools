@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import PrimaryButton from "../../../Components/utils/Button/PrimaryButton";
-import TextArea from "../../../Components/utils/textArea/textArea";
+import TextArea from "../../../Components/utils/textArea/TextArea";
 import { toast } from "react-toastify";
 import {
   toastStyleError,

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { diffChars } from "diff";
 import { Helmet } from "react-helmet-async";
-import TextArea from "../../Components/utils/textArea/textArea";
+import TextArea from "../../Components/utils/textArea/TextArea";
 const TextComparator = () => {
   const [originalParagraph, setOriginalParagraph] = useState("");
   const [modifiedParagraph, setModifiedParagraph] = useState("");
