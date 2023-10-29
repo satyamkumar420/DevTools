@@ -1,4 +1,4 @@
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Slide, ToastContainer } from "react-toastify"; // Import the toast function
 import { HelmetProvider } from "react-helmet-async";
@@ -130,6 +130,25 @@ const JSMinify = lazy(() => import("./Pages/MinifyCode/JSMinify/JSMinify"));
 // Lazy-loaded route components 'EmojiPicker'
 const EmojiPicker = lazy(() => import("./Pages/EmojiPicker/EmojiPicker"));
 function App() {
+  const disableContextMenu = (e) => {
+    e.preventDefault();
+  };
+
+  const disableF12 = (e) => {
+    if (e.key === "F12" || e.keyCode === 123) {
+      e.preventDefault();
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("contextmenu", disableContextMenu);
+    document.addEventListener("keydown", disableF12);
+
+    return () => {
+      document.removeEventListener("contextmenu", disableContextMenu);
+      document.removeEventListener("keydown", disableF12);
+    };
+  }, []);
   return (
     <BrowserRouter>
       <Suspense fallback={<Loader />}>

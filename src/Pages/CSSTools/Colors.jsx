@@ -6,6 +6,7 @@ import {
   IconColorBucket,
   IconImageFilterBlackWhite,
   IconSelectColor,
+  IconColorFilter,
 } from "../../Components/Icons/Icons";
 import { Helmet } from "react-helmet-async";
 
@@ -44,13 +45,13 @@ const Colors = () => {
     {
       to: "/converters/color-converter",
       text: "Color Converter",
-      icon: <IconSelectColor className="text-pink-500" />,
+      icon: <IconSelectColor className="text-orange-500" />,
       className: "p-2 grid place-items-center",
     },
     {
       to: "/colors/gradient-color",
       text: "Gradient Color",
-      icon: <IconSelectColor className="text-pink-500" />,
+      icon: <IconColorFilter className="text-teal-500" />,
       className: "p-2 grid place-items-center",
     },
   ];
