@@ -47,6 +47,9 @@ const ImageColorPicker = lazy(() =>
 const ColorConverter = lazy(() =>
   import("./Pages/CSSTools/ColorConverter/ColorConverter")
 );
+const GradientColor = lazy(() =>
+  import("./Pages/CSSTools/GradientColor/GradientColor")
+);
 
 // Lazy-loaded route components 'RandomData'
 const RandomData = lazy(() => import("./Pages/RandomData/RandomData"));
@@ -165,7 +168,7 @@ function App() {
               element={<ImageToBase64Converter />}
             />
 
-            {/* Here are the routes for 'Colors' */}
+            {/* Here are the routes for 'CSS Tools' */}
             <Route path="/colors" element={<Colors />} />
             <Route path="/colors/color-picker" element={<ColorPicker />} />
             <Route path="/colors/random-color" element={<RandomColor />} />
@@ -178,6 +181,7 @@ function App() {
               path="/converters/color-converter"
               element={<ColorConverter />}
             />
+            <Route path="/colors/gradient-color" element={<GradientColor />} />
 
             {/* Here are the routes for 'Converters' */}
             <Route path="/converters" element={<Converters />} />

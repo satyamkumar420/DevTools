@@ -51,7 +51,7 @@ const Home = () => {
               </span>
             </div>
           </div>
-          <div className="mt-10">
+          <div className="mt-4">
             <div className="border-l-4 border-l-purple-500 p-2 text-sm sm:text-lg bg-[#1a1c2e]">
               <strong className="text-orange-500 text-center">Note</strong>{" "}
               <span className="text-blue-300">
