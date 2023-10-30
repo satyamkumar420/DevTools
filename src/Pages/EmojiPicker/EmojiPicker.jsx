@@ -8,20 +8,19 @@ import { Helmet } from "react-helmet-async";
 
 const EmojiPicker = () => {
   // TODO: Optimize search logic by using lodash
-  const [searchTerm, setSearchTerm] = useState("");
-  const [filteredEmojis, setFilteredEmojis] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("Smileys & Emotion");
+  const [filteredEmojis, setFilteredEmojis] = useState([]);
 
   const MyCategories = [
-    { id: 1, char: "😂", groupName: "Smileys & Emotion" },
+    { id: 1, char: "😂", groupName: "smileys & emotion" },
     { id: 2, char: "👋", groupName: "hand" },
     { id: 3, char: "🧑", groupName: "person" },
     { id: 4, char: "🐯", groupName: "animal" },
     { id: 5, char: "☕", groupName: "food" },
-    { id: 6, char: "🚀", groupName: "Travel" },
-    { id: 7, char: "⚽", groupName: "Activities" },
-    { id: 8, char: "💡", groupName: "Objects" },
-    { id: 9, char: "🚸", groupName: "Symbols" },
+    { id: 6, char: "🚀", groupName: "travel" },
+    { id: 7, char: "⚽", groupName: "activities" },
+    { id: 8, char: "💡", groupName: "objects" },
+    { id: 9, char: "🚸", groupName: "symbols" },
     { id: 10, char: "🚩", groupName: "flag" },
   ];
 
@@ -34,7 +33,7 @@ const EmojiPicker = () => {
     if (selectedCategoryObject) {
       // Filter emojis based on the selected category
       const emojisForCategory = Emoji.filter((emoji) =>
-        emoji.category.includes(selectedCategoryObject.groupName)
+        emoji.category.toLowerCase().includes(selectedCategoryObject.groupName)
       );
       setFilteredEmojis(emojisForCategory);
     }
@@ -42,13 +41,13 @@ const EmojiPicker = () => {
 
   // filter searchTerm if
   const handleSearch = debounce((searchTerm) => {
-    setSearchTerm(searchTerm);
+    setSelectedCategory(searchTerm);
     const emojisForCategory = Emoji.filter((emoji) =>
-      emoji.name.includes(searchTerm) ? emoji : null
+      emoji.name.toLowerCase().includes(searchTerm) ? emoji : null
     );
     // Set the filtered emojis
     setFilteredEmojis(emojisForCategory);
-  }, 100);
+  }, 200);
 
   useEffect(() => {
     if (MyCategories.length > 0) {
@@ -57,7 +56,7 @@ const EmojiPicker = () => {
 
       // Filter emojis to include only those from the first category
       const emojisForFirstCategory = Emoji.filter(
-        (emoji) => emoji.group === firstCategory.groupName
+        (emoji) => emoji.group.toLowerCase() === firstCategory.groupName
       );
 
       // Set the filtered emojis
@@ -89,7 +88,7 @@ const EmojiPicker = () => {
   return (
     <>
       <Helmet>
-        <title>Emoji Picker 🥰 🎉 🐱 ☔ </title>
+        <title>Emoji Picker 🥰 🎉 🤣 🤌 🌻</title>
       </Helmet>
       <div className="p-4 sm:ml-52 max-w-screen  overflow-y-auto max-h-screen">
         <div className="my-20">
@@ -102,7 +101,7 @@ const EmojiPicker = () => {
               type="text"
               placeholder="Search Your Favorite Emoji"
               className="p-1 pl-10  px-3 text-base w-full  rounded-md bg-[#1a1c2e] outline-none border-2 border-gray-600 focus:border-blue-600 text-blue-100 sm:text-lg"
-              onChange={(e) => handleSearch(e.target.value)}
+              onChange={(e) => handleSearch(e.target.value.toLowerCase())}
               autoComplete="off"
             />
           </div>
