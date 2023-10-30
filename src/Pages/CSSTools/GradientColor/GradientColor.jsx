@@ -11,9 +11,6 @@ const GradientColor = () => {
   const gradientBoxRef = useRef(null);
 
   const gradient = `linear-gradient(${direction}, ${color1}, ${color2})`;
-  //   const generateGradient = () => {
-  //     gradientBoxRef.current.style.background = gradient;
-  //   };
 
   const handleDirectionChange = (newDirection) => {
     setDirection(newDirection);
