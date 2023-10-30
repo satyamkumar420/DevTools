@@ -2,7 +2,7 @@ import React, { useState, useRef } from "react";
 import { Helmet } from "react-helmet-async";
 import PrimaryButton from "../../../Components/utils/Button/PrimaryButton";
 import { toast } from "react-toastify";
-import { toastStyleSuccess } from "../../../Components/utils/Toastify/ToastStyle";
+import { toastStyleSuccess } from "../../../Components/utils/Toastify/toastStyle";
 
 const GradientColor = () => {
   const [direction, setDirection] = useState("to left");
