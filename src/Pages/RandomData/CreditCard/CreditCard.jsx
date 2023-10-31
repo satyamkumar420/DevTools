@@ -1,14 +1,16 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { faker } from "@faker-js/faker";
 import PrimaryButton from "../../../Components/utils/Button/PrimaryButton";
 import Card from "./Card";
-import MasterCardLogo from "../../../assets/mastercard.svg";
-import Visa from "../../../assets/visa.svg";
-import amex from "../../../assets/amex.svg";
-import paypal from "../../../assets/paypal.svg";
-import discover from "../../../assets/discover.svg";
-import maestro from "../../../assets/maestro.svg";
+import {
+  VISA,
+  AMEX,
+  MASTERCARD,
+  DISCOVER,
+  MAESTRO,
+  PAYPAL,
+} from "../../../assets";
 
 const CreditCard = () => {
   const [creditCardData, setCreditCardData] = useState("");
@@ -38,9 +40,6 @@ const CreditCard = () => {
     generateRandomCardData(),
     generateRandomCardData(),
     generateRandomCardData(),
-    generateRandomCardData(),
-    generateRandomCardData(),
-    generateRandomCardData(),
   ];
 
   // Function to generate random credit card data
@@ -59,7 +58,7 @@ const CreditCard = () => {
         year: "numeric",
       }),
       cvv: faker.finance.creditCardCVV(),
-      cardLogo: [MasterCardLogo, amex, Visa, paypal, discover, maestro][
+      cardLogo: [VISA, AMEX, MASTERCARD, DISCOVER, MAESTRO, PAYPAL][
         Math.floor(Math.random() * 6)
       ],
     };

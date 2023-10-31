@@ -10,11 +10,17 @@ const options = ({
   setInputValue,
   includeHtml,
   setIncludeHtml,
+  defaultText,
 }) => {
-  const textToCopy =
+  let textToCopy =
     includeHtml === "yes"
       ? paragraphs.map((sentence) => `<${tag}>${sentence}</${tag}>`).join("\n")
       : paragraphs.map((sentence) => sentence).join("\n");
+
+  // Match the text to copy
+  if (textToCopy === "") {
+    textToCopy = defaultText;
+  }
 
   const handleCopy = () => {
     if (navigator.clipboard && navigator.clipboard.writeText) {
@@ -33,7 +39,7 @@ const options = ({
   };
 
   return (
-    <div className="flex flex-wrap gap-3 mt-5 items-center justify-center">
+    <div className="flex flex-wrap gap-3 mt-5 items-center justify-center md:justify-start">
       <div className="">
         <h3 className="mb-2 font-semibold">No. of Paragraphs</h3>
         <input
@@ -82,11 +88,13 @@ const options = ({
           <option value="yes">Yes</option>
         </select>
       </div>
-      <div className="flex justify-end">
+
+      <div className=" justify-end">
+        <h3 className="mb-2 font-semibold">Paragraph Copy</h3>
         <PrimaryButton
           onClick={handleCopy}
           text="Copy Text"
-          className={"w-52 px-4 py-2 mt-7"}
+          className={"w-52 px-4 py-2 mt"}
         />
       </div>
     </div>

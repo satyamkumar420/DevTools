@@ -84,7 +84,7 @@ const TokenGenerator = () => {
             </div>
             {token && (
               <div className="my-5 text-left ">
-                <p className="text-base sm:text-lg text-orange-500">
+                <p className="text-base sm:text-lg text-gray-400">
                   Generated Token:{" "}
                 </p>
                 <pre className="text-left bg-[#1a1c2e] rounded-md py-3 px-4 break-words">

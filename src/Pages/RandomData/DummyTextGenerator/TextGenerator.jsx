@@ -8,9 +8,13 @@ import { faker } from "@faker-js/faker";
 import { Helmet } from "react-helmet-async";
 
 const TextGenerator = () => {
+  // Dummy Text
+  const defaultText =
+    "Bacon ipsum dolor amet cow spare ribs pig tail pork chop leberkas ball tip filet mignon, shank pork tri-tip corned beef pastrami beef. Pork loin chuck t-bone, burgdoggen strip steak shank meatball shoulder chislic pig rump spare ribs bacon ground round salami. Capicola rump ground round shank drumstick, picanha cow prosciutto kielbasa ham hock pork loin chislic. Salami chuck drumstick strip steak.";
+
   const [paragraphs, setParagraphs] = useState([]);
   const [tag, setTag] = useState("p");
-  const [inputValue, setInputValue] = useState(5);
+  const [inputValue, setInputValue] = useState(0);
   const [includeHtml, setIncludeHtml] = useState(false);
 
   useEffect(() => {
@@ -54,6 +58,7 @@ const TextGenerator = () => {
               setInputValue={setInputValue}
               includeHtml={includeHtml}
               setIncludeHtml={setIncludeHtml}
+              defaultText={defaultText}
             />
           </div>
           <div className="my-4">
@@ -61,6 +66,7 @@ const TextGenerator = () => {
               paragraphs={paragraphs}
               tag={tag}
               includeHtml={includeHtml}
+              defaultText={defaultText}
             />
           </div>
           <div className="mt-10">
