@@ -17,7 +17,7 @@ const Navbar = () => {
       <header className="fixed w-full top-0 left-0 right-0 z-50  backdrop-blur-3xl firefox:bg-opacity-50 p-4  flex shadow-lg  justify-between items-center">
         <div className="ml-3 flex">
           <div className="sm:hidden  p-1" onClick={toggleMenu}>
-            <IconMenuLeft className="font-bold text-2xl cursor-pointer" />
+            <IconMenuLeft className="font-bold text-4xl cursor-pointer" />
           </div>
 
           <NavLink
@@ -25,7 +25,13 @@ const Navbar = () => {
             className="text-blue-50 text-xl font-bold cursor-pointer "
           >
             <div className="flex items-center">
-              <img src={Logo} alt="Logo" className="w-8 sm:w-10 h-auto mr-2" />
+              <img
+                src={Logo}
+                alt="Logo"
+                width="40px"
+                height="auto"
+                className="mr-2"
+              />
               <div className="hidden sm:block">
                 <span className="text-pink-500 underline">Dev</span>
                 <span className="text-blue-50">Tools</span>
