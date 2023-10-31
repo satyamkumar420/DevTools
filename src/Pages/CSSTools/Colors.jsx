@@ -7,6 +7,7 @@ import {
   IconImageFilterBlackWhite,
   IconSelectColor,
   IconColorFilter,
+  IconBoxShadow,
 } from "../../Components/Icons/Icons";
 import { Helmet } from "react-helmet-async";
 
@@ -54,6 +55,12 @@ const Colors = () => {
       icon: <IconColorFilter className="text-teal-500" />,
       className: "p-2 grid place-items-center",
     },
+    {
+      to: "/colors/box-shadow",
+      text: "Box Shadow",
+      icon: <IconBoxShadow className="text-[#299fd6]" />,
+      className: "p-2 grid place-items-center",
+    },
   ];
   return (
     <>
@@ -63,7 +70,7 @@ const Colors = () => {
       <div className="p-4 sm:ml-52 max-w-screen overflow-y-auto  max-h-screen">
         <div className=" my-20  max-w-screen-lg">
           <h3 className="p-2 rounded text-lg sm:text-2xl text-yellow-500 w-full bg-[#1a1c2e]">
-            Color Tools
+            CSS Tools
           </h3>
           <div className="mt-5 sm:flex sm:flex-wrap sm:gap-6 ">
             {buttons.map((button, index) => (
