@@ -72,7 +72,7 @@ const RandomBoxShadowGenerator = () => {
             {boxShadows.map((boxShadow, index) => (
               <div
                 key={index}
-                className="w-40 h-40 bg-slate-800 m-5 p-2 justify-center flex items-center rounded-md cursor-pointer"
+                className="sm:w-40 w-full h-40 bg-slate-800 m-5 p-2 justify-center flex items-center rounded-md cursor-pointer"
                 style={{ boxShadow }}
                 onClick={() => handleCopy(boxShadow)}
               >

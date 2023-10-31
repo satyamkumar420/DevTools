@@ -109,13 +109,16 @@ const GradientColor = () => {
           <div className="mt-10">
             <div className="text-left border-l-4 border-l-purple-500 p-2 text-sm sm:text-lg bg-[#1a1c2e]">
               <p className="text-blue-300">
-                The "Gradient Color Generator" is a web-based tool that helps
-                users generate custom CSS gradients for their web design and
-                development needs. It offers a user-friendly interface that
-                allows users to select the gradient direction and choose two
-                colors, which will seamlessly transition into each other.
-                Additionally, it provides a feature to copy the generated
-                gradient code with just a single click.
+                The Gradient Color Generator is an incredibly useful web-based
+                tool that assists users in generating custom CSS gradients for
+                their web design and development projects. This tool features a
+                user-friendly interface that allows users to easily select the
+                gradient direction and choose two colors, color1 and color2. The
+                generator seamlessly transitions between the two colors to
+                provide a beautiful gradient effect that is perfect for any web
+                project. Additionally, the tool provides a convenient copy
+                feature that allows users to easily copy the generated gradient
+                code with just one click.
               </p>
             </div>
           </div>
