@@ -8,6 +8,7 @@ import {
   IconSelectColor,
   IconColorFilter,
   IconBoxShadow,
+  IconGradientVertical,
 } from "../../Components/Icons/Icons";
 import { Helmet } from "react-helmet-async";
 
@@ -59,6 +60,12 @@ const Colors = () => {
       to: "/colors/box-shadow",
       text: "Box Shadow",
       icon: <IconBoxShadow className="text-[#299fd6]" />,
+      className: "p-2 grid place-items-center",
+    },
+    {
+      to: "/colors/random-gradient-color",
+      text: "Random Gradient",
+      icon: <IconGradientVertical className="text-[#ce39f8]" />,
       className: "p-2 grid place-items-center",
     },
   ];

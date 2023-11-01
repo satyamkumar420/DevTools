@@ -51,6 +51,9 @@ const GradientColor = lazy(() =>
   import("./Pages/CSSTools/GradientColor/GradientColor")
 );
 const BoxShadow = lazy(() => import("./Pages/CSSTools/BoxShadow/BoxShadow"));
+const RandomGradientColor = lazy(() =>
+  import("./Pages/CSSTools/RandomGradientColor/RandomGradientColor")
+);
 
 // Lazy-loaded route components 'RandomData'
 const RandomData = lazy(() => import("./Pages/RandomData/RandomData"));
@@ -203,6 +206,12 @@ function App() {
             />
             <Route path="/colors/gradient-color" element={<GradientColor />} />
             <Route path="/colors/box-shadow" element={<BoxShadow />} />
+
+            <Route
+              path="/colors/random-gradient-color"
+              element={<RandomGradientColor />}
+            />
+
             {/* Here are the routes for 'Converters' */}
             <Route path="/converters" element={<Converters />} />
 

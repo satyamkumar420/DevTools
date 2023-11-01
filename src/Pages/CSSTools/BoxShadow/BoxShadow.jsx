@@ -65,7 +65,7 @@ const RandomBoxShadowGenerator = () => {
             <PrimaryButton
               onClick={generateRandomBoxShadows}
               text={"Generate"}
-              className={"w-40 py-2"}
+              className={"w-full mx-5 sm:w-48 py-2"}
             />
           </div>
           <div className="text-center flex flex-wrap justify-center sm:justify-start ">

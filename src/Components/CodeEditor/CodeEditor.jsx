@@ -1,9 +1,11 @@
-import { useState } from "react";
-import CodeMirror from "@uiw/react-codemirror";
+import { useState, lazy } from "react";
 import { tags as t } from "@lezer/highlight";
 import Loader from "../utils/Loader/Loader";
 import { andromeda, andromedaInit } from "@uiw/codemirror-theme-andromeda";
 import "./CodeEditor.css";
+// import CodeMirror from "@uiw/react-codemirror";
+const CodeMirror = lazy(() => import("@uiw/react-codemirror"));
+
 const myTheme = {
   settings: {
     background: "#1a1c2e",
