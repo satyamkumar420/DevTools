@@ -8,7 +8,7 @@ const Home = () => {
   return (
     <>
       <Helmet>
-        <title>DevTools</title>
+        <title>Home | DevTools</title>
       </Helmet>
       <div className="p-4 sm:ml-52 max-w-screen  overflow-y-auto max-h-screen">
         <div className="max-w-screen-lg p-4 border-gray-200 rounded-lg mt-20 mb-20">
