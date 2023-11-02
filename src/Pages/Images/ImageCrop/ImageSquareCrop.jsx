@@ -22,6 +22,7 @@ const ImageSquareCrop = () => {
         };
         reader.readAsDataURL(file);
       } else {
+        setImage(null);
         toast("Only image files are accepted", {
           style: toastStyleError,
         });

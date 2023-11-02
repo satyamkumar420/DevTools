@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import Avatar from "react-avatar-edit";
 import CustomAlert from "../../../Components/utils/Toastify/CustomAlert";
 import { Helmet } from "react-helmet-async";
+import PrimaryButton from "./../../../Components/utils/Button/PrimaryButton";
 
 const ImageCircleCrop = () => {
   const [preview, setPreview] = useState(null);
@@ -54,35 +55,48 @@ const ImageCircleCrop = () => {
           <h3 className="text-left p-2 rounded text-lg sm:text-2xl text-yellow-500 w-full bg-[#1a1c2e]">
             Crop Circle Size Image
           </h3>
-          <div className="flex flex-col items-center mt-10 text-center ">
-            {showAlert && (
-              <CustomAlert
-                message={currentError}
-                onClose={() => {
-                  setShowAlert(false);
-                  setCurrentError("");
-                }}
-              />
-            )}
+          <div className="flex flex-col lg:flex-row  items-center gap-10  text-center ">
+            <div>
+              {showAlert && (
+                <CustomAlert
+                  message={currentError}
+                  onClose={() => {
+                    setShowAlert(false);
+                    setCurrentError("");
+                  }}
+                />
+              )}
+            </div>
             <div className=" rounded-lg overflow-hidden">
+              <h1 className="text-2xl my-2 text-blue-50">Upload Image</h1>
               <Avatar
                 width={300}
                 height={300}
                 onCrop={handleCrop}
                 onClose={() => setPreview(null)}
                 onBeforeFileLoad={handleBeforeFileLoad}
+                closeIconColor="#f70303"
               />
             </div>
             {preview && (
-              <div className="mt-4 text-center">
-                <h1 className="text-2xl my-5 text-blue-50">Cropped Image</h1>
-                <img src={preview} alt="Cropped Avatar" className="w-48 h-48" />
-                <button
-                  className="mt-8 bg-blue-500 hover:bg-blue-700 text-blue-50 text-center font-semibold py-2 px-4 rounded"
-                  onClick={handleSave}
-                >
-                  Download
-                </button>
+              <div className="">
+                <div className="mt-4 sm:mt-6 text-center">
+                  <h1 className="text-2xl my-2 text-blue-50">Preview</h1>
+                  <img
+                    src={preview}
+                    alt="Cropped Avatar"
+                    width={"250"}
+                    height={"250"}
+                    className="border-2 border-blue-500 rounded-full"
+                  />
+                </div>
+                <div>
+                  <PrimaryButton
+                    onClick={handleSave}
+                    text="Save Image"
+                    className={"mt-5 py-2"}
+                  />
+                </div>
               </div>
             )}
           </div>

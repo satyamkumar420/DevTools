@@ -28,14 +28,23 @@ const AgeCalculator = () => {
 
       const ageString = (
         <div className="flex gap-3 flex-wrap">
-          <div className="flex gap-1">
-            <div className="text-orange-600">{years}</div> Years
+          <div className="flex gap-1 ">
+            <div className="text-green-500 font-bold text-base sm:text-xl">
+              {years}
+            </div>
+            Years
           </div>
           <div className="flex gap-1">
-            <div className="text-orange-600">{months}</div> Months
+            <div className="text-green-500 font-bold text-base sm:text-xl">
+              {months}
+            </div>
+            Months
           </div>
           <div className="flex gap-1">
-            <div className="text-orange-600">{days}</div> Days
+            <div className="text-green-500 font-bold text-base sm:text-xl">
+              {days}
+            </div>{" "}
+            Days
           </div>
         </div>
       );
@@ -81,9 +90,9 @@ const AgeCalculator = () => {
             />
             <div className="mt-4 overflow-hidden">
               {age && (
-                <div className="text-green-600 flex gap-2 flex-wrap bg-[#171929] p-4 rounded-md shadow-md">
+                <div className="text-blue-50 flex gap-2 flex-wrap bg-[#171929] p-4 rounded-md shadow-md font-normal sm:text-lg text-base ">
                   Your Age <div className="font-bold text-yellow-500">:</div>
-                  <div className="font-semibold">{age}</div>
+                  <div className="font-medium">{age}</div>
                 </div>
               )}
             </div>

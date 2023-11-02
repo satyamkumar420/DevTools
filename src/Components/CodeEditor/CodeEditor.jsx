@@ -51,6 +51,7 @@ const CodeEditor = ({
   required,
   displayName,
   Height,
+  Width,
   Button,
   Icon,
 }) => {
@@ -80,6 +81,7 @@ const CodeEditor = ({
         <CodeMirror
           value={value}
           height={`${Height || "60vh"}`}
+          width={Width || "100%"}
           theme={andromedaInit(myTheme)}
           extensions={languages}
           onChange={onChange}
