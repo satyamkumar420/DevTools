@@ -145,11 +145,11 @@ const MetaTagsGenerator = () => {
 								<h2 className="text-lg text-gray-300 mb-1">
 									Generated Meta Tags:
 								</h2>
-								{/* <pre>{metaTagString}</pre> */}
+
 								<CodeEditor
 									value={metaTagString}
 									languages={[html()]}
-									Height={'25vh'}
+									Height={'35vh'}
 								/>
 								<div className="mt-2">
 									<PrimaryButton
