@@ -127,6 +127,9 @@ const EncodeURL = lazy(() =>
 const QRCodeGenerator = lazy(() =>
 	import('./Pages/VariousTools/QrCodeGenerator/QrCodeGenerator')
 );
+const MetaTagsGenerator = lazy(() =>
+	import('./Pages/VariousTools/MetaTagsGenerator/MetaTagsGenerator')
+);
 
 // Lazy-loaded route components 'MinifyCode'
 const MinifyCode = lazy(() => import('./Pages/MinifyCode/MinifyCode'));
@@ -281,6 +284,10 @@ function App() {
 						<Route
 							path="/various-tools/qr-code-generator"
 							element={<QRCodeGenerator />}
+						/>
+						<Route
+							path="/various-tools/meta-tags-generator"
+							element={<MetaTagsGenerator />}
 						/>
 
 						{/* Here are the routes for 'Emoji Picker' */}

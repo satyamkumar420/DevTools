@@ -48,6 +48,12 @@ const VariousTools = () => {
 			icon: <IconQrCode className="text-cyan-100 text-lg md:text-3xl" />,
 			className: 'p-2 grid place-items-center',
 		},
+		{
+			to: '/various-tools/meta-tags-generator',
+			text: 'Meta Tags Generator',
+			icon: <IconXml className="text-orange-500 text-lg md:text-3xl" />,
+			className: 'p-2 grid place-items-center',
+		},
 
 		// Add more buttons here
 	];
