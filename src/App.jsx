@@ -124,6 +124,10 @@ const EncodeURL = lazy(() =>
 	import('./Pages/VariousTools/URLEncoder/URLEncoder')
 );
 
+const QRCodeGenerator = lazy(() =>
+	import('./Pages/VariousTools/QrCodeGenerator/QrCodeGenerator')
+);
+
 // Lazy-loaded route components 'MinifyCode'
 const MinifyCode = lazy(() => import('./Pages/MinifyCode/MinifyCode'));
 const HtmlMinify = lazy(() =>
@@ -274,6 +278,10 @@ function App() {
 							element={<FrontendCode />}
 						/>
 						<Route path="/various-tools/encode-url" element={<EncodeURL />} />
+						<Route
+							path="/various-tools/qr-code-generator"
+							element={<QRCodeGenerator />}
+						/>
 
 						{/* Here are the routes for 'Emoji Picker' */}
 						<Route path="/emojis-picker" element={<EmojiPicker />} />

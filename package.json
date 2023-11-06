@@ -33,6 +33,7 @@
     "lodash": "^4.17.21",
     "md5": "^2.3.0",
     "prettier": "^3.0.3",
+    "qrcode": "^1.5.3",
     "react": "^18.2.0",
     "react-avatar-edit": "^1.2.0",
     "react-cropper": "^2.3.3",
