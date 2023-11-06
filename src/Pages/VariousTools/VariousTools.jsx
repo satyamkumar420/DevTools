@@ -6,6 +6,7 @@ import {
 	IconHash,
 	IconBold,
 	IconXml,
+	IconQrCode,
 } from '../../Components/Icons/Icons';
 import { Helmet } from 'react-helmet-async';
 
@@ -44,7 +45,7 @@ const VariousTools = () => {
 		{
 			to: '/various-tools/qr-code-generator',
 			text: 'QR Code Generator',
-			icon: <IconXml className="text-blue-500 text-lg md:text-3xl" />,
+			icon: <IconQrCode className="text-cyan-100 text-lg md:text-3xl" />,
 			className: 'p-2 grid place-items-center',
 		},
 
