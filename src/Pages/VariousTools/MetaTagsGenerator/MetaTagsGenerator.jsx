@@ -137,7 +137,7 @@ const MetaTagsGenerator = () => {
 							<PrimaryButton
 								onClick={generateMetaTags}
 								text={'Generate Meta Tags'}
-								className={'py-2'}
+								className={'py-2 px-4'}
 							/>
 						</div>
 						{metaTagString && (
@@ -155,7 +155,7 @@ const MetaTagsGenerator = () => {
 									<PrimaryButton
 										onClick={handleCopy}
 										text={'Copy Meta Tags'}
-										className={'py-2'}
+										className={'py-2 px-8'}
 									/>
 								</div>
 							</div>
