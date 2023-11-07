@@ -166,7 +166,7 @@ function App() {
 		<BrowserRouter>
 			<Suspense fallback={<Loader />}>
 				<Navbar />
-				<Analytics debug={false} />
+				<Analytics />
 				<ToastContainer
 					position="top-right"
 					theme="dark"
