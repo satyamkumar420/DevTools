@@ -92,6 +92,7 @@ const TimeConverter = lazy(() =>
 
 // Lazy-loaded route components 'About'
 const About = lazy(() => import('./Pages/About/About'));
+
 const Privacy = lazy(() => import('./Pages/About/PrivacyPolicy'));
 const Terms = lazy(() => import('./Pages/About/Terms'));
 
