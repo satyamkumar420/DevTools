@@ -58,9 +58,8 @@
     "monaco-themes": "^0.4.4",
     "postcss": "^8.4.29",
     "tailwindcss": "^3.3.3",
-    "vite": "^4.4.5",
-    "checkly": "latest",
     "ts-node": "latest",
-    "typescript": "latest"
+    "typescript": "latest",
+    "vite": "^4.4.5"
   }
 }
