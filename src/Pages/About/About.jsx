@@ -18,7 +18,7 @@ const About = () => {
 							alt="logo"
 							className="rounded w-20 float-left align-middle mr-4"
 						/>
-						<p className="text-gray-400">
+						<p className="text-gray-400"> 
 							At DevTools, we provide a website with various free tools designed
 							for developers, software testers, and other tech professionals.
 							Our goal is to assist with your tasks throughout the different
@@ -29,9 +29,9 @@ const About = () => {
 							PDFs. Our platform also benefits students, designers, and content
 							creators. We are continuously expanding our collection of tools to
 							add value to developers and the technology community.
-						</p>
-					</div>
-				</div>
+						</p> 
+					</div> 
+				</div> 
 			</div>
 		</>
 	);
