@@ -22,6 +22,7 @@ const AsciiLater = lazy(() => import('./Pages/Texts/AsciiLater/AsciiLater'));
 const TextToSpeech = lazy(() =>
 	import('./Pages/Texts/TextToSpeech/TextToSpeech')
 );
+const TextToHtml = lazy(() => import('./Pages/Texts/TextToHtml/TextToHtml'));
 
 // Lazy-loaded route components 'Images'
 const Images = lazy(() => import('./Pages/Images/Images'));
@@ -193,6 +194,7 @@ function App() {
 						<Route path="/texts/text-converter" element={<TextConverter />} />
 						<Route path="/texts/ascii-later" element={<AsciiLater />} />
 						<Route path="/texts/text-to-speech" element={<TextToSpeech />} />
+						<Route path="/texts/text-to-html" element={<TextToHtml />} />
 
 						{/* Here are the routes for 'Images' */}
 						<Route path="/image-tools" element={<Images />} />

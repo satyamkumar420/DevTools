@@ -132,32 +132,30 @@ const MetaTagsGenerator = () => {
 								</select>
 							</div>
 						</div>
-
-						<div className="mt-2">
+						<div className="mt-2 flex flex-wrap gap-2">
 							<PrimaryButton
 								onClick={generateMetaTags}
 								text={'Generate Meta Tags'}
 								className={'py-2 px-4'}
 							/>
+							{metaTagString && (
+								<PrimaryButton
+									onClick={handleCopy}
+									text={'Copy Meta Tags'}
+									className={'py-2 px-8 bg-orange-600 hover:bg-orange-800'}
+								/>
+							)}
 						</div>
 						{metaTagString && (
 							<div className="mt-4">
 								<h2 className="text-lg text-gray-300 mb-1">
 									Generated Meta Tags:
 								</h2>
-
 								<CodeEditor
 									value={metaTagString}
 									languages={[html()]}
 									Height={'35vh'}
 								/>
-								<div className="mt-2">
-									<PrimaryButton
-										onClick={handleCopy}
-										text={'Copy Meta Tags'}
-										className={'py-2 px-8'}
-									/>
-								</div>
 							</div>
 						)}
 					</div>
