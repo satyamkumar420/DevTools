@@ -140,7 +140,7 @@ const TextToHtml = () => {
 								</h2>
 								<iframe
 									title="HTML Preview"
-									className="w-full h-80"
+									className="w-full h-80 rounded-md"
 									srcDoc={marked(inputText)}></iframe>
 							</div>
 						)}
