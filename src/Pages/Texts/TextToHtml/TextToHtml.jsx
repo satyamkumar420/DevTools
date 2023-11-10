@@ -133,11 +133,14 @@ const TextToHtml = () => {
 								displayName={'Text to HTML'}
 							/>
 						) : (
-							<div className="mt-4">
-								<h2 className="text-lg font-semibold mb-2"> HTML Preview</h2>
+							<div className="mt-4 bg-[#1a1c2e] rounded-md">
+								<h2 className="text-lg font-semibold mb-2 text-center">
+									{' '}
+									HTML Preview
+								</h2>
 								<iframe
 									title="HTML Preview"
-									className=" rounded-md w-full h-80"
+									className="w-full h-80"
 									srcDoc={marked(inputText)}></iframe>
 							</div>
 						)}
