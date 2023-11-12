@@ -3,9 +3,9 @@ import 'cropperjs/dist/cropper.css';
 import Cropper from 'react-cropper';
 import { toast } from 'react-toastify';
 import { toastStyleError } from '../../../Components/utils/Toastify/toastStyle';
-import { Helmet } from 'react-helmet-async';
 import { useDropzone } from 'react-dropzone';
 import PrimaryButton from '../../../Components/utils/Button/PrimaryButton';
+import SEO from '../../../Components/MetaTags/SEO';
 
 const ImageCrop = () => {
 	const [image, setImage] = useState(null);
@@ -55,9 +55,16 @@ const ImageCrop = () => {
 
 	return (
 		<>
-			<Helmet>
-				<title>Custom Image Crop</title>
-			</Helmet>
+			<SEO
+				title={'Online Free Image Cropper'}
+				description={
+					'With this tool, you can upload an image and then customize the crop shape by drawing a shape on the image using your mouse or touchpad. The tool provides various shape options such as rectangle, ellipse, polygon, or freehand. You can also adjust the size and position of the shape to fit your desired crop area.'
+				}
+				keywords={
+					'online free image cropper, custom, image, cropper, custom logo crop, crop, logo, crop, logo crop, images, image,image-cropper'
+				}
+				url={'https://www.devtoo1s.dev/image/images-crop'}
+			/>
 			<div className="p-4 sm:ml-52 text-justify max-w-screen overflow-y-auto max-h-screen">
 				<div className="my-20 max-w-screen-lg">
 					<h3 className="text-left p-2 rounded text-lg sm:text-2xl text-yellow-500 w-full bg-[#1a1c2e]">
@@ -117,11 +124,18 @@ const ImageCrop = () => {
 					</div>
 					<div className="mt-10">
 						<div className="text-left border-l-4 border-l-purple-500 p-2 text-sm sm:text-lg bg-[#1a1c2e]">
-							<span className="text-blue-300">
-								<strong>Note:</strong> For a better experience, please use the
-								Chrome browser. If you are using Firefox, some functionality may
-								not work.
-							</span>
+							<p className="text-blue-300">
+								Devtools.dev offers an online free custom image cropper tool
+								that allows you to crop an image to your desired shape. This
+								tool is particularly useful for web developers and graphic
+								designers who need to create images with custom shapes.
+							</p>
+
+							<p className="text-blue-300 mt-2">
+								Overall, the custom image cropper tool in devtoo1s.dev is a
+								convenient and easy-to-use tool for web developers and graphic
+								designers who need to create images with custom shapes.
+							</p>
 						</div>
 					</div>
 				</div>

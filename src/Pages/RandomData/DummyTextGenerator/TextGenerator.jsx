@@ -5,7 +5,7 @@ import { toast } from 'react-toastify';
 import { toastStyleError } from '../../../Components/utils/Toastify/toastStyle';
 import lodash from 'lodash';
 import { faker } from '@faker-js/faker';
-import { Helmet } from 'react-helmet-async';
+import SEO from '../../../Components/MetaTags/SEO';
 
 const TextGenerator = () => {
 	// Dummy Text
@@ -41,9 +41,16 @@ const TextGenerator = () => {
 
 	return (
 		<>
-			<Helmet>
-				<title>Random Text Generator</title>
-			</Helmet>
+			<SEO
+				title={'Online Free Random Text Generator Tools'}
+				description={
+					'Online free random text generators are tools that create random text content for various purposes, such as placeholder text, Lorem Ipsum text, or random quotes. These tools are commonly used by designers, developers, and writers who need to create mockups, prototypes, or drafts of text-heavy projects. At devtoo1s.dev, you can find various random text generators that allow you to generate text with different lengths, formats, and languages. Some of these generators also allow you to customize the output text by adding specific words, phrases, or styles. These tools are easy to use and can save you time and effort in creating realistic text content.'
+				}
+				keywords={
+					'random text generator,random text generator online, online random text generator,random text generator tool,random text generator tools, random text generator for design, random text generator for development, random text generator for writing, random text generator for marketing, random text generator for business, random text generator for content creation, random text generator for copywriting, random text generator for copywriting'
+				}
+				url={'https://www.devtoo1s.dev/random-data/text-generator'}
+			/>
 			<div className="p-4 sm:ml-52 text-justify max-w-screen overflow-y-auto max-h-screen">
 				<div className="my-20 max-w-screen-lg">
 					<h3 className="p-2 rounded-md max-w-screen-lg text-lg sm:text-2xl text-yellow-500 w-full bg-[#1a1c2e]">

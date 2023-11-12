@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import TextArea from '../../../Components/utils/textArea/TextArea';
-import { Helmet } from 'react-helmet-async';
 import PrimaryButton from '../../../Components/utils/Button/PrimaryButton';
+import SEO from '../../../Components/MetaTags/SEO';
 
 const TextToSpeech = () => {
 	const [textInput, setTextInput] = useState('');
@@ -77,9 +77,17 @@ const TextToSpeech = () => {
 
 	return (
 		<>
-			<Helmet>
-				<title>Text To Speech</title>
-			</Helmet>
+			<SEO
+				title={'Online Free Text To Speech Tools'}
+				description={
+					'Text-to-speech (TTS) technology converts written text into spoken words. This process involves the use of computer algorithms to generate human-like speech, providing an audible representation of written content. TTS systems are utilized in various applications, including accessibility features, voice assistants, and audiobook production.'
+				}
+				keywords={
+					'Online Free Text To Speech Tools, text to speech, text to speech online, tts, tts online, text to speech converter, text to speech converter online, text to speech tools, text to speech tools online, text to speech converter tools, text to speech converter tools online'
+				}
+				url={'https://www.devtoo1s.dev/texts/text-to-speech'}
+			/>
+
 			<div className="p-4 sm:ml-52 max-w-screen overflow-y-auto max-h-screen">
 				<div className="my-20 max-w-screen-lg">
 					<h3 className="text-left p-2 rounded text-lg sm:text-2xl text-yellow-500 w-full bg-[#1a1c2e]">

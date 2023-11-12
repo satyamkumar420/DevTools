@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { marked } from 'marked';
-import { Helmet } from 'react-helmet-async';
 import CodeEditor from '../../../Components/CodeEditor/CodeEditor';
 import { html } from '@codemirror/lang-html';
 import PrimaryButton from '../../../Components/utils/Button/PrimaryButton';
@@ -17,6 +16,7 @@ import {
 } from '../../../Components/Icons/Icons';
 import { toastStyleSuccess } from '../../../Components/utils/Toastify/toastStyle';
 import { toast } from 'react-toastify';
+import SEO from '../../../Components/MetaTags/SEO';
 
 const TextToHtml = () => {
 	const [inputText, setInputText] = useState('');
@@ -77,11 +77,16 @@ const TextToHtml = () => {
 
 	return (
 		<>
-			<Helmet>
-				<title>Text to HTML Converter</title>
-				<meta name="description" content={metaDescription} />
-				<meta name="keywords" content={metaKeywords} />
-			</Helmet>
+			<SEO
+				title={'Online Free Text To HTML Converter Tools'}
+				description={
+					'Online free Text to HTML converter tools transform plain text into HTML code, automating the process of converting simple text content into web-friendly HTML markup. These tools are convenient for users who may not be familiar with HTML coding, providing an easy way to generate the necessary HTML tags for formatting text on websites or web pages.'
+				}
+				keywords={
+					'text to HTML, online converter, tools, web development, HTML converter, SEO, online tool, coding tool'
+				}
+				url={'https://www.devtoo1s.dev/texts/text-to-html'}
+			/>
 			<div className="p-4 sm:ml-52 max-w-screen overflow-y-auto max-h-screen">
 				<div className="my-20 max-w-screen-lg">
 					<h3 className="text-left p-2 rounded text-lg sm:text-2xl text-yellow-500 w-full bg-[#1a1c2e]">

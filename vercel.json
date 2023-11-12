@@ -1,5 +1,13 @@
 {
+	"version": 2,
 	"rewrites": [{ "source": "/(.*)", "destination": "/" }],
+	"routes": [
+		{
+			"src": "/.*\\.(js|jsx)$",
+			"headers": { "Content-Type": "application/javascript" },
+			"continue": true
+		}
+	],
 	"headers": [
 		{
 			"source": "/(.*)",

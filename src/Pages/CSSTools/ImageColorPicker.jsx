@@ -5,9 +5,9 @@ import {
 	toastStyleError,
 	toastStyleSuccess,
 } from '../../Components/utils/Toastify/toastStyle';
-import { Helmet } from 'react-helmet-async';
 import { useDropzone } from 'react-dropzone';
 import PrimaryButton from './../../Components/utils/Button/PrimaryButton';
+import SEO from '../../Components/MetaTags/SEO';
 
 const ImageColorPicker = () => {
 	const [imageSrc, setImageSrc] = useState(null);
@@ -28,23 +28,6 @@ const ImageColorPicker = () => {
 	useEffect(() => {
 		localStorage.setItem('colorHistory', JSON.stringify(colorHistory));
 	}, [colorHistory]);
-
-	const handleFileChange = (event) => {
-		const file = event.target.files[0];
-		if (file) {
-			// Check if the file type is an image (you can modify this check to include additional image types)
-			if (file.type.startsWith('image/')) {
-				const fileURL = URL.createObjectURL(file);
-				setImageSrc(fileURL);
-				setIsFileSelected(true);
-			} else {
-				// Show a toast or an alert for non-image file types
-				toast('Only image files are accepted', {
-					style: toastStyleError,
-				});
-			}
-		}
-	};
 
 	const onDrop = useCallback((acceptedFiles) => {
 		const file = acceptedFiles[0];
@@ -107,9 +90,12 @@ const ImageColorPicker = () => {
 
 	return (
 		<>
-			<Helmet>
-				<title>Image Color Picker</title>
-			</Helmet>
+			<SEO
+				title="Image Color Picker"
+				description="Online image color picker tools are web-based software that allows you to select colors from an image without downloading any software. These tools are particularly useful for those who don't have access to image editing software and need to identify colors used in an image. Some popular online image color picker tools include Canva Color Palette Generator, Image Color Picker by HTML Color Codes, and Colormind. These tools are easy to use and help you identify colors accurately."
+				keywords={'image color picker'}
+				url={'https://www.devtoo1s.dev/colors/image-color-picker'}
+			/>
 			<div className="p-4 sm:ml-52 max-w-screen overflow-y-auto  max-h-screen">
 				<div className=" my-20  max-w-screen-lg">
 					<h3 className="p-2 rounded text-lg sm:text-2xl text-yellow-500 w-full bg-[#1a1c2e]">
@@ -179,10 +165,14 @@ const ImageColorPicker = () => {
 					<div className="mt-10">
 						<div className="border-l-4 border-l-purple-500 p-2 text-sm sm:text-lg bg-[#1a1c2e]">
 							<span className="text-blue-300">
-								If you're a developer, student, or professional, you might find
-								this tool pretty handy. It's an image color picker that lets you
-								easily select any color in hex format - just click on the color
-								pick button and you're good to go!
+								Online image color picker tools are web-based software that
+								allows you to select colors from an image without downloading
+								any software. These tools are particularly useful for those who
+								don't have access to image editing software and need to identify
+								colors used in an image. Some popular online image color picker
+								tools include Canva Color Palette Generator, Image Color Picker
+								by HTML Color Codes, and Colormind. These tools are easy to use
+								and help you identify colors accurately.
 							</span>
 						</div>
 					</div>

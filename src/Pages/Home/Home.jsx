@@ -2,14 +2,19 @@ import { HomeLinks } from '../../Components/utils/Link/Links';
 import Button from '../../Components/utils/Button/Button';
 import { NavLink } from 'react-router-dom';
 import { IconShieldTick } from '../../Components/Icons/Icons';
-import { Helmet } from 'react-helmet-async';
+import SEO from '../../Components/MetaTags/SEO';
 
 const Home = () => {
 	return (
 		<>
-			<Helmet>
-				<title>Home | DevTools</title>
-			</Helmet>
+			<SEO
+				title={'Home | DevToo1s.dev'}
+				description={
+					'DevToo1s.dev is a website with various free tools designed for developers, software testers, and other tech professionals. Our goal is to assist with your tasks throughout the different topics.'
+				}
+				keywords={'Home - online free devtoo1s.dev, devtoo1s, devtools'}
+				url={'https://www.devtoo1s.dev'}
+			/>
 			<div className="p-4 sm:ml-52 max-w-screen  overflow-y-auto max-h-screen">
 				<div className="max-w-screen-lg p-4 border-gray-200 rounded-lg mt-20 mb-20">
 					<h3 className="p-2 rounded sm:text-2xl text-yellow-500 w-full bg-[#1a1c2e]">

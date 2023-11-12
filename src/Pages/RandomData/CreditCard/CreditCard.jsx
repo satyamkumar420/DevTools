@@ -1,5 +1,4 @@
 import React, { useState, lazy } from 'react';
-import { Helmet } from 'react-helmet-async';
 import { faker } from '@faker-js/faker';
 import PrimaryButton from '../../../Components/utils/Button/PrimaryButton';
 import Card from './Card';
@@ -9,6 +8,7 @@ import MASTERCARD from '../../../assets/mastercard.svg';
 import DISCOVER from '../../../assets/discover.svg';
 import MAESTRO from '../../../assets/maestro.svg';
 import PAYPAL from '../../../assets/paypal.svg';
+import SEO from '../../../Components/MetaTags/SEO';
 
 const CreditCard = () => {
 	const [creditCardData, setCreditCardData] = useState('');
@@ -63,9 +63,16 @@ const CreditCard = () => {
 	}
 	return (
 		<>
-			<Helmet>
-				<title>Credit Card 💳</title>
-			</Helmet>
+			<SEO
+				title={'Online Free Credit Card Generator Tools'}
+				description={
+					'Online free credit card generator tools are software programs that create fake credit card numbers for testing purposes. These tools are commonly used by developers, merchants, and testers to verify their payment systems and fraud detection mechanisms. At devtoo1s.dev, you can find various credit card generator tools that allow you to generate credit card numbers with different formats and data types, such as CVV, expiration date, and issuer identification number. These tools are easy to use and can help you test your credit card processing systems without risking real transactions.'
+				}
+				keywords={
+					'Credit card generator, free credit card generator, credit, card, fake,random credit card'
+				}
+				url={'https://devtoo1s.dev/random-data/credit-card'}
+			/>
 			<div className="p-4 sm:ml-52 text-justify max-w-screen overflow-y-auto max-h-screen">
 				<div className="my-20 max-w-screen-xl">
 					<h3 className="p-2 rounded text-lg  sm:text-2xl text-yellow-500 w-full bg-[#1a1c2e]">

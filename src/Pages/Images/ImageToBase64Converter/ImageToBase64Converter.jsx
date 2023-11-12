@@ -4,9 +4,9 @@ import {
 	toastStyleSuccess,
 } from '../../../Components/utils/Toastify/toastStyle';
 import { toast } from 'react-toastify';
-import { Helmet } from 'react-helmet-async';
 import PrimaryButton from '../../../Components/utils/Button/PrimaryButton';
 import { useDropzone } from 'react-dropzone';
+import SEO from '../../../Components/MetaTags/SEO';
 
 const ImageToBase64Converter = () => {
 	const [base64Image, setBase64Image] = useState('');
@@ -53,9 +53,16 @@ const ImageToBase64Converter = () => {
 
 	return (
 		<>
-			<Helmet>
-				<title>Image To Base64</title>
-			</Helmet>
+			<SEO
+				title={'Image To Base64 Converter'}
+				description={
+					'Devtools.dev offers an online free image to Base64 converter tool that allows you to convert an image to a Base64 encoded string. This tool is particularly useful for web developers who need to embed images directly in HTML or CSS code. With this tool, you can easily convert an image to a Base64 string and then use it in your web application without having to host the image separately.'
+				}
+				keywords={
+					'image to base64, image to base64 converter, base64, image, image to base64'
+				}
+				url={'https://www.devtoo1s.dev/converters/ImageToBase64Converter'}
+			/>
 			<div className="p-4 sm:ml-52 text-justify max-w-screen overflow-y-auto max-h-screen">
 				<div className="my-20  max-w-screen-lg">
 					<h3 className="p-2 rounded text-lg sm:text-2xl text-yellow-500 w-full bg-[#1a1c2e]">
@@ -108,10 +115,28 @@ const ImageToBase64Converter = () => {
 					</div>
 					<div className="mt-10">
 						<div className="border-l-4 border-l-purple-500 p-2 text-sm sm:text-lg bg-[#1a1c2e]">
-							<span className="text-blue-300">
-								Converting an image to base64 can be a complex task, but have no
-								fear! This powerful tool makes it easy and stress-free.
-							</span>
+							<p className="text-blue-300">
+								Devtools.dev offers an online free image to Base64 converter
+								tool that allows you to convert an image to a Base64 encoded
+								string. This tool is particularly useful for web developers who
+								need to embed images directly in HTML or CSS code. With this
+								tool, you can easily convert an image to a Base64 string and
+								then use it in your web application without having to host the
+								image separately.
+							</p>
+							<p className="mt-2 text-blue-300">
+								To use the image to Base64 converter tool in devtoo1s.dev,
+								simply upload the image you want to convert. The tool will then
+								generate a Base64 encoded string for the image, which you can
+								copy and paste into your code. The tool also provides options to
+								customize the output, such as adjusting the image quality or
+								choosing a different output format.
+							</p>
+							<p className="mt-2 text-blue-300">
+								Overall, the image to Base64 converter tool in devtoo1s.dev is a
+								convenient and easy-to-use tool for web developers who need to
+								convert images to Base64 strings.
+							</p>
 						</div>
 					</div>
 				</div>

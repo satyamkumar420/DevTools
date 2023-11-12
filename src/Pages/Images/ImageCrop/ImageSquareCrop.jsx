@@ -3,9 +3,9 @@ import 'cropperjs/dist/cropper.css';
 import Cropper from 'react-cropper';
 import { toast } from 'react-toastify';
 import { toastStyleError } from '../../../Components/utils/Toastify/toastStyle';
-import { Helmet } from 'react-helmet-async';
 import { useDropzone } from 'react-dropzone';
 import PrimaryButton from './../../../Components/utils/Button/PrimaryButton';
+import SEO from '../../../Components/MetaTags/SEO';
 
 const ImageSquareCrop = () => {
 	const [image, setImage] = useState(null);
@@ -57,13 +57,20 @@ const ImageSquareCrop = () => {
 
 	return (
 		<>
-			<Helmet>
-				<title>Square Image Crop</title>
-			</Helmet>
+			<SEO
+				title={'Online Free Square Size Image Cropper Tools'}
+				description={
+					'Devtools.dev offers an online free image square size image cropper tool that allows you to crop an image into a square shape. This tool is particularly useful for social media platforms that require a square profile picture or image.'
+				}
+				keywords={
+					'square image cropper, online image cropper, image crop tool,square image crop tool,profile,crop,image, Profile Cropper, Square Image Cropper, Online Image Cropper'
+				}
+				url={'https://www.devtoo1s.dev/images/square-crop'}
+			/>
 			<div className="p-4 sm:ml-52 text-justify max-w-screen overflow-y-auto max-h-screen">
 				<div className="my-20 max-w-screen-lg">
 					<h3 className="text-left p-2 rounded text-lg sm:text-2xl text-yellow-500 w-full bg-[#1a1c2e]">
-						Square Size Image Crop
+						Square Size Image Cropper
 					</h3>
 					<div className="container mx-auto  my-8 max-w-xl">
 						{isFileSelected ? null : (
@@ -123,11 +130,23 @@ const ImageSquareCrop = () => {
 					</div>
 					<div className="mt-10">
 						<div className="text-left border-l-4 border-l-purple-500 p-2 text-sm sm:text-base bg-[#1a1c2e]">
-							<span className="text-blue-300 ">
-								<strong>Note:</strong> For a better experience, please use the
-								Chrome browser. If you are using Firefox, some functionality may
-								not work.
-							</span>
+							<p className="text-blue-300 ">
+								Devtools.dev offers an online free image square size image
+								cropper tool that allows you to crop an image into a square
+								shape. This tool is particularly useful for social media
+								platforms that require a square profile picture or image.
+							</p>
+							<p className="text-blue-300 mt-2">
+								With this tool, you can easily upload an image and crop it to
+								fit the square shape. The tool provides options to adjust the
+								size and position of the crop area, as well as the output format
+								of the cropped image. You can download the cropped image.
+							</p>
+							<p className="text-blue-300 mt-2">
+								Overall, the online free image square size image cropper tool in
+								devtoo1s.dev is a great tool for anyone who needs to crop images
+								into a square shape, especially for social media platforms.
+							</p>
 						</div>
 					</div>
 				</div>

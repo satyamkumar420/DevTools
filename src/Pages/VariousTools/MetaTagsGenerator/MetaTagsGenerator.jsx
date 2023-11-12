@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { Helmet } from 'react-helmet-async';
 import CodeEditor from '../../../Components/CodeEditor/CodeEditor';
 import { html } from '@codemirror/lang-html';
 import { toast } from 'react-toastify';
 import { toastStyleSuccess } from '../../../Components/utils/Toastify/toastStyle';
 import PrimaryButton from '../../../Components/utils/Button/PrimaryButton';
+import SEO from '../../../Components/MetaTags/SEO';
 
 const MetaTagsGenerator = () => {
 	const [title, setTitle] = useState('');
@@ -51,9 +51,16 @@ const MetaTagsGenerator = () => {
 
 	return (
 		<>
-			<Helmet>
-				<title>Meta Tag Generator</title>
-			</Helmet>
+			<SEO
+				title={'Online Free Meta Tag Generator Tools'}
+				description={
+					'Online free meta tag generator tools are web-based applications that assist in creating meta tags for HTML documents. Meta tags provide information about a webpage and are often used by search engines to understand the content of a page. These tools typically allow users to input information such as title, description, keywords, and other metadata, and then generate the corresponding HTML meta tags. This helps optimize webpages for search engines and improves the presentation of content when shared on social media platforms.'
+				}
+				keywords={
+					'meta tags generator, meta tags, meta tag generate, SEO meta tag generator, SEO keywords generator, meta tag generator'
+				}
+				url={'https://www.devtoo1s.dev/various-tools/meta-tags-generator'}
+			/>
 			<div className="p-4 sm:ml-52 max-w-screen overflow-y-auto max-h-screen">
 				<div className="my-20 max-w-screen-lg">
 					<h3 className="p-2 rounded text-lg sm:text-2xl text-yellow-500 w-full bg-[#1a1c2e]">

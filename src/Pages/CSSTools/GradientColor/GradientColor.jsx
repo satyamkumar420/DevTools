@@ -1,8 +1,8 @@
 import React, { useState, useRef } from 'react';
-import { Helmet } from 'react-helmet-async';
 import PrimaryButton from '../../../Components/utils/Button/PrimaryButton';
 import { toast } from 'react-toastify';
 import { toastStyleSuccess } from '../../../Components/utils/Toastify/toastStyle';
+import SEO from '../../../Components/MetaTags/SEO';
 
 const GradientColor = () => {
 	const [direction, setDirection] = useState('to left');
@@ -39,9 +39,23 @@ const GradientColor = () => {
 
 	return (
 		<>
-			<Helmet>
-				<title>Gradient Color Picker</title>
-			</Helmet>
+			<SEO
+				title={'Gradient Color Picker'}
+				description={`	The Gradient Color Generator is an incredibly useful web-based
+					tool that assists users in generating custom CSS gradients for
+					their web design and development projects. This tool features a
+					user-friendly interface that allows users to easily select the
+					gradient direction and choose two colors, color1 and color2. The
+					generator seamlessly transitions between the two colors to
+					provide a beautiful gradient effect that is perfect for any web
+					project. Additionally, the tool provides a convenient copy
+					feature that allows users to easily copy the generated gradient
+					code with just one click.`}
+				keywords={
+					'gradient color picker, gradient color, css gradient color picker, css gradient color'
+				}
+				url={'https://www.devtools.dev/colors/gradient-color'}
+			/>
 			<div className="p-4 sm:ml-52 max-w-screen overflow-y-auto max-h-screen">
 				<div className="my-20 max-w-screen-lg">
 					<h3 className="p-2 rounded text-lg sm:text-2xl text-yellow-500 w-full bg-[#1a1c2e]">
@@ -66,7 +80,7 @@ const GradientColor = () => {
 									<PrimaryButton
 										onClick={() => handleDirectionChange(dir)}
 										text={dir}
-										className={`py-2 w-40 hover:bg-orange-700 ${
+										className={`py-2  hover:bg-orange-700 ${
 											direction === dir ? 'bg-orange-700' : ''
 										}`}
 									/>

@@ -170,7 +170,7 @@ function App() {
 		<BrowserRouter>
 			<Suspense fallback={<Loader />}>
 				<Navbar />
-				<Analytics />
+				<Analytics debug={false} />
 				<ToastContainer
 					position="top-right"
 					theme="dark"

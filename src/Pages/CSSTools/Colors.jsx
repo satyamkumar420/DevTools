@@ -10,7 +10,7 @@ import {
 	IconBoxShadow,
 	IconGradientVertical,
 } from '../../Components/Icons/Icons';
-import { Helmet } from 'react-helmet-async';
+import SEO from '../../Components/MetaTags/SEO';
 
 const Colors = () => {
 	const buttons = [
@@ -77,9 +77,14 @@ const Colors = () => {
 	];
 	return (
 		<>
-			<Helmet>
-				<title>CSS Tools</title>
-			</Helmet>
+			<SEO
+				title={'Online Free CSS Tools'}
+				description={`Color Tools -Boost productivity with our CSS tools - gradient generator, box-shadow generator, color picker, and color converter. `}
+				keywords={
+					'color tools, gradient generator, box-shadow generator, color picker, color converter'
+				}
+				url={'https://www.devtoo1s.dev/colors'}
+			/>
 			<div className="p-4 sm:ml-52 max-w-screen overflow-y-auto  max-h-screen">
 				<div className=" my-20  max-w-screen-lg">
 					<h3 className="p-2 rounded text-lg sm:text-2xl text-yellow-500 w-full bg-[#1a1c2e]">

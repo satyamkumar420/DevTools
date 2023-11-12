@@ -1,11 +1,20 @@
-import { Helmet } from 'react-helmet-async';
+import lazyLoad from '../../utils/lazyLoad/lazyLoad';
+const SEO = lazyLoad('../../Components/MetaTags/SEO');
 
 const PrivacyPolicy = () => {
 	return (
 		<>
-			<Helmet>
-				<title>Privacy & Policy</title>
-			</Helmet>
+			<SEO
+				title={'Privacy & Policy'}
+				description={`	DevToo1s.dev takes the privacy of its users seriously. In this
+							document, we outline the types of information we collect and how
+							we use it. By continuing to browse our website, you agree to this
+							Privacy Policy, regardless of your browser settings.`}
+				keywords={
+					'Privacy & Policy - online free devtoo1s.dev, devtoo1s, devtools, privacy policy'
+				}
+				url={'https://www.devtoo1s.dev/privacy-policy'}
+			/>
 			<div className="p-4 sm:ml-52 text-justify max-w-screen overflow-y-auto max-h-screen">
 				<div className="my-20 max-w-screen-lg">
 					<h3 className="p-2 rounded text-lg sm:text-2xl text-yellow-500 w-full bg-[#1a1c2e]">

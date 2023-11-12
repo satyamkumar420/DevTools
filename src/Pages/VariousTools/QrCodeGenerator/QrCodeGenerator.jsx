@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import QRCode from 'qrcode';
-import { Helmet } from 'react-helmet-async';
 import PrimaryButton from '../../../Components/utils/Button/PrimaryButton';
 import { toast } from 'react-toastify';
 import { toastStyleError } from '../../../Components/utils/Toastify/toastStyle';
 import QrImage from '../../../assets/qrcode.png';
+import SEO from '../../../Components/MetaTags/SEO';
 
 const QrCodeGenerator = () => {
 	const [textInput, setTextInput] = useState('');
@@ -39,9 +39,16 @@ const QrCodeGenerator = () => {
 
 	return (
 		<>
-			<Helmet>
-				<title>QR Code Generator</title>
-			</Helmet>
+			<SEO
+				title={'Online Free QR Code Generator Tools'}
+				description={
+					'Online free QR code generator tools are web-based applications that enable users to create QR (Quick Response) codes. QR codes are two-dimensional barcodes that can store various types of information, such as website URLs, contact details, or plain text. These tools typically allow users to input the desired information and generate a unique QR code. Users can then download or share the generated QR code for use in various applications, including marketing materials, business cards, or product packaging.'
+				}
+				keywords={
+					'QR Code Generator, QR Code Generator Tools, Qr code generator, qr code, free qr code generator, online qr code generator, text to qr code, text to qr, text to qr code generator, text to qr code generator tools, text to qr code generator online, text to qr code generator free'
+				}
+				url={'https://www.devtoo1s.dev/various-tools/qr-code-generator'}
+			/>
 			<div className="p-4 sm:ml-52 max-w-screen overflow-y-auto max-h-screen">
 				<div className="my-20 max-w-screen-lg">
 					<h3 className="p-2 rounded text-lg sm:text-2xl text-yellow-500 w-full bg-[#1a1c2e]">

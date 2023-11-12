@@ -1,5 +1,3 @@
-import React from 'react';
-
 const PrimaryButton = ({ onClick, text, className, disabled }) => {
 	return (
 		<button

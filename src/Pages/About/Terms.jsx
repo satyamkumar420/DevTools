@@ -1,11 +1,17 @@
-import { Helmet } from 'react-helmet-async';
+import lazyLoad from '../../utils/lazyLoad/lazyLoad';
+const SEO = lazyLoad('../../Components/MetaTags/SEO');
 
 const Terms = () => {
 	return (
 		<>
-			<Helmet>
-				<title>Terms and Conditions</title>
-			</Helmet>
+			<SEO
+				title={'Terms and Conditions'}
+				description={'Terms and Conditions'}
+				keywords={
+					'Terms and Conditions, Terms and Conditions - online free devtoo1s.dev, devtoo1s, devtools, terms and conditions'
+				}
+				url={'https://www.devtoo1s.dev/terms-and-conditions'}
+			/>
 			<div className="p-4 sm:ml-52 text-justify max-w-screen overflow-y-auto max-h-screen">
 				<div className="my-20 max-w-screen-lg">
 					<h3 className="text-left p-2 rounded text-lg sm:text-2xl text-yellow-500 w-full bg-[#1a1c2e]">
@@ -59,11 +65,11 @@ const Terms = () => {
 							or through the website will be effective, accurate or reliable;
 							(e) the quality of any content purchased or obtained by you on or
 							through the website will meet your expectations.
-							<p>
+							<span>
 								When using the website, any content accessed or obtained is at
 								your own discretion and risk. DEVtOO1S.DEV takes no
 								responsibility for any resulting damage.
-							</p>
+							</span>
 						</p>
 						<h3 className="mt-5 text-xl font-medium text-orange-400">
 							Indemnity
@@ -114,7 +120,7 @@ const Terms = () => {
 						</h3>
 						<p className="text-base text-gray-400">
 							You may use this website only in accordance with DevTools.dev's
-							policies (including its Privacy Policy found at{' '}
+							policies (including its Privacy Policy found at
 							<a href="/privacy-policy">www.devtoo1s.dev/privacy-policy</a> )
 							and applicable laws and regulations.
 						</p>

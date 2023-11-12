@@ -8,7 +8,7 @@ import {
 	IconXml,
 	IconQrCode,
 } from '../../Components/Icons/Icons';
-import { Helmet } from 'react-helmet-async';
+import SEO from '../../Components/MetaTags/SEO';
 
 const VariousTools = () => {
 	const buttons = [
@@ -60,9 +60,16 @@ const VariousTools = () => {
 
 	return (
 		<>
-			<Helmet>
-				<title>Various Tools</title>
-			</Helmet>
+			<SEO
+				title={'Online Free Various Tools'}
+				description={
+					'Online free various tools encompass a Meta Tag Generator for creating SEO-friendly meta tags, a Code Viewer for displaying and rendering frontend code snippets, a URL Encoder for encoding special characters in URLs, a Base64 Encoder for converting binary or text data to Base64 encoding, and an MD5 Hash Encoder for generating MD5 hash values for text or data. Each tool serves a specific purpose, offering users quick and accessible functionalities for tasks like SEO optimization, code viewing, URL encoding, and data hashing.'
+				}
+				keywords={
+					'Various Tools, Various Tools Online, Various Tools Free, meta tags, age calculator, url encoder, qr code generator, base64 encoder, md5 hash, frontend code, url to encode, url to decode, url to encode online, url to decode online, url to encode free, url to decode free'
+				}
+				url={'https://www.devtoo1s.dev/various-tools'}
+			/>
 			<div className="p-4 sm:ml-52 max-w-screen overflow-y-auto max-h-screen">
 				<div className="my-20 max-w-screen-lg">
 					<h3 className="p-2 rounded text-lg sm:text-2xl text-yellow-500 w-full bg-[#1a1c2e]">

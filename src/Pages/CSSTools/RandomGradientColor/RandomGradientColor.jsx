@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
-import { Helmet } from 'react-helmet-async';
 import PrimaryButton from '../../../Components/utils/Button/PrimaryButton';
 import { toast } from 'react-toastify';
 import { toastStyleSuccess } from '../../../Components/utils/Toastify/toastStyle';
+import SEO from '../../../Components/MetaTags/SEO';
 
 const GradientBox = ({ colors, angle, onClick }) => {
 	const gradientColors = colors.join(', ');
@@ -64,9 +64,14 @@ const RandomGradientColor = () => {
 
 	return (
 		<>
-			<Helmet>
-				<title>Random Gradient Color Generator</title>
-			</Helmet>
+			<SEO
+				title={'Random Gradient Color'}
+				description={
+					'Devtools.dev offers a free online Random Gradient Color Generator tool that allows you to create beautiful gradient color schemes for your design projects. With this tool, you can generate random color combinations or choose your own colors to create a customized gradient. The tool is user-friendly and provides you with the CSS code for your chosen gradient. You can use this code in your web development projects, or export the gradient as an image for use in other design applications. Best of all, it is completely free to use on devtools.dev.'
+				}
+				keywords={'Random Gradient Color, gradient, color, css, web design'}
+				url={'https://www.devtools.dev/colors/random-gradient-color'}
+			/>
 			<div className="p-4 sm:ml-52 max-w-screen overflow-y-auto max-h-screen">
 				<div className="my-20 max-w-screen-lg">
 					<h3 className="p-2  rounded text-lg sm:text-2xl text-yellow-500 w-full bg-[#1a1c2e]">
@@ -95,11 +100,15 @@ const RandomGradientColor = () => {
 					<div className="mt-10">
 						<div className="border-l-4 border-l-purple-500 p-2 text-sm sm:text-lg bg-[#1a1c2e]">
 							<p className="text-blue-200">
-								This tool is designed to assist you with your work. It generates
-								multiple random gradient colors with a single click, which can
-								save you time and effort. The tool also copies the colors for
-								you, making it even more convenient. We believe that this tool
-								will be an invaluable resource for your development needs.
+								Devtools.dev offers a free online Random Gradient Color
+								Generator tool that allows you to create beautiful gradient
+								color schemes for your design projects. With this tool, you can
+								generate random color combinations or choose your own colors to
+								create a customized gradient. The tool is user-friendly and
+								provides you with the CSS code for your chosen gradient. You can
+								use this code in your web development projects, or export the
+								gradient as an image for use in other design applications. Best
+								of all, it is completely free to use on devtools.dev.
 							</p>
 						</div>
 					</div>

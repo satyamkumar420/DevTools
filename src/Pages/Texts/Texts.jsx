@@ -7,7 +7,7 @@ import {
 	IconScriptTextPlay,
 	IconFiletypeHtml,
 } from '../../Components/Icons/Icons';
-import { Helmet } from 'react-helmet-async';
+import SEO from '../../Components/MetaTags/SEO';
 
 const Texts = () => {
 	const buttons = [
@@ -46,9 +46,16 @@ const Texts = () => {
 
 	return (
 		<>
-			<Helmet>
-				<title> Text Tools</title>
-			</Helmet>
+			<SEO
+				title={'Online Free Text Tools'}
+				description={
+					'Online free text tools provide various text tools. and many more tools available.'
+				}
+				keywords={
+					'online free text tools, text tools, text tools online, free text tools'
+				}
+				url={'https://devtoo1s.dev/texts'}
+			/>
 			<div className="p-4 sm:ml-52   max-w-screen overflow-y-auto max-h-screen">
 				<div className="my-20 max-w-screen-lg">
 					<h3 className="text-left p-2 rounded text-lg sm:text-2xl text-yellow-500 w-full bg-[#1a1c2e]">
