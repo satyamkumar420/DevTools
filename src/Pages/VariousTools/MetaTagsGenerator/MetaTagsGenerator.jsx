@@ -76,7 +76,7 @@ const MetaTagsGenerator = () => {
 									placeholder="Enter title"
 									value={title}
 									onChange={(e) => setTitle(e.target.value)}
-									className="w-full p-2 bg-[#1a1c2e] outline-none rounded-md focus:border-blue-500 border-2 border-gray-400"
+									className="w-full p-2 bg-[#1a1c2e] outline-none rounded-md focus:border-blue-500 border-2 border-gray-600"
 								/>
 							</div>
 							<div>
@@ -86,7 +86,7 @@ const MetaTagsGenerator = () => {
 									placeholder="Enter description"
 									value={description}
 									onChange={(e) => setDescription(e.target.value)}
-									className="w-full p-2 bg-[#1a1c2e] outline-none rounded-md focus:border-blue-500 border-2 border-gray-400"
+									className="w-full p-2 bg-[#1a1c2e] outline-none rounded-md focus:border-blue-500 border-2 border-gray-600"
 								/>
 							</div>
 							<div>
@@ -96,7 +96,7 @@ const MetaTagsGenerator = () => {
 									placeholder="Enter keywords"
 									value={keywords}
 									onChange={(e) => setKeywords(e.target.value)}
-									className="w-full p-2 bg-[#1a1c2e] outline-none rounded-md focus:border-blue-500 border-2 border-gray-400"
+									className="w-full p-2 bg-[#1a1c2e] outline-none rounded-md focus:border-blue-500 border-2 border-gray-600"
 								/>
 							</div>
 							<div>
@@ -106,7 +106,7 @@ const MetaTagsGenerator = () => {
 									placeholder="Enter URL"
 									value={url}
 									onChange={(e) => setUrl(e.target.value)}
-									className="w-full p-2 bg-[#1a1c2e] outline-none rounded-md focus:border-blue-500 border-2 border-gray-400"
+									className="w-full p-2 bg-[#1a1c2e] outline-none rounded-md focus:border-blue-500 border-2 border-gray-600"
 								/>
 							</div>
 							<div>
@@ -116,16 +116,15 @@ const MetaTagsGenerator = () => {
 									placeholder="Image URL"
 									value={image}
 									onChange={(e) => setImage(e.target.value)}
-									className="w-full p-2 bg-[#1a1c2e] outline-none rounded-md focus:border-blue-500 border-2 border-gray-400"
+									className="w-full p-2 bg-[#1a1c2e] outline-none rounded-md focus:border-blue-500 border-2 border-gray-600"
 								/>
 							</div>
 							<div>
 								<label>Type</label>
-
 								<select
 									value={type}
 									onChange={(e) => setType(e.target.value)}
-									className="w-full p-2 rounded-md border-2 border-gray-400 bg-[#1a1c2e] cursor-pointer">
+									className="w-full p-2 rounded-md border-2 border-gray-600 bg-[#1a1c2e] cursor-pointer outline-none">
 									<option value="website">Website</option>
 									<option value="article">Article</option>
 									<option value="book">Book</option>
