@@ -68,12 +68,6 @@ const Colors = () => {
 			icon: <IconGradientVertical className="text-[#ce39f8]" />,
 			className: 'p-2 grid place-items-center',
 		},
-		// {
-		// 	to: '/colors/clip-path-generator',
-		// 	text: 'Clip Path Generator',
-		// 	icon: <IconGradientVertical className="text-[#ce39f8]" />,
-		// 	className: 'p-2 grid place-items-center',
-		// },
 	];
 	return (
 		<>

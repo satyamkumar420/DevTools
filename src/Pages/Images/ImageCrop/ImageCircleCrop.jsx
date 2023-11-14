@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import Avatar from 'react-avatar-edit';
 import CustomAlert from '../../../Components/utils/Toastify/CustomAlert';
 import PrimaryButton from './../../../Components/utils/Button/PrimaryButton';
