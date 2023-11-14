@@ -15,7 +15,7 @@
 
 				{
 					"key": "Permissions-Policy",
-					"value": "geolocation=(self 'https://www.devtoo1s.dev')"
+					"value": "geolocation=(self 'https://www.devtoo1s.dev'), camera=()"
 				},
 
 				{
