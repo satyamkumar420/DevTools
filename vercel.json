@@ -14,7 +14,7 @@
         },
         {
           "key": "Permissions-Policy",
-          "value": "geolocation=(self 'https://www.devtoo1s.dev') camera=()"
+          "value": "geolocation=(self 'https://www.devtoo1s.dev'), camera=(), microphone=()"
         },
         {
           "key": "Referrer-Policy",
