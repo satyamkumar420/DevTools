@@ -1,43 +1,75 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta
-			name="description"
-			content="DevToo1s.dev - Your source for a variety of online free developer tools including Emoji Picker, Text Converter, CSS Generator, Box Generator, Gradient Generator, URL Encoder, MD5 Hash Generator, Base64 Encoder, Text Comparison, Color Picker, Image Color Picker, and more." />
-		<meta
-			name="keywords"
-			content="developer tools, online tools, emoji picker, text converter, CSS generator, box generator, gradient generator, URL encoder, MD5 hash generator, base64 encoder, text comparison, color picker, image color picker, Text Counter, Text to Speech, Random Number Generator, Random Password Generator, Random Color Generator, favorite color, favorite colors, Color Converter, box shadow generator, gradient color generator, Random Box Shadow Generator, Random Gradient Color Generator, Random Text Generator, Time Converter, Random Data Generator, Storage Unit Converter, MB To Kb MB GB TB, XML to JSON, JSON to XML, Square Size Image Crop, Circle Size Image Crop, custom image crop, image to base64, Random Fake details generator, Random Fake Credit Card generator, Age Calculator, Code Viewer, Frontend Code Viewer, Format JSON, Minify JSON, Minify Code, Minify CSS, Minify HTML, Minify JavaScript, devtoo1s.dev - Your source for a variety of online free developer tools" />
-		<meta name="author" content="@satyamkumar404" />
-		<meta name="robots" content="index, follow" />
-		<meta
-			name="og:title"
-			content="DevToo1s.dev - Free Online Developer Tools" />
-		<meta
-			name="og:description"
-			content="Explore a variety of free online developer tools on DevToo1s.dev, including Emoji Picker, Text Converter, CSS Generator, and more. Enhance your development workflow with our tools." />
-		<meta
-			name="og:image"
-			content="https://www.devtoo1s.dev/assets/favicon-bc856b9d.png" />
-		<meta name="og:url" content="https://www.devtoo1s.dev" />
-		<meta name="og:site_name" content="DevToo1s.dev" />
-		<title>DevTools1.dev - Free Online Developer Tools</title>
-		<link rel="icon" type="image/svg+xml" href="favicon.png" />
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&family=Noto+Emoji:wght@300;400;500;600;700&display=swap"
-			rel="stylesheet" />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
-			rel="stylesheet" />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500&display=swap"
-			rel="stylesheet" />
-	</head>
-	<body>
-		<div id="root"></div>
-		<script type="module" src="/src/main.jsx"></script>
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="DevToo1s.dev - Your source for a variety of online free developer tools including Emoji Picker, Text Converter, CSS Generator, Box Generator, Gradient Generator, URL Encoder, MD5 Hash Generator, Base64 Encoder, Text Comparison, Color Picker, Image Color Picker, and more."
+    />
+    <meta
+      name="keywords"
+      content="developer tools, online tools, emoji picker, text converter, CSS generator, box generator, gradient generator, URL encoder, MD5 hash generator, base64 encoder, text comparison, color picker, image color picker, Text Counter, Text to Speech, Random Number Generator, Random Password Generator, Random Color Generator, favorite color, favorite colors, Color Converter, box shadow generator, gradient color generator, Random Box Shadow Generator, Random Gradient Color Generator, Random Text Generator, Time Converter, Random Data Generator, Storage Unit Converter, MB To Kb MB GB TB, XML to JSON, JSON to XML, Square Size Image Crop, Circle Size Image Crop, custom image crop, image to base64, Random Fake details generator, Random Fake Credit Card generator, Age Calculator, Code Viewer, Frontend Code Viewer, Format JSON, Minify JSON, Minify Code, Minify CSS, Minify HTML, Minify JavaScript, devtoo1s.dev - Your source for a variety of online free developer tools"
+    />
+    <meta name="author" content="@satyamkumar404" />
+    <meta name="robots" content="index, follow" />
+    <meta
+      name="og:title"
+      content="DevToo1s.dev - Free Online Developer Tools"
+    />
+    <meta
+      name="og:description"
+      content="Explore a variety of free online developer tools on DevToo1s.dev, including Emoji Picker, Text Converter, CSS Generator, and more. Enhance your development workflow with our tools."
+    />
+    <meta
+      name="og:image"
+      content="https://www.devtoo1s.dev/assets/favicon-bc856b9d.png"
+    />
+    <meta name="og:url" content="https://www.devtoo1s.dev" />
+    <meta name="og:site_name" content="DevToo1s.dev" />
+    <title>DevTools1.dev - Free Online Developer Tools</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&family=Noto+Emoji:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-5L5RBF3L");
+    </script>
+    <!-- End Google Tag Manager -->
+  </head>
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-5L5RBF3L"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>
