@@ -4,6 +4,7 @@ import { Slide, ToastContainer } from "react-toastify"; // Import the toast func
 import { HelmetProvider } from "react-helmet-async";
 import "react-toastify/dist/ReactToastify.css";
 import Loader from "./Components/utils/Loader/Loader";
+import { GoogleAnalytics, GoogleTagManager } from "./utils/GoogleAnalytics";
 
 const Navbar = lazy(() => import("./Components/Navbar/Navbar"));
 const Notfound = lazy(() => import("./Components/Notfound/Notfound"));
@@ -166,6 +167,8 @@ function App() {
     <BrowserRouter>
       <Suspense fallback={<Loader />}>
         <Navbar />
+        <GoogleAnalytics />
+        <GoogleTagManager />
 
         <ToastContainer
           position="top-right"
