@@ -4,6 +4,7 @@ import { Slide, ToastContainer } from "react-toastify"; // Import the toast func
 import { HelmetProvider } from "react-helmet-async";
 import "react-toastify/dist/ReactToastify.css";
 import Loader from "./Components/utils/Loader/Loader";
+import { Analytics } from "@vercel/analytics/react";
 import { GoogleAnalytics, GoogleTagManager } from "./utils/GoogleAnalytics";
 
 const Navbar = lazy(() => import("./Components/Navbar/Navbar"));
@@ -169,7 +170,7 @@ function App() {
         <Navbar />
         <GoogleAnalytics />
         <GoogleTagManager />
-
+        <Analytics />
         <ToastContainer
           position="top-right"
           theme="dark"
