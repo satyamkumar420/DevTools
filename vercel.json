@@ -1,30 +1,39 @@
 {
-	"rewrites": [{ "source": "/(.*)", "destination": "/" }],
-	"headers": [
-		{
-			"source": "/(.*)",
-			"headers": [
-				{ "key": "Cache-Control", "value": "no-cache" },
-				{ "key": "X-Content-Type-Options", "value": "nosniff" },
-				{ "key": "X-Frame-Options", "value": "SAMEORIGIN" },
-				{ "key": "X-XSS-Protection", "value": "1; mode=block" },
-				{
-					"key": "Strict-Transport-Security",
-					"value": "max-age=31536000; includeSubDomains; preload"
-				},
-				{
-					"key": "Permissions-Policy",
-					"value": "geolocation=(self 'https://www.devtoo1s.dev'), camera=()"
-				},
-				{
-					"key": "Referrer-Policy",
-					"value": "strict-origin-when-cross-origin"
-				},
-				{
-					"key": "Access-Control-Allow-Origin",
-					"value": "https://www.devtoo1s.dev"
-				}
-			]
-		}
-	]
+  "rewrites": [
+    {
+      "source": "^/(.*)$",
+      "destination": "/$1"
+    }
+  ],
+  "headers": [
+    {
+      "source": "^/(.*)$",
+      "headers": [
+        { "key": "Cache-Control", "value": "no-cache" },
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
+        { "key": "X-XSS-Protection", "value": "1; mode=block" },
+        {
+          "key": "Strict-Transport-Security",
+          "value": "max-age=31536000; includeSubDomains; preload"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "geolocation=(self 'https://www.devtools.dev'), camera=()"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "https://www.devtools.dev"
+        },
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self'; font-src 'self' data:; img-src 'self' data:; script-src 'self'; style-src 'self' 'unsafe-inline'"
+        }
+      ]
+    }
+  ]
 }
