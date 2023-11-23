@@ -12,10 +12,23 @@ const options = ({
   setIncludeHtml,
   defaultText,
 }) => {
-  let textToCopy =
-    includeHtml === "yes"
-      ? paragraphs.map((sentence) => `<${tag}>${sentence}</${tag}>`).join("\n")
-      : paragraphs.map((sentence) => sentence).join("\n");
+  let textToCopy;
+
+  if (includeHtml === "yes") {
+    textToCopy = paragraphs
+      .map((sentence) => `<${tag}>${sentence}</${tag}>`)
+      .join("\n");
+  } else if (includeHtml === "all") {
+    textToCopy = `<${tag}>${paragraphs.join("")}</${tag}>`;
+  } else if (includeHtml === "no") {
+    textToCopy = paragraphs.join("");
+  } else {
+    if (includeHtml === "no") {
+      textToCopy = `<${tag}>${defaultText}</${tag}>`;
+    } else {
+      textToCopy = defaultText;
+    }
+  }
 
   // Match the text to copy
   if (textToCopy === "") {
@@ -54,7 +67,7 @@ const options = ({
           autoComplete="off"
           min="1"
           max="1000"
-          className="text-lg py-2 px-5 rounded outline-none bg-[#1a1c2e] shadow-md text-white w-52 appearance-none"
+          className="text-lg py-2 px-5 rounded outline-none bg-[#1a1c2e] shadow-md text-blue-100 w-52 appearance-none"
         />
       </div>
       <div className="">
@@ -86,6 +99,7 @@ const options = ({
         >
           <option value="no">No</option>
           <option value="yes">Yes</option>
+          <option value="all">All</option>
         </select>
       </div>
 
