@@ -1,13 +1,8 @@
 {
-  "rewrites": [
-    {
-      "source": "^/(.*)$",
-      "destination": "/$1"
-    }
-  ],
+  "rewrites": [{ "source": "/(.*)", "destination": "/" }],
   "headers": [
     {
-      "source": "^/(.*)$",
+      "source": "/(.*)",
       "headers": [
         { "key": "Cache-Control", "value": "no-cache" },
         { "key": "X-Content-Type-Options", "value": "nosniff" },
@@ -19,7 +14,7 @@
         },
         {
           "key": "Permissions-Policy",
-          "value": "geolocation=(self 'https://www.devtools.dev'), camera=()"
+          "value": "geolocation=(self 'https://www.devtoo1s.dev'), camera=()"
         },
         {
           "key": "Referrer-Policy",
@@ -27,7 +22,7 @@
         },
         {
           "key": "Access-Control-Allow-Origin",
-          "value": "https://www.devtools.dev"
+          "value": "https://www.devtoo1s.dev"
         },
         {
           "key": "Content-Security-Policy",
