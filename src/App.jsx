@@ -5,7 +5,7 @@ import { HelmetProvider } from "react-helmet-async";
 import "react-toastify/dist/ReactToastify.css";
 import Loader from "./Components/utils/Loader/Loader";
 import { Analytics } from "@vercel/analytics/react";
-import ReactGA from "react-ga";
+
 const Navbar = lazy(() => import("./Components/Navbar/Navbar"));
 const Notfound = lazy(() => import("./Components/Notfound/Notfound"));
 const Footer = lazy(() => import("./Components/Footer/Footer"));
@@ -162,11 +162,6 @@ function App() {
       document.removeEventListener("contextmenu", disableContextMenu);
       document.removeEventListener("keydown", disableF12);
     };
-  }, []);
-
-  useEffect(() => {
-    ReactGA.initialize("G-NPVWYNTKYG");
-    ReactGA.pageview(window.location.pathname + window.location.search);
   }, []);
 
   return (

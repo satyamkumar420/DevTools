@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import ReactGA from "react-ga";
 
 const Button = ({ text, icon, onClick, className }) => {
   const [hovered, setHovered] = useState(false);
@@ -63,19 +62,10 @@ const Button = ({ text, icon, onClick, className }) => {
     setHovered(false);
   };
 
-  const handleButtonClick = () => {
-    ReactGA.event({
-      category: "Button",
-      action: "Click",
-      label: "My Button",
-    });
-    onClick();
-  };
-
   return (
     <button
       className="items-center text-center"
-      onClick={handleButtonClick}
+      onClick={onClick}
       style={buttonStyle}
       type="button"
       onMouseEnter={handleMouseEnter}
