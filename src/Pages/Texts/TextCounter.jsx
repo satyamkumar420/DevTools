@@ -77,7 +77,7 @@ function TextCounter() {
               </li>
             </ul>
           </div>
-          <HorizontalAdSense />
+          {/* <HorizontalAdSense /> */}
           <div className="mt-5">
             {/* TODO: convert into text in 123 format */}
             <div className="text-blue-300 border-l-4 border-l-purple-500 p-2 text-sm sm:text-lg bg-[#1a1c2e]">

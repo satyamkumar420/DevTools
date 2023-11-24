@@ -74,7 +74,7 @@ const Texts = () => {
             ))}
           </div>
 
-          <HorizontalAdSense />
+          {/* <HorizontalAdSense /> */}
           <div className="mt-10">
             <div className="text-left border-l-4 border-l-purple-500 p-2 text-sm sm:text-lg bg-[#1a1c2e]">
               <p className="text-blue-300">
