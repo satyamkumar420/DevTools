@@ -8,6 +8,7 @@ import {
   IconFiletypeHtml,
 } from "../../Components/Icons/Icons";
 import SEO from "../../Components/MetaTags/SEO";
+import { HorizontalAdSense } from "../../utils/ads/GoogleAdSense";
 
 const Texts = () => {
   const buttons = [
@@ -73,6 +74,7 @@ const Texts = () => {
             ))}
           </div>
 
+          <HorizontalAdSense />
           <div className="mt-10">
             <div className="text-left border-l-4 border-l-purple-500 p-2 text-sm sm:text-lg bg-[#1a1c2e]">
               <p className="text-blue-300">
