@@ -93,9 +93,9 @@ const TimeConverter = lazy(
 
 // Lazy-loaded route components 'About'
 const About = lazy(() => import("./Pages/About/About"));
-
 const Privacy = lazy(() => import("./Pages/About/PrivacyPolicy"));
 const Terms = lazy(() => import("./Pages/About/Terms"));
+const Authors = lazy(() => import("./Pages/About/Authors"));
 
 // Lazy-loaded route components 'FormatCode'
 const FormatCode = lazy(() => import("./Pages/FormatCode/FormatCode"));
@@ -308,6 +308,7 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/privacy-policy" element={<Privacy />} />
             <Route path="/terms-and-conditions" element={<Terms />} />
+            <Route path="/authors" element={<Authors />} />
           </Routes>
         </HelmetProvider>
         <Footer />

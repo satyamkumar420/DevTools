@@ -31,6 +31,12 @@ const Footer = () => {
           >
             Terms
           </NavLink>
+          <NavLink
+            to="/authors"
+            className="text-blue-400 hover:underline hover:text-blue-500"
+          >
+            Authors
+          </NavLink>
         </div>
       </div>
     </footer>

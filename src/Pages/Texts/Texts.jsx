@@ -90,6 +90,7 @@ const Texts = () => {
               </p>
             </div>
           </div>
+          
         </div>
       </div>
     </>
