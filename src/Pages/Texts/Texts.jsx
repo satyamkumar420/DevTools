@@ -8,7 +8,7 @@ import {
   IconFiletypeHtml,
 } from "../../Components/Icons/Icons";
 import SEO from "../../Components/MetaTags/SEO";
-import { HorizontalAdSense } from "../../utils/ads/GoogleAdSense";
+// import { HorizontalAdSense } from "../../utils/ads/GoogleAdSense";
 
 const Texts = () => {
   const buttons = [
@@ -90,7 +90,6 @@ const Texts = () => {
               </p>
             </div>
           </div>
-          
         </div>
       </div>
     </>
