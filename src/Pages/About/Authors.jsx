@@ -34,7 +34,7 @@ const Authors = () => {
                   height={200}
                 />
               </div>
-              <div className="text-center">
+              <div className="text-center my-5">
                 <h1 className="text-4xl text-white font-medium my-2">
                   Satyam Kumar
                 </h1>
@@ -42,7 +42,7 @@ const Authors = () => {
                 <h3 className="text-gray-400 mb-3">
                   R.G.P.V University, Bhopal
                 </h3>
-                <div className="flex justify-center gap-x-3 text-2xl">
+                <div className="flex justify-center gap-x-8 text-xl sm:text-2xl mt-8">
                   <NavLink
                     className="text-white hover:text-blue hover:bg-blue-500/10 rounded-full p-1 "
                     to="https://github.com/satyamkumar420"
