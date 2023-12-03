@@ -114,7 +114,7 @@ export function IconArrowsMinimize(props) {
   );
 }
 
-export function IconGrid_squares(props) {
+export function IconGrid_squares() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -1137,6 +1137,20 @@ export function IconEmailOpen(props) {
       {...props}
     >
       <path d="M4 8l8 5 8-5-8-5-8 5m18 0v10a2 2 0 01-2 2H4a2 2 0 01-2-2V8c0-.73.39-1.36.97-1.71L12 .64l9.03 5.65c.58.35.97.98.97 1.71z" />
+    </svg>
+  );
+}
+
+export function IconFormatParagraph(props) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      height="1.6em"
+      width="1.6em"
+      {...props}
+    >
+      <path d="M13 4a4 4 0 014 4 4 4 0 01-4 4h-2v6H9V4h4m0 6a2 2 0 002-2 2 2 0 00-2-2h-2v4h2z" />
     </svg>
   );
 }

@@ -17,6 +17,7 @@
     "@codemirror/lang-markdown": "^6.2.2",
     "@codemirror/lang-xml": "^6.0.2",
     "@codemirror/language": "^6.9.1",
+    "@codemirror/view": "^6.22.1",
     "@lezer/highlight": "^1.1.6",
     "@uiw/codemirror-extensions-langs": "^4.21.20",
     "@uiw/codemirror-theme-andromeda": "^4.21.20",

@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 const PrimaryButton = ({ onClick, text, className, disabled }) => {
   return (
     <button

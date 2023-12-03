@@ -13,16 +13,20 @@ import {
   IconListUl,
   IconListOl,
   IconStrikethrough,
+  IconFormatParagraph,
 } from "../../../Components/Icons/Icons";
 import { toastStyleSuccess } from "../../../Components/utils/Toastify/toastStyle";
 import { toast } from "react-toastify";
 import SEO from "../../../Components/MetaTags/SEO";
+import * as prettier from "prettier/standalone";
+import prettierPluginHtml from "prettier/plugins/html";
+import { toastStyleError } from "../../../Components/utils/Toastify/toastStyle";
 
 const TextToHtml = () => {
   const [inputText, setInputText] = useState("");
   const [showEditor, setShowEditor] = useState(true);
 
-  const applyFormatting = (tag) => {
+  const applyFormatting = async (tag) => {
     const selectedText = window.getSelection().toString();
 
     let formattedText;
@@ -33,14 +37,23 @@ const TextToHtml = () => {
       formattedText = `<${tag}>${numberedLines}</${tag}>`;
     } else if (tag === "a") {
       // Handle a tag link
-
       formattedText = `<${tag} href="">${selectedText}</${tag}>`;
     } else {
       formattedText = `<${tag}>${selectedText}</${tag}>`;
     }
 
     const newText = inputText.replace(selectedText, `${formattedText}`);
-    setInputText(newText);
+
+    // Format HTML using Prettier
+    try {
+      const formatted = await prettier.format(newText, {
+        parser: "html",
+        plugins: [prettierPluginHtml],
+      });
+      setInputText(formatted);
+    } catch (error) {
+      toast("Something went wrong!", { style: toastStyleError });
+    }
   };
 
   const toggleView = () => {
@@ -68,6 +81,9 @@ const TextToHtml = () => {
     { label: <IconListUl />, tag: "li" },
     { label: <IconListOl />, tag: "ol" },
     { label: <IconStrikethrough />, tag: "s" },
+    { label: "DIV", tag: "div" },
+    { label: <IconFormatParagraph />, tag: "p" },
+    { label: "SPAN", tag: "span" },
   ];
 
   return (
@@ -128,7 +144,7 @@ const TextToHtml = () => {
                 placeholder={"Enter your text here..."}
                 onChange={(e) => setInputText(e)}
                 value={inputText}
-                Height={"50vh"}
+                Height={"80vh"}
                 languages={[html()]}
                 displayName={"Text to HTML"}
               />
@@ -140,7 +156,7 @@ const TextToHtml = () => {
                 </h2>
                 <iframe
                   title="HTML Preview"
-                  className="w-full h-80 rounded-md"
+                  className="w-full min-h-[70vh] max-h-[100vh] rounded-md"
                   srcDoc={marked(inputText)}
                 ></iframe>
               </div>
