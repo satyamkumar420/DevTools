@@ -5,6 +5,7 @@ import { HelmetProvider } from "react-helmet-async";
 import "react-toastify/dist/ReactToastify.css";
 import Loader from "./Components/utils/Loader/Loader";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const Navbar = lazy(() => import("./Components/Navbar/Navbar"));
 const Notfound = lazy(() => import("./Components/Notfound/Notfound"));
@@ -170,6 +171,7 @@ function App() {
         <Navbar />
 
         <Analytics />
+        <SpeedInsights />
         <ToastContainer
           position="top-right"
           theme="dark"
