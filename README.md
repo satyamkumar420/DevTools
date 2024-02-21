@@ -33,10 +33,17 @@ Welcome to DevTools, a versatile collection of developer tools to enhance your w
 ### and many more...
 
 # Screenshot's
-[![image](https://github.com/satyamkumar420/DevToo1s/assets/98641231/03dfeb3a-028e-4b4b-986d-8a9c09fb3835)](https://devtoo1s.dev)
-[![image](https://github.com/satyamkumar420/DevToo1s/assets/98641231/785a347c-2031-4a80-831a-2bed8a9fed72)](https://devtoo1s.dev)
-[![image](https://github.com/satyamkumar420/DevToo1s/assets/98641231/0a411891-596f-4cab-9711-50efc6eb058e)](https://devtoo1s.dev)
-[![image](https://github.com/satyamkumar420/DevToo1s/assets/98641231/3dd831ea-a435-4b4e-915c-87e4cd18f790)](https://devtoo1s.dev)
+![image](https://github.com/satyamkumar420/DevTools/assets/98641231/e35fb64c-6ad4-4c9d-a8b4-6df4c113b325)
+
+![image](https://github.com/satyamkumar420/DevTools/assets/98641231/acfb70de-6c92-4f03-bb9d-e66bd6c2ff51)
+
+![image](https://github.com/satyamkumar420/DevTools/assets/98641231/bbf56c96-29d4-4428-8921-d7d8c4e5f1a9)
+![image](https://github.com/satyamkumar420/DevTools/assets/98641231/5fc361cd-ad16-476a-8dfd-8eedb95540c3)
+![image](https://github.com/satyamkumar420/DevTools/assets/98641231/37722715-c4f5-4de7-89a3-8b12679dde06)
+![image](https://github.com/satyamkumar420/DevTools/assets/98641231/9380fbd9-a1c6-4b00-be33-44961cdf0bda)
+
+
+
 
 
 Feel free to reach out with any suggestions, bug reports, or improvements!
