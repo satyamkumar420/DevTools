@@ -23,50 +23,100 @@ const Authors = () => {
           <h3 className="p-2 rounded text-lg sm:text-2xl text-yellow-500 w-full bg-[#1a1c2e]">
             Authors Details
           </h3>
-          <div className="flex justify-center md:justify-start">
-            <div className=" mt-5 bg-[#1a1c2e] p-5 rounded-lg text-sm sm:text-lg w-fit shadow-lg">
-              <div className="flex justify-center">
-                <img
-                  src={AuthorImage}
-                  className="rounded-full"
-                  alt="Authors"
-                  width={200}
-                  height={200}
-                />
+          <div className="flex gap-10 flex-wrap">
+            <div className="flex justify-center md:justify-start">
+              <div className=" mt-5 bg-[#1a1c2e] p-5 rounded-lg text-sm sm:text-lg w-fit shadow-lg">
+                <div className="flex justify-center">
+                  <img
+                    src={AuthorImage}
+                    className="rounded-full"
+                    alt="Authors"
+                    width={200}
+                    height={200}
+                  />
+                </div>
+                <div className="text-center my-5">
+                  <h1 className="text-4xl text-white font-medium my-2">
+                    Satyam Kumar
+                  </h1>
+                  <h3 className="mb-2 text-xl">🥷Full Stack Developer🥷</h3>
+                  <h3 className="text-gray-400 mb-3">
+                    R.G.P.V University, Bhopal
+                  </h3>
+                  <div className="flex justify-center gap-x-8 text-xl sm:text-2xl mt-8">
+                    <NavLink
+                      className="text-white hover:text-blue hover:bg-blue-500/10 rounded-full p-1 "
+                      to="https://github.com/satyamkumar420"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <IconGithub />
+                    </NavLink>
+                    <NavLink
+                      className="text-white hover:text-blue hover:bg-blue-400/10  rounded-full p-1"
+                      to="https://www.linkedin.com/in/satyamkumar404/"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <IconLinkedinCircled />
+                    </NavLink>
+                    <NavLink
+                      className="text-white hover:text-blue hover:bg-blue-400/10  rounded-full p-1"
+                      to="mailto:satyamkumar2460@gmail.com"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <IconEmailOpen />
+                    </NavLink>
+                  </div>
+                </div>
               </div>
-              <div className="text-center my-5">
-                <h1 className="text-4xl text-white font-medium my-2">
-                  Satyam Kumar
-                </h1>
-                <h3 className="mb-2 text-xl">🥷Full Stack Developer🥷</h3>
-                <h3 className="text-gray-400 mb-3">
-                  R.G.P.V University, Bhopal
-                </h3>
-                <div className="flex justify-center gap-x-8 text-xl sm:text-2xl mt-8">
-                  <NavLink
-                    className="text-white hover:text-blue hover:bg-blue-500/10 rounded-full p-1 "
-                    to="https://github.com/satyamkumar420"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <IconGithub />
-                  </NavLink>
-                  <NavLink
-                    className="text-white hover:text-blue hover:bg-blue-400/10  rounded-full p-1"
-                    to="https://www.linkedin.com/in/satyamkumar404/"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <IconLinkedinCircled />
-                  </NavLink>
-                  <NavLink
-                    className="text-white hover:text-blue hover:bg-blue-400/10  rounded-full p-1"
-                    to="mailto:satyamkumar2460@gmail.com"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <IconEmailOpen />
-                  </NavLink>
+            </div>
+            <div className="flex justify-center md:justify-start">
+              <div className=" mt-5 bg-[#1a1c2e] p-5 rounded-lg text-sm sm:text-lg w-fit shadow-lg">
+                <div className="flex justify-center">
+                  <img
+                    src="https://avatars.githubusercontent.com/u/102042730?v=4"
+                    className="rounded-full"
+                    alt="Authors"
+                    width={200}
+                    height={200}
+                  />
+                </div>
+                <div className="text-center my-5">
+                  <h1 className="text-4xl text-white font-medium my-2">
+                    MD Ali Azam
+                  </h1>
+                  <h3 className="mb-2 text-xl">🥷Full Stack Developer🥷</h3>
+                  <h3 className="text-gray-400 mb-3">
+                    R.G.P.V University, Bhopal
+                  </h3>
+                  <div className="flex justify-center gap-x-8 text-xl sm:text-2xl mt-8">
+                    <NavLink
+                      className="text-white hover:text-blue hover:bg-blue-500/10 rounded-full p-1 "
+                      to="https://github.com/aliazam07"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <IconGithub />
+                    </NavLink>
+                    <NavLink
+                      className="text-white hover:text-blue hover:bg-blue-400/10  rounded-full p-1"
+                      to="https://www.linkedin.com/in/"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <IconLinkedinCircled />
+                    </NavLink>
+                    <NavLink
+                      className="text-white hover:text-blue hover:bg-blue-400/10  rounded-full p-1"
+                      to="#"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <IconEmailOpen />
+                    </NavLink>
+                  </div>
                 </div>
               </div>
             </div>
